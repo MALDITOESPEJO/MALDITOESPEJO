@@ -1,0 +1,230 @@
+@import "tailwindcss";
+
+/* ============================================================
+   MALDITOESPEJO — DESIGN TOKENS (FUNDACIONES)
+   ------------------------------------------------------------
+   Todos los valores cromaticos y tipograficos viven aqui como
+   variables CSS. Para sustituir la tipografia definitiva o el
+   color de acento, basta con editar estas variables.
+
+   NOTA TIPOGRAFIA:
+   --font-display (titulares editoriales) y --font-sans
+   (navegacion, metadatos, interfaz) son hoy pilas de sistema
+   como colocacion temporal y reversible. La seleccion de las
+   dos familias web definitivas se decide tras revisar el
+   preview. Cambiar estas variables no requiere tocar ningun
+   componente.
+   ============================================================ */
+
+:root {
+  /* ---- COLOR: PALETA BASE (blanco / negro / grises neutros) ---- */
+  --color-background: #ffffff;
+  --color-foreground: #141414;
+  --color-ink: #141414;
+  --color-surface: #f6f6f4;
+  --color-muted: #6d6d6d;
+  /* faint cumple WCAG AA (>=4.5:1 sobre blanco) para texto pequeno */
+  --color-faint: #757575;
+  --color-border: #e4e4e2;
+  --color-border-strong: #d5d5d2;
+
+  /* ---- COLOR: ACENTO UNICO DE MARCA (rojo editorial sobrio) ---- */
+  --color-accent: #c4302b;
+  --color-accent-soft: #f5e4e2;
+
+  /* ---- TIPOGRAFIA ----
+     --font-display (titulares editoriales) y --font-sans
+     (navegacion, metadatos, interfaz) se definen en layout.tsx
+     via next/font/google (Source Serif 4 + Inter). Estas son las
+     unicas dos familias del producto; las demas del preview /design
+     no se cargan en el bundle de la Home. */
+
+  /* ---- LAYOUT ---- */
+  --max-width: 1180px;
+  --max-width-reading: 700px;
+  --gutter-mobile: 1.25rem;   /* 20px */
+  --gutter-tablet: 2rem;      /* 32px */
+  --gutter-desktop: 2.5rem;   /* 40px */
+
+  /* ---- ESPACIADO VERTICAL ENTRE BLOQUES ---- */
+  --section-space-y-mobile: 3rem;
+  --section-space-y-desktop: 4.5rem;
+
+  /* ---- RADIO ---- */
+  --radius-sm: 2px;
+  --radius-md: 4px;
+}
+
+/* Mapear tokens al sistema de utilitarios de Tailwind v4 */
+@theme inline {
+  --color-background: var(--color-background);
+  --color-foreground: var(--color-foreground);
+  --color-ink: var(--color-ink);
+  --color-surface: var(--color-surface);
+  --color-muted: var(--color-muted);
+  --color-faint: var(--color-faint);
+  --color-border: var(--color-border);
+  --color-border-strong: var(--color-border-strong);
+  --color-accent: var(--color-accent);
+  --color-accent-soft: var(--color-accent-soft);
+
+  --font-display: var(--font-display);
+  --font-sans: var(--font-sans);
+}
+
+/* ============================================================
+   BASE
+   ============================================================ */
+
+* {
+  border-color: var(--color-border);
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Enlaces: distincion clara, foco accesible */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+/* ============================================================
+   UTILIDADES DE DISENO REUTILIZABLES
+   ============================================================ */
+
+/* Contenedor principal. Ancho maximo + gutters responsive. */
+.container-editorial {
+  width: 100%;
+  margin-inline: auto;
+  padding-inline: var(--gutter-mobile);
+  max-width: calc(var(--max-width) + var(--gutter-mobile) * 2);
+}
+
+@media (min-width: 768px) {
+  .container-editorial {
+    padding-inline: var(--gutter-tablet);
+    max-width: calc(var(--max-width) + var(--gutter-tablet) * 2);
+  }
+}
+
+@media (min-width: 1200px) {
+  .container-editorial {
+    padding-inline: var(--gutter-desktop);
+    max-width: calc(var(--max-width) + var(--gutter-desktop) * 2);
+  }
+}
+
+/* Separacion vertical estandar entre bloques de la portada */
+.section-space {
+  margin-top: var(--section-space-y-mobile);
+}
+
+@media (min-width: 768px) {
+  .section-space {
+    margin-top: var(--section-space-y-desktop);
+  }
+}
+
+/* ============================================================
+   TIPOGRAFIA EDITORIAL (jerarquia)
+   ============================================================ */
+
+.headline-display {
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1.06;
+  letter-spacing: -0.015em;
+  text-wrap: balance;
+}
+
+.headline-xl {
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  font-size: clamp(2.1rem, 6vw, 3.5rem);
+  text-wrap: balance;
+}
+
+.headline-lg {
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+  font-size: clamp(1.6rem, 4.5vw, 2.4rem);
+  text-wrap: balance;
+}
+
+.headline-md {
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1.18;
+  letter-spacing: -0.01em;
+  font-size: clamp(1.15rem, 2.8vw, 1.5rem);
+  text-wrap: balance;
+}
+
+.headline-sm {
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1.25;
+  font-size: clamp(1rem, 2.2vw, 1.15rem);
+  text-wrap: balance;
+}
+
+/* Entradilla / subheadline (voz editorial: Source Serif 4) */
+.dek {
+  font-family: var(--font-display);
+  font-size: clamp(1.05rem, 2.2vw, 1.25rem);
+  line-height: 1.5;
+  color: var(--color-ink);
+}
+
+/* Cuerpo de articulo / desarrollo (voz editorial: Source Serif 4) */
+.prose-editorial {
+  font-family: var(--font-display);
+  font-size: 1.0625rem;
+  line-height: 1.75;
+  color: var(--color-ink);
+}
+
+.prose-editorial p + p {
+  margin-top: 1.25rem;
+}
+
+/* Metadatos (fecha, hora, autor) */
+.metadata {
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  line-height: 1.4;
+  color: var(--color-muted);
+}
+
+/* Etiqueta de datos numero */
+.data-value {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}

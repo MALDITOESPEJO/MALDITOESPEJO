@@ -1,0 +1,46 @@
+import Link from "next/link";
+
+export function Footer() {
+  const year = new Date().getFullYear();
+
+  return (
+    <footer className="mt-24 border-t border-border">
+      <div className="container-editorial py-12">
+        <div className="flex flex-col gap-8 md:flex-row md:items-start md:justify-between">
+          <div className="max-w-xs">
+            <p className="text-[1.05rem] font-black uppercase tracking-[0.04em] text-foreground">
+              Maldito<span className="text-accent">espejo</span>
+            </p>
+            <p className="mt-3 text-sm text-muted">
+              Información basada en hechos, datos, documentos y declaraciones
+              atribuibles. Sin opinión ni interpretación.
+            </p>
+          </div>
+
+          <nav aria-label="Secciones">
+            <ul className="flex flex-wrap gap-x-6 gap-y-3 text-sm text-muted">
+              {[
+                { name: "Actualidad", url: "/actualidad" },
+                { name: "Política", url: "/politica" },
+                { name: "Economía", url: "/economia" },
+                { name: "Sociedad", url: "/sociedad" },
+                { name: "Mundo", url: "/mundo" },
+                { name: "Tecnología", url: "/tecnologia" },
+              ].map((s) => (
+                <li key={s.url}>
+                  <Link href={s.url} className="transition-colors hover:text-ink">
+                    {s.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        </div>
+
+        <div className="mt-10 border-t border-border pt-6 text-xs text-faint">
+          <p>© {year} MALDITOESPEJO. Contenido de demostración.</p>
+        </div>
+      </div>
+    </footer>
+  );
+}
