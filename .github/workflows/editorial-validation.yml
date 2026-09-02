@@ -35,5 +35,8 @@ jobs:
       - name: Validate source independence and contradictions
         run: npm run validate:independence
 
+      - name: Validate provenance lineage
+        run: npm run validate:lineage
+
 # The publication gate remains an explicit editorial authorization step.
 # It is not run here while legacy published articles are pending formal certification.
