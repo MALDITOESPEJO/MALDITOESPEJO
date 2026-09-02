@@ -1,0 +1,2 @@
+alert_id,narrative_id,case_id,alert_type,impact_level,claim_id,observed_value,threshold,detected_at,reason_code,status,assigned_editor,decision_id,resolved_at,notes
+NIA-00000001,NAR-00000001,,NARRATIVE_EMERGING,INFO,,,,,NARRATIVE_REVIEW_PENDING,OPEN,,,,Initial narrative assessment required before operational use.
