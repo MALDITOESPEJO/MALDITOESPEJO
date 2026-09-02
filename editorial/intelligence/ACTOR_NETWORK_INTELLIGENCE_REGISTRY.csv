@@ -1,0 +1,2 @@
+actor_id,actor_type,identity_status,name_or_label,case_id,narrative_id,relationship_count,independent_evidence_lineages,attribution_status,attribution_confidence,coordination_status,network_status,impact_level,review_status,first_observed_at,last_assessed_at,reviewer,notes
+ACT-00000001,UNKNOWN,UNKNOWN,,,,0,0,ATTRIBUTION_UNKNOWN,UNKNOWN,UNKNOWN,UNKNOWN,UNKNOWN,OPEN,,,,
