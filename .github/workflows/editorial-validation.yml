@@ -1,0 +1,30 @@
+name: Editorial validation
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  article-metadata:
+    name: Validate article metadata
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Validate articles
+        run: npm run validate:articles
+
+# The publication gate remains an explicit editorial authorization step.
+# It is not run here while legacy published articles are pending formal certification.
