@@ -36,6 +36,7 @@
     "verify": "node scripts/verify.mjs",
     "article:original": "node scripts/original-article.mjs",
     "trace:article": "node scripts/trace-article.mjs",
+    "calculation:provenance": "node scripts/validate-calculation-provenance.mjs",
     "originality": "node scripts/check-originality.mjs",
     "validate:articles": "node scripts/validate-articles.mjs",
     "validate:verification": "node scripts/validate-verification-records.mjs",
