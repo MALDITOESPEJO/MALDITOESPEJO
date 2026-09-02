@@ -1,0 +1,117 @@
+{
+  "case_id": "CASE-00000003",
+  "created_at": "2026-09-02",
+  "status": "INVESTIGATING",
+  "input_type": "news_lead",
+  "input_reference": "Irán responde a Estados Unidos con nuevos ataques contra Bahréin, Jordania y Kuwait. Washington y Teherán se enzarzan por tercer día consecutivo en escaramuzas militares tras un mes de relativa calma. Los bombardeos matan al menos a 18 iraníes, según la República Islámica.",
+  "editorial_section": "Mundo",
+  "assigned_author": "Daniel Ortega Salvat",
+  "discovery_source": {
+    "role": "DISCOVERY",
+    "publication": false,
+    "note": "La pista inicial no se utilizará como fuente pública por sí misma."
+  },
+  "claims": [
+    {
+      "claim_id": "CLM-00000010",
+      "type": "FACT",
+      "importance": "CENTRAL",
+      "claim": "Irán lanzó ataques con misiles y drones contra objetivos estadounidenses en Bahréin, Jordania y Kuwait el 2 de septiembre de 2026.",
+      "verification_status": "UNASSESSED",
+      "evidence_required": ["official_military_or_government_source", "independent_corresponding_evidence"]
+    },
+    {
+      "claim_id": "CLM-00000011",
+      "type": "FACT",
+      "importance": "HIGH",
+      "claim": "Estados Unidos realizó nuevos ataques contra objetivos en Irán antes de la respuesta iraní.",
+      "verification_status": "UNASSESSED",
+      "evidence_required": ["official_us_military_source", "independent_corresponding_evidence"]
+    },
+    {
+      "claim_id": "CLM-00000012",
+      "type": "FACT",
+      "importance": "HIGH",
+      "claim": "Las autoridades iraníes informaron de al menos 18 personas muertas en los nuevos bombardeos estadounidenses.",
+      "verification_status": "UNASSESSED",
+      "evidence_required": ["iranian_official_source", "independent_corroboration_or_explicit_attribution"]
+    },
+    {
+      "claim_id": "CLM-00000013",
+      "type": "FACT",
+      "importance": "HIGH",
+      "claim": "Jordania informó de la interceptación de misiles iraníes sin víctimas en su territorio en esta nueva oleada.",
+      "verification_status": "UNASSESSED",
+      "evidence_required": ["jordanian_official_source"]
+    },
+    {
+      "claim_id": "CLM-00000014",
+      "type": "FACT",
+      "importance": "HIGH",
+      "claim": "Kuwait informó de la actuación de sus defensas aéreas frente a misiles y drones iraníes.",
+      "verification_status": "UNASSESSED",
+      "evidence_required": ["kuwaiti_official_source"]
+    },
+    {
+      "claim_id": "CLM-00000015",
+      "type": "PENDING",
+      "importance": "HIGH",
+      "claim": "No está confirmado de forma independiente el alcance exacto de los daños, las bajas militares estadounidenses atribuidas por Irán ni todos los objetivos alcanzados.",
+      "verification_status": "UNASSESSED",
+      "evidence_required": ["independent_damage_and_casualty_verification"]
+    }
+  ],
+  "sources": [
+    {
+      "source_id": "DISCOVERY-USER-LEAD-20260902",
+      "role": "DISCOVERY",
+      "description": "Titular y entradilla proporcionados como pista inicial; no son fuente de publicación."
+    }
+  ],
+  "research_plan": {
+    "priority": "PRIMARY_FIRST",
+    "targets": [
+      "US Central Command / Department of Defense",
+      "Iranian Foreign Ministry / IRGC / official Iranian authorities",
+      "Jordanian Armed Forces / government",
+      "Kuwaiti Armed Forces / government",
+      "Bahraini government / Bahrain Defence Force",
+      "official Iraqi authorities for Erbil if relevant",
+      "independent visual and satellite verification where available",
+      "Reuters/AP/AFP only for cross-check and provenance tracing, not as automatic independent evidence"
+    ],
+    "questions": [
+      "¿Qué ataques realizó Irán y contra qué objetivos concretos?",
+      "¿Qué ataques realizó Estados Unidos y contra qué objetivos concretos?",
+      "¿Qué confirman oficialmente Bahréin, Jordania y Kuwait?",
+      "¿Cuántos misiles y drones fueron lanzados e interceptados, según cada autoridad?",
+      "¿Hay víctimas o daños confirmados en los países atacados?",
+      "¿Quién confirma las 18 muertes en Irán y qué grado de verificación independiente existe?",
+      "¿Existen afirmaciones de bajas estadounidenses y han sido confirmadas o negadas por Washington?",
+      "¿Las informaciones de los distintos medios proceden de las mismas fuentes originales?"
+    ]
+  },
+  "evidence": [],
+  "provenance": {
+    "status": "UNKNOWN",
+    "central_claim_lineage": null,
+    "secondary_media_counted_as_independent": false
+  },
+  "contrast": null,
+  "contradictions": {
+    "material_conflict_found": false,
+    "status": "UNASSESSED"
+  },
+  "verification": {
+    "completed": false,
+    "status": "UNASSESSED",
+    "human_approval": false
+  },
+  "draft": {
+    "status": "NOT_STARTED"
+  },
+  "publication": {
+    "allowed": false,
+    "reason": "Investigación todavía no verificada."
+  }
+}
