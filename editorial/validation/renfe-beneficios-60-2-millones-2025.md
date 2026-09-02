@@ -43,6 +43,12 @@ No se ha identificado una contradicción material entre el comunicado oficial y 
 
 La referencia a que 2019 fue el último ejercicio con beneficio se mantiene porque es la comparación expresamente indicada por Grupo Renfe. No se presenta como una conclusión independiente de MALDITOESPEJO.
 
+### Independencia de las fuentes
+
+Las dos fuentes públicas principales pertenecen al mismo origen institucional: Grupo Renfe. La segunda aporta documentación económica y de auditoría adicional, pero no se contabiliza automáticamente como una corroboración independiente del comunicado corporativo. La existencia de dos documentos del mismo grupo no equivale a dos fuentes independientes.
+
+No se ha identificado, para las afirmaciones centrales, una evidencia de procedencia materialmente independiente que deba incorporarse para sostener el artículo. Esta limitación queda registrada para que el editor la valore antes de publicar.
+
 ## 6. Riesgos de interpretación
 
 - Beneficio consolidado del grupo no significa que todas las filiales sean rentables.
