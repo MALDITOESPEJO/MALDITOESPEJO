@@ -1,117 +1,36 @@
 {
   "case_id": "CASE-00000003",
   "created_at": "2026-09-02",
-  "status": "INVESTIGATING",
+  "status": "RECHECK_REQUIRED",
   "input_type": "news_lead",
   "input_reference": "Irán responde a Estados Unidos con nuevos ataques contra Bahréin, Jordania y Kuwait. Washington y Teherán se enzarzan por tercer día consecutivo en escaramuzas militares tras un mes de relativa calma. Los bombardeos matan al menos a 18 iraníes, según la República Islámica.",
   "editorial_section": "Mundo",
   "assigned_author": "Daniel Ortega Salvat",
-  "discovery_source": {
-    "role": "DISCOVERY",
-    "publication": false,
-    "note": "La pista inicial no se utilizará como fuente pública por sí misma."
-  },
+  "discovery_source": {"role":"DISCOVERY","publication":false,"note":"La pista inicial no se utilizará como fuente pública por sí misma."},
   "claims": [
-    {
-      "claim_id": "CLM-00000010",
-      "type": "FACT",
-      "importance": "CENTRAL",
-      "claim": "Irán lanzó ataques con misiles y drones contra objetivos estadounidenses en Bahréin, Jordania y Kuwait el 2 de septiembre de 2026.",
-      "verification_status": "UNASSESSED",
-      "evidence_required": ["official_military_or_government_source", "independent_corresponding_evidence"]
-    },
-    {
-      "claim_id": "CLM-00000011",
-      "type": "FACT",
-      "importance": "HIGH",
-      "claim": "Estados Unidos realizó nuevos ataques contra objetivos en Irán antes de la respuesta iraní.",
-      "verification_status": "UNASSESSED",
-      "evidence_required": ["official_us_military_source", "independent_corresponding_evidence"]
-    },
-    {
-      "claim_id": "CLM-00000012",
-      "type": "FACT",
-      "importance": "HIGH",
-      "claim": "Las autoridades iraníes informaron de al menos 18 personas muertas en los nuevos bombardeos estadounidenses.",
-      "verification_status": "UNASSESSED",
-      "evidence_required": ["iranian_official_source", "independent_corroboration_or_explicit_attribution"]
-    },
-    {
-      "claim_id": "CLM-00000013",
-      "type": "FACT",
-      "importance": "HIGH",
-      "claim": "Jordania informó de la interceptación de misiles iraníes sin víctimas en su territorio en esta nueva oleada.",
-      "verification_status": "UNASSESSED",
-      "evidence_required": ["jordanian_official_source"]
-    },
-    {
-      "claim_id": "CLM-00000014",
-      "type": "FACT",
-      "importance": "HIGH",
-      "claim": "Kuwait informó de la actuación de sus defensas aéreas frente a misiles y drones iraníes.",
-      "verification_status": "UNASSESSED",
-      "evidence_required": ["kuwaiti_official_source"]
-    },
-    {
-      "claim_id": "CLM-00000015",
-      "type": "PENDING",
-      "importance": "HIGH",
-      "claim": "No está confirmado de forma independiente el alcance exacto de los daños, las bajas militares estadounidenses atribuidas por Irán ni todos los objetivos alcanzados.",
-      "verification_status": "UNASSESSED",
-      "evidence_required": ["independent_damage_and_casualty_verification"]
-    }
+    {"claim_id":"CLM-00000010","type":"FACT","importance":"CENTRAL","claim":"Irán lanzó ataques con misiles y drones contra objetivos estadounidenses en Bahréin, Jordania y Kuwait el 2 de septiembre de 2026.","verification_status":"RECHECK_REQUIRED","evidence_required":["official_military_or_government_source","independent_corresponding_evidence"]},
+    {"claim_id":"CLM-00000011","type":"FACT","importance":"HIGH","claim":"Estados Unidos realizó nuevos ataques contra objetivos en Irán antes de la respuesta iraní.","verification_status":"SUPPORTED_BY_PRIMARY_SOURCE","evidence_required":["official_us_military_source"]},
+    {"claim_id":"CLM-00000012","type":"STATEMENT","importance":"HIGH","claim":"Las autoridades iraníes informaron de al menos 18 personas muertas en los nuevos bombardeos estadounidenses.","verification_status":"RECHECK_REQUIRED","evidence_required":["iranian_official_source","independent_corroboration_or_explicit_attribution"]},
+    {"claim_id":"CLM-00000013","type":"FACT","importance":"HIGH","claim":"Jordania informó de la interceptación de 13 misiles balísticos procedentes de Irán, diez de ellos destruidos y tres caídos en zonas remotas, sin víctimas registradas.","verification_status":"SUPPORTED_BY_PRIMARY_SOURCE","evidence_required":["jordanian_official_source"]},
+    {"claim_id":"CLM-00000014","type":"FACT","importance":"HIGH","claim":"Kuwait informó de la actuación de sus defensas aéreas frente a ataques iraníes.","verification_status":"RECHECK_REQUIRED","evidence_required":["kuwaiti_official_source"]},
+    {"claim_id":"CLM-00000015","type":"PENDING","importance":"HIGH","claim":"No está confirmado de forma independiente el alcance exacto de los daños, las bajas militares estadounidenses atribuidas por Irán ni todos los objetivos alcanzados.","verification_status":"OPEN","evidence_required":["independent_damage_and_casualty_verification"]}
   ],
   "sources": [
-    {
-      "source_id": "DISCOVERY-USER-LEAD-20260902",
-      "role": "DISCOVERY",
-      "description": "Titular y entradilla proporcionados como pista inicial; no son fuente de publicación."
-    }
+    {"source_id":"SRC-CENTCOM-20260901","role":"PUBLICATION","description":"U.S. Central Command: comunicado oficial sobre una oleada de ataques contra objetivos del IRGC en Irán, 1 de septiembre de 2026."},
+    {"source_id":"SRC-JAF-PETRA-20260902","role":"PUBLICATION","description":"Jordan Armed Forces / Petra: comunicado oficial sobre 13 misiles balísticos procedentes de Irán, 2 de septiembre de 2026."},
+    {"source_id":"SRC-IRAN-OFFICIAL-20260902","role":"PUBLICATION","description":"Declaraciones de autoridades iraníes sobre víctimas y represalias; pendiente de consolidar documento primario accesible y corroboración independiente."},
+    {"source_id":"DISCOVERY-USER-LEAD-20260902","role":"DISCOVERY","description":"Pista inicial proporcionada por el editor; no es fuente pública."}
   ],
-  "research_plan": {
-    "priority": "PRIMARY_FIRST",
-    "targets": [
-      "US Central Command / Department of Defense",
-      "Iranian Foreign Ministry / IRGC / official Iranian authorities",
-      "Jordanian Armed Forces / government",
-      "Kuwaiti Armed Forces / government",
-      "Bahraini government / Bahrain Defence Force",
-      "official Iraqi authorities for Erbil if relevant",
-      "independent visual and satellite verification where available",
-      "Reuters/AP/AFP only for cross-check and provenance tracing, not as automatic independent evidence"
-    ],
-    "questions": [
-      "¿Qué ataques realizó Irán y contra qué objetivos concretos?",
-      "¿Qué ataques realizó Estados Unidos y contra qué objetivos concretos?",
-      "¿Qué confirman oficialmente Bahréin, Jordania y Kuwait?",
-      "¿Cuántos misiles y drones fueron lanzados e interceptados, según cada autoridad?",
-      "¿Hay víctimas o daños confirmados en los países atacados?",
-      "¿Quién confirma las 18 muertes en Irán y qué grado de verificación independiente existe?",
-      "¿Existen afirmaciones de bajas estadounidenses y han sido confirmadas o negadas por Washington?",
-      "¿Las informaciones de los distintos medios proceden de las mismas fuentes originales?"
-    ]
-  },
-  "evidence": [],
-  "provenance": {
-    "status": "UNKNOWN",
-    "central_claim_lineage": null,
-    "secondary_media_counted_as_independent": false
-  },
-  "contrast": null,
-  "contradictions": {
-    "material_conflict_found": false,
-    "status": "UNASSESSED"
-  },
-  "verification": {
-    "completed": false,
-    "status": "UNASSESSED",
-    "human_approval": false
-  },
-  "draft": {
-    "status": "NOT_STARTED"
-  },
-  "publication": {
-    "allowed": false,
-    "reason": "Investigación todavía no verificada."
-  }
+  "research_plan": {"priority":"PRIMARY_FIRST","targets":["U.S. Central Command","Jordan Armed Forces / Petra","Bahrain Defence Force / Bahrain News Agency","Kuwait Ministry of Defence / KUNA","Iranian government / IRGC / Foreign Ministry","fuentes independientes para víctimas y daños"],"questions":["¿Qué objetivos fueron atacados en cada país y qué organismo local lo confirma?","¿Qué daños y víctimas están confirmados oficialmente en Bahréin y Kuwait?","¿Qué parte de las afirmaciones iraníes sobre bajas estadounidenses está confirmada o negada por Estados Unidos?","¿Qué cifra de víctimas iraníes está documentada por fuentes primarias y cuáles requieren corroboración?","¿Cuál es la cronología exacta de los ataques desde el 31 de agosto?"]},
+  "evidence": [
+    {"evidence_id":"EVD-00000010","claim_id":"CLM-00000011","source_id":"SRC-CENTCOM-20260901","source_role":"PUBLICATION","document_or_record":"CENTCOM Completes Strikes on IRGC Targets in Iran, 1 Sep 2026","published_at":"2026-09-01","observed_at":"2026-09-02","evidence_role":"PRIMARY_DOCUMENT","provenance_status":"ESTABLISHED","independence_group":"IG-USCENTCOM-01","lineage_id":"LIN-USCENTCOM-01","relationship_type":"ORIGINAL","assessment":"SUPPORTS"},
+    {"evidence_id":"EVD-00000011","claim_id":"CLM-00000010","source_id":"SRC-JAF-PETRA-20260902","source_role":"PUBLICATION","document_or_record":"Armed Forces: 13 Ballistic Missiles Intercepted After Entering Jordanian Airspace, Petra, 2 Sep 2026","published_at":"2026-09-02","observed_at":"2026-09-02","evidence_role":"PRIMARY_DOCUMENT","provenance_status":"ESTABLISHED","independence_group":"IG-JAF-01","lineage_id":"LIN-JAF-01","relationship_type":"ORIGINAL","assessment":"PARTIALLY_SUPPORTS"},
+    {"evidence_id":"EVD-00000012","claim_id":"CLM-00000013","source_id":"SRC-JAF-PETRA-20260902","source_role":"PUBLICATION","document_or_record":"Statement by Jordan Armed Forces-Arab Army spokesperson, Petra, 2 Sep 2026","published_at":"2026-09-02","observed_at":"2026-09-02","evidence_role":"PRIMARY_DOCUMENT","provenance_status":"ESTABLISHED","independence_group":"IG-JAF-01","lineage_id":"LIN-JAF-01","relationship_type":"ORIGINAL","assessment":"SUPPORTS"}
+  ],
+  "provenance":{"status":"PARTIAL","central_claim_lineage":"LIN-JAF-01","secondary_media_counted_as_independent":false,"notes":"La evidencia primaria confirma los ataques estadounidenses y el ataque iraní sobre Jordania. Bahréin, Kuwait y las cifras de víctimas requieren completar la documentación primaria."},
+  "contrast":{"status":"CONTESTED","material_conflict_found":true,"material_conflict":"Existen afirmaciones enfrentadas sobre las bajas estadounidenses atribuidas por Irán y la posición estadounidense inicial.","assessed_at":"2026-09-02"},
+  "contradictions":{"material_conflict_found":true,"status":"UNRESOLVED","items":[{"claim_id":"CLM-00000015","description":"Afirmaciones enfrentadas sobre posibles bajas estadounidenses y alcance de los ataques.","impact":"Puede cambiar de forma material la descripción de los efectos militares.","resolution":"PENDIENTE"}]},
+  "verification":{"completed":false,"status":"RECHECK_REQUIRED","human_approval":false},
+  "draft":{"status":"NOT_STARTED"},
+  "publication":{"allowed":false,"reason":"Faltan fuentes primarias para Bahréin y Kuwait y permanece abierta una contradicción material sobre bajas y daños."}
 }
