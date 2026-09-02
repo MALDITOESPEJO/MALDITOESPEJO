@@ -1,0 +1,6 @@
+audit_id,object_type,object_id,object_version,action,actor_type,actor_id,timestamp,previous_status,new_status,reason_code,source_ref,evidence_ref,related_object_id,change_summary,integrity_reference
+AUD-########,EVIDENCE,EVD-########,v1,CREATE,HUMAN|SYSTEM,ACTOR-########,ISO-8601,,,CREATED,SRC/URL,URL_OR_HASH,,Initial registration,OPTIONAL
+AUD-########,CLAIM,CLM-########,v2,STATUS_CHANGE,HUMAN,ACTOR-########,ISO-8601,UNVERIFIED,PARTIALLY_VERIFIED,NEW_EVIDENCE,VER-########,EVD-########,EVT-########,Verification status changed,OPTIONAL
+AUD-########,VERIFICATION,VER-########,v1,REVIEW,HUMAN,ACTOR-########,ISO-8601,PENDING,VERIFIED,EDITOR_REVIEW,EVD-########,EVD-########,CLM-########,Evidence reviewed and status assigned,OPTIONAL
+AUD-########,SIGNAL,SIG-########,v2,PRIORITY_CHANGE,SYSTEM|HUMAN,ACTOR-########,ISO-8601,B,A,THRESHOLD_CROSSING,EVD-########,EVD-########,EVT-########,Priority changed following material evidence,OPTIONAL
+AUD-########,OBJECT,OBJECT-########,vN,SUPERSEDE,HUMAN|SYSTEM,ACTOR-########,ISO-8601,ACTIVE,SUPERSEDED,SUPERSESSION,,OBJECT-########,NEW-OBJECT-########,Operational state superseded,OPTIONAL
