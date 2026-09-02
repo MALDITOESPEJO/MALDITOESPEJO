@@ -4,9 +4,23 @@
 
 The Verification Chain determines whether an editorially relevant assertion can be treated as verified, partially verified, unresolved or contradicted.
 
+The newsroom may discover a story through secondary media, social platforms or other leads. That discovery route is separate from the evidence used to support the published article.
+
 ## Canonical chain
 
-`DETECTION → PRIMARY EVIDENCE → SOURCE AUTHORITY → TEMPORAL CHECK → INDEPENDENT CORROBORATION → CONTRADICTION CHECK → HUMAN REVIEW → VERIFICATION STATUS`
+`DETECTION → PRIMARY / APPROPRIATE EVIDENCE → SOURCE AUTHORITY → TEMPORAL CHECK → INDEPENDENT CORROBORATION → CONTRADICTION CHECK → HUMAN REVIEW → VERIFICATION STATUS → PUBLICATION`
+
+## Discovery is not evidence
+
+A `DISCOVERY_SOURCE` is a lead used to find something worth investigating. It is not automatically a `PUBLICATION_SOURCE`.
+
+The system must distinguish:
+
+`DISCOVERY_SOURCE ≠ PUBLICATION_SOURCE`
+
+A secondary article may point the newsroom towards an official document. The published article should be based on the official document when that document supports the proposition.
+
+The discovery source remains in the internal investigation record when useful for auditability. It should not appear publicly merely because it provided the initial lead.
 
 ## Evidence hierarchy
 
@@ -68,6 +82,32 @@ For conflict events, distinguish:
 
 Datasets such as ACLED and UCDP are valuable corroborative/event-data sources but do not replace the original evidence of a particular incident.
 
+## Plain-language editorial rule
+
+Verification is rigorous internally but the published language should remain easy to understand.
+
+Do not expose technical labels when ordinary language is clearer.
+
+Examples:
+
+- Internal: `VERIFIED_PRIMARY_DATA`
+- Public: "Los datos oficiales muestran..."
+
+- Internal: `ATTRIBUTED_CLAIM`
+- Public: "El ministro afirmó..."
+
+- Internal: `UNRESOLVED`
+- Public: "Todavía no hay datos suficientes para saberlo."
+
+- Internal: `CONTRADICTED`
+- Public: "Los datos disponibles no coinciden y la cuestión sigue abierta."
+
+The objective is not to simplify the evidence. It is to explain it clearly without unnecessary jargon.
+
 ## Final human gate
 
-No automated verification result overrides editorial judgment for high-impact claims. Material uncertainty must remain visible in the editorial record.
+No automated verification result overrides editorial judgment for high-impact claims. Material uncertainty must remain visible in the editorial record and, when relevant to understanding the story, in the published article.
+
+## Core doctrine
+
+> **La investigación puede ser compleja; la explicación no debe serlo.**
