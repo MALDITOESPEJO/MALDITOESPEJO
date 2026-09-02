@@ -1,0 +1,2 @@
+relationship_id,source_id,channel_id,endpoint_id,feed_id,evidence_id,pack_id,case_id,claim_id,event_id,relationship_type,lineage_id,independence_status,materiality,status,created_at,last_reviewed_at,reviewer,notes
+REL-00000001,,,,,EVD-########,PACK-########,CASE-########,,,,SUPPLIES_EVIDENCE,LIN-########,UNKNOWN,HIGH,ACTIVE,,,,Template row: replace placeholders with canonical IDs.
