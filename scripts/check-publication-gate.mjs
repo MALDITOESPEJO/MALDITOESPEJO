@@ -6,10 +6,12 @@ import path from "node:path";
 const ROOT = process.cwd();
 const ARTICLES_DIR = path.join(ROOT, "content", "articles");
 const GATES_DIR = path.join(ROOT, "editorial", "publication-gates");
+const CASES_DIR = path.join(ROOT, "editorial", "cases");
 
 const REQUIRED_APPROVAL_FIELDS = [
   "article",
   "verification_completed",
+  "publication_claims",
   "publication_sources_support",
   "material_contradictions_resolved",
   "human_editorial_approval",
@@ -45,6 +47,17 @@ function readGate(articleId) {
     return JSON.parse(fs.readFileSync(file, "utf8"));
   } catch {
     return { __invalid_json: true };
+  }
+}
+
+function readCase(caseId) {
+  if (!caseId) return null;
+  const file = path.join(CASES_DIR, `${caseId}.json`);
+  if (!fs.existsSync(file)) return null;
+  try {
+    return JSON.parse(fs.readFileSync(file, "utf8"));
+  } catch {
+    return null;
   }
 }
 
@@ -86,8 +99,25 @@ for (const file of articles) {
     if (gate.article && gate.article !== relative && gate.article !== articleId) {
       errors.push(`el registro no corresponde al artículo (${gate.article})`);
     }
-    for (const booleanField of REQUIRED_APPROVAL_FIELDS.slice(1)) {
-      if (gate[booleanField] !== true) errors.push(`'${booleanField}' debe ser true`);
+    if (gate.verification_completed !== true) errors.push("'verification_completed' debe ser true");
+    if (!Array.isArray(gate.publication_claims) || gate.publication_claims.length === 0) {
+      errors.push("'publication_claims' debe contener al menos una afirmación");
+    }
+    if (gate.publication_sources_support !== true) errors.push("'publication_sources_support' debe ser true");
+    if (gate.material_contradictions_resolved !== true) errors.push("'material_contradictions_resolved' debe ser true");
+    if (gate.human_editorial_approval !== true) errors.push("'human_editorial_approval' debe ser true");
+
+    const caseId = metadata.case_id;
+    const caseRecord = readCase(caseId);
+    if (!caseRecord) {
+      errors.push(`no se puede comprobar el caso editorial '${caseId ?? "sin case_id"}'`);
+    } else {
+      const verified = new Set(caseRecord.verification?.verified_claims ?? []);
+      const scope = new Set(caseRecord.publishable_scope?.claim_ids ?? []);
+      for (const claimId of gate.publication_claims ?? []) {
+        if (!verified.has(claimId)) errors.push(`la afirmación '${claimId}' no consta como VERIFIED en el caso`);
+        if (!scope.has(claimId)) errors.push(`la afirmación '${claimId}' no pertenece al alcance publicable del caso`);
+      }
     }
   }
 
