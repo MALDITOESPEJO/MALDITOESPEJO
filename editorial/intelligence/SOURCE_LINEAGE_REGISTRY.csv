@@ -1,0 +1,2 @@
+lineage_id,root_object_type,root_object_id,lineage_type,parent_lineage_id,independence_status,first_observed_at,last_observed_at,material_claim_count,material_evidence_count,case_count,concentration_level,network_status,last_assessed_at,reviewer,notes
+LIN-00000001,SOURCE,,PRIMARY_ORIGIN,,UNKNOWN,,,,,,UNKNOWN,ACTIVE,,,
