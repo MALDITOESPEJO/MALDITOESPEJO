@@ -1,0 +1,36 @@
+source_id,channel_id,channel_name,channel_type,endpoint,radar,editorial_function,verification_status,notes
+BIS-001,BIS-001-WEB,Official website,WEB,https://www.bis.org/,MARKET RADAR;DATA RADAR,PRIMARY_DISCOVERY,PENDING,Institutional home; endpoint requires periodic validation
+BIS-001,BIS-001-RSS,RSS feeds,RSS,https://www.bis.org/rss/index.htm,NEWS RADAR;MARKET RADAR,DISCOVERY,PENDING,Do not count as independent source from BIS
+BLS-001,BLS-001-RSS,News releases RSS,RSS,https://www.bls.gov/feed/,DATA RADAR;MARKET RADAR,DATA_RELEASE,PENDING,Release stream; figures may be revised
+CFTC-001,CFTC-001-RSS,Press releases RSS,RSS,https://www.cftc.gov/PressRoom/PressReleases/rss,REGULATORY RADAR;MARKET RADAR,DISCOVERY,PENDING,Official regulatory announcements
+WTO-001,WTO-001-RSS,News RSS,RSS,https://www.wto.org/english/news_e/news_e.rss,NEWS RADAR;MARKET RADAR,DISCOVERY,PENDING,Official WTO news channel
+EUROSTAT-001,EUROSTAT-001-SDMX3,SDMX 3.0 API,SDMX,https://ec.europa.eu/eurostat/api/dissemination/sdmx/3.0/data/,DATA RADAR;SOCIAL DATA RADAR,DATA_INGESTION,PENDING,Canonical machine-readable statistical access; dataset-specific queries required
+EUROSTAT-001,EUROSTAT-001-CATALOGUE,Catalogue API,CATALOGUE_API,https://ec.europa.eu/eurostat/api/dissemination/catalogue/,DATA RADAR,DATASET_DISCOVERY,PENDING,Dataset catalogue; endpoint structure should be validated before production use
+EIOPA-001,EIOPA-001-RSS,Technical information RSS,RSS,https://www.eiopa.europa.eu/,MARKET RADAR;REGULATORY RADAR,DISCOVERY,PENDING,Institutional channel; exact feed endpoint requires validation
+EURONEXT-001,EURONEXT-001-RSS,Press releases RSS,RSS,https://www.euronext.com/en/news-and-insights/rss-feeds,RSS_DISCOVERY,DISCOVERY,PENDING,Market operator; feeds are not independent evidence
+WMO-001,WMO-001-CAP,Global Multi-hazard Alert System,CAP_XML,https://severeweather.wmo.int/,ALERT RADAR,HAZARD_ALERT,PENDING,CAP architecture and national alert authorities must be distinguished
+COPERNICUS-001,COPERNICUS-001-DATASPACE,Copernicus Data Space Ecosystem,WEB,https://dataspace.copernicus.eu/,SATELLITE RADAR;ENVIRONMENTAL DATA RADAR,EARTH_OBSERVATION,PENDING,Satellite data platform; actual imagery access must be queried per product
+NIST-AI-001,NIST-AI-001-WEB,NIST AI,WEB,https://www.nist.gov/artificial-intelligence,AI RADAR,PRIMARY_CONTEXT,PENDING,Guidance and research; not automatically binding law
+CISA-001,CISA-001-KEV,Known Exploited Vulnerabilities,WEB,https://www.cisa.gov/known-exploited-vulnerabilities-catalog,CYBER RADAR,SECURITY_ALERT,PENDING,KEV is the exploitation-focused dataset
+NVD-001,NVD-001-API,NVD API,REST_API,https://services.nvd.nist.gov/rest/json/cves/2.0,CYBER RADAR,VULNERABILITY_DATA,PENDING,Enrichment/scoring; not proof of exploitation by itself
+EU-AI-OFFICE-001,EU-AI-OFFICE-001-WEB,EU AI Office,WEB,https://digital-strategy.ec.europa.eu/en/policies/ai-office,AI RADAR;REGULATORY RADAR,REGULATORY_DISCOVERY,PENDING,Distinguish guidance, implementation and binding legal instruments
+EURLEX-001,EURLEX-001-WEB,EUR-Lex,WEB,https://eur-lex.europa.eu/,REGULATORY RADAR;DOCUMENT RADAR,PRIMARY_LEGAL_TEXT,PENDING,Official EU legal information service
+EP-001,EP-001-PLENARY,European Parliament Plenary,WEB,https://www.europarl.europa.eu/plenary/en/home.html,POLITICAL RADAR,PARLIAMENTARY_EVENT,PENDING,Debate/vote evidence; not automatically enacted law
+BOE-001,BOE-001-WEB,Boletín Oficial del Estado,WEB,https://www.boe.es/,REGULATORY RADAR;DOCUMENT RADAR,PRIMARY_LEGAL_PUBLICATION,PENDING,Publication is distinct from entry into force
+REUTERS-001,REUTERS-001-WEB,Reuters,WEB,https://www.reuters.com/,NEWS RADAR,DISCOVERY;BREAKING_NEWS;CROSS_CHECK,PENDING,Secondary source; trace important claims to primary evidence
+AP-001,AP-001-WEB,Associated Press,WEB,https://apnews.com/,NEWS RADAR,DISCOVERY;BREAKING_NEWS;CROSS_CHECK,PENDING,Secondary source; trace important claims to primary evidence
+AFP-001,AFP-001-WEB,Agence France-Presse,WEB,https://www.afp.com/,NEWS RADAR,DISCOVERY;BREAKING_NEWS;CROSS_CHECK,PENDING,Secondary source; trace important claims to primary evidence
+EFE-001,EFE-001-WEB,Agencia EFE,WEB,https://efe.com/,NEWS RADAR,DISCOVERY;BREAKING_NEWS;CROSS_CHECK,PENDING,Secondary source; especially relevant for Spain and Spanish-speaking countries
+MALDITA-001,MALDITA-001-WEB,Maldita.es,WEB,https://maldita.es/,VERIFICATION RADAR;DISINFORMATION RADAR,FACT_CHECKING,PENDING,Fact-checker; underlying evidence must be retained
+BELLINGCAT-001,BELLINGCAT-001-WEB,Bellingcat,WEB,https://www.bellingcat.com/,OSINT RADAR;GEOLOCATION RADAR,OSINT_INVESTIGATION,PENDING,Investigative OSINT; reproducibility and corroboration required
+OSM-001,OSM-001-API,OpenStreetMap API,API,https://www.openstreetmap.org/,GEOLOCATION RADAR,MAP_REFERENCE,PENDING,Community-maintained geographic data
+OPENSKY-001,OPENSKY-001-API,OpenSky REST API,REST_API,https://opensky-network.org/apidoc/rest.html,AVIATION RADAR,FLIGHT_DATA,PENDING,Coverage depends on receiver network and data availability
+IMO-001,IMO-001-WEB,International Maritime Organization,WEB,https://www.imo.org/,MARITIME RADAR,OFFICIAL_MARITIME,PENDING,Official institutional source
+EMSA-001,EMSA-001-WEB,European Maritime Safety Agency,WEB,https://www.emsa.europa.eu/,MARITIME RADAR,MARITIME_MONITORING,PENDING,Official EU agency
+INVID-001,INVID-001-WEB,InVID Verification Plugin,WEB,https://www.invid-project.eu/,VERIFICATION RADAR,VISUAL_VERIFICATION,PENDING,Tool assistance; output is not proof by itself
+ACLED-001,ACLED-001-API,ACLED API,API,https://acleddata.com/,CONFLICT RADAR,CONFLICT_DATA,PENDING,Coded event data; methodology must accompany interpretation
+UCDP-001,UCDP-001-DATA,UCDP datasets,DATASET,https://ucdp.uu.se/,CONFLICT RADAR,HISTORICAL_CONFLICT_DATA,PENDING,Comparative conflict data; publication and coding lag apply
+SIPRI-001,SIPRI-001-DATA,SIPRI databases,DATASET,https://www.sipri.org/databases,DEFENSE RADAR,DEFENSE_DATA,PENDING,TIV is not monetary value
+OCHA-001,OCHA-001-WEB,OCHA humanitarian information,WEB,https://www.unocha.org/,HUMANITARIAN CONFLICT RADAR;ALERT RADAR,HUMANITARIAN_DATA,PENDING,Institutional humanitarian source
+RELIEFWEB-001,RELIEFWEB-001-WEB,ReliefWeb,WEB,https://reliefweb.int/,HUMANITARIAN CONFLICT RADAR,HUMANITARIAN_INFORMATION,PENDING,Repository/service; distinguish original publisher from OCHA hosting
+UNOSAT-001,UNOSAT-001-WEB,UNOSAT,WEB,https://unosat.org/,DAMAGE VERIFICATION RADAR;SATELLITE RADAR,DAMAGE_ASSESSMENT,PENDING,Analytical satellite assessments; retain imagery/date methodology
