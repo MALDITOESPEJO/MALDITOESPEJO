@@ -68,7 +68,10 @@ const stages = [
   ["check-provenance.mjs", ["--case", caseId]],
   ["contrast.mjs", ["--case", caseId]],
   ["verify.mjs", ["--case", caseId]],
+  ["scope.mjs", ["--case", caseId]],
   ["original-article.mjs", ["--case", caseId]],
+  ["article-scope-guard.mjs", ["--case", caseId]],
+  ["language-guard.mjs", ["--case", caseId]],
   ["check-originality.mjs", ["--case", caseId]],
 ];
 
@@ -78,5 +81,6 @@ for (const [script, args] of stages) {
 
 console.log("\nMALDITOESPEJO — PIPELINE FINALIZADO");
 console.log(`Caso: ${caseId}`);
+console.log("Secuencia: investigación → evidencia → procedencia → contraste → verificación → alcance → redacción → controles de alcance y lenguaje → originalidad.");
 console.log("La automatización nunca concede aprobación editorial ni publica por sí sola.");
 console.log("La siguiente etapa es revisión humana y, si procede, Publication Gate.");
