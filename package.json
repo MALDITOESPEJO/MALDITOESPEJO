@@ -7,6 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
+    "pipeline": "node scripts/pipeline.mjs",
     "investigate": "node scripts/investigate.mjs",
     "claims": "node scripts/claims.mjs",
     "research:plan": "node scripts/research-plan.mjs",
