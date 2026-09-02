@@ -1,0 +1,2 @@
+flow_id,case_id,origin_object_type,origin_object_id,first_detection_at,first_public_appearance_at,first_independent_corroboration_at,verification_at,editorial_decision_at,publication_at,flow_depth,independent_lineage_count,transformation_status,narrative_drift_status,flow_state,last_assessed_at,reviewer,notes
+FLW-00000001,,,,,,,,,,,0,0,UNKNOWN,UNKNOWN,UNKNOWN,,,
