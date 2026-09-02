@@ -26,6 +26,7 @@
     "evidence:import": "node scripts/import-evidence.mjs",
     "evidence:accept": "node scripts/accept-evidence.mjs",
     "evidence:sufficiency": "node scripts/evidence-sufficiency.mjs",
+    "evidence:coverage": "node scripts/evidence-coverage.mjs",
     "temporal:verify": "node scripts/temporal-verify.mjs",
     "provenance": "node scripts/check-provenance.mjs",
     "contrast": "node scripts/contrast.mjs",
