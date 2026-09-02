@@ -100,6 +100,7 @@ for (const claim of claims) {
   });
 }
 
+const verifiedClaims = assessments.filter((item) => item.status === "VERIFIED");
 const blocking = assessments.filter((item) =>
   ["CONTESTED", "RECHECK_REQUIRED", "INSUFFICIENT"].includes(item.status) &&
   (item.importance === "CENTRAL" || item.type === "FACT" || item.type === "STATEMENT")
@@ -110,17 +111,34 @@ const allCentralVerified = centralClaims.length > 0 && centralClaims.every((clai
   return assessment?.status === "VERIFIED";
 });
 
-const verificationStatus = blocking.length
-  ? blocking.some((item) => item.status === "CONTESTED") ? "CONTESTED" : "RECHECK_REQUIRED"
-  : allCentralVerified ? "VERIFIED" : "INSUFFICIENT";
+const hasPublishableScope = verifiedClaims.length > 0;
+const hasMaterialContest = blocking.some((item) => item.status === "CONTESTED");
+
+let verificationStatus;
+if (allCentralVerified && !blocking.length) {
+  verificationStatus = "VERIFIED";
+} else if (hasPublishableScope) {
+  verificationStatus = "PARTIALLY_VERIFIED";
+} else if (hasMaterialContest) {
+  verificationStatus = "CONTESTED";
+} else {
+  verificationStatus = "RECHECK_REQUIRED";
+}
 
 record.verification = {
   assessed_at: new Date().toISOString(),
   status: verificationStatus,
-  completed: verificationStatus === "VERIFIED",
+  completed: hasPublishableScope,
   claims: assessments,
+  verified_claims: verifiedClaims.map((item) => item.claim_id),
   blocking_claims: blocking.map((item) => item.claim_id),
   human_approval: false,
+};
+
+record.publishable_scope = {
+  status: hasPublishableScope ? "AVAILABLE" : "NONE",
+  claim_ids: verifiedClaims.map((item) => item.claim_id),
+  rule: "Solo pueden publicarse como hechos las afirmaciones con estado VERIFIED. Las demás quedan fuera del alcance factual de la pieza y no pueden presentarse como hechos verificados.",
 };
 
 record.workflow = {
@@ -130,6 +148,8 @@ record.workflow = {
 
 if (verificationStatus === "VERIFIED") {
   record.status = "VERIFIED";
+} else if (verificationStatus === "PARTIALLY_VERIFIED") {
+  record.status = "EDITOR_REVIEW";
 } else if (verificationStatus === "CONTESTED") {
   record.status = "CONTESTED";
 } else {
@@ -138,7 +158,9 @@ if (verificationStatus === "VERIFIED") {
 
 record.publication = {
   allowed: false,
-  reason: "La verificación automática no sustituye la revisión ni la aprobación editorial humana.",
+  reason: hasPublishableScope
+    ? "Existe un alcance de afirmaciones verificadas que puede convertirse en una pieza limitada, pero requiere controles finales y aprobación editorial humana."
+    : "No existe un alcance factual verificado suficiente para redactar una pieza publicable.",
 };
 
 fs.writeFileSync(casePath, `${JSON.stringify(record, null, 2)}\n`, "utf8");
@@ -148,7 +170,9 @@ console.log(`Caso: ${caseId}`);
 console.log(`Claims evaluados: ${assessments.length}`);
 for (const item of assessments) console.log(`- ${item.claim_id}: ${item.status}`);
 console.log(`\nEstado de verificación: ${verificationStatus}`);
+console.log(`Claims verificadas publicables: ${verifiedClaims.length}`);
+console.log(`Alcance publicable: ${hasPublishableScope ? "DISPONIBLE" : "NINGUNO"}`);
 console.log("Aprobación humana: PENDIENTE");
 console.log("Publicación: BLOQUEADA");
 
-if (verificationStatus !== "VERIFIED") process.exitCode = 2;
+if (!hasPublishableScope) process.exitCode = 2;
