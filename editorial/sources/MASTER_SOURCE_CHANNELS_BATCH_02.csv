@@ -1,0 +1,111 @@
+source_id,channel_id,channel_name,channel_type,endpoint,radar,editorial_function,verification_status,notes
+EUROSTAT,EUROSTAT-SDMX21-001,Eurostat SDMX 2.1,API,https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/,DATA RADAR,structured statistical retrieval,PENDING,Technical endpoint requires periodic validation
+EUROSTAT,EUROSTAT-RSS-001,Eurostat RSS updates,FEED,RSS update feed,DATA RADAR,detect dataset/publication updates,PENDING,Feed endpoint should be checked before production use
+BIS,BIS-DATA-001,BIS data feed,DATA,BIS statistics data services,MARKET RADAR,monetary and financial statistics,PENDING,Verify current machine-readable access path
+BIS,BIS-CALENDAR-001,BIS release calendar,FEED,BIS statistical release calendar,MARKET RADAR,scheduled release detection,PENDING,Calendar is a timing source not independent corroboration
+EIOPA,EIOPA-RFR-001,Risk-Free Interest Rate Term Structures,DATA,EIOPA technical data publication,RISK/MARKET RADAR,insurance market technical data,PENDING,Validate current monthly publication endpoint
+EIOPA,EIOPA-SAECC-001,Symmetric Adjustment of Equity Capital Charge,DATA,EIOPA technical data publication,RISK/MARKET RADAR,market-risk regulatory indicator,PENDING,Validate current technical publication endpoint
+BLS,BLS-FEED-001,BLS latest releases feed,FEED,BLS release/latest RSS or feed,ECONOMIC RADAR,labour and price release detection,PENDING,Endpoint must be rechecked periodically
+AEMET,AEMET-CAP-001,AEMET CAP alerts,ALERT,CAP alert service,ALERT RADAR,weather and emergency alert detection,PENDING,Use official alerting authority data where available
+AEMET,AEMET-RSS-001,AEMET RSS,FEED,RSS feeds,ALERT RADAR,weather bulletin detection,PENDING,Feed availability can vary by product
+FAO,FAO-STAT-001,FAOSTAT,DATA,FAOSTAT data platform,FOOD/AGRICULTURE RADAR,food agriculture fisheries statistics,PENDING,Dataset methodology and release dates must be retained
+WHO,WHO-GHO-001,Global Health Observatory,DATA,GHO data platform,HEALTH RADAR,health indicators and datasets,PENDING,Prefer indicator metadata and original series
+WHO,WHO-DON-001,Disease Outbreak News,FEED,WHO outbreak publication channel,HEALTH/ALERT RADAR,outbreak event detection,PENDING,Primary institutional bulletin; verify publication endpoint
+UNICEF,UNICEF-DATA-001,UNICEF Data,DATA,UNICEF Data platform,SOCIAL/CHILDREN RADAR,children and social indicators,PENDING,Retain dataset definitions and update dates
+UNICEF,UNICEF-EMERG-001,UNICEF Emergencies,ALERT,UNICEF emergency updates,HUMANITARIAN RADAR,humanitarian situation detection,PENDING,Institutional situation reporting
+UNHCR,UNHCR-ODP-001,Operational Data Portal,DATA,UNHCR operational data platform,MIGRATION/HUMANITARIAN RADAR,displacement operational data,PENDING,Check dataset version and update timestamp
+UNHCR,UNHCR-RDF-001,Refugee Data Finder,DATA,UNHCR Refugee Data Finder,MIGRATION RADAR,refugee displacement statistics,PENDING,Historical and current datasets require version control
+UNFPA,UNFPA-DATA-001,UNFPA Data,DATA,UNFPA data platform,DEMOGRAPHIC RADAR,population and reproductive health indicators,PENDING,Validate current API/download options
+UNESCO,UNESCO-UIS-001,UNESCO Institute for Statistics,DATA,UIS data platform,EDUCATION RADAR,education science culture indicators,PENDING,Retain methodology and metadata
+UNEP,UNEP-DATA-001,UNEP Environment Data,DATA,UNEP data platform,ENVIRONMENTAL RADAR,environmental indicators,PENDING,Validate current dataset access
+EUROPEAN-COMMISSION,EC-SOCIAL-DATA-001,European Commission social protection datasets,DATA,European Commission social data services,SOCIAL RADAR,social protection and inclusion data,PENDING,Specific dataset endpoints vary by programme
+JRC,JRC-001,Joint Research Centre publications/data,WEB/DATA,European Commission JRC portal,SCIENCE/AI RADAR,research evidence and datasets,PENDING,Separate publications from machine-readable datasets
+NIST,NIST-CYBER-001,NIST Cybersecurity,WEB/DATA,NIST cybersecurity resources,CYBER RADAR,standards vulnerabilities and cybersecurity guidance,PENDING,Primary institutional source
+CERT-EU,CERT-EU-001,CERT-EU security advisories,ALERT,CERT-EU advisories,CYBER/ALERT RADAR,EU institutional cyber alerts,PENDING,Verify current publication/feed endpoint
+ESA,ESA-001,ESA news and mission data,WEB/DATA,ESA institutional portal,SCIENCE/SPACE RADAR,space missions and science,PENDING,Separate news from mission datasets
+NASA,NASA-001,NASA science and mission data,WEB/DATA,NASA institutional portal,SCIENCE/SPACE RADAR,space science and imagery,PENDING,Use mission-specific primary datasets where possible
+CERN,CERN-001,CERN publications and experiment information,WEB/DATA,CERN institutional portal,SCIENCE RADAR,particle physics research and institutional releases,PENDING,Publication evidence should link to original record
+CROSSREF,CROSSREF-001,Crossref API,API,https://api.crossref.org/,SCIENCE RADAR,scholarly metadata discovery,PENDING,Metadata aggregator; not proof of research findings
+OPENALEX,OPENALEX-001,OpenAlex API,API,https://api.openalex.org/,SCIENCE RADAR,scholarly graph and discovery,PENDING,Metadata/data service; not primary research evidence
+COUNCIL-EU,CONSILIUM-001,Consilium official portal,WEB,https://www.consilium.europa.eu/,POLITICAL/REGULATORY RADAR,EU Council decisions and meetings,PENDING,Resolve to original Council document
+EUR-LEX,EURLEX-OJ-001,Official Journal,WEB,EUR-Lex Official Journal,REGULATORY RADAR,legislation and official acts,PENDING,Primary legal publication
+EUROPEAN-PARLIAMENT,EP-COMMITTEES-001,Parliament committees,WEB,European Parliament committee portals,POLITICAL/REGULATORY RADAR,committee proceedings and documents,PENDING,Committee-specific channels are not independent corroboration
+BOE,BOE-API-001,BOE API,API,BOE API services,REGULATORY/SPAIN RADAR,official Spanish legal publication retrieval,PENDING,Verify current API documentation and endpoint
+CONGRESO,CONGRESO-001,Congreso de los Diputados,WEB/DATA,Congreso institutional portal,POLITICAL RADAR,parliamentary proceedings and initiatives,PENDING,Primary parliamentary record
+SENADO,SENADO-001,Senado de España,WEB/DATA,Senado institutional portal,POLITICAL RADAR,parliamentary proceedings and initiatives,PENDING,Primary parliamentary record
+TRIBUNAL-CONSTITUCIONAL,TC-001,Tribunal Constitucional,WEB,TC institutional portal,JUSTICE RADAR,constitutional judgments and decisions,PENDING,Primary judicial record
+CGPJ,CGPJ-001,Consejo General del Poder Judicial,WEB/DATA,CGPJ institutional portal,JUSTICE RADAR,Spanish judiciary statistics and institutional information,PENDING,Distinguish statistics from individual judgments
+CURIA,CURIA-001,CURIA case law,WEB,https://curia.europa.eu/,JUSTICE/EU RADAR,CJEU judgments and opinions,PENDING,Primary judicial source
+ECHR,ECHR-001,European Court of Human Rights,WEB,DH/ECHR HUDOC services,HUMAN RIGHTS/JUSTICE RADAR,Strasbourg case law,PENDING,Use HUDOC record as primary judicial evidence
+OHCHR,OHCHR-001,OHCHR,WEB/DATA,OHCHR institutional portal,HUMAN RIGHTS RADAR,UN human-rights documentation and data,PENDING,Separate statements from formal findings
+UN,UN-001,United Nations,WEB,UN institutional portal,GEOPOLITICAL/HUMANITARIAN RADAR,official UN documents and events,PENDING,Resolve to specific agency/document
+NATO,NATO-001,NATO official portal,WEB,https://www.nato.int/,GEOPOLITICAL/DEFENSE RADAR,official statements and defense information,PENDING,Institutional source; distinguish claims from independently verified events
+OSCE,OSCE-001,OSCE official portal,WEB,https://www.osce.org/,DEMOCRACY/SECURITY RADAR,election observation and security information,PENDING,Observation reports are not equivalent to certified results
+INTERNATIONAL-IDEA,IDEA-DATA-001,International IDEA data,DATA,IDEA data platform,ELECTION RADAR,electoral systems and democracy data,PENDING,Comparative dataset not official election result
+ACE,ACE-001,ACE Electoral Knowledge Network,WEB/DATA,ACE electoral knowledge resources,ELECTION RADAR,electoral administration context,PENDING,Secondary/specialist reference
+IFES,IFES-001,IFES election resources,WEB/DATA,IFES election resources,ELECTION RADAR,election integrity and administration context,PENDING,Specialist secondary source
+UK-ELECTORAL-COMMISSION,UK-EC-001,UK Electoral Commission,WEB/DATA,UK Electoral Commission portal,ELECTION RADAR,official UK electoral information,PENDING,Use official result authorities for final result confirmation
+SPAIN-INTERIOR,ES-MI-ELECTIONS-001,Spain Ministry of Interior election data,DATA,official Spanish election results/data portal,ELECTION RADAR,official election results and data,PENDING,Result authority context must be preserved
+EP-ELECTIONS,EP-ELECTIONS-001,European Parliament election results,DATA,European Parliament election results portal,ELECTION RADAR,official European election results,PENDING,Confirm result status and national authority provenance
+REUTERS,REUTERS-VISUAL-001,Reuters Visual Verification,WEB,Reuters visual verification resources,VERIFICATION RADAR,image/video verification and discovery,PENDING,Secondary evidence; original media should be retained where available
+AFP,AFP-FACTCHECK-001,AFP Fact Check,WEB,AFP Fact Check,CLAIM/DISINFORMATION RADAR,fact checking and verification,PENDING,Fact-checking source; preserve cited evidence
+EFE,EFE-VERIFY-001,EFE Verifica,WEB,EFE Verifica,CLAIM/VERIFICATION RADAR,Spanish-language verification,PENDING,Use underlying evidence and original source where available
+EFE,EFE-OSINT-001,EFE Verifica OSINT,WEB,EFE Verifica OSINT,OSINT RADAR,open-source verification,PENDING,Secondary verification resource
+EFE,EFE-ELECTION-001,EFE Verifica Elections,WEB,EFE election verification resources,ELECTION/CLAIM RADAR,election misinformation verification,PENDING,Not a substitute for official results
+EFE,EFE-HEALTH-001,EFE Verifica Health,WEB,EFE health verification resources,HEALTH/CLAIM RADAR,health misinformation verification,PENDING,Not primary medical evidence
+MALDITA,MALDITA-METH-001,Maldita.es methodology,WEB,Maldita.es methodology,CLAIM/VERIFICATION RADAR,verification methodology,PENDING,Methodological reference
+FULLFACT,FULLFACT-AI-001,Full Fact AI tools,WEB,Full Fact AI resources,CLAIM/AI RADAR,automated fact-checking research and tools,PENDING,Tooling/research not primary claim evidence
+EUvsDISINFO,EUVSDISINFO-FIMI-001,FIMI Galaxy/Explorer,WEB,EUvsDisinfo FIMI resources,DISINFORMATION RADAR,FIMI campaign analysis,PENDING,Analytical intelligence; preserve underlying examples
+EUvsDISINFO,EUVSDISINFO-REVIEW-001,Disinformation Review,WEB,EUvsDisinfo Review,DISINFORMATION RADAR,disinformation analysis,PENDING,Secondary analytical source
+EUvsDISINFO,EUVSDISINFO-NEWS-001,News and Analysis,WEB,EUvsDisinfo news and analysis,DISINFORMATION RADAR,trend and campaign monitoring,PENDING,Secondary analytical source
+BELLINGCAT,OSINT-BELLINGCAT-002,Online Investigation Toolkit,WEB, Bellingcat toolkit,OSINT RADAR,OSINT research methods,PENDING,Tool/resource rather than incident evidence
+BELLINGCAT,GEO-BELLINGCAT-003,Search Grid Generator,TOOL,Bellingcat tool,GEolocation RADAR,systematic image search support,PENDING,Tool output requires human verification
+OSM,GEO-OSM-003,Overpass API,API,https://overpass-api.de/,GEOLOCATION RADAR,OpenStreetMap feature querying,PENDING,Community geographic data; verify feature history
+MAPILLARY,GEO-MAPILLARY-001,Mapillary imagery,WEB/API,Mapillary platform,GEOLOCATION RADAR,street-level imagery comparison,PENDING,Imagery date and provenance must be checked
+GOOGLE,GEO-GOOGLE-EARTH-001,Google Earth,TOOL,Google Earth platform,GEOLOCATION RADAR,visual geographic comparison,PENDING,Not primary evidence by itself
+GOOGLE,GEO-GOOGLE-STREET-001,Google Street View,TOOL,Google Street View platform,GEOLOCATION RADAR,street-level contextual verification,PENDING,Imagery capture date may differ from event date
+COPERNICUS,SAT-SENTINELHUB-CATALOG-001,Sentinel Hub Catalog API,API,Copernicus/Sentinel Hub catalog service,SATELLITE RADAR,satellite product discovery,PENDING,Check current API access and product metadata
+COPERNICUS,SAT-SENTINELHUB-PROC-001,Sentinel Hub Processing API,API,Copernicus/Sentinel Hub processing service,SATELLITE RADAR,remote sensing product processing,PENDING,Requires validated access and terms
+COPERNICUS,SAT-SENTINELHUB-STATS-001,Sentinel Hub Statistical API,API,Copernicus/Sentinel Hub statistical service,SATELLITE RADAR,area/time-series statistics,PENDING,Validate endpoint and authentication requirements
+COPERNICUS,SAT-SENTINEL-1-001,Sentinel-1 SAR,DATA,Sentinel-1 mission data,SATELLITE/DAMAGE RADAR,SAR imagery for all-weather observation,PENDING,Use acquisition metadata and processing level
+COPERNICUS,SAT-SENTINEL-2-001,Sentinel-2 optical,DATA,Sentinel-2 mission data,SATELLITE/DAMAGE RADAR,optical imagery and land observation,PENDING,Cloud cover and acquisition time must be checked
+COPERNICUS,SAT-SENTINEL-3-001,Sentinel-3,DATA,Sentinel-3 mission data,SATELLITE/ENVIRONMENT RADAR,ocean/land monitoring,PENDING,Use product-specific metadata
+COPERNICUS,SAT-SENTINEL-5P-001,Sentinel-5P,DATA,Sentinel-5P mission data,ENVIRONMENT/ATMOSPHERE RADAR,atmospheric composition,PENDING,Use product-specific uncertainty metadata
+OPENSKY,AVIATION-OPENSKY-HIST-001,OpenSky historical data,DATA,OpenSky historical datasets,AVIATION RADAR,historical aircraft movement reconstruction,PENDING,Historical availability and sampling limitations apply
+OPENSKY,AVIATION-OPENSKY-SCI-001,OpenSky scientific datasets,DATA,OpenSky research datasets,AVIATION RADAR,aviation research and validation,PENDING,Research dataset; understand coverage and methodology
+OPENSKY,AVIATION-OPENSKY-META-001,OpenSky aircraft metadata,DATA,OpenSky aircraft metadata,AVIATION RADAR,aircraft identity/type enrichment,PENDING,Metadata does not prove flight occurrence alone
+ADSBEXCHANGE,AVIATION-ADSB-API-001,ADS-B Exchange API,API,ADS-B Exchange API,AVIATION RADAR,aircraft tracking and corroboration,PENDING,Validate access conditions and endpoint
+ADSBEXCHANGE,AVIATION-ADSB-HIST-001,ADS-B Exchange historical traces,DATA,ADS-B Exchange historical data,AVIATION RADAR,historical flight trace corroboration,PENDING,Coverage depends on receiver network
+MARINETRAFFIC,MARITIME-MT-API-001,MarineTraffic API,API,MarineTraffic API,MARITIME RADAR,vessel movement data,PENDING,Commercial service; access and coverage limitations
+MARINETRAFFIC,MARITIME-MT-HIST-001,MarineTraffic historical data,DATA,MarineTraffic historical AIS,MARITIME RADAR,historical vessel movement reconstruction,PENDING,Historical coverage and data licensing require review
+COPERNICUS-MARINE,MARITIME-COPERNICUS-001,Copernicus Marine,DATA,https://marine.copernicus.eu/,MARITIME/ENVIRONMENT RADAR,oceanographic data and forecasts,PENDING,Distinguish observations from model outputs
+IMO,MARITIME-IMO-001,International Maritime Organization,WEB,https://www.imo.org/,MARITIME/REGULATORY RADAR,maritime regulatory and safety information,PENDING,Primary institutional source
+EMSA,MARITIME-EMSA-001,European Maritime Safety Agency,WEB/DATA,https://www.emsa.europa.eu/,MARITIME/EU RADAR,maritime safety and surveillance information,PENDING,Verify dataset-specific access
+INVID,VERIFY-INVID-003,InVID Keyframes,TOOL,InVID verification plugin,VERIFICATION RADAR,video keyframe extraction,PENDING,Tool output requires contextual validation
+INVID,VERIFY-INVID-004,InVID Metadata,TOOL,InVID verification plugin,VERIFICATION RADAR,metadata inspection,PENDING,Metadata can be absent or manipulated
+INVID,VERIFY-INVID-005,InVID Reverse Image Search,TOOL,InVID verification plugin,VERIFICATION RADAR,reverse-image discovery,PENDING,Search result is lead not proof
+INVID,VERIFY-INVID-006,InVID Forensic Filters,TOOL,InVID verification plugin,VERIFICATION RADAR,forensic image inspection,PENDING,Forensic indications require expert interpretation
+ACLED,CONFLICT-ACLED-CODEBOOK-001,ACLED Codebook,DATA/METHODOLOGY,ACLED codebook,CONFLICT RADAR,event coding interpretation,PENDING,Required for correct dataset use
+ACLED,CONFLICT-ACLED-METHOD-001,ACLED Methodology,METHODOLOGY,ACLED methodology,CONFLICT RADAR,conflict event methodology,PENDING,Methodology must accompany extracted data
+ACLED,CONFLICT-ACLED-EVENT-001,ACLED Event Data,DATA,ACLED event dataset,CONFLICT RADAR,political violence and protest events,PENDING,Dataset is corroborative not automatically incident primary evidence
+ACLED,CONFLICT-ACLED-FATALITY-001,ACLED Fatality Data,DATA,ACLED fatality fields,CONFLICT RADAR,conflict fatality indicators,PENDING,Check coding and uncertainty
+UCDP,UCDP-DATA-001,UCDP datasets,DATA,UCDP datasets,CONFLICT RADAR,armed conflict event data,PENDING,Historical/comparative dataset; preserve version
+UCDP,UCDP-API-001,UCDP API,API,UCDP API services,CONFLICT RADAR,programmatic conflict data retrieval,PENDING,Validate current endpoint
+IISS,DEFENSE-IISS-002,Armed Conflict Survey,REPORT,IISS Armed Conflict Survey,DEFENSE RADAR,strategic conflict analysis,PENDING,Secondary analytical source
+IISS,DEFENSE-IISS-003,Conflict Trends,ANALYSIS,IISS conflict trends,DEFENSE RADAR,conflict trend assessment,PENDING,Analytical assessment not incident primary evidence
+IISS,DEFENSE-IISS-005,Conflict Map,MAP,IISS conflict map,DEFENSE RADAR,geographic conflict overview,PENDING,Map is analytical reference
+SIPRI,DEFENSE-SIPRI-002,Arms Transfers Database,DATA,SIPRI arms transfers database,DEFENSE/ARMS RADAR,arms transfer trend data,PENDING,TIV is not financial price
+SIPRI,DEFENSE-SIPRI-004,Military Expenditure Database,DATA,SIPRI military expenditure database,DEFENSE/ECONOMIC RADAR,military expenditure statistics,PENDING,Retain methodology and currency/year context
+SIPRI,DEFENSE-SIPRI-005,Arms Embargoes,DATA,SIPRI embargoes database,DEFENSE/REGULATORY RADAR,arms embargo tracking,PENDING,Cross-check current legal instrument
+SIPRI,DEFENSE-SIPRI-008,Sources and Methods,METHODOLOGY,SIPRI methodology,DEFENSE RADAR,data interpretation and limitations,PENDING,Methodology is mandatory for derived analysis
+OCHA,HUMANITARIAN-OCHA-004,Situation Reports,REPORT,OCHA situation reports,HUMANITARIAN RADAR,situation and humanitarian impact detection,PENDING,Institutional reporting; preserve reporting date
+OCHA,HUMANITARIAN-OCHA-005,Humanitarian Data,DATA,OCHA humanitarian datasets,HUMANITARIAN RADAR,humanitarian indicators and operational data,PENDING,Dataset provenance must be preserved
+RELIEFWEB,HUMANITARIAN-RELIEFWEB-002,ReliefWeb Reports,REPOSITORY,ReliefWeb reports,HUMANITARIAN RADAR,humanitarian document discovery,PENDING,Repository/service; trace back to original publisher
+RELIEFWEB,HUMANITARIAN-RELIEFWEB-003,ReliefWeb Maps,MAP,ReliefWeb maps,HUMANITARIAN RADAR,humanitarian geospatial context,PENDING,Map source and date must be retained
+UNOSAT,DAMAGE-UNOSAT-001,UNOSAT satellite damage assessment,REPORT/DATA,UNOSAT analysis, DAMAGE VERIFICATION RADAR,damage assessment and mapping,PENDING,Analytical satellite product; retain acquisition dates and methodology
+OSM,DAMAGE-OSM-001,OpenStreetMap infrastructure reference,DATA,OpenStreetMap data,DAMAGE VERIFICATION RADAR,building/infrastructure baseline,PENDING,Community mapping; historical completeness varies
+BELLINGCAT,DAMAGE-BELLINGCAT-001,Bellingcat damage verification,ANALYSIS,Bellingcat investigations,DAMAGE VERIFICATION RADAR,open-source damage corroboration,PENDING,Secondary OSINT analysis; preserve underlying evidence
+UN-SECURITY-COUNCIL,UN-SC-002,Security Council Resolutions,DOCUMENT,UN Security Council resolutions,GEOPOLITICAL/REGULATORY RADAR,official resolutions and legal/political acts,PENDING,Primary institutional document
+UN-SECURITY-COUNCIL,UN-SC-003,Sanctions Lists,DATA,UN Security Council sanctions lists,GEOPOLITICAL/REGULATORY RADAR,sanctions status verification,PENDING,Check list version and effective date
+UN-SECURITY-COUNCIL,UN-SC-004,Sanctions Committees,WEB/DOCUMENT,UN sanctions committees,GEOPOLITICAL/REGULATORY RADAR,sanctions committee decisions and notices,PENDING,Primary institutional source
+UN-SECURITY-COUNCIL,UN-SC-005,Secretary-General Reports,REPORT,UN Security Council SG reports,GEOPOLITICAL RADAR,conflict and international security reporting,PENDING,Official report; distinguish reporting from independent verification
