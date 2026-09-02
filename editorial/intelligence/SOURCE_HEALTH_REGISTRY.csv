@@ -1,0 +1,2 @@
+health_id,source_id,channel_id,endpoint_id,observed_at,availability_health,update_health,endpoint_health,provenance_health,integrity_health,revision_health,methodology_health,access_risk,overall_state,trigger_event,affected_objects,last_reviewed_at,reviewer,notes
+HLT-########,SRC-########,,,,HEALTHY,UNKNOWN,PENDING,UNKNOWN,UNKNOWN,UNKNOWN,UNKNOWN,LOW,UNKNOWN,INITIAL_ASSESSMENT,,,,Template row; overall_state is contextual and must not be interpreted as a truth score.
