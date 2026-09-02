@@ -48,16 +48,14 @@ for (const claim of claims) {
   let status = "INSUFFICIENT";
   let reason = "No existe evidencia suficiente vinculada a la afirmación.";
 
+  // Contradictions and incomplete documentary records always take precedence.
   if (materialConflict || contrast?.result === "CONTESTED") {
     status = "CONTESTED";
     reason = "Existe una contradicción material no resuelta.";
-  } else if (!supporting.length) {
-    status = "INSUFFICIENT";
-    reason = "No existe evidencia evaluada como SUPPORTS.";
   } else if (incompleteEvidence.length) {
     status = "RECHECK_REQUIRED";
     reason = "La evidencia vinculada no conserva todos los datos documentales necesarios.";
-  } else if (centralClaims.includes(claim) && provenanceUnknown) {
+  } else if (centralClaims.includes(claim) && provenanceUnknown && linked.length > 0) {
     status = "RECHECK_REQUIRED";
     reason = "La procedencia de la evidencia central es desconocida o incompleta.";
   } else if (contrast?.result === "PARTIALLY_SUPPORTED") {
@@ -66,9 +64,18 @@ for (const claim of claims) {
   } else if (contrast?.result === "INSUFFICIENT") {
     status = "INSUFFICIENT";
     reason = "El contraste considera insuficiente el respaldo disponible.";
+  } else if (!supporting.length) {
+    status = "INSUFFICIENT";
+    reason = "No existe evidencia evaluada como SUPPORTS.";
   } else {
     status = "VERIFIED";
     reason = "Existe evidencia de apoyo, trazabilidad documental y no consta un conflicto material pendiente.";
+  }
+
+  // Claims explicitly marked UNKNOWN/PENDING are never promoted to verified facts.
+  if (["UNKNOWN", "PENDING"].includes(claim.type)) {
+    status = status === "CONTESTED" ? status : "INSUFFICIENT";
+    reason = "La afirmación está marcada como UNKNOWN/PENDING y no puede convertirse automáticamente en un hecho verificado.";
   }
 
   assessments.push({
