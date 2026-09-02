@@ -1,0 +1,2 @@
+alert_id,integrity_id,case_id,alert_type,impact_level,object_id,observed_value,threshold,detected_at,reason_code,status,assigned_editor,decision_id,resolved_at,notes
+IIA-00000001,INT-00000001,,INTEGRITY_PROVENANCE_BREAK,INFO,,,,,INTEGRITY_REVIEW_PENDING,OPEN,,,,Initial integrity assessment required before operational use.
