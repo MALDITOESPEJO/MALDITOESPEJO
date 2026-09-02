@@ -31,6 +31,7 @@
     "provenance": "node scripts/check-provenance.mjs",
     "contrast": "node scripts/contrast.mjs",
     "contradictions": "node scripts/resolve-contradictions.mjs",
+    "independence:enforce": "node scripts/enforce-source-independence.mjs",
     "verify": "node scripts/verify.mjs",
     "article:original": "node scripts/original-article.mjs",
     "originality": "node scripts/check-originality.mjs",
