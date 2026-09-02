@@ -13,6 +13,7 @@
     "dependencies": "node scripts/dependencies.mjs",
     "calculate": "node scripts/calculate.mjs",
     "scope": "node scripts/scope.mjs",
+    "scope:guard": "node scripts/article-scope-guard.mjs",
     "research:plan": "node scripts/research-plan.mjs",
     "web:research": "node scripts/web-research.mjs",
     "web:search": "node scripts/search-web.mjs",
