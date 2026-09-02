@@ -66,7 +66,9 @@ for (const item of queries) {
       url: result.url ?? null,
       snippet: result.description ?? result.snippet ?? null,
       publisher: result.profile?.long_name ?? result.profile?.short_name ?? null,
+      source_name: result.profile?.long_name ?? result.profile?.short_name ?? result.url ?? null,
       published_at: result.age ?? null,
+      document_or_record: result.title ?? null,
       result_type: "web",
       provider_rank: results.length + 1,
       provider_score: null,
@@ -101,7 +103,7 @@ fs.writeFileSync(file, `${JSON.stringify(record, null, 2)}\n`, "utf8");
 
 console.log("MALDITOESPEJO — WEB SEARCH");
 console.log(`✓ Caso: ${caseId}`);
-console.log(`✓ Proveedor: Brave Search`);
+console.log("✓ Proveedor: Brave Search");
 console.log(`✓ Resultados recuperados: ${results.length}`);
 console.log(`✓ Archivo: ${path.relative(ROOT, outFile)}`);
 console.log("⚠ Ningún resultado ha sido convertido automáticamente en evidencia.");
