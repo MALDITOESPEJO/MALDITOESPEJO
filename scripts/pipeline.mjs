@@ -12,7 +12,7 @@ function getArg(name) {
 }
 
 function usage() {
-  console.log(`MALDITOESPEJO — AUTOMATED NEWS PIPELINE\n\nUso:\n  npm run pipeline -- --title "Título de la noticia"\n  npm run pipeline -- --input ruta/al/archivo.txt\n  npm run pipeline -- --json ruta/al/entrada.json\n\nEl pipeline investiga, recupera candidatos documentales, controla su trazabilidad y se detiene antes de la publicación.`);
+  console.log(`MALDITOESPEJO — AUTOMATED NEWS PIPELINE\n\nUso:\n  npm run pipeline -- --title "Título de la noticia"\n  npm run pipeline -- --input ruta/al/archivo.txt\n  npm run pipeline -- --json ruta/al/entrada.json\n\nEl pipeline investiga, recupera candidatos documentales, resuelve fuentes, controla su trazabilidad y se detiene antes de la publicación.`);
 }
 
 if (process.argv.includes("--help") || process.argv.includes("-h")) {
@@ -87,6 +87,7 @@ if (webSearchOk) {
 }
 
 const postRetrievalStages = [
+  ["resolve-source.mjs", ["--case", caseId]],
   ["check-provenance.mjs", ["--case", caseId]],
   ["contrast.mjs", ["--case", caseId]],
   ["verify.mjs", ["--case", caseId]],
@@ -103,7 +104,7 @@ for (const [script, args] of postRetrievalStages) {
 
 console.log("\nMALDITOESPEJO — PIPELINE FINALIZADO");
 console.log(`Caso: ${caseId}`);
-console.log("Secuencia: investigación → claims → plan de búsqueda → recuperación web → importación de candidatos → procedencia → contraste → verificación → alcance → redacción → controles → originalidad.");
-console.log("Importante: los resultados de búsqueda siguen siendo candidatos hasta su evaluación documental y editorial.");
+console.log("Secuencia: investigación → claims → plan de búsqueda → recuperación web → importación → resolución de fuentes → procedencia → contraste → verificación → alcance → redacción → controles → originalidad.");
+console.log("Importante: resolver una fuente no certifica su contenido ni su independencia; los resultados siguen sujetos a evaluación documental.");
 console.log("La automatización nunca concede aprobación editorial ni publica por sí sola.");
 console.log("Siguiente etapa: evaluación/aceptación de evidencia y revisión humana; después, Publication Gate.");
