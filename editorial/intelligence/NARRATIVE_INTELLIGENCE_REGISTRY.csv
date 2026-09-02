@@ -1,0 +1,2 @@
+narrative_id,case_id,title,topic,jurisdiction,origin_claim_id,claim_count,independent_lineage_count,propagation_depth,reach_status,truth_status,intent_status,integrity_status,coordination_status,impact_level,priority,confidence,status,first_observed_at,last_assessed_at,reviewer,notes
+NAR-00000001,,,,,,0,0,0,UNKNOWN,UNVERIFIED,UNKNOWN,UNKNOWN,UNKNOWN,UNKNOWN,UNKNOWN,UNKNOWN,OPEN,,,
