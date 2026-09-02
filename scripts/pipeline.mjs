@@ -31,11 +31,11 @@ if (webSearchOk) {
   if (!fs.existsSync(resultsPath)) console.error("✖ La búsqueda terminó sin generar resultados documentales.");
   else run("import-web-results.mjs", ["--input", path.relative(ROOT, resultsPath).replaceAll(path.sep, "/")], { allowFailure: true });
 }
-const postRetrievalStages = [["resolve-source.mjs", ["--case", caseId]], ["source-authority.mjs", ["--case", caseId]], ["check-provenance.mjs", ["--case", caseId]], ["contrast.mjs", ["--case", caseId]], ["evidence-sufficiency.mjs", ["--case", caseId]], ["verify.mjs", ["--case", caseId]], ["scope.mjs", ["--case", caseId]], ["original-article.mjs", ["--case", caseId]], ["article-scope-guard.mjs", ["--case", caseId]], ["language-guard.mjs", ["--case", caseId]], ["check-originality.mjs", ["--case", caseId]]];
+const postRetrievalStages = [["resolve-source.mjs", ["--case", caseId]], ["source-authority.mjs", ["--case", caseId]], ["check-provenance.mjs", ["--case", caseId]], ["contrast.mjs", ["--case", caseId]], ["evidence-sufficiency.mjs", ["--case", caseId]], ["temporal-verify.mjs", ["--case", caseId]], ["verify.mjs", ["--case", caseId]], ["scope.mjs", ["--case", caseId]], ["original-article.mjs", ["--case", caseId]], ["article-scope-guard.mjs", ["--case", caseId]], ["language-guard.mjs", ["--case", caseId]], ["check-originality.mjs", ["--case", caseId]]];
 for (const [script, args] of postRetrievalStages) { if (!run(script, args, { allowFailure: true })) break; }
 console.log("\nMALDITOESPEJO — PIPELINE FINALIZADO");
 console.log(`Caso: ${caseId}`);
-console.log("Secuencia: investigación → claims → plan → recuperación web → importación → resolución de fuentes → autoridad de fuente → procedencia → contraste → suficiencia documental → verificación → alcance → redacción → controles → originalidad.");
-console.log("Importante: identificar y clasificar una fuente no certifica su contenido, autenticidad, independencia ni suficiencia para el claim.");
+console.log("Secuencia: investigación → claims → plan → recuperación web → importación → resolución de fuentes → autoridad de fuente → procedencia → contraste → suficiencia documental → control temporal → verificación → alcance → redacción → controles → originalidad.");
+console.log("Importante: identificar y clasificar una fuente no certifica su contenido, autenticidad, independencia, adecuación temporal ni suficiencia para el claim.");
 console.log("La automatización nunca concede aprobación editorial ni publica por sí sola.");
 console.log("Siguiente etapa: aceptación documental explícita cuando proceda, revisión humana y Publication Gate.");
