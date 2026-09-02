@@ -16,6 +16,8 @@
     "calculation:provenance": "node scripts/validate-calculation-provenance.mjs",
     "impact:propagate": "node scripts/propagate-editorial-impact.mjs",
     "impact:published": "node scripts/check-published-impact.mjs",
+    "correction:create": "node scripts/create-correction-record.mjs",
+    "correction:validate": "node scripts/validate-correction-records.mjs",
     "scope": "node scripts/scope.mjs",
     "scope:guard": "node scripts/article-scope-guard.mjs",
     "language:guard": "node scripts/language-guard.mjs",
