@@ -1,0 +1,2 @@
+alert_id,warning_id,case_id,alert_type,alert_level,signal_id,observed_value,baseline_value,threshold,detected_at,forecast_window_end,reason_code,status,assigned_editor,decision_id,resolved_at,notes
+EWA-00000001,EWR-00000001,,EMERGING_EVENT,WATCH,,,,,,EARLY_WARNING_REVIEW_PENDING,OPEN,,,,Initial warning assessment required before operational use.
