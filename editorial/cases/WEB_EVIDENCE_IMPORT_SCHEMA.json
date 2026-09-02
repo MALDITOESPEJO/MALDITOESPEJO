@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "MALDITOESPEJO Web Evidence Import",
+  "type": "object",
+  "required": ["case_id", "evidence"],
+  "properties": {
+    "case_id": { "type": "string", "pattern": "^CASE-[0-9]{8}$" },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["claim_id", "source_id", "document_or_record", "url_or_reference", "assessment"],
+        "properties": {
+          "claim_id": { "type": "string", "pattern": "^CLM-[0-9]{8}$" },
+          "source_id": { "type": "string" },
+          "source_role": { "enum": ["DISCOVERY", "PUBLICATION", "CORROBORATION", "CONTEXT"] },
+          "document_or_record": { "type": "string", "minLength": 1 },
+          "url_or_reference": { "type": "string", "minLength": 1 },
+          "published_at": { "type": ["string", "null"] },
+          "observed_at": { "type": ["string", "null"] },
+          "relevant_excerpt_or_data": { "type": ["string", "null"] },
+          "lineage_id": { "type": ["string", "null"] },
+          "independence_group": { "type": ["string", "null"] },
+          "relationship_type": { "enum": ["ORIGINAL", "REPRODUCES", "QUOTES", "DERIVED_FROM", "AGGREGATES", "ENRICHES", "INDEPENDENT_OBSERVATION", "UNKNOWN_PROVENANCE"] },
+          "assessment": { "enum": ["UNASSESSED", "SUPPORTS", "PARTIALLY_SUPPORTS", "DOES_NOT_SUPPORT", "CONTESTS", "SUPERSEDED"] }
+        }
+      }
+    }
+  }
+}
