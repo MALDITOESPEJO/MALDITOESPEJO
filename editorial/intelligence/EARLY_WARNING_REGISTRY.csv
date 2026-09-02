@@ -1,0 +1,2 @@
+warning_id,case_id,warning_type,topic,jurisdiction,signal_id,observation_count,independent_lineage_count,baseline_reference,observed_deviation,forecast_window_start,forecast_window_end,confirmation_status,confidence,alert_level,invalidation_condition,status,first_detected_at,last_assessed_at,reviewer,notes
+EWR-00000001,,,,,,0,0,,,,,UNCONFIRMED,UNKNOWN,WATCH,,OPEN,,,,
