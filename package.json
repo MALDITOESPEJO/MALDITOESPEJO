@@ -9,6 +9,7 @@
     "lint": "eslint",
     "validate:articles": "node scripts/validate-articles.mjs",
     "validate:verification": "node scripts/validate-verification-records.mjs",
+    "validate:claims": "node scripts/validate-claim-evidence.mjs",
     "check:publication": "node scripts/check-publication-gate.mjs"
   },
   "dependencies": {
