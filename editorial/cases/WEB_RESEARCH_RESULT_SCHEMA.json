@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "MALDITOESPEJO Web Research Result",
+  "type": "object",
+  "required": ["research_run_id", "case_id", "results"],
+  "properties": {
+    "research_run_id": {"type": "string", "pattern": "^WEB-[A-Z0-9-]+$"},
+    "case_id": {"type": "string", "pattern": "^CASE-[0-9]{8}$"},
+    "generated_at": {"type": "string"},
+    "provider": {"type": "string"},
+    "results": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["claim_id", "url", "title", "source_name"],
+        "properties": {
+          "claim_id": {"type": "string", "pattern": "^CLM-[0-9]{8}$"},
+          "url": {"type": "string", "format": "uri"},
+          "title": {"type": "string", "minLength": 1},
+          "source_name": {"type": "string", "minLength": 1},
+          "published_at": {"type": ["string", "null"]},
+          "snippet": {"type": ["string", "null"]},
+          "document_or_record": {"type": ["string", "null"]},
+          "source_role": {"type": ["string", "null"]},
+          "relationship_type": {"type": ["string", "null"]},
+          "lineage_id": {"type": ["string", "null"]},
+          "independence_group": {"type": ["string", "null"]}
+        }
+      }
+    }
+  }
+}
