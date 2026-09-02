@@ -1,0 +1,2 @@
+health_event_id,source_id,channel_id,endpoint_id,event_type,detected_at,effective_at,previous_state,new_state,reason_code,evidence_id,impact_level,resolution_status,resolved_at,actor_type,actor_id,notes
+SHE-########,SRC-########,,,INITIAL_ASSESSMENT,,,,INITIAL, ,LOW,OPEN,,,SYSTEM,EDITORIAL_BOOTSTRAP,Template row; replace placeholders with canonical IDs.
