@@ -1,0 +1,32 @@
+entity_type,entity_subtype,definition,required_core_fields,typical_sources,editorial_rule
+OBSERVATION,STATISTICAL,Direct observation from a dataset or API,observation_id source_id feed_id reference_at value unit detected_at,Eurostat BIS BLS WHO FAOSTAT,Observation is not interpretation
+OBSERVATION,TRACKING,Observed aircraft or vessel position/status,observation_id source_id feed_id observed_at latitude longitude altitude_or_draught identifier confidence,OpenSky ADS-B Exchange MarineTraffic,Tracking observation does not establish intent
+OBSERVATION,SATELLITE,Remote-sensing observation,observation_id source_id product_id acquired_at geometry processing_level,Sentinel Copernicus UNOSAT,Separate acquisition from publication and assessment
+OBSERVATION,WEATHER_ALERT,Machine-readable hazard observation/alert,observation_id source_id alert_id issued_at effective_at expires_at area severity,WMO CAP AEMET,Alert validity must be preserved
+OBSERVATION,MEDIA,Original image/video/audio observation,observation_id source_id media_id captured_at published_at provenance,Original media agencies witnesses,Authenticity and context require verification
+EVENT,POLITICAL,Political action or occurrence,event_id event_type date institution jurisdiction status source_url,Parliaments governments UN,Institutional occurrence must be separated from interpretation
+EVENT,ELECTION,Election/result event,event_id election_id authority date stage result_authority_level source_url,Electoral authorities IDEA OSCE EP,Official/certified result outranks preliminary reporting
+EVENT,LEGAL,Judgment decision sanction or legal act,event_id event_type document_id date jurisdiction legal_effect source_url,EUR-Lex CURIA courts regulators,Original decision/document is primary evidence
+EVENT,REGULATORY,Regulatory action,event_id institution action_type effective_at jurisdiction document_id,EU institutions regulators CISA,Distinguish announcement from legal effectiveness
+EVENT,CONFLICT,Armed conflict incident,event_id date location actors event_type casualties source_url confidence,Official/local sources ACLED UCDP OCHA,Research datasets do not automatically replace incident evidence
+EVENT,HUMANITARIAN,Humanitarian situation event,event_id date location population_affected indicator source_url,OCHA UNHCR UNICEF WHO,Preserve estimate/status and reference date
+EVENT,MARKET,Market or financial event,event_id instrument market event_time value source_url,BIS Euronext exchanges Reuters,Market data and media reports must remain distinct
+EVENT,SECURITY,Cybersecurity event,event_id vulnerability_or_threat date affected_system severity source_url,CISA CVE NVD ENISA,Exploit evidence requires correlation
+EVENT,SCIENCE,Scientific publication or result,event_id publication_id publication_date study_type source_url,Crossref OpenAlex CERN NASA ESA,Publication existence is not proof of the study's conclusions
+CLAIM,PUBLIC_STATEMENT,A proposition attributed to a speaker,claim_id claim_text speaker date source_url topic,Government media social networks,Attribute the claim; do not present it as established fact
+CLAIM,DATA_CLAIM,Proposition derived from quantitative data,claim_id claim_text dataset_id reference_period methodology evidence,Official datasets research institutions,Check definition denominator unit and revision status
+CLAIM,MEDIA_CLAIM,Proposition reported by a media source,claim_id claim_text publisher publication_date source_url,Reuters AP AFP EFE BBC FT Bloomberg,Trace to underlying evidence whenever possible
+CLAIM,USER_GENERATED,Claim originating in social or user-generated content,claim_id claim_text author published_at platform url,Social platforms,Lead only until independently verified
+CLAIM,FACT_CHECKED,Claim with documented verification result,claim_id claim_text verification_status fact_checker fact_check_date evidence,Maldita Newtral Full Fact AFP EFE Reuters,Fact-check result is evidence about the claim and must preserve methodology
+CLAIM,VIRAL,High-circulation claim requiring rapid review,claim_id claim_text first_seen_at spread_indicator source_url,Social/web monitoring,Virality increases priority but not truth probability
+NARRATIVE,POLITICAL,Cluster of related political claims,narrative_id claim_ids actors topic timeframe,Political sources fact-checkers,Do not collapse distinct claims into one assertion
+NARRATIVE,DISINFORMATION,Coherent cluster of misleading/false claims,narrative_id claim_ids distribution_pattern evidence,EUvsDisinfo fact-checkers OSINT,Requires evidence of narrative relationship
+NARRATIVE,INFORMATION_OPERATION,Coordinated influence pattern,narrative_id claim_ids actors infrastructure timeframe evidence,OSINT specialist sources,High-confidence designation requires substantial corroboration
+SIGNAL,NEW_PUBLICATION,New source resource detected,signal_id source_id channel_id feed_id detected_at evidence_url,All feeds,Creates editorial candidate not publication
+SIGNAL,DATA_UPDATE,Dataset value/resource updated,signal_id feed_id detected_at reference_at change_summary,Statistical datasets,Check revision before interpretation
+SIGNAL,THRESHOLD_CROSSING,Metric crosses configured threshold,signal_id feed_id metric threshold observation_period evidence_url,Data feeds,Threshold is an alerting mechanism not a causal explanation
+SIGNAL,REGULATORY_ACTION,Regulatory action detected,signal_id event_id source_id effective_at evidence_url,Regulators courts governments,Verify legal status and effective date
+SIGNAL,SECURITY_ALERT,Security alert detected,signal_id source_id vulnerability_or_threat severity detected_at evidence_url,CISA ENISA NVD CVE,Correlate exploit status and affected products
+SIGNAL,CONFLICT_ALERT,Conflict-related signal detected,signal_id event_id location severity evidence_count detected_at,ACLED UCDP OCHA OSINT agencies,Preserve uncertainty and source lineage
+SIGNAL,ELECTION_ALERT,Election-related signal detected,signal_id election_id stage authority_level detected_at evidence_url,Electoral authorities IDEA OSCE,Preliminary status must remain explicit
+SIGNAL,DAMAGE_VERIFIED,Damages corroborated across evidence types,signal_id location image_evidence satellite_evidence geolocation confidence,UNOSAT Copernicus OSM Bellingcat,Requires verification chain before confirmed publication
