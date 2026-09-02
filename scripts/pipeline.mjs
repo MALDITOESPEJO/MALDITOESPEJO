@@ -23,7 +23,7 @@ const caseFiles = fs.readdirSync(casesDir).filter((name) => /^CASE-\d{8}\.json$/
 if (!caseFiles.length) { console.error("✖ No se pudo localizar el caso creado."); process.exit(1); }
 const latest = caseFiles.map((name) => ({ name, mtime: fs.statSync(path.join(casesDir, name)).mtimeMs })).sort((a, b) => b.mtime - a.mtime)[0].name;
 const caseId = path.basename(latest, ".json");
-const stages = [["claims.mjs", ["--case", caseId]], ["research-plan.mjs", ["--case", caseId]], ["web-research.mjs", ["--case", caseId]]];
+const stages = [["claims.mjs", ["--case", caseId]], ["dependencies.mjs", ["--case", caseId]], ["research-plan.mjs", ["--case", caseId]], ["web-research.mjs", ["--case", caseId]]];
 for (const [script, args] of stages) { if (!run(script, args)) process.exit(process.exitCode ?? 1); }
 const webSearchOk = run("search-web.mjs", ["--case", caseId], { allowFailure: true });
 if (webSearchOk) {
@@ -44,6 +44,7 @@ const postRetrievalStages = [
   ["enforce-source-independence.mjs", ["--case", caseId]],
   ["temporal-verify.mjs", ["--case", caseId]],
   ["verify.mjs", ["--case", caseId]],
+  ["propagate-uncertainty.mjs", ["--case", caseId]],
   ["scope.mjs", ["--case", caseId]],
   ["original-article.mjs", ["--case", caseId]],
   ["article-scope-guard.mjs", ["--case", caseId]],
@@ -55,8 +56,8 @@ for (const [script, args] of postRetrievalStages) {
 }
 console.log("\nMALDITOESPEJO — PIPELINE FINALIZADO");
 console.log(`Caso: ${caseId}`);
-console.log("Secuencia: investigación → claims → plan → recuperación web → importación → resolución → autoridad → recuperación documental → preparación de evidencia → procedencia → contraste → resolución de conflictos → suficiencia → cobertura → independencia → temporalidad → verificación → alcance → redacción → controles → originalidad.");
-console.log("Importante: preparar candidatos no equivale a aceptarlos. La evidencia solo entra como evidencia aceptada mediante evaluación documental explícita.");
+console.log("Secuencia: investigación → claims → dependencias → plan → recuperación web → importación → resolución → autoridad → recuperación documental → preparación de evidencia → procedencia → contraste → conflictos → suficiencia → cobertura → independencia → temporalidad → verificación → propagación de incertidumbre → alcance → redacción → controles → originalidad.");
 console.log("Las reproducciones del mismo origen no se contabilizan como corroboraciones independientes.");
+console.log("Una dependencia bloqueada propaga la revisión a sus claims derivados y puede exigir revisar titular y entradilla.");
 console.log("La automatización nunca concede aprobación editorial ni publica por sí sola.");
 console.log("Siguiente etapa: evaluación/aceptación documental, revisión humana y Publication Gate.");
