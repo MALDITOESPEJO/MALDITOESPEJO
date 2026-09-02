@@ -15,6 +15,7 @@
     "web:search": "node scripts/search-web.mjs",
     "web:import": "node scripts/import-web-results.mjs",
     "evidence:import": "node scripts/import-evidence.mjs",
+    "evidence:accept": "node scripts/accept-evidence.mjs",
     "provenance": "node scripts/check-provenance.mjs",
     "contrast": "node scripts/contrast.mjs",
     "verify": "node scripts/verify.mjs",
