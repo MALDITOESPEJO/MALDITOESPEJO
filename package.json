@@ -15,6 +15,7 @@
     "calculate": "node scripts/calculate.mjs",
     "calculation:provenance": "node scripts/validate-calculation-provenance.mjs",
     "impact:propagate": "node scripts/propagate-editorial-impact.mjs",
+    "impact:published": "node scripts/check-published-impact.mjs",
     "scope": "node scripts/scope.mjs",
     "scope:guard": "node scripts/article-scope-guard.mjs",
     "language:guard": "node scripts/language-guard.mjs",
