@@ -6,7 +6,7 @@ import { spawnSync } from "node:child_process";
 
 const ROOT = process.cwd();
 function getArg(name) { const index = process.argv.indexOf(name); return index >= 0 ? process.argv[index + 1] : null; }
-function usage() { console.log(`MALDITOESPEJO — AUTOMATED NEWS PIPELINE\n\nUso:\n  npm run pipeline -- --title "Título de la noticia"\n  npm run pipeline -- --input ruta/al/archivo.txt\n  npm run pipeline -- --json ruta/al/entrada.json\n\nEl pipeline investiga, recupera candidatos documentales, resuelve y clasifica fuentes, registra evidencia aceptada y controla su trazabilidad antes de redactar.`); }
+function usage() { console.log(`MALDITOESPEJO — AUTOMATED NEWS PIPELINE\n\nUso:\n  npm run pipeline -- --title "Título de la noticia"\n  npm run pipeline -- --input ruta/al/archivo.txt\n  npm run pipeline -- --json ruta/al/entrada.json\n\nEl pipeline investiga, recupera candidatos documentales, resuelve y clasifica fuentes, prepara evidencia para evaluación explícita y controla su trazabilidad antes de redactar.`); }
 if (process.argv.includes("--help") || process.argv.includes("-h")) { usage(); process.exit(0); }
 const title = getArg("--title"); const inputPath = getArg("--input"); const jsonPath = getArg("--json");
 if (!title && !inputPath && !jsonPath) { usage(); process.exit(1); }
@@ -34,10 +34,11 @@ if (webSearchOk) {
 const postRetrievalStages = [
   ["resolve-source.mjs", ["--case", caseId]],
   ["source-authority.mjs", ["--case", caseId]],
-  ["evidence:retrieve", ["--case", caseId]],
-  ["evidence:accept", ["--case", caseId]],
+  ["retrieve-evidence.mjs", ["--case", caseId]],
+  ["prepare-evidence-candidates.mjs", ["--case", caseId]],
   ["check-provenance.mjs", ["--case", caseId]],
   ["contrast.mjs", ["--case", caseId]],
+  ["resolve-contradictions.mjs", ["--case", caseId]],
   ["evidence-sufficiency.mjs", ["--case", caseId]],
   ["temporal-verify.mjs", ["--case", caseId]],
   ["verify.mjs", ["--case", caseId]],
@@ -48,16 +49,12 @@ const postRetrievalStages = [
   ["check-originality.mjs", ["--case", caseId]],
 ];
 for (const [script, args] of postRetrievalStages) {
-  const executable = script.includes(":") ? null : script;
-  if (!executable) {
-    console.log(`\n⚠ ${script} requiere un archivo de candidatos explícito; el pipeline no inventa candidatos ni los autoacepta.`);
-    continue;
-  }
-  if (!run(executable, args, { allowFailure: true })) break;
+  if (!run(script, args, { allowFailure: true })) break;
 }
 console.log("\nMALDITOESPEJO — PIPELINE FINALIZADO");
 console.log(`Caso: ${caseId}`);
-console.log("Secuencia: investigación → claims → plan → recuperación web → importación → resolución de fuentes → autoridad → recuperación documental → aceptación explícita → procedencia → contraste → suficiencia → control temporal → verificación → alcance → redacción → controles → originalidad.");
-console.log("Importante: un candidato de búsqueda no se convierte automáticamente en evidencia. La aceptación requiere evaluación documental explícita.");
+console.log("Secuencia: investigación → claims → plan → recuperación web → importación → resolución → autoridad → recuperación documental → preparación de evidencia → procedencia → contraste → resolución de conflictos → suficiencia → temporalidad → verificación → alcance → redacción → controles → originalidad.");
+console.log("Importante: preparar candidatos no equivale a aceptarlos. La evidencia solo entra como evidencia aceptada mediante evaluación documental explícita.");
+console.log("La resolución de conflictos localiza el alcance afectado; no elige automáticamente qué fuente tiene razón.");
 console.log("La automatización nunca concede aprobación editorial ni publica por sí sola.");
-console.log("Siguiente etapa: revisión humana y Publication Gate.");
+console.log("Siguiente etapa: evaluación/aceptación documental, revisión humana y Publication Gate.");
