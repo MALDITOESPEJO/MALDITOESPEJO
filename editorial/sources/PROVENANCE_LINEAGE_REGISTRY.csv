@@ -1,0 +1,2 @@
+lineage_id,evidence_id,source_id,document_or_record,provenance_parent_id,independence_group,relationship_type,evidence_role,provenance_status,notes
+LIN-0001,EVD-00000000,SOURCE-UNKNOWN,,NULL,IG-UNKNOWN,UNKNOWN_PROVENANCE,UNRESOLVED,UNKNOWN,Template row only; replace with real evidence identifiers
