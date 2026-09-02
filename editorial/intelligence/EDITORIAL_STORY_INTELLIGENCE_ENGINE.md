@@ -14,6 +14,23 @@ Core principle:
 
 `SIGNAL → CASE → STORY CANDIDATE → NEWS QUESTION → EVIDENCE BASE → EDITORIAL ANGLE → OPEN QUESTIONS → VERIFICATION PLAN → STORY READINESS → HUMAN EDITOR → EDITORIAL DECISION → PUBLICATION`
 
+## Source-role rule
+
+The story layer must distinguish between:
+
+- `DISCOVERY_SOURCE` — used to find the story or locate a lead;
+- `PUBLICATION_SOURCE` — used to support, establish or properly attribute material published information.
+
+A discovery source does not automatically belong in the published article.
+
+Secondary media may be used extensively during investigation. If primary or appropriate evidence is subsequently obtained, the publication should rely on that evidence rather than reproduce the secondary outlet's account.
+
+Internal traceability may preserve the discovery path:
+
+`DISCOVERY_SOURCE → LEAD → INVESTIGATION → EVIDENCE → VERIFICATION → PUBLICATION`
+
+The public article should normally show the sources that support the published information, not the source that merely alerted the newsroom to the story.
+
 ## Fundamental distinctions
 
 - `SIGNAL ≠ STORY`
@@ -28,6 +45,7 @@ Core principle:
 - `NOVELTY ≠ NEWSWORTHINESS`
 - `VIRALITY ≠ NEWS VALUE`
 - `IMPACT ≠ CAUSATION`
+- `DISCOVERY_SOURCE ≠ PUBLICATION_SOURCE`
 
 ## Story candidate object
 
@@ -201,6 +219,32 @@ Assess separately:
 - context loss;
 - reputational harm.
 
+## Plain-language publication rule
+
+MALDITOESPEJO uses a sophisticated verification system, but it is written for a general reader.
+
+Internal complexity must not become unnecessary public jargon.
+
+The published article should:
+
+- use short, clear sentences where possible;
+- explain technical terms the first time they appear;
+- distinguish facts from statements in ordinary language;
+- say clearly when something is not known;
+- avoid inflated or bureaucratic wording;
+- preserve precision without making the reader decode the editorial system.
+
+Examples:
+
+- Internal: `VERIFIED_PRIMARY_DATA` → Public: "Los datos oficiales muestran..."
+- Internal: `ATTRIBUTED_CLAIM` → Public: "El ministro afirmó..."
+- Internal: `UNRESOLVED` → Public: "Todavía no hay datos suficientes para saberlo."
+- Internal: `CONTRADICTED` → Public: "Los datos disponibles no coinciden y la cuestión sigue abierta."
+
+The rule is simple:
+
+> **La investigación puede ser compleja; la explicación no debe serlo.**
+
 ## Story readiness
 
 Suggested states:
@@ -272,7 +316,6 @@ No automated system may:
 
 - decide that a story is true merely because it is important;
 - select a sensational angle solely for engagement;
-- convert an allegation into fact;
 - suppress contradictory evidence;
 - authorize publication;
 - assign blame or intent without evidentiary basis;
@@ -285,4 +328,4 @@ Final chain:
 
 ## Core doctrine
 
-> MALDITOESPEJO does not publish because a story exists. It publishes when the central proposition is evidentially supportable, the uncertainty is honestly expressible, the angle adds public value, and a human editor accepts responsibility for the decision.
+> **MALDITOESPEJO uses available media and other sources to discover what deserves investigation. It publishes the result of its own verification, using the strongest appropriate evidence and explaining it in language that anyone can understand.**
