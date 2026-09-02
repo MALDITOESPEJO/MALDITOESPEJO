@@ -10,6 +10,7 @@
     "pipeline": "node scripts/pipeline.mjs",
     "investigate": "node scripts/investigate.mjs",
     "claims": "node scripts/claims.mjs",
+    "dependencies": "node scripts/dependencies.mjs",
     "research:plan": "node scripts/research-plan.mjs",
     "web:research": "node scripts/web-research.mjs",
     "web:search": "node scripts/search-web.mjs",
