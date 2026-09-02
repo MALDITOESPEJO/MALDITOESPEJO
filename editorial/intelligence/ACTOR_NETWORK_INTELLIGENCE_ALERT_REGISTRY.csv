@@ -1,0 +1,2 @@
+alert_id,actor_id,case_id,narrative_id,alert_type,impact_level,evidence_id,observed_value,threshold,detected_at,reason_code,status,assigned_editor,decision_id,resolved_at,notes
+ANA-00000001,ACT-00000001,,,ACTOR_ATTRIBUTION_GAP,INFO,,,,,ACTOR_REVIEW_PENDING,OPEN,,,,Initial actor assessment required before operational use.
