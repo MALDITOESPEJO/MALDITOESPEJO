@@ -1,0 +1,2 @@
+story_id,case_id,story_version,story_type,working_headline,news_question,central_proposition,jurisdiction,topic,news_value,public_interest,novelty,timeliness,consequence,proximity,scale,human_relevance,accountability,evidence_strength,uncertainty,contradiction_status,editorial_angle,known,unknown,disputed,open_questions,verification_requirements,source_requirements,publication_risks,readiness_state,lead_editor,created_at,updated_at,reviewed_at
+STY-00000001,,v1,INVESTIGATION,,,,,,,,,,,,,,,,UNKNOWN,UNKNOWN,NO,,,,,,,IDEA,,,,
