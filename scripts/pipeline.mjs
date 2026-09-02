@@ -50,19 +50,17 @@ const postRetrievalStages = [
   ["article-scope-guard.mjs", ["--case", caseId]],
   ["language-guard.mjs", ["--case", caseId]],
   ["trace-article.mjs", ["--case", caseId]],
-  ["calculation:provenance" , ["--case", caseId]],
+  ["validate-calculation-provenance.mjs", ["--case", caseId]],
+  ["propagate-editorial-impact.mjs", ["--case", caseId]],
   ["check-originality.mjs", ["--case", caseId]],
 ];
-for (const [script, args] of postRetrievalStages) {
-  const actualScript = script === "calculation:provenance" ? null : script;
-  if (actualScript) { if (!run(actualScript, args, { allowFailure: true })) break; }
-  else { if (!run("validate-calculation-provenance.mjs", args, { allowFailure: true })) break; }
-}
+for (const [script, args] of postRetrievalStages) { if (!run(script, args, { allowFailure: true })) break; }
 console.log("\nMALDITOESPEJO — PIPELINE FINALIZADO");
 console.log(`Caso: ${caseId}`);
-console.log("Secuencia: investigación → claims → dependencias → plan → recuperación web → importación → resolución → autoridad → recuperación documental → preparación de evidencia → procedencia → contraste → conflictos → suficiencia → cobertura → independencia → temporalidad → verificación → propagación de incertidumbre → alcance → redacción → controles → trazabilidad de frases → validación de cálculos → originalidad.");
+console.log("Secuencia: investigación → claims → dependencias → plan → recuperación web → importación → resolución → autoridad → recuperación documental → preparación de evidencia → procedencia → contraste → conflictos → suficiencia → cobertura → independencia → temporalidad → verificación → propagación de incertidumbre → alcance → redacción → controles → trazabilidad de frases → validación de cálculos → propagación de impacto → originalidad.");
 console.log("Las reproducciones del mismo origen no se contabilizan como corroboraciones independientes.");
 console.log("Cada afirmación factual material debe poder remontarse internamente a claims y evidencia documental.");
 console.log("Las cifras derivadas deben conservar sus datos de entrada y quedar sujetas a reverificación si estos cambian.");
+console.log("Todo cambio material en evidencia se propaga hasta claims, cálculos y frases dependientes antes de mantener la publicación.");
 console.log("La automatización nunca concede aprobación editorial ni publica por sí sola.");
 console.log("Siguiente etapa: revisión humana y Publication Gate.");
