@@ -5,6 +5,7 @@ import path from "node:path";
 
 const ROOT = process.cwd();
 const ARTICLES_DIR = path.join(ROOT, "content", "articles");
+const VALIDATION_DIR = path.join(ROOT, "editorial", "validation");
 
 const SECTION_AUTHORS = {
   "Actualidad": "Clara Valdés Moreno",
@@ -30,7 +31,7 @@ function fail(message) {
   console.error(`✖ ${message}`);
 }
 
-function parseFrontmatter(content, file) {
+function parseFrontmatter(content) {
   const lines = content.split(/\r?\n/);
   if (lines[0]?.trim() !== "---") {
     return { data: null, error: "no comienza con un bloque YAML de frontmatter (---)" };
@@ -60,9 +61,17 @@ function parseFrontmatter(content, file) {
   return { data, error: null };
 }
 
+function verificationRecordExists(articleId) {
+  const candidates = [
+    path.join(VALIDATION_DIR, `${articleId}.md`),
+    path.join(VALIDATION_DIR, `${articleId}.json`),
+  ];
+  return candidates.some((candidate) => fs.existsSync(candidate));
+}
+
 function validateArticle(file) {
   const content = fs.readFileSync(file, "utf8");
-  const { data, error } = parseFrontmatter(content, file);
+  const { data, error } = parseFrontmatter(content);
   const errors = [];
   const warnings = [];
 
@@ -96,9 +105,16 @@ function validateArticle(file) {
     errors.push(`estado editorial no permitido '${data.status}'`);
   }
 
+  const articleId = data.id || path.basename(file, path.extname(file));
+  if ((data.status === "verified" || data.status === "published") && !verificationRecordExists(articleId)) {
+    errors.push(
+      `estado '${data.status}' requiere un expediente de verificación en editorial/validation/${articleId}.md o .json`
+    );
+  }
+
   if (data.status === "published") {
     warnings.push(
-      "estado 'published': la validación automática comprueba metadatos y asignación de autoría; la verificación factual y la aprobación humana siguen siendo editoriales"
+      "estado 'published': la validación automática comprueba estructura y existencia del expediente; la aprobación humana y el Publication Gate siguen siendo obligatorios"
     );
   }
 
