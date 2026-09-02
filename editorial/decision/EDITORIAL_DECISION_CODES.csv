@@ -1,0 +1,10 @@
+decision_code,state,definition,minimum_condition,publication_effect
+DEC-INVESTIGATE,INVESTIGATING,Research remains active,Case exists and evidence gathering is ongoing,No confirmed publication
+DEC-HOLD,HOLD,Evidence or verification insufficient,Material gap or unresolved contradiction,Do not publish as confirmed
+DEC-PUBLISH,PUBLISH,Publication approved,Evidence standard satisfied plus human approval,Publish
+DEC-QUALIFIED,PUBLISH_WITH_QUALIFIERS,Publication approved with explicit uncertainty,Credible evidence but material uncertainty disclosed,Publish with qualifiers
+DEC-UPDATE,UPDATE,Existing item materially updated,New evidence changes factual state,Publish update and preserve history
+DEC-CORRECT,CORRECT,Material factual error corrected,Published statement materially inaccurate,Transparent correction
+DEC-RETRACT,RETRACT,Central proposition withdrawn,Central factual basis no longer supportable,Transparent retraction
+DEC-DISPUTED,DISPUTED,Credible evidence materially conflicts,Conflict cannot responsibly be resolved,Publish only if dispute itself is newsworthy and accurately framed
+DEC-CLOSE,CLOSE,Case concluded without publication,No sufficient editorial basis or relevance,Archive with reason
