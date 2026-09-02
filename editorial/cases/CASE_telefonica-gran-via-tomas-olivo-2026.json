@@ -1,0 +1,197 @@
+{
+  "case_id": "CASE-00000002",
+  "created_at": "2026-09-02",
+  "status": "PARTIALLY_VERIFIED",
+  "input_type": "news_lead",
+  "input_reference": "Telefónica cierra la venta de su histórica sede en Gran Vía a Tomás Olivo por 200 millones",
+  "editorial_section": "Economía",
+  "assigned_author": "Marta Robles Ferrer",
+  "discovery_source": {
+    "role": "DISCOVERY",
+    "publication": false,
+    "description": "Titular facilitado como pista de investigación"
+  },
+  "claims": [
+    {
+      "claim_id": "CLM-00000006",
+      "type": "FACT",
+      "importance": "CENTRAL",
+      "claim": "Telefónica ha cerrado la venta del inmueble situado en Gran Vía 28, Madrid.",
+      "assessment": "SUPPORTED_BY_MULTIPLE_CURRENT_REPORTS",
+      "verification_status": "VERIFIED"
+    },
+    {
+      "claim_id": "CLM-00000007",
+      "type": "FACT",
+      "importance": "CENTRAL",
+      "claim": "El comprador es Tomás Olivo, mediante General de Galerías Comerciales.",
+      "assessment": "SUPPORTED_BY_MULTIPLE_CURRENT_REPORTS",
+      "verification_status": "VERIFIED"
+    },
+    {
+      "claim_id": "CLM-00000008",
+      "type": "FACT",
+      "importance": "HIGH",
+      "claim": "La escritura de la compraventa se formalizó el 1 de septiembre de 2026.",
+      "assessment": "SUPPORTED_BY_CURRENT_REPORTS",
+      "verification_status": "VERIFIED"
+    },
+    {
+      "claim_id": "CLM-00000009",
+      "type": "FACT",
+      "importance": "CENTRAL",
+      "claim": "El precio definitivo de la operación fue exactamente de 200 millones de euros.",
+      "assessment": "CONFLICTING_CURRENT_REPORTS",
+      "verification_status": "CONTESTED"
+    },
+    {
+      "claim_id": "CLM-00000010",
+      "type": "CONTEXT",
+      "importance": "MEDIUM",
+      "claim": "El inmueble mantiene una protección patrimonial elevada que limita sus posibles usos.",
+      "assessment": "SUPPORTED_BY_PRIOR_DOCUMENTARY_REPORTING; PRIMARY_URBAN_PLANNING_RECORD_PENDING",
+      "verification_status": "RECHECK_REQUIRED"
+    },
+    {
+      "claim_id": "CLM-00000011",
+      "type": "CONTEXT",
+      "importance": "MEDIUM",
+      "claim": "El edificio fue construido entre 1926 y 1929 y es uno de los inmuebles históricos más relevantes de la Gran Vía.",
+      "assessment": "SUPPORTED_BY_CURRENT_AND_HISTORICAL_SOURCES",
+      "verification_status": "VERIFIED"
+    }
+  ],
+  "sources": [
+    {
+      "role": "PUBLICATION",
+      "source_name": "Europa Press",
+      "url": "https://www.europapress.es/economia/noticia-telefonica-vende-sede-historica-gran-via-tomas-olivo-cerca-200-millones-20260902180105.html",
+      "source_type": "SECONDARY_REPORTING",
+      "provenance_note": "Reports closure and says sources close to the operation place the amount below 200 million."
+    },
+    {
+      "role": "PUBLICATION",
+      "source_name": "Cinco Días",
+      "url": "https://cincodias.elpais.com/companias/2026-09-02/telefonica-cierra-la-venta-de-su-historica-sede-en-gran-via-a-tomas-olivo-por-mas-de-200-millones.html",
+      "source_type": "SECONDARY_REPORTING",
+      "provenance_note": "Reports the deed on 1 September and a price of 200 million euros, citing sources familiar with the transaction."
+    },
+    {
+      "role": "PUBLICATION",
+      "source_name": "Zonamovilidad",
+      "url": "https://www.zonamovilidad.es/telefonica-cierra-venta-historica-sede-gran-via-28-tomas-olivo-200-millones",
+      "source_type": "SECONDARY_REPORTING",
+      "provenance_note": "Independently reports closure, buyer and 200 million euros."
+    },
+    {
+      "role": "CONTEXT",
+      "source_name": "Telefónica",
+      "url": "https://www.telefonica.com/es/sala-comunicacion/prensa/telefonica-flagship-store-acoge-las-principales-copas-ganadas-por-la-seleccion/",
+      "source_type": "PRIMARY_CORPORATE_CONTEXT",
+      "provenance_note": "Confirms Gran Vía 28 as Telefónica's flagship location; not evidence of the 2026 sale."
+    },
+    {
+      "role": "CONTEXT",
+      "source_name": "CNMV",
+      "url": "https://www.cnmv.es/webservices/verdocumento/ver?t=%7Ba1a51bad-9f9f-40e4-a261-168985167670%7D",
+      "source_type": "PRIMARY_REGULATORY_CONTEXT",
+      "provenance_note": "Confirms Telefónica's corporate reporting relationship with Gran Vía 28 but does not confirm this sale."
+    }
+  ],
+  "evidence": [
+    {
+      "evidence_id": "EVD-00000001",
+      "claim_id": "CLM-00000006",
+      "source_role": "PUBLICATION",
+      "source_name": "Europa Press",
+      "url_or_reference": "https://www.europapress.es/economia/noticia-telefonica-vende-sede-historica-gran-via-tomas-olivo-cerca-200-millones-20260902180105.html",
+      "document_or_record": "Europa Press, 2 septiembre 2026",
+      "relevant_excerpt_or_data": "Informa del cierre de la venta de Gran Vía 28 y de la escrituración el 1 de septiembre.",
+      "assessment": "SUPPORTS",
+      "lineage_id": "LIN-CASE2-CLOSURE",
+      "independence_group": "IG-CASE2-CURRENT-REPORTING"
+    },
+    {
+      "evidence_id": "EVD-00000002",
+      "claim_id": "CLM-00000006",
+      "source_role": "PUBLICATION",
+      "source_name": "Cinco Días",
+      "url_or_reference": "https://cincodias.elpais.com/companias/2026-09-02/telefonica-cierra-la-venta-de-su-historica-sede-en-gran-via-a-tomas-olivo-por-mas-de-200-millones.html",
+      "document_or_record": "Cinco Días, 2 septiembre 2026",
+      "relevant_excerpt_or_data": "Informa de que Telefónica escrituró la venta el 1 de septiembre a Tomás Olivo.",
+      "assessment": "SUPPORTS",
+      "lineage_id": "LIN-CASE2-CLOSURE",
+      "independence_group": "IG-CASE2-CURRENT-REPORTING"
+    },
+    {
+      "evidence_id": "EVD-00000003",
+      "claim_id": "CLM-00000009",
+      "source_role": "PUBLICATION",
+      "source_name": "Europa Press",
+      "url_or_reference": "https://www.europapress.es/economia/noticia-telefonica-vende-sede-historica-gran-via-tomas-olivo-cerca-200-millones-20260902180105.html",
+      "document_or_record": "Europa Press, 2 septiembre 2026",
+      "relevant_excerpt_or_data": "Sitúa la cifra en una cantidad inferior a 200 millones de euros.",
+      "assessment": "CONTESTS",
+      "lineage_id": "LIN-CASE2-PRICE",
+      "independence_group": "IG-CASE2-PRICE"
+    },
+    {
+      "evidence_id": "EVD-00000004",
+      "claim_id": "CLM-00000009",
+      "source_role": "PUBLICATION",
+      "source_name": "Cinco Días",
+      "url_or_reference": "https://cincodias.elpais.com/companias/2026-09-02/telefonica-cierra-la-venta-de-su-historica-sede-en-gran-via-a-tomas-olivo-por-mas-de-200-millones.html",
+      "document_or_record": "Cinco Días, 2 septiembre 2026",
+      "relevant_excerpt_or_data": "Sitúa el precio en 200 millones de euros y señala que existen fórmulas fija y variable vinculadas al desarrollo del proyecto.",
+      "assessment": "PARTIALLY_SUPPORTS",
+      "lineage_id": "LIN-CASE2-PRICE",
+      "independence_group": "IG-CASE2-PRICE"
+    },
+    {
+      "evidence_id": "EVD-00000005",
+      "claim_id": "CLM-00000007",
+      "source_role": "CORROBORATION",
+      "source_name": "Zonamovilidad",
+      "url_or_reference": "https://www.zonamovilidad.es/telefonica-cierra-venta-historica-sede-gran-via-28-tomas-olivo-200-millones",
+      "document_or_record": "Zonamovilidad, 2 septiembre 2026",
+      "relevant_excerpt_or_data": "Confirma a Tomás Olivo como comprador y la operación a través de Galerías Comerciales.",
+      "assessment": "SUPPORTS",
+      "lineage_id": "LIN-CASE2-CLOSURE",
+      "independence_group": "IG-CASE2-CURRENT-REPORTING"
+    }
+  ],
+  "provenance": {
+    "central_claim_lineage": "LIN-CASE2-CLOSURE",
+    "price_claim_lineage": "LIN-CASE2-PRICE",
+    "secondary_media_counted_as_independent": false,
+    "status": "PARTIAL",
+    "note": "La confirmación del cierre procede de varias informaciones actuales; la cifra económica presenta una discrepancia que impide tratar 200 millones como dato cerrado sin evidencia primaria adicional."
+  },
+  "contradictions": {
+    "material_conflict_found": true,
+    "material_claim_ids": ["CLM-00000009"],
+    "status": "MATERIAL_CONFLICT_REQUIRES_RECHECK",
+    "description": "Cinco Días informa de 200 millones, mientras Europa Press informa de una cifra inferior a 200 millones."
+  },
+  "verification": {
+    "completed": false,
+    "status": "PARTIALLY_VERIFIED",
+    "verified_claims": ["CLM-00000006", "CLM-00000007", "CLM-00000008", "CLM-00000011"],
+    "blocking_claims": ["CLM-00000009", "CLM-00000010"],
+    "human_approval": false
+  },
+  "publishable_scope": {
+    "status": "AVAILABLE_WITH_REDUCED_SCOPE",
+    "claim_ids": ["CLM-00000006", "CLM-00000007", "CLM-00000008", "CLM-00000011"],
+    "excluded_claims": ["CLM-00000009", "CLM-00000010"],
+    "rule": "La pieza puede informar del cierre, comprador y fecha de formalización, pero no debe presentar como hecho el precio exacto ni afirmar usos urbanísticos sin comprobación adicional."
+  },
+  "draft": {
+    "article_path": "content/articles/telefonica-gran-via-tomas-olivo-2026.md",
+    "status": "EDITOR_REVIEW"
+  },
+  "publication_gate": {
+    "certified": false,
+    "reason": "Human editorial approval and final publication gate are pending."
+  }
+}
