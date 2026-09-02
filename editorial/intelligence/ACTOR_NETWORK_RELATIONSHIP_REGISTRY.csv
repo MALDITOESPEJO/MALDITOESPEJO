@@ -1,0 +1,2 @@
+relationship_id,actor_id,related_actor_id,relationship_type,status,evidence_id,source_id,lineage_id,observed_at,effective_from,effective_to,confidence,alternative_explanation,review_status,notes
+REL-00000001,ACT-00000001,,,,,,,,,,,OPEN,
