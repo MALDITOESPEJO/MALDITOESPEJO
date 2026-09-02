@@ -1,0 +1,1 @@
+alert_id,portfolio_id,alert_type,impact_level,metric_or_condition,observed_state,threshold_or_requirement,detected_at,status,assigned_editor,related_source_id,related_lineage_id,decision_id,resolved_at,notes
