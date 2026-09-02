@@ -1,0 +1,80 @@
+{
+  "case_id": "CASE-00000001",
+  "created_at": "2026-09-02",
+  "status": "EDITOR_REVIEW",
+  "input_type": "news_lead",
+  "input_reference": "Sean, hijo de John Lennon y Yoko Ono, padre por primera vez",
+  "editorial_section": "Actualidad",
+  "assigned_author": "Clara Valdés Moreno",
+  "discovery_source": {
+    "role": "DISCOVERY",
+    "publication": false
+  },
+  "claims": [
+    {
+      "claim_id": "CLM-00000001",
+      "type": "FACT",
+      "claim": "Sean Ono Lennon ha sido padre por primera vez.",
+      "assessment": "CONFIRMED_BY_PRIMARY_SOURCE"
+    },
+    {
+      "claim_id": "CLM-00000002",
+      "type": "FACT",
+      "claim": "El hijo se llama Aurelius.",
+      "assessment": "CONFIRMED_BY_PRIMARY_SOURCE"
+    },
+    {
+      "claim_id": "CLM-00000003",
+      "type": "FACT",
+      "claim": "Charlotte Kemp Muhl es la madre del niño.",
+      "assessment": "CONFIRMED_BY_PRIMARY_SOURCES"
+    },
+    {
+      "claim_id": "CLM-00000004",
+      "type": "CONTEXT",
+      "claim": "Aurelius es el primer nieto de John Lennon.",
+      "assessment": "CONFIRMED_BY_GENEALOGICAL_SOURCES"
+    },
+    {
+      "claim_id": "CLM-00000005",
+      "type": "UNKNOWN",
+      "claim": "La fecha exacta del nacimiento no ha sido comunicada inequívocamente por los padres.",
+      "assessment": "NOT_PUBLICLY_CONFIRMED"
+    }
+  ],
+  "sources": [
+    {
+      "role": "PUBLICATION",
+      "description": "Publicación directa de Sean Ono Lennon del 1 de septiembre de 2026"
+    },
+    {
+      "role": "PUBLICATION",
+      "description": "Publicación de Charlotte Kemp Muhl del 1 de septiembre de 2026"
+    },
+    {
+      "role": "CONTEXT",
+      "description": "Fuentes biográficas utilizadas para comprobar la genealogía familiar"
+    }
+  ],
+  "provenance": {
+    "central_claim_lineage": "PRIMARY_ANNOUNCEMENT",
+    "secondary_media_counted_as_independent": false,
+    "status": "ESTABLISHED"
+  },
+  "contradictions": {
+    "material_conflict_found": false,
+    "status": "NO_MATERIAL_CONTRADICTION_IDENTIFIED"
+  },
+  "verification": {
+    "completed": true,
+    "human_approval": false
+  },
+  "draft": {
+    "article_path": "content/articles/sean-ono-lennon-padre-primera-vez-2026.md",
+    "status": "review"
+  },
+  "publication_gate": {
+    "certified": false,
+    "reason": "Human editorial approval has not been granted."
+  }
+}
