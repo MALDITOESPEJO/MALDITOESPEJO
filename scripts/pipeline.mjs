@@ -40,6 +40,7 @@ const postRetrievalStages = [
   ["contrast.mjs", ["--case", caseId]],
   ["resolve-contradictions.mjs", ["--case", caseId]],
   ["evidence-sufficiency.mjs", ["--case", caseId]],
+  ["evidence-coverage.mjs", ["--case", caseId]],
   ["temporal-verify.mjs", ["--case", caseId]],
   ["verify.mjs", ["--case", caseId]],
   ["scope.mjs", ["--case", caseId]],
@@ -53,8 +54,8 @@ for (const [script, args] of postRetrievalStages) {
 }
 console.log("\nMALDITOESPEJO — PIPELINE FINALIZADO");
 console.log(`Caso: ${caseId}`);
-console.log("Secuencia: investigación → claims → plan → recuperación web → importación → resolución → autoridad → recuperación documental → preparación de evidencia → procedencia → contraste → resolución de conflictos → suficiencia → temporalidad → verificación → alcance → redacción → controles → originalidad.");
+console.log("Secuencia: investigación → claims → plan → recuperación web → importación → resolución → autoridad → recuperación documental → preparación de evidencia → procedencia → contraste → resolución de conflictos → suficiencia → cobertura → temporalidad → verificación → alcance → redacción → controles → originalidad.");
 console.log("Importante: preparar candidatos no equivale a aceptarlos. La evidencia solo entra como evidencia aceptada mediante evaluación documental explícita.");
-console.log("La resolución de conflictos localiza el alcance afectado; no elige automáticamente qué fuente tiene razón.");
+console.log("La cobertura comprueba que las afirmaciones relevantes tienen respaldo; los huecos críticos obligan a reducir alcance o continuar la investigación.");
 console.log("La automatización nunca concede aprobación editorial ni publica por sí sola.");
 console.log("Siguiente etapa: evaluación/aceptación documental, revisión humana y Publication Gate.");
