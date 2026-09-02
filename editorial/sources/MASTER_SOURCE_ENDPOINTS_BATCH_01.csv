@@ -1,0 +1,44 @@
+endpoint_id,source_id,channel_id,endpoint_name,endpoint_type,protocol,access_pattern,update_pattern,authority_level,endpoint_verified,feed_id,notes
+EP-EUROSTAT-SDMX21-001,EUROSTAT-001,EUROSTAT-SDMX-001,Eurostat SDMX 2.1,API,HTTPS,queryable,scheduled,A,PENDING,,Legacy/compatible statistical API; verify exact endpoint before production use
+EP-EUROSTAT-SDMX30-001,EUROSTAT-001,EUROSTAT-SDMX-002,Eurostat SDMX 3.0,API,HTTPS,queryable,scheduled,A,PENDING,,Primary modern statistical access layer
+EP-EUROSTAT-CATALOG-001,EUROSTAT-001,EUROSTAT-CATALOG-001,Eurostat Catalogue API,API,HTTPS,queryable,on_change,A,PENDING,,Dataset discovery and metadata
+EP-BIS-DATA-001,BIS-001,BIS-DATA-001,BIS Data feed,DATA_FEED,HTTPS,download/query,scheduled,A,PENDING,,Central-bank statistical data
+EP-BIS-CALENDAR-001,BIS-001,BIS-CALENDAR-001,BIS release calendar,WEB_FEED,HTTPS,poll,scheduled,A,PENDING,,Publication timing metadata
+EP-EIOPA-RFR-001,EIOPA-001,EIOPA-RFR-001,Risk-free interest rate term structures,DATASET,HTTPS,download,monthly,A,PENDING,,Technical regulatory dataset
+EP-EIOPA-SAECC-001,EIOPA-001,EIOPA-SAECC-001,Symmetric adjustment equity capital charge,DATASET,HTTPS,download,monthly,A,PENDING,,Technical prudential dataset
+EP-BLS-RSS-001,BLS-001,BLS-RSS-001,BLS latest releases RSS,RSS,HTTPS,poll,on_release,A,PENDING,,Release discovery
+EP-AEMET-CAP-001,AEMET-001,AEMET-CAP-001,AEMET CAP alerts,CAP,HTTPS,poll,event_driven,A+,PENDING,,Official severe-weather alert channel; endpoint requires technical validation
+EP-FAOSTAT-001,FAO-001,FAOSTAT-001,FAOSTAT data,DATASET,HTTPS,query/download,scheduled,A+,PENDING,,Food and agriculture statistics
+EP-WHO-GHO-001,WHO-001,WHO-GHO-001,Global Health Observatory,DATASET,HTTPS,query/download,scheduled,A+,PENDING,,Global health indicators
+EP-WHO-DON-001,WHO-001,WHO-DON-001,Disease Outbreak News,WEB_FEED,HTTPS,poll,on_release,A+,PENDING,,Official outbreak reporting
+EP-UNICEF-DATA-001,UNICEF-001,UNICEF-DATA-001,UNICEF Data,DATASET,HTTPS,query/download,scheduled,A+,PENDING,,Children and social indicators
+EP-UNICEF-EMERG-001,UNICEF-001,UNICEF-EMERG-001,UNICEF Emergencies,WEB_FEED,HTTPS,poll,event_driven,A+,PENDING,,Humanitarian emergency reporting
+EP-UNHCR-ODP-001,UNHCR-001,UNHCR-ODP-001,Operational Data Portal,PORTAL,HTTPS,query,on_change,A+,PENDING,,Operational displacement data
+EP-UNHCR-RDF-001,UNHCR-001,UNHCR-RDF-001,Refugee Data Finder,DATASET,HTTPS,query/download,scheduled,A+,PENDING,,Displacement statistics
+EP-UNFPA-DATA-001,UNFPA-001,UNFPA-DATA-001,UNFPA Data,DATASET,HTTPS,query/download,scheduled,A,PENDING,,Population and reproductive-health data
+EP-UNESCO-UIS-001,UNESCO-UIS-001,UNESCO-UIS-001,UNESCO Institute for Statistics,DATASET,HTTPS,query/download,scheduled,A+,PENDING,,Education and science statistics
+EP-UNEP-DATA-001,UNEP-001,UNEP-DATA-001,UNEP environment data,DATASET,HTTPS,query/download,scheduled,A+,PENDING,,Environmental indicators
+EP-CISA-KEV-001,CISA-KEV-001,CISA-KEV-001,Known Exploited Vulnerabilities Catalog,DATASET,HTTPS,download,on_change,A+,PENDING,,Critical cyber exploitation feed
+EP-NVD-REST-001,NVD-001,NVD-REST-001,NVD REST API,API,HTTPS,query,on_update,A+,PENDING,,Vulnerability enrichment and scoring
+EP-COPERNICUS-CATALOG-001,COPERNICUS-001,SAT-COPERNICUS-003,Copernicus Catalog API,API,HTTPS,query,on_update,A+,PENDING,,Satellite catalogue discovery
+EP-SENTINEL-1-001,COPERNICUS-001,SAT-COPERNICUS-006,Sentinel-1 SAR,DATASET,HTTPS,query/download,on_acquisition,A+,PENDING,,Radar imagery for damage and change detection
+EP-SENTINEL-2-001,COPERNICUS-001,SAT-COPERNICUS-007,Sentinel-2 optical,DATASET,HTTPS,query/download,on_acquisition,A+,PENDING,,Optical imagery for geolocation and damage assessment
+EP-OSM-OVERPASS-001,OSM-001,GEO-OSM-003,Overpass API,API,HTTPS,query,on_change,A,PENDING,,Open geospatial data query
+EP-OPENSKY-REST-001,OPENSKY-001,AVIATION-OPENSKY-002,OpenSky REST API,API,HTTPS,query,near_real_time,A+,PENDING,,Aircraft tracking observations
+EP-OPENSKY-HIST-001,OPENSKY-001,AVIATION-OPENSKY-003,OpenSky Historical Data,DATASET,HTTPS,download,historical,A,PENDING,,Historical aircraft observations
+EP-ADSB-API-001,ADSB-EXCHANGE-001,AVIATION-ADSB-002,ADS-B Exchange API,API,HTTPS,query,near_real_time,A+,PENDING,,Independent aircraft tracking
+EP-MT-API-001,MARITRAFFIC-001,MARITIME-MT-002,MarineTraffic API,API,HTTPS,query,near_real_time,A,PENDING,,AIS-derived maritime observations
+EP-IMO-001,IMO-001,MARITIME-IMO-001,IMO official information,WEB,HTTPS,browse,on_release,A+,PENDING,,Primary maritime institutional evidence
+EP-EMSA-001,EMSA-001,MARITIME-EMSA-001,EMSA maritime information,WEB,HTTPS,browse,on_release,A+,PENDING,,European maritime operational information
+EP-ACLED-API-001,ACLED-001,CONFLICT-ACLED-004,ACLED API,API,HTTPS,query,scheduled,A+,PENDING,,Conflict event data
+EP-UCDP-API-001,UCDP-001,CONFLICT-UCDP-008,UCDP API,API,HTTPS,query,scheduled,A,PENDING,,Conflict research data
+EP-OCHA-DATA-001,OCHA-001,HUMANITARIAN-OCHA-005,OCHA Humanitarian Data,DATASET,HTTPS,query/download,on_update,A+,PENDING,,Humanitarian datasets
+EP-UNOSAT-001,UNOSAT-001,DAMAGE-UNOSAT-001,UNOSAT satellite damage products,DATASET,HTTPS,download,on_publication,A+,PENDING,,Satellite-derived damage assessments
+EP-FEC-DATA-001,FEC-001,FEC-DATA-001,FEC Campaign Finance Data,API,HTTPS,query,scheduled,A+,PENDING,,Official US campaign finance data
+EP-IDEA-DATA-001,IDEA-001,IDEA-DATA-001,International IDEA electoral data,DATASET,HTTPS,query/download,scheduled,A+,PENDING,,Comparative democracy/election data
+EP-OSCE-ELECTION-001,OSCE-ODIHR-001,OSCE-ELECTION-001,OSCE ODIHR election observation,WEB,HTTPS,browse,on_release,A+,PENDING,,Election observation evidence
+EP-INVID-KEYFRAMES-001,INVID-001,VERIFY-INVID-003,InVID keyframes,TOOL,HTTPS,interactive,on_demand,A+,PENDING,,Video verification workflow
+EP-INVID-METADATA-001,INVID-001,VERIFY-INVID-004,InVID metadata,TOOL,HTTPS,interactive,on_demand,A,PENDING,,Metadata inspection; metadata absence is not proof of manipulation
+EP-INVID-REVERSE-001,INVID-001,VERIFY-INVID-005,InVID reverse image search,TOOL,HTTPS,interactive,on_demand,A+,PENDING,,Discovery/corroboration tool
+EP-UNSC-RES-001,UN-SC-001,UN-SC-002,Security Council Resolutions,WEB,HTTPS,browse,on_release,A+,PENDING,,Primary international legal/political record
+EP-UNSC-SANCTIONS-001,UN-SC-001,UN-SC-003,UN Sanctions Lists,DATASET,HTTPS,download,on_change,A+,PENDING,,Sanctions reference data
