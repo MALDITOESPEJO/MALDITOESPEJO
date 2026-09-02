@@ -1,0 +1,101 @@
+{
+  "case_id": "CASE-00000002",
+  "created_at": "2026-09-02",
+  "status": "INVESTIGATING",
+  "input_type": "news_lead",
+  "input_reference": "Herida una persona tras ser apuñalada frente a la estación de Renfe de Arenys de Mar",
+  "editorial_section": "Actualidad",
+  "assigned_author": "Clara Valdés Moreno",
+  "discovery_source": {
+    "role": "DISCOVERY",
+    "publication": false,
+    "note": "La pista inicial no se utilizará como fuente pública por sí misma."
+  },
+  "claims": [
+    {
+      "claim_id": "CLM-00000006",
+      "type": "FACT",
+      "importance": "CENTRAL",
+      "claim": "Una persona resultó herida por arma blanca en las inmediaciones de la estación de Renfe de Arenys de Mar el 1 de septiembre de 2026.",
+      "verification_status": "UNASSESSED",
+      "evidence_required": ["official_police_or_emergency_record", "primary_documentary_source"]
+    },
+    {
+      "claim_id": "CLM-00000007",
+      "type": "FACT",
+      "importance": "HIGH",
+      "claim": "La persona herida fue trasladada a un centro sanitario.",
+      "verification_status": "UNASSESSED",
+      "evidence_required": ["official_emergency_or_hospital_source"]
+    },
+    {
+      "claim_id": "CLM-00000008",
+      "type": "FACT",
+      "importance": "HIGH",
+      "claim": "Los Mossos d'Esquadra investigan los hechos.",
+      "verification_status": "UNASSESSED",
+      "evidence_required": ["official_police_source"]
+    },
+    {
+      "claim_id": "CLM-00000009",
+      "type": "PENDING",
+      "importance": "MEDIUM",
+      "claim": "La identidad del presunto agresor, las circunstancias exactas de la agresión y si se ha producido alguna detención deben ser confirmadas por fuentes oficiales.",
+      "verification_status": "UNASSESSED",
+      "evidence_required": ["official_investigation_update"]
+    }
+  ],
+  "sources": [
+    {
+      "source_id": "DISCOVERY-LAVANGUARDIA-20260901",
+      "role": "DISCOVERY",
+      "description": "Información periodística inicial utilizada para detectar el caso; no es fuente de publicación."
+    },
+    {
+      "source_id": "DISCOVERY-ELCASO-20260902",
+      "role": "DISCOVERY",
+      "description": "Información periodística secundaria utilizada para localizar y contrastar hechos; no es fuente de publicación."
+    }
+  ],
+  "research_plan": {
+    "priority": "PRIMARY_FIRST",
+    "targets": [
+      "Mossos d'Esquadra / Departament d'Interior",
+      "Policia Local d'Arenys de Mar",
+      "Sistema d'Emergències Mèdiques (SEM)",
+      "Hospital Germans Trias i Pujol / Can Ruti si existe confirmación pública utilizable",
+      "otras fuentes oficiales que documenten la investigación"
+    ],
+    "questions": [
+      "¿Está oficialmente confirmado el apuñalamiento y cuándo ocurrió?",
+      "¿Qué organismo confirma la intervención policial?",
+      "¿Qué información oficial existe sobre el estado de la persona herida?",
+      "¿Se ha producido alguna detención?",
+      "¿Existe información oficial sobre el presunto agresor o sobre la relación entre las personas implicadas?",
+      "¿Hay contradicciones entre las fuentes y qué datos siguen sin confirmarse?"
+    ]
+  },
+  "evidence": [],
+  "provenance": {
+    "status": "UNKNOWN",
+    "central_claim_lineage": null,
+    "secondary_media_counted_as_independent": false
+  },
+  "contrast": null,
+  "contradictions": {
+    "material_conflict_found": false,
+    "status": "UNASSESSED"
+  },
+  "verification": {
+    "completed": false,
+    "status": "UNASSESSED",
+    "human_approval": false
+  },
+  "draft": {
+    "status": "NOT_STARTED"
+  },
+  "publication": {
+    "allowed": false,
+    "reason": "Investigación todavía no verificada."
+  }
+}
