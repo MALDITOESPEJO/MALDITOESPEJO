@@ -21,6 +21,7 @@
     "web:import": "node scripts/import-web-results.mjs",
     "source:resolve": "node scripts/resolve-source.mjs",
     "source:authority": "node scripts/source-authority.mjs",
+    "evidence:prepare": "node scripts/prepare-evidence-candidates.mjs",
     "evidence:retrieve": "node scripts/retrieve-evidence.mjs",
     "evidence:import": "node scripts/import-evidence.mjs",
     "evidence:accept": "node scripts/accept-evidence.mjs",
