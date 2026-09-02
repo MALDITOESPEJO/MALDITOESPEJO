@@ -1,0 +1,2 @@
+lineage_id,source_id,topic,jurisdiction,section,case_count,material_claim_count,evidence_count,independent_lineage_count,dependency_level,primary_status,revision_risk,access_risk,concentration_status,last_reviewed_at,notes
+LIN-########,SRC-########,,,,0,0,0,0,LOW,UNKNOWN,UNKNOWN,UNKNOWN,NORMAL,,,Template row; replace placeholders with canonical IDs.
