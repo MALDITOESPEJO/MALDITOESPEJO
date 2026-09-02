@@ -1,0 +1,51 @@
+relation_id,from_source_id,to_source_id,relation_type,independence_effect,evidence_effect,notes
+REL-001,RELIEFWEB,OCHA,SERVICE_OF,NOT_INDEPENDENT,PROVENANCE_LINK,ReliefWeb is an OCHA humanitarian information service/repository; trace reports to original publishers
+REL-002,CROSSREF,ACADEMIC-PUBLISHERS,METADATA_INDEX,NOT_INDEPENDENT,DISCOVERY_ONLY,Crossref indexes scholarly metadata; underlying work remains evidentiary source
+REL-003,OPENALEX,ACADEMIC-PUBLISHERS,METADATA_INDEX,NOT_INDEPENDENT,DISCOVERY_ONLY,OpenAlex is a scholarly discovery/data layer
+REL-004,NVD,CVE,ENRICHES,NOT_INDEPENDENT,ENRICHMENT,NVD enriches vulnerability records; CVE identifier remains part of vulnerability provenance
+REL-005,CISA-KEV,CVE,REFERENCES,INDEPENDENT_FOR_EXPLOIT_STATUS,STRONG_CORROBORATION,CISA KEV establishes known exploitation status when an entry is listed
+REL-006,CISA-KEV,NVD,REFERENCES,INDEPENDENT_FOR_EXPLOIT_STATUS,STRONG_CORROBORATION,Do not treat identical vulnerability identifiers as independent incident evidence
+REL-007,EUROSTAT,EUROPEAN-COMMISSION,INSTITUTIONAL_SERVICE,NOT_INDEPENDENT,PRIMARY_STATISTICAL_PROVENANCE,Eurostat operates within the European Commission statistical system
+REL-008,EUROSTAT,EUROPEAN-PARLIAMENT,INSTITUTIONAL_REFERENCE,NOT_INDEPENDENT,CONTEXT,Parliament may cite Eurostat data; citation is not independent corroboration
+REL-009,UNHCR,UN,AGENCY_OF,NOT_INDEPENDENT,PRIMARY_INSTITUTIONAL_PROVENANCE,UNHCR is a UN agency
+REL-010,UNICEF,UN,AGENCY_OF,NOT_INDEPENDENT,PRIMARY_INSTITUTIONAL_PROVENANCE,UNICEF is a UN agency
+REL-011,UNFPA,UN,AGENCY_OF,NOT_INDEPENDENT,PRIMARY_INSTITUTIONAL_PROVENANCE,UNFPA is a UN agency
+REL-012,UNEP,UN,PROGRAMME_OF,NOT_INDEPENDENT,PRIMARY_INSTITUTIONAL_PROVENANCE,UNEP is a UN programme
+REL-013,WHO,UN,SPECIALIZED_AGENCY,NOT_INDEPENDENT,PRIMARY_INSTITUTIONAL_PROVENANCE,WHO is a specialized UN agency
+REL-014,OCHA,UN,OFFICE_OF,NOT_INDEPENDENT,PRIMARY_INSTITUTIONAL_PROVENANCE,OCHA is a UN humanitarian affairs office
+REL-015,UN-SECURITY-COUNCIL,UN,ORGAN_OF,NOT_INDEPENDENT,PRIMARY_INSTITUTIONAL_PROVENANCE,Security Council is a principal UN organ
+REL-016,ACLED,NEWS_AGENCIES,USES_AS_SOURCES,NOT_DETERMINATIVE,SECONDARY_CORROBORATION,ACLED codes conflict events using multiple source types; source lineage must be inspected
+REL-017,UCDP,NEWS_AGENCIES,USES_AS_SOURCES,NOT_DETERMINATIVE,SECONDARY_CORROBORATION,UCDP datasets synthesize event information and require methodological interpretation
+REL-018,IISS,NEWS_AGENCIES,ANALYTICAL_REFERENCE,INDEPENDENT_ANALYSIS,ANALYSIS,IISS is a specialist analytical source, not an incident primary record
+REL-019,SIPRI,NEWS_AGENCIES,DATA_REFERENCE,INDEPENDENT_ANALYSIS,DATA_CORROBORATION,SIPRI provides research/data; underlying official transaction evidence may still be required
+REL-020,BELLINGCAT,OSM,USES_FOR_GEOLOCATION,INDEPENDENT_TOOLCHAIN,GEOGRAPHIC_CORROBORATION,Bellingcat investigations may use OSM as one geospatial layer
+REL-021,BELLINGCAT,COPERNICUS,USES_FOR_SATELLITE_VERIFICATION,INDEPENDENT_TOOLCHAIN,SATELLITE_CORROBORATION,Bellingcat may use satellite imagery as corroborative evidence
+REL-022,BELLINGCAT,GOOGLE,USES_FOR_GEOLOCATION,INDEPENDENT_TOOLCHAIN,GEOLOCATION_CORROBORATION,Street/Earth imagery can support location comparison
+REL-023,UNOSAT,COPERNICUS,USES_SATELLITE_DATA,NOT_INDEPENDENT_FOR_SAME_PRODUCT,SATELLITE_ANALYSIS,UNOSAT analyses satellite imagery; distinguish its assessment from raw imagery
+REL-024,OCHA,UNOSAT,USES_ANALYSIS,INDEPENDENT_INSTITUTIONAL_REPORTING,CONTEXT,OCHA may incorporate geospatial damage information into humanitarian reporting
+REL-025,OSCE,INTERNATIONAL-IDEA,COMPARATIVE_REFERENCE,INDEPENDENT_CONTEXT,CONTEXT,OSCE election observation and IDEA comparative datasets serve different evidentiary functions
+REL-026,OSCE,ACE,COMPARATIVE_REFERENCE,INDEPENDENT_CONTEXT,CONTEXT,Observation and electoral administration knowledge are complementary, not duplicate result sources
+REL-027,OSCE,IFES,COMPARATIVE_REFERENCE,INDEPENDENT_CONTEXT,CONTEXT,Specialist election sources with distinct methodologies
+REL-028,SPAIN-INTERIOR,EP-ELECTIONS,OFFICIAL_RESULT_REFERENCE,NOT_ALWAYS_INDEPENDENT,RESULT_CORROBORATION,European Parliament results portal aggregates/reflects national results; preserve national authority provenance
+REL-029,REUTERS,AP,NEWS_AGENCY_PEER,INDEPENDENT_UNLESS_SHARED_LINEAGE,SECONDARY_CORROBORATION,Two agencies are independent only if they did not reproduce the same underlying dispatch/source
+REL-030,REUTERS,AFP,NEWS_AGENCY_PEER,INDEPENDENT_UNLESS_SHARED_LINEAGE,SECONDARY_CORROBORATION,Check evidence lineage before counting as independent
+REL-031,AFP,EFE,NEWS_AGENCY_PEER,INDEPENDENT_UNLESS_SHARED_LINEAGE,SECONDARY_CORROBORATION,Check evidence lineage before counting as independent
+REL-032,REUTERS,EFE,NEWS_AGENCY_PEER,INDEPENDENT_UNLESS_SHARED_LINEAGE,SECONDARY_CORROBORATION,Check evidence lineage before counting as independent
+REL-033,MALDITA,NEWTRAL,FACT_CHECKER_PEER,INDEPENDENT_UNLESS_SHARED_EVIDENCE,VERIFICATION_CORROBORATION,Independent fact checks can corroborate methodology/results but must retain cited evidence
+REL-034,EFE,REUTERS,NEWS_AGENCY_PEER,INDEPENDENT_UNLESS_SHARED_LINEAGE,SECONDARY_CORROBORATION,Agency reports may share official statements or wire material
+REL-035,RELIEFWEB,UNHCR,REPOSITORY_PUBLISHER_LINK,NOT_INDEPENDENT,PROVENANCE_LINK,UNHCR reports can appear through ReliefWeb; underlying UNHCR document remains source lineage
+REL-036,RELIEFWEB,OCHA,REPOSITORY_PUBLISHER_LINK,NOT_INDEPENDENT,PROVENANCE_LINK,OCHA-originated material may be distributed through ReliefWeb
+REL-037,COPERNICUS,SENTINEL-1,PROGRAMME_PRODUCT,NOT_INDEPENDENT,PRIMARY_DATA_PROVENANCE,Sentinel-1 is a Copernicus satellite mission/product family
+REL-038,COPERNICUS,SENTINEL-2,PROGRAMME_PRODUCT,NOT_INDEPENDENT,PRIMARY_DATA_PROVENANCE,Sentinel-2 is a Copernicus satellite mission/product family
+REL-039,COPERNICUS,SENTINEL-3,PROGRAMME_PRODUCT,NOT_INDEPENDENT,PRIMARY_DATA_PROVENANCE,Sentinel-3 is a Copernicus satellite mission/product family
+REL-040,COPERNICUS,SENTINEL-5P,PROGRAMME_PRODUCT,NOT_INDEPENDENT,PRIMARY_DATA_PROVENANCE,Sentinel-5P is a Copernicus satellite mission/product family
+REL-041,OPENSTREETMAP,OVERPASS-API,TECHNICAL_ACCESS,NOT_INDEPENDENT,ACCESS_LAYER,Overpass queries OSM data and is not an independent geographic source
+REL-042,OPENSKY,ADSBEXCHANGE,AVIATION_PEER,INDEPENDENT_RECEIVER_NETWORKS,TRACK_CORROBORATION,Distinct tracking networks can corroborate aircraft observations subject to coverage
+REL-043,MARINETRAFFIC,EMSA,MARITIME_PEER,INDEPENDENT_UNLESS_SHARED_AIS,TRACK_CORROBORATION,Marine tracking and official maritime surveillance may provide complementary evidence
+REL-044,COPERNICUS-MARINE,EMSA,MARITIME_DATA_REFERENCE,INDEPENDENT_CONTEXT,ENVIRONMENTAL_CORROBORATION,Copernicus Marine provides oceanographic/model data; EMSA provides maritime safety/surveillance information
+REL-045,NATO,OSCE,INSTITUTIONAL_PEER,INDEPENDENT_INSTITUTIONAL_SOURCES,CONTEXT,Distinct mandates; statements should not be treated as identical evidence
+REL-046,UN-SECURITY-COUNCIL,NATO,INSTITUTIONAL_PEER,INDEPENDENT_INSTITUTIONAL_SOURCES,GEOPOLITICAL_CORROBORATION,Different institutional mandates and evidentiary roles
+REL-047,ECHR,EUROPEAN-PARLIAMENT,INSTITUTIONAL_REFERENCE,INDEPENDENT_INSTITUTIONAL_SOURCES,LEGAL_CONTEXT,Parliamentary material does not replace judicial record
+REL-048,CURIA,EUR-LEX,LEGAL_RECORD_REFERENCE,NOT_INDEPENDENT_FOR_JUDGMENT,PRIMARY_LEGAL_CONTEXT,CURIA is judicial record; EUR-Lex may publish/access EU legal materials
+REL-049,BOE,CONGRESO,OFFICIAL_LEGAL_PROCESS_LINK,INDEPENDENT_STAGES_OF_PROCESS,LEGAL_PROVENANCE,Parliamentary legislative process and final official publication are different stages
+REL-050,CONGRESO,SENADO,PARLIAMENTARY_PROCESS_LINK,INDEPENDENT_STAGES_OF_PROCESS,PROCESS_CORROBORATION,Separate chambers in legislative process; same bill is not independent event evidence
