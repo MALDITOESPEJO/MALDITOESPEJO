@@ -1,0 +1,2 @@
+alert_id,flow_id,case_id,alert_type,impact_level,object_id,observed_value,threshold,detected_at,reason_code,status,assigned_editor,decision_id,resolved_at,notes
+FIA-00000001,FLW-00000001,,FLOW_PUBLICATION_TRACE_BREAK,INFO,,,,,FLOW_REVIEW_PENDING,OPEN,,,,Initial flow assessment required before operational use.
