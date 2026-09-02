@@ -9,6 +9,7 @@
     "lint": "eslint",
     "investigate": "node scripts/investigate.mjs",
     "claims": "node scripts/claims.mjs",
+    "research:plan": "node scripts/research-plan.mjs",
     "validate:articles": "node scripts/validate-articles.mjs",
     "validate:verification": "node scripts/validate-verification-records.mjs",
     "validate:claims": "node scripts/validate-claim-evidence.mjs",
