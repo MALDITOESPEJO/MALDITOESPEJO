@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "MALDITOESPEJO Public Change Notice",
+  "type": "object",
+  "required": ["notice_id", "article_id", "change_type", "status", "message"],
+  "properties": {
+    "notice_id": {"type": "string", "pattern": "^NOTICE-[0-9]{8}$"},
+    "article_id": {"type": "string", "minLength": 1},
+    "correction_id": {"type": ["string", "null"]},
+    "change_type": {"enum": ["UPDATE", "CORRECTION", "WITHDRAW"]},
+    "status": {"enum": ["DRAFT", "APPROVED", "PUBLISHED", "SUPERSEDED", "WITHDRAWN"]},
+    "published_at": {"type": ["string", "null"]},
+    "message": {"type": "string", "minLength": 1},
+    "reason": {"type": ["string", "null"]},
+    "previous_version": {"type": ["string", "null"]},
+    "new_version": {"type": ["string", "null"]},
+    "approved_by": {"type": ["string", "null"]},
+    "approved_at": {"type": ["string", "null"]}
+  }
+}
