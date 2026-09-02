@@ -11,6 +11,7 @@
     "investigate": "node scripts/investigate.mjs",
     "claims": "node scripts/claims.mjs",
     "dependencies": "node scripts/dependencies.mjs",
+    "uncertainty:propagate": "node scripts/propagate-uncertainty.mjs",
     "calculate": "node scripts/calculate.mjs",
     "scope": "node scripts/scope.mjs",
     "scope:guard": "node scripts/article-scope-guard.mjs",
