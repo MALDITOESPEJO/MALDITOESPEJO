@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "MALDITOESPEJO Publication Gate Record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "article",
+    "verification_completed",
+    "publication_sources_support",
+    "material_contradictions_resolved",
+    "human_editorial_approval"
+  ],
+  "properties": {
+    "article": { "type": "string", "minLength": 1 },
+    "verification_completed": { "const": true },
+    "publication_sources_support": { "const": true },
+    "material_contradictions_resolved": { "const": true },
+    "human_editorial_approval": { "const": true },
+    "approved_at": { "type": "string", "minLength": 1 },
+    "approved_by": { "type": "string", "minLength": 1 },
+    "notes": { "type": "string" }
+  }
+}
