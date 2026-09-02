@@ -1,0 +1,2 @@
+alert_id,lineage_id,source_id,alert_type,impact_level,object_type,object_id,observed_value,threshold,detected_at,reason_code,status,assigned_editor,decision_id,resolved_at,notes
+SLA-00000001,LIN-00000001,,NETWORK_REVIEW_PENDING,INFO,,,,,,NETWORK_REVIEW_PENDING,OPEN,,,,Initial network assessment required before operational use.
