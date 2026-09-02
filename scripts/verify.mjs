@@ -37,24 +37,37 @@ const contrastClaims = new Map((record.contrast?.claims ?? []).map((item) => [it
 const centralClaims = claims.filter((claim) => claim.importance === "CENTRAL" || !claim.importance);
 const assessments = [];
 
+function hasTemporalData(item) {
+  return Boolean(item.published_at || item.observed_at || item.effective_at);
+}
+
+function temporalRequirementMissing(claim, linked) {
+  if (!linked.length) return false;
+  const temporalSensitive = claim.temporal_requirement === true || /actual|actualmente|hoy|ahora|vigente|current|today|now/i.test(claim.claim ?? "");
+  return temporalSensitive && linked.some((item) => !hasTemporalData(item));
+}
+
 for (const claim of claims) {
   const linked = evidence.filter((item) => item.claim_id === claim.claim_id);
   const supporting = linked.filter((item) => item.assessment === "SUPPORTS");
-  const incompleteEvidence = linked.filter((item) => !item.source_id || !item.document_or_record);
+  const incompleteEvidence = linked.filter((item) => !item.source_id || !item.document_or_record || !item.evidence_id);
   const provenanceUnknown = linked.some((item) => item.provenance_status === "UNKNOWN" || !item.provenance_status);
+  const temporalMissing = temporalRequirementMissing(claim, linked);
   const contrast = contrastClaims.get(claim.claim_id);
   const materialConflict = Boolean(record.contradictions?.items?.some((item) => item.claim_id === claim.claim_id && item.material));
 
   let status = "INSUFFICIENT";
   let reason = "No existe evidencia suficiente vinculada a la afirmación.";
 
-  // Contradictions and incomplete documentary records always take precedence.
   if (materialConflict || contrast?.result === "CONTESTED") {
     status = "CONTESTED";
     reason = "Existe una contradicción material no resuelta.";
   } else if (incompleteEvidence.length) {
     status = "RECHECK_REQUIRED";
     reason = "La evidencia vinculada no conserva todos los datos documentales necesarios.";
+  } else if (temporalMissing) {
+    status = "RECHECK_REQUIRED";
+    reason = "La afirmación requiere control temporal y la evidencia no conserva información temporal suficiente.";
   } else if (centralClaims.includes(claim) && provenanceUnknown && linked.length > 0) {
     status = "RECHECK_REQUIRED";
     reason = "La procedencia de la evidencia central es desconocida o incompleta.";
@@ -72,7 +85,6 @@ for (const claim of claims) {
     reason = "Existe evidencia de apoyo, trazabilidad documental y no consta un conflicto material pendiente.";
   }
 
-  // Claims explicitly marked UNKNOWN/PENDING are never promoted to verified facts.
   if (["UNKNOWN", "PENDING"].includes(claim.type)) {
     status = status === "CONTESTED" ? status : "INSUFFICIENT";
     reason = "La afirmación está marcada como UNKNOWN/PENDING y no puede convertirse automáticamente en un hecho verificado.";
@@ -84,7 +96,7 @@ for (const claim of claims) {
     importance: claim.importance ?? "CENTRAL",
     status,
     reason,
-    evidence_ids: linked.map((item) => item.evidence_id),
+    evidence_ids: linked.map((item) => item.evidence_id).filter(Boolean),
   });
 }
 
