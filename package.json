@@ -11,6 +11,7 @@
     "validate:verification": "node scripts/validate-verification-records.mjs",
     "validate:claims": "node scripts/validate-claim-evidence.mjs",
     "validate:independence": "node scripts/validate-source-independence.mjs",
+    "validate:lineage": "node scripts/validate-provenance-lineage.mjs",
     "check:publication": "node scripts/check-publication-gate.mjs"
   },
   "dependencies": {
