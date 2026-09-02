@@ -12,6 +12,7 @@
     "claims": "node scripts/claims.mjs",
     "research:plan": "node scripts/research-plan.mjs",
     "web:research": "node scripts/web-research.mjs",
+    "web:search": "node scripts/search-web.mjs",
     "web:import": "node scripts/import-web-results.mjs",
     "evidence:import": "node scripts/import-evidence.mjs",
     "provenance": "node scripts/check-provenance.mjs",
