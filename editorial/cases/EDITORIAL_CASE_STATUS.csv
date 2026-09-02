@@ -1,0 +1,15 @@
+status,stage,definition,allowed_next_states
+OPEN,INTAKE,Case created from signal or editorial lead,TRIAGE
+TRIAGE,INTAKE,Initial relevance and risk assessment,INVESTIGATING|CLOSED
+INVESTIGATING,RESEARCH,Evidence and source investigation active,VERIFYING|HOLD|CLOSED
+VERIFYING,VERIFICATION,Evidence assessment and contradiction review active,DECIDING|INVESTIGATING|HOLD
+DECIDING,EDITORIAL,Human editorial decision pending,PUBLISHED|HOLD|DISPUTED|CLOSED
+PUBLISHED,POST_PUBLICATION,Case resulted in publication,REOPENED|CLOSED
+HOLD,PAUSED,Publication paused pending evidence,INVESTIGATING|CLOSED
+DISPUTED,EDITORIAL,Credible material conflict remains,REOPENED|PUBLISHED|CLOSED
+REOPENED,POST_PUBLICATION,Published case reopened by new material evidence,REVIEWING
+REVIEWING,POST_PUBLICATION,Post-publication review active,UPDATED|CORRECTED|RETRACTED|CLOSED
+UPDATED,POST_PUBLICATION,Publication materially updated,REOPENED|CLOSED
+CORRECTED,POST_PUBLICATION,Material factual error corrected,REOPENED|CLOSED
+RETRACTED,POST_PUBLICATION,Publication retracted,REOPENED|CLOSED
+CLOSED,ARCHIVE,Case concluded and archived,REOPENED
