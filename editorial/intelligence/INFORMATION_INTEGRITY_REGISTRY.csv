@@ -1,0 +1,2 @@
+integrity_id,case_id,object_type,object_id,integrity_dimension,assessment_method,integrity_status,confidence,original_object_id,provenance_status,temporal_status,geographic_status,context_status,review_required,assessed_at,reviewer,notes
+INT-00000001,,,,CONTENT,INITIAL_REVIEW,UNVERIFIED,UNKNOWN,,,,,,YES,,,
