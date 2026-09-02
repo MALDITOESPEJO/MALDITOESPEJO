@@ -6,6 +6,7 @@
   "required": [
     "article",
     "verification_completed",
+    "publication_claims",
     "publication_sources_support",
     "material_contradictions_resolved",
     "human_editorial_approval"
@@ -13,6 +14,12 @@
   "properties": {
     "article": { "type": "string", "minLength": 1 },
     "verification_completed": { "const": true },
+    "publication_claims": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "string", "minLength": 1 },
+      "uniqueItems": true
+    },
     "publication_sources_support": { "const": true },
     "material_contradictions_resolved": { "const": true },
     "human_editorial_approval": { "const": true },
