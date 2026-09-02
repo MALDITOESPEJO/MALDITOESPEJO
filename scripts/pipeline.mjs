@@ -1,0 +1,82 @@
+#!/usr/bin/env node
+
+import fs from "node:fs";
+import path from "node:path";
+import { spawnSync } from "node:child_process";
+
+const ROOT = process.cwd();
+
+function getArg(name) {
+  const index = process.argv.indexOf(name);
+  return index >= 0 ? process.argv[index + 1] : null;
+}
+
+function usage() {
+  console.log(`MALDITOESPEJO — AUTOMATED NEWS PIPELINE\n\nUso:\n  npm run pipeline -- --title "Título de la noticia"\n  npm run pipeline -- --input ruta/al/archivo.txt\n  npm run pipeline -- --json ruta/al/entrada.json\n\nEl pipeline orquesta las etapas disponibles y se detiene antes de la publicación.`);
+}
+
+if (process.argv.includes("--help") || process.argv.includes("-h")) {
+  usage();
+  process.exit(0);
+}
+
+const title = getArg("--title");
+const inputPath = getArg("--input");
+const jsonPath = getArg("--json");
+
+if (!title && !inputPath && !jsonPath) {
+  usage();
+  process.exit(1);
+}
+
+function run(script, args) {
+  console.log(`\n▶ ${script} ${args.join(" ")}`);
+  const result = spawnSync(process.execPath, [path.join(ROOT, "scripts", script), ...args], {
+    cwd: ROOT,
+    stdio: "inherit",
+  });
+  if (result.status !== 0) {
+    console.log(`\n⚠ El pipeline se detiene en ${script}.`);
+    process.exitCode = result.status ?? 1;
+    return false;
+  }
+  return true;
+}
+
+let investigateArgs;
+if (title) investigateArgs = ["--title", title];
+else if (inputPath) investigateArgs = ["--input", inputPath];
+else investigateArgs = ["--json", jsonPath];
+
+if (!run("investigate.mjs", investigateArgs)) process.exit(process.exitCode ?? 1);
+
+const casesDir = path.join(ROOT, "editorial", "cases");
+const caseFiles = fs.readdirSync(casesDir).filter((name) => /^CASE-\d{8}\.json$/.test(name));
+if (!caseFiles.length) {
+  console.error("✖ No se pudo localizar el caso creado.");
+  process.exit(1);
+}
+
+const latest = caseFiles
+  .map((name) => ({ name, mtime: fs.statSync(path.join(casesDir, name)).mtimeMs }))
+  .sort((a, b) => b.mtime - a.mtime)[0].name;
+const caseId = path.basename(latest, ".json");
+
+const stages = [
+  ["claims.mjs", ["--case", caseId]],
+  ["research-plan.mjs", ["--case", caseId]],
+  ["check-provenance.mjs", ["--case", caseId]],
+  ["contrast.mjs", ["--case", caseId]],
+  ["verify.mjs", ["--case", caseId]],
+  ["original-article.mjs", ["--case", caseId]],
+  ["check-originality.mjs", ["--case", caseId]],
+];
+
+for (const [script, args] of stages) {
+  if (!run(script, args)) break;
+}
+
+console.log("\nMALDITOESPEJO — PIPELINE FINALIZADO");
+console.log(`Caso: ${caseId}`);
+console.log("La automatización nunca concede aprobación editorial ni publica por sí sola.");
+console.log("La siguiente etapa es revisión humana y, si procede, Publication Gate.");
