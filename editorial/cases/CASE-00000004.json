@@ -1,0 +1,30 @@
+{
+  "case_id": "CASE-00000004",
+  "created_at": "2026-09-02",
+  "status": "PARTIALLY_VERIFIED",
+  "input_type": "news_lead",
+  "input_reference": "Telefónica cierra la venta de su histórica sede en Gran Vía a Tomás Olivo por 200 millones",
+  "editorial_section": "Economía",
+  "assigned_author": "Marta Robles Ferrer",
+  "discovery_source": {"role":"DISCOVERY","publication":false},
+  "claims": [
+    {"claim_id":"CLM-00000016","type":"FACT","importance":"CENTRAL","claim":"Telefónica ha cerrado la venta del edificio situado en Gran Vía 28, Madrid, al empresario Tomás Olivo.","verification_status":"VERIFIED"},
+    {"claim_id":"CLM-00000017","type":"FACT","importance":"HIGH","claim":"La compraventa quedó formalizada mediante escritura el 1 de septiembre de 2026.","verification_status":"VERIFIED"},
+    {"claim_id":"CLM-00000018","type":"FACT","importance":"CENTRAL","claim":"El precio exacto de la operación fue de 200 millones de euros.","verification_status":"CONTESTED"},
+    {"claim_id":"CLM-00000019","type":"CONTEXT","importance":"MEDIUM","claim":"El edificio de Gran Vía 28 está catalogado por el Ayuntamiento de Madrid con nivel 1, grado Singular.","verification_status":"VERIFIED"},
+    {"claim_id":"CLM-00000020","type":"CONTEXT","importance":"MEDIUM","claim":"El edificio fue construido entre 1926 y 1929 y está vinculado históricamente a Telefónica.","verification_status":"VERIFIED"}
+  ],
+  "evidence": [
+    {"evidence_id":"EVD-00000015","claim_id":"CLM-00000016","source_id":"MEDIA-20260902-CINCO-DIAS","source_role":"PUBLICATION","document_or_record":"Información de Cinco Días sobre el cierre de la venta","url_or_reference":"https://cincodias.elpais.com/companias/2026-09-02/telefonica-cierra-la-venta-de-su-historica-sede-en-gran-via-a-tomas-olivo-por-mas-de-200-millones.html","assessment":"SUPPORTS","lineage_id":"LIN-TELEFONICA-GRANVIA-2026","independence_group":"IG-TELEFONICA-GRANVIA-2026"},
+    {"evidence_id":"EVD-00000016","claim_id":"CLM-00000017","source_id":"MEDIA-20260902-EUROPA-PRESS","source_role":"CORROBORATION","document_or_record":"Información de Europa Press sobre la escritura de la venta","url_or_reference":"https://www.europapress.es/economia/noticia-telefonica-vende-sede-historica-gran-via-tomas-olivo-cerca-200-millones-20260902180105.html","assessment":"SUPPORTS","lineage_id":"LIN-TELEFONICA-GRANVIA-2026","independence_group":"IG-TELEFONICA-GRANVIA-2026"},
+    {"evidence_id":"EVD-00000017","claim_id":"CLM-00000018","source_id":"MEDIA-20260902-EUROPA-PRESS","source_role":"CORROBORATION","document_or_record":"Europa Press sitúa la operación en una cifra inferior a 200 millones de euros","url_or_reference":"https://www.europapress.es/economia/noticia-telefonica-vende-sede-historica-gran-via-tomas-olivo-cerca-200-millones-20260902180105.html","assessment":"CONTESTS","lineage_id":"LIN-TELEFONICA-GRANVIA-2026","independence_group":"IG-TELEFONICA-GRANVIA-2026"},
+    {"evidence_id":"EVD-00000018","claim_id":"CLM-00000019","source_id":"MADRID-PATRIMONIO-TELEFONICA-001","source_role":"PUBLICATION","document_or_record":"Ficha patrimonial oficial del Edificio Telefónica","url_or_reference":"https://patrimonioypaisaje.madrid.es/portales/monumenta/es/Especiales/Edificio-Telefonica/","assessment":"SUPPORTS","lineage_id":"LIN-MADRID-PATRIMONIO-GRANVIA28","independence_group":"IG-MADRID-PATRIMONIO"},
+    {"evidence_id":"EVD-00000019","claim_id":"CLM-00000020","source_id":"MADRID-PATRIMONIO-TELEFONICA-001","source_role":"PUBLICATION","document_or_record":"Ficha patrimonial oficial del Edificio Telefónica","url_or_reference":"https://patrimonioypaisaje.madrid.es/portales/monumenta/es/Especiales/Edificio-Telefonica/","assessment":"SUPPORTS","lineage_id":"LIN-MADRID-PATRIMONIO-GRANVIA28","independence_group":"IG-MADRID-PATRIMONIO"}
+  ],
+  "provenance":{"status":"PARTIAL","central_claim_lineage":"LIN-TELEFONICA-GRANVIA-2026","secondary_media_counted_as_independent":false},
+  "contradictions":{"material_conflict_found":true,"affected_claim_ids":["CLM-00000018"],"status":"MATERIAL_CONFLICT_LOCALIZED"},
+  "verification":{"completed":true,"status":"PARTIALLY_VERIFIED","verified_claims":["CLM-00000016","CLM-00000017","CLM-00000019","CLM-00000020"],"blocking_claims":["CLM-00000018"],"human_approval":false},
+  "publishable_scope":{"status":"AVAILABLE","claim_ids":["CLM-00000016","CLM-00000017","CLM-00000019","CLM-00000020"],"excluded_claim_ids":["CLM-00000018"]},
+  "draft":{"article_path":"content/articles/telefonica-gran-via-tomas-olivo-2026.md","status":"review"},
+  "publication":{"allowed":false,"reason":"La noticia puede redactarse con el alcance verificado, pero requiere aprobación editorial humana y el precio exacto continúa en conflicto."}
+}
