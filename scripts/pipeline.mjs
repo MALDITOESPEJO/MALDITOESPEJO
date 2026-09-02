@@ -12,7 +12,7 @@ function getArg(name) {
 }
 
 function usage() {
-  console.log(`MALDITOESPEJO — AUTOMATED NEWS PIPELINE\n\nUso:\n  npm run pipeline -- --title "Título de la noticia"\n  npm run pipeline -- --input ruta/al/archivo.txt\n  npm run pipeline -- --json ruta/al/entrada.json\n\nEl pipeline orquesta las etapas disponibles y se detiene antes de la publicación.`);
+  console.log(`MALDITOESPEJO — AUTOMATED NEWS PIPELINE\n\nUso:\n  npm run pipeline -- --title "Título de la noticia"\n  npm run pipeline -- --input ruta/al/archivo.txt\n  npm run pipeline -- --json ruta/al/entrada.json\n\nEl pipeline investiga, recupera candidatos documentales, controla su trazabilidad y se detiene antes de la publicación.`);
 }
 
 if (process.argv.includes("--help") || process.argv.includes("-h")) {
@@ -29,13 +29,17 @@ if (!title && !inputPath && !jsonPath) {
   process.exit(1);
 }
 
-function run(script, args) {
+function run(script, args, options = {}) {
   console.log(`\n▶ ${script} ${args.join(" ")}`);
   const result = spawnSync(process.execPath, [path.join(ROOT, "scripts", script), ...args], {
     cwd: ROOT,
     stdio: "inherit",
   });
   if (result.status !== 0) {
+    if (options.allowFailure) {
+      console.log(`\n⚠ ${script} no pudo completarse; el caso queda detenido para intervención.`);
+      return false;
+    }
     console.log(`\n⚠ El pipeline se detiene en ${script}.`);
     process.exitCode = result.status ?? 1;
     return false;
@@ -65,6 +69,24 @@ const caseId = path.basename(latest, ".json");
 const stages = [
   ["claims.mjs", ["--case", caseId]],
   ["research-plan.mjs", ["--case", caseId]],
+  ["web-research.mjs", ["--case", caseId]],
+];
+
+for (const [script, args] of stages) {
+  if (!run(script, args)) break;
+}
+
+const webSearchOk = run("search-web.mjs", ["--case", caseId], { allowFailure: true });
+if (webSearchOk) {
+  const resultsPath = path.join(casesDir, `${caseId}.web-results.json`);
+  if (!fs.existsSync(resultsPath)) {
+    console.error("✖ La búsqueda terminó sin generar resultados documentales.");
+  } else {
+    run("import-web-results.mjs", ["--input", path.relative(ROOT, resultsPath).replaceAll(path.sep, "/")], { allowFailure: true });
+  }
+}
+
+const postRetrievalStages = [
   ["check-provenance.mjs", ["--case", caseId]],
   ["contrast.mjs", ["--case", caseId]],
   ["verify.mjs", ["--case", caseId]],
@@ -75,12 +97,13 @@ const stages = [
   ["check-originality.mjs", ["--case", caseId]],
 ];
 
-for (const [script, args] of stages) {
-  if (!run(script, args)) break;
+for (const [script, args] of postRetrievalStages) {
+  if (!run(script, args, { allowFailure: true })) break;
 }
 
 console.log("\nMALDITOESPEJO — PIPELINE FINALIZADO");
 console.log(`Caso: ${caseId}`);
-console.log("Secuencia: investigación → evidencia → procedencia → contraste → verificación → alcance → redacción → controles de alcance y lenguaje → originalidad.");
+console.log("Secuencia: investigación → claims → plan de búsqueda → recuperación web → importación de candidatos → procedencia → contraste → verificación → alcance → redacción → controles → originalidad.");
+console.log("Importante: los resultados de búsqueda siguen siendo candidatos hasta su evaluación documental y editorial.");
 console.log("La automatización nunca concede aprobación editorial ni publica por sí sola.");
-console.log("La siguiente etapa es revisión humana y, si procede, Publication Gate.");
+console.log("Siguiente etapa: evaluación/aceptación de evidencia y revisión humana; después, Publication Gate.");
