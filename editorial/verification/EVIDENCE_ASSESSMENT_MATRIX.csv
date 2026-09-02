@@ -1,0 +1,32 @@
+dimension,code,definition,editorial_effect
+authority,A+,Primary/highest relevant authority,Strong positive weight but contextual
+authority,A,Strong authoritative or specialist source,Positive
+authority,B,Secondary or contextual source,Limited positive
+authority,C,Background or low-authority source,Context only
+directness,DIRECT,Directly establishes or records the proposition,Strong positive
+ directness,INDIRECT,Requires inference or interpretation,Reduced support
+independence,HIGH,Materially independent evidence lineage,Strong corroboration
+independence,MEDIUM,Some independence but possible shared inputs,Moderate corroboration
+independence,LOW,Likely shared origin or derivative reporting,Weak corroboration
+independence,NONE,Same underlying lineage,No additional corroboration
+temporal_fit,EXACT,Timestamp aligns with relevant event,Positive
+temporal_fit,COMPATIBLE,No material temporal conflict,Positive
+temporal_fit,UNCERTAIN,Timing cannot yet be established,Uncertainty retained
+temporal_fit,INCONSISTENT,Timing materially conflicts,Support impaired
+geographic_fit,EXACT,Location directly matches,Positive
+geographic_fit,COMPATIBLE,Location plausibly matches,Moderate positive
+geographic_fit,UNCERTAIN,Location unresolved,Uncertainty retained
+geographic_fit,INCONSISTENT,Location conflicts materially,Support impaired
+specificity,HIGH,Directly addresses the exact claim,Strong positive
+specificity,MEDIUM,Addresses material part of claim,Moderate positive
+specificity,LOW,Only indirectly relevant,Limited support
+consistency,CONSISTENT,Compatible with relevant evidence,Positive
+consistency,MIXED,Material evidence points in different directions,Requires review
+consistency,CONTRADICTORY,Direct conflict remains,Blocks confirmed status
+integrity_risk,LOW,Normal provenance and integrity indicators,No special penalty
+integrity_risk,MEDIUM,Some provenance or manipulation uncertainty,Review required
+integrity_risk,HIGH,Significant integrity concern,Strong caution
+integrity_risk,CRITICAL,Material evidence cannot be trusted,Do not use as confirmed evidence
+completeness,HIGH,Material evidentiary picture substantially complete,Positive
+completeness,MEDIUM,Some relevant evidence still missing,Uncertainty retained
+completeness,LOW,Major evidentiary gaps remain,Do not overstate certainty
