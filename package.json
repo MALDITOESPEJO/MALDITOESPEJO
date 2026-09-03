@@ -62,6 +62,7 @@
     "legacy:review:init": "node scripts/legacy-review-init.mjs",
     "legacy:gate:readiness": "node scripts/check-legacy-gate-readiness.mjs",
     "news:ingest": "node scripts/ingest-news-feeds.mjs",
+    "news:events": "node scripts/cluster-news-events.mjs",
     "news:rank": "node scripts/rank-news.mjs",
     "news:report": "node scripts/daily-news-report.mjs",
     "news:source-check": "node scripts/check-source-universe.mjs"
