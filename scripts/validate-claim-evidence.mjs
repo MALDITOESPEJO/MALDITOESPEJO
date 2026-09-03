@@ -32,20 +32,68 @@ function collectMarkdownFiles(directory) {
 }
 
 function normalize(value) {
-  return value.trim().toLowerCase().replace(/\s+/g, " ");
+  return String(value ?? "").trim().toLowerCase().replace(/\s+/g, " ");
 }
 
-function validateRecord(articleFile) {
-  const article = fs.readFileSync(articleFile, "utf8");
-  const data = parseFrontmatter(article);
-  if (!data || !["verified", "published"].includes(data.status)) return null;
+function findVerificationRecord(articleId) {
+  for (const ext of [".md", ".json"]) {
+    const candidate = path.join(VALIDATION_DIR, `${articleId}${ext}`);
+    if (fs.existsSync(candidate)) return candidate;
+  }
+  return null;
+}
 
-  const articleId = data.id || path.basename(articleFile, path.extname(articleFile));
-  const recordPath = path.join(VALIDATION_DIR, `${articleId}.md`);
-  if (!fs.existsSync(recordPath)) {
-    return { articleId, errors: [`falta el expediente ${path.relative(ROOT, recordPath)}`] };
+function validateJsonRecord(recordPath, articleId, data) {
+  const errors = [];
+  let record;
+  try {
+    record = JSON.parse(fs.readFileSync(recordPath, "utf8"));
+  } catch {
+    errors.push("el expediente JSON no contiene JSON válido");
+    return errors;
   }
 
+  if (record.article_id !== articleId) {
+    errors.push("article_id del expediente no coincide con el artículo");
+  }
+
+  if (!Array.isArray(record.publication_sources) || record.publication_sources.length === 0) {
+    errors.push("faltan publication_sources");
+  }
+  if (!String(record.claim_to_evidence_assessment ?? "").trim()) {
+    errors.push("falta claim_to_evidence_assessment");
+  }
+  if (!String(record.temporal_check ?? "").trim()) {
+    errors.push("falta temporal_check");
+  }
+  if (!String(record.corroboration_contradiction_check ?? "").trim()) {
+    errors.push("falta corroboration_contradiction_check");
+  }
+  if (!Array.isArray(record.interpretation_risks)) {
+    errors.push("falta interpretation_risks");
+  }
+  if (!Array.isArray(record.unresolved_points)) {
+    errors.push("falta unresolved_points");
+  }
+  if (!String(record.human_approval_status ?? "").trim()) {
+    errors.push("falta human_approval_status");
+  }
+
+  const claimsText = `${record.claim_to_evidence_assessment ?? ""} ${record.corroboration_contradiction_check ?? ""}`.toLowerCase();
+  if (!claimsText.includes("afirm") || !claimsText.includes("evidenc")) {
+    errors.push("el expediente no describe de forma reconocible la relación entre afirmaciones y evidencia");
+  }
+
+  for (const [label, value] of [["title", data.title], ["description", data.description]]) {
+    if (!value || !normalize(JSON.stringify(record)).includes(normalize(value))) {
+      errors.push(`no se encuentra en el expediente la trazabilidad de '${label}'`);
+    }
+  }
+
+  return errors;
+}
+
+function validateMarkdownRecord(recordPath, articleId, data) {
   const record = fs.readFileSync(recordPath, "utf8");
   const lower = record.toLowerCase();
   const errors = [];
@@ -54,13 +102,7 @@ function validateRecord(articleFile) {
     errors.push("la sección de afirmaciones no contiene una tabla reconocible de afirmación, evidencia y evaluación");
   }
 
-  const requiredValues = [
-    ["article_id", articleId],
-    ["title", data.title],
-    ["description", data.description],
-  ];
-
-  for (const [label, value] of requiredValues) {
+  for (const [label, value] of [["article_id", articleId], ["title", data.title], ["description", data.description]]) {
     if (!value || !lower.includes(normalize(value))) {
       errors.push(`no se encuentra en el expediente la trazabilidad de '${label}'`);
     }
@@ -79,6 +121,24 @@ function validateRecord(articleFile) {
       }
     }
   }
+
+  return errors;
+}
+
+function validateRecord(articleFile) {
+  const article = fs.readFileSync(articleFile, "utf8");
+  const data = parseFrontmatter(article);
+  if (!data || !["verified", "published"].includes(data.status)) return null;
+
+  const articleId = data.id || path.basename(articleFile, path.extname(articleFile));
+  const recordPath = findVerificationRecord(articleId);
+  if (!recordPath) {
+    return { articleId, errors: [`falta el expediente ${path.relative(ROOT, path.join(VALIDATION_DIR, `${articleId}.md`))}`] };
+  }
+
+  const errors = path.extname(recordPath).toLowerCase() === ".json"
+    ? validateJsonRecord(recordPath, articleId, data)
+    : validateMarkdownRecord(recordPath, articleId, data);
 
   return { articleId, errors };
 }
