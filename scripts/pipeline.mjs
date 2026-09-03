@@ -24,6 +24,9 @@ function run(script, args, options = {}) {
   }
   return true;
 }
+function audit(caseId, stage, status = "PASS", details = {}) {
+  return run("audit-event.mjs", ["--case", caseId, "--stage", stage, "--status", status, "--details", JSON.stringify(details)]);
+}
 let investigateArgs; if (title) investigateArgs = ["--title", title]; else if (inputPath) investigateArgs = ["--input", inputPath]; else investigateArgs = ["--json", jsonPath];
 if (!run("investigate.mjs", investigateArgs)) process.exit(process.exitCode ?? 1);
 const casesDir = path.join(ROOT, "editorial", "cases");
@@ -31,14 +34,18 @@ const caseFiles = fs.readdirSync(casesDir).filter((name) => /^CASE-\d{8}\.json$/
 if (!caseFiles.length) { console.error("✖ No se pudo localizar el caso creado."); process.exit(1); }
 const latest = caseFiles.map((name) => ({ name, mtime: fs.statSync(path.join(casesDir, name)).mtimeMs })).sort((a, b) => b.mtime - a.mtime)[0].name;
 const caseId = path.basename(latest, ".json");
+if (!audit(caseId, "investigate", "PASS", { input: title ?? inputPath ?? jsonPath })) process.exit(1);
 const stages = [["claims.mjs", ["--case", caseId]], ["dependencies.mjs", ["--case", caseId]], ["research-plan.mjs", ["--case", caseId]], ["web-research.mjs", ["--case", caseId]]];
-for (const [script, args] of stages) { if (!run(script, args)) process.exit(process.exitCode ?? 1); }
+for (const [script, args] of stages) { if (!run(script, args)) process.exit(process.exitCode ?? 1); if (!audit(caseId, script.replace(/\.mjs$/, ""))) process.exit(1); }
 const webSearchOk = run("search-web.mjs", ["--case", caseId], { allowFailure: true });
 if (webSearchOk) {
+  if (!audit(caseId, "search-web", "PASS")) process.exit(1);
   const resultsPath = path.join(casesDir, `${caseId}.web-results.json`);
-  if (!fs.existsSync(resultsPath)) console.error("✖ La búsqueda terminó sin generar resultados documentales.");
-  else run("import-web-results.mjs", ["--input", path.relative(ROOT, resultsPath).replaceAll(path.sep, "/")], { allowFailure: true });
-}
+  if (!fs.existsSync(resultsPath)) { console.error("✖ La búsqueda terminó sin generar resultados documentales."); if (!audit(caseId, "search-web", "FAIL", { reason: "missing_web_results" })) process.exit(1); }
+  else if (!run("import-web-results.mjs", ["--input", path.relative(ROOT, resultsPath).replaceAll(path.sep, "/")], { allowFailure: true })) {
+    if (!audit(caseId, "import-web-results", "REVIEW_REQUIRED")) process.exit(1);
+  } else if (!audit(caseId, "import-web-results", "PASS")) process.exit(1);
+} else if (!audit(caseId, "search-web", "REVIEW_REQUIRED", { reason: "web_search_failed" })) process.exit(1);
 const postRetrievalStages = [
   ["resolve-source.mjs", ["--case", caseId]],
   ["source-authority.mjs", ["--case", caseId]],
@@ -62,12 +69,17 @@ const postRetrievalStages = [
   ["propagate-editorial-impact.mjs", ["--case", caseId]],
   ["check-originality.mjs", ["--case", caseId]],
 ];
-for (const [script, args] of postRetrievalStages) { if (!run(script, args, { allowFailure: true })) break; }
+for (const [script, args] of postRetrievalStages) {
+  const ok = run(script, args, { allowFailure: true });
+  if (!audit(caseId, script.replace(/\.mjs$/, ""), ok ? "PASS" : "REVIEW_REQUIRED", ok ? {} : { reason: "stage_failed" })) process.exit(1);
+  if (!ok) break;
+}
 
 // El gate es deliberadamente una barrera final: no hereda allowFailure.
 // La automatización puede investigar y redactar, pero solo el registro de
 // aprobación editorial permite considerar una pieza publicable.
 const gateOk = run("check-publication-gate.mjs", []);
+if (!audit(caseId, "publication-gate", gateOk ? "PASS" : "BLOCKED", { gate_result: gateOk ? "PASSED" : "BLOCKED" })) process.exit(1);
 
 console.log("\nMALDITOESPEJO — PIPELINE FINALIZADO");
 console.log(`Caso: ${caseId}`);
