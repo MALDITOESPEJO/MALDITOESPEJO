@@ -10,12 +10,14 @@ La autoría ordinaria se asigna según la sección editorial:
 
 ## 2. Equipo actual
 
-- Actualidad → Clara Valdés Moreno
-- Política → Álvaro Serrano Vidal
-- Economía → Marta Robles Ferrer
-- Sociedad → Elena Campos Navarro
-- Mundo → Daniel Ortega Salvat
-- Tecnología → Lucía Martín Vega
+- Actualidad → Iria Valcárcel Montoro
+- Política → Bruno Salvatierra Ledesma
+- Economía → Nerea Villacorta Beltrán
+- Sociedad → Ariadna Soler Montalbán
+- Mundo → Gael Santacruz Ferrán
+- Tecnología → Vera Alcántara Robledo
+
+Estas identidades son personajes editoriales ficticios creados para MALDITOESPEJO y no representan a personas reales.
 
 ## 3. Metadatos mínimos de publicación
 
@@ -41,8 +43,12 @@ La persona que firma una pieza responde de su elaboración editorial, pero la fi
 
 Las fuentes utilizadas para descubrir una historia pueden permanecer en el registro interno. La pieza pública debe apoyarse en las fuentes y evidencias que hayan sido realmente examinadas y verificadas durante la investigación.
 
+Las fuentes no deben aparecer como un listado dentro del texto público del artículo.
+
 ## 6. Lenguaje público
 
 La autoría no modifica la regla general de estilo: la investigación interna puede ser rigurosa y compleja, pero la explicación publicada debe ser clara, directa y comprensible.
+
+MALDITOESPEJO no incorpora opiniones institucionales en las noticias. La redacción debe exponer hechos, declaraciones, contexto, discrepancias y cuestiones pendientes sin presentar como posición del medio una valoración propia.
 
 > **La investigación puede ser compleja; la explicación no debe serlo.**
