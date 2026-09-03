@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "MALDITOESPEJO Legacy Article Certification",
+  "type": "object",
+  "required": ["article", "migration_status", "claims_reconstructed", "evidence_mapped", "verification_completed", "human_editorial_approval"],
+  "properties": {
+    "article": {"type": "string"},
+    "migration_status": {"enum": ["LEGACY_UNREVIEWED", "LEGACY_IN_REVIEW", "CERTIFIED", "REQUIRES_CORRECTION", "WITHDRAWN"]},
+    "claims_reconstructed": {"type": "boolean"},
+    "evidence_mapped": {"type": "boolean"},
+    "verification_completed": {"type": "boolean"},
+    "human_editorial_approval": {"type": "boolean"},
+    "publication_gate_id": {"type": ["string", "null"]},
+    "audit_event_id": {"type": ["string", "null"]}
+  },
+  "additionalProperties": true
+}
