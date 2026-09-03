@@ -59,7 +59,8 @@
     "recovery:validate": "node scripts/validate-failure-records.mjs",
     "legacy:inventory": "node scripts/inventory-legacy-articles.mjs",
     "legacy:certify:validate": "node scripts/validate-legacy-certifications.mjs",
-    "legacy:review:init": "node scripts/legacy-review-init.mjs"
+    "legacy:review:init": "node scripts/legacy-review-init.mjs",
+    "legacy:gate:readiness": "node scripts/check-legacy-gate-readiness.mjs"
   },
   "dependencies": {
     "next": "16.3.3",
