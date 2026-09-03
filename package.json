@@ -10,7 +10,7 @@
     "pipeline": "node scripts/pipeline.mjs",
     "investigate": "node scripts/investigate.mjs",
     "claims": "node scripts/claims.mjs",
-    "dependencies": "node scripts/dependencies.mjs",
+    "claim:dependencies": "node scripts/dependencies.mjs",
     "uncertainty:propagate": "node scripts/propagate-uncertainty.mjs",
     "calculate": "node scripts/calculate.mjs",
     "calculation:provenance": "node scripts/validate-calculation-provenance.mjs",
