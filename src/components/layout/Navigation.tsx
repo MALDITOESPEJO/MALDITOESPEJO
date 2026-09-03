@@ -6,12 +6,15 @@ export function Wordmark() {
   return (
     <Link
       href="/"
-      aria-label="MALDITOESPEJO — portada"
-      className="inline-flex items-baseline"
+      aria-label="MALDITOESPEJO — Hechos — portada"
+      className="inline-flex flex-col leading-none"
     >
-      <span className="text-[1.15rem] font-black uppercase tracking-[0.04em] text-foreground leading-none">
+      <span className="text-[1.15rem] font-black uppercase tracking-[0.04em] text-foreground">
         Maldito
         <span className="text-accent">espejo</span>
+      </span>
+      <span className="mt-1 text-[0.55rem] font-semibold uppercase tracking-[0.24em] text-ink/70">
+        Hechos
       </span>
     </Link>
   );
