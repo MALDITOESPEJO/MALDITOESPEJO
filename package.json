@@ -63,7 +63,8 @@
     "legacy:gate:readiness": "node scripts/check-legacy-gate-readiness.mjs",
     "news:ingest": "node scripts/ingest-news-feeds.mjs",
     "news:rank": "node scripts/rank-news.mjs",
-    "news:report": "node scripts/daily-news-report.mjs"
+    "news:report": "node scripts/daily-news-report.mjs",
+    "news:source-check": "node scripts/check-source-universe.mjs"
   },
   "dependencies": {
     "next": "16.3.3",
