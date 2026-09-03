@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "MALDITOESPEJO Daily News Candidate",
+  "type": "object",
+  "required": ["candidate_id", "detected_at", "title", "status", "signals"],
+  "properties": {
+    "candidate_id": {"type": "string", "pattern": "^NEWS-[0-9]{8}$"},
+    "detected_at": {"type": "string", "format": "date-time"},
+    "first_seen_at": {"type": "string", "format": "date-time"},
+    "title": {"type": "string", "minLength": 1},
+    "summary": {"type": "string"},
+    "url": {"type": "string", "format": "uri"},
+    "language": {"type": "string"},
+    "geography": {"type": "string"},
+    "section_candidate": {"type": "string"},
+    "entities": {"type": "array", "items": {"type": "string"}},
+    "topics": {"type": "array", "items": {"type": "string"}},
+    "source_ids": {"type": "array", "items": {"type": "string"}},
+    "source_count": {"type": "number", "minimum": 0},
+    "independent_source_count": {"type": "number", "minimum": 0},
+    "duplicate_cluster_id": {"type": ["string", "null"]},
+    "status": {"type": "string", "enum": ["NEW", "CLUSTERED", "RANKED", "SELECTED", "REJECTED", "INVESTIGATING", "VERIFIED", "PUBLISHED"]},
+    "signals": {
+      "type": "object",
+      "required": ["virality", "editorial", "timeliness", "risk"],
+      "properties": {
+        "virality": {
+          "type": "object",
+          "properties": {
+            "volume": {"type": ["number", "null"], "minimum": 0, "maximum": 100},
+            "velocity": {"type": ["number", "null"], "minimum": 0, "maximum": 100},
+            "acceleration": {"type": ["number", "null"], "minimum": 0, "maximum": 100},
+            "cross_source_spread": {"type": ["number", "null"], "minimum": 0, "maximum": 100},
+            "search_interest": {"type": ["number", "null"], "minimum": 0, "maximum": 100},
+            "persistence": {"type": ["number", "null"], "minimum": 0, "maximum": 100}
+          }
+        },
+        "editorial": {
+          "type": "object",
+          "properties": {
+            "relevance": {"type": ["number", "null"], "minimum": 0, "maximum": 100},
+            "impact": {"type": ["number", "null"], "minimum": 0, "maximum": 100},
+            "novelty": {"type": ["number", "null"], "minimum": 0, "maximum": 100},
+            "editorial_fit": {"type": ["number", "null"], "minimum": 0, "maximum": 100},
+            "verification_readiness": {"type": ["number", "null"], "minimum": 0, "maximum": 100},
+            "originality_opportunity": {"type": ["number", "null"], "minimum": 0, "maximum": 100},
+            "source_independence": {"type": ["number", "null"], "minimum": 0, "maximum": 100}
+          }
+        },
+        "timeliness": {"type": ["number", "null"], "minimum": 0, "maximum": 100},
+        "risk": {"type": ["number", "null"], "minimum": 0, "maximum": 100}
+      }
+    }
+  }
+}
