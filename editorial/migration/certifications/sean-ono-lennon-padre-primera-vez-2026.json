@@ -1,0 +1,53 @@
+{
+  "article": "sean-ono-lennon-padre-primera-vez-2026.md",
+  "migration_status": "LEGACY_IN_REVIEW",
+  "claims_reconstructed": true,
+  "evidence_mapped": true,
+  "verification_completed": true,
+  "human_editorial_approval": false,
+  "publication_gate_id": null,
+  "audit_event_id": null,
+  "reviewed_at": "2026-09-03",
+  "verification_notes": [
+    "Sean Ono Lennon and Charlotte Kemp Muhl publicly announced on 2026-09-01 that they had welcomed a son named Aurelius.",
+    "Current independent reporting consistently identifies Aurelius as Sean Lennon's first child and John Lennon's first grandchild.",
+    "John Lennon had two sons, Julian and Sean; available biographical evidence indicates Julian has no children, supporting the first-grandchild claim.",
+    "Current reporting supports that Sean Lennon and Charlotte Kemp Muhl have been together since 2007 and met in 2005.",
+    "The article's distinction between facts communicated by the parents, biographical context and information not publicly disclosed is editorially appropriate.",
+    "The exact birth date of Aurelius is not established by the available public announcement and is therefore not asserted as a fact.",
+    "No certification is granted because explicit human editorial approval and a publication-gate decision are still required."
+  ],
+  "evidence": [
+    {
+      "claim_group": "birth_announcement",
+      "source": "Sean Ono Lennon / Charlotte Kemp Muhl social-media announcement",
+      "publication_date": "2026-09-01"
+    },
+    {
+      "claim_group": "first_child_and_first_grandchild",
+      "source": "ABC News",
+      "url": "https://abcnews.com/GMA/Culture/sean-lennon-ono-welcomes-1st-child-partner-charlotte/story?id=136150124",
+      "publication_date": "2026-09-02"
+    },
+    {
+      "claim_group": "john_lennon_children",
+      "source": "People",
+      "url": "https://people.com/meet-john-lennon-children-12076638",
+      "publication_date": "2026-09-03"
+    },
+    {
+      "claim_group": "relationship_timeline",
+      "source": "People",
+      "url": "https://people.com/john-lennon-s-son-sean-ono-lennon-welcomes-first-child-with-partner-charlotte-kemp-muhl-12076426",
+      "publication_date": "2026-09-02"
+    },
+    {
+      "claim_group": "julian_no_children",
+      "source": "Smashing Interviews Magazine",
+      "url": "https://smashinginterviews.com/interviews/musicians/julian-lennon-interview-happiness-is-a-colombian-tribe",
+      "publication_date": "2014-01-01"
+    }
+  ],
+  "open_issues": [],
+  "decision": "READY_FOR_HUMAN_EDITORIAL_APPROVAL"
+}
