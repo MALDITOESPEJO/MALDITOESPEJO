@@ -10,6 +10,7 @@ const VALID_SECTIONS = new Set<SectionSlug>([
   "sociedad",
   "mundo",
   "tecnologia",
+  "cartagena",
 ]);
 
 function parseFrontmatter(markdown: string): Record<string, string> {
