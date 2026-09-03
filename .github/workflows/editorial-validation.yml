@@ -38,5 +38,11 @@ jobs:
       - name: Validate provenance lineage
         run: npm run validate:lineage
 
+      - name: Validate audit logs
+        run: npm run audit:validate
+
+      - name: Run editorial E2E acceptance tests
+        run: npm run test:e2e:editorial
+
 # The publication gate remains an explicit editorial authorization step.
 # It is not run here while legacy published articles are pending formal certification.
