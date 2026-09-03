@@ -56,7 +56,8 @@
     "test:e2e:editorial": "node scripts/editorial-e2e-test.mjs",
     "check:publication": "node scripts/check-publication-gate.mjs",
     "recovery:record": "node scripts/record-editorial-failure.mjs",
-    "recovery:validate": "node scripts/validate-failure-records.mjs"
+    "recovery:validate": "node scripts/validate-failure-records.mjs",
+    "legacy:inventory": "node scripts/inventory-legacy-articles.mjs"
   },
   "dependencies": {
     "next": "16.3.3",
