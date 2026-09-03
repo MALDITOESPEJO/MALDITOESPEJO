@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 import { SearchClient } from "@/components/search/SearchClient";
+import { articles } from "@/data/articles";
 
 export const metadata: Metadata = {
   title: "Buscar",
@@ -13,9 +14,9 @@ export default function SearchPage() {
       <section className="section-space max-w-2xl">
         <h1 className="headline-lg text-ink">Buscar</h1>
         <p className="metadata mt-3">
-          Búsqueda local sobre el contenido de demostración.
+          Búsqueda local sobre el contenido publicado de MALDITOESPEJO.
         </p>
-        <SearchClient />
+        <SearchClient articles={articles} />
       </section>
     </div>
   );
