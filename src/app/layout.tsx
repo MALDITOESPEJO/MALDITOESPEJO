@@ -4,6 +4,7 @@ import { Inter, Source_Serif_4 } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { CookieBanner } from "@/components/layout/CookieBanner";
 
 /* Tipografia oficial MALDITOESPEJO:
    Display (titulares): Source Serif 4
@@ -73,6 +74,7 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
+        <CookieBanner />
       </body>
     </html>
   );
