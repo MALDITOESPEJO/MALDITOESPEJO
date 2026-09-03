@@ -1,0 +1,51 @@
+{
+  "article": "telefonica-gran-via-tomas-olivo-2026.md",
+  "migration_status": "LEGACY_IN_REVIEW",
+  "claims_reconstructed": true,
+  "evidence_mapped": true,
+  "verification_completed": true,
+  "human_editorial_approval": false,
+  "publication_gate_id": null,
+  "audit_event_id": null,
+  "reviewed_at": "2026-09-03",
+  "verification_notes": [
+    "Europa Press reports that Telefónica completed the sale of Gran Vía 28 to Tomás Olivo and that the deed was executed on 1 September 2026.",
+    "Cinco Días reports the transaction at 200 million euros, while Europa Press reports a figure below 200 million euros; the exact price therefore remains unresolved.",
+    "The Madrid City Council identifies Gran Vía 28 as a Level 1, Singular Grade protected building and dates the building to 1926-1929.",
+    "Telefónica's own materials confirm the historical identity of Gran Vía 28 and its continued association with Fundación Telefónica.",
+    "The article excludes the disputed exact price and unverified future-use claims from factual assertions.",
+    "No certification is granted because explicit human editorial approval and a publication-gate decision are still required."
+  ],
+  "evidence": [
+    {
+      "claim_group": "sale_and_buyer",
+      "source": "Europa Press",
+      "url": "https://www.europapress.es/economia/noticia-telefonica-vende-sede-historica-gran-via-tomas-olivo-cerca-200-millones-20260902180105.html",
+      "publication_date": "2026-09-02"
+    },
+    {
+      "claim_group": "transaction_price",
+      "source": "Europa Press / Cinco Días",
+      "url": "https://cincodias.elpais.com/companias/2026-09-03/telefonica-mantendra-su-presencia-en-la-historica-sede-de-gran-via-al-menos-durante-tres-anos.html",
+      "publication_date": "2026-09-03",
+      "status": "CONFLICTED"
+    },
+    {
+      "claim_group": "heritage_protection_and_history",
+      "source": "Ayuntamiento de Madrid",
+      "url": "https://patrimonioypaisaje.madrid.es/portales/monumenta/es/Especiales/Edificio-Telefonica/",
+      "status": "VERIFIED"
+    },
+    {
+      "claim_group": "historical_identity",
+      "source": "Telefónica",
+      "url": "https://www.telefonica.com/es/sala-comunicacion/blog/descubriendo-al-pintor-sede-telefonica/",
+      "publication_date": "2025-01-21",
+      "status": "VERIFIED"
+    }
+  ],
+  "open_issues": [
+    "Exact transaction price remains unresolved because published reports conflict between 200 million euros and below 200 million euros."
+  ],
+  "decision": "REQUIRES_CORRECTION"
+}
