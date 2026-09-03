@@ -1,14 +1,25 @@
 {
   "article_id": "empleo-agosto-2026",
+  "title": "La afiliación a la Seguridad Social cae en 162.840 personas en agosto y el paro registrado aumenta en 44.419",
+  "description": "La afiliación media baja en agosto, mientras el paro registrado sube. La serie desestacionalizada de afiliación aumenta en 83.844 personas.",
   "publication_date": "2026-09-02",
   "section": "Economía",
   "author": "Marta Robles Ferrer",
   "editorial_status": "published",
+  "title_claim_ids": [
+    "CLM-00000001",
+    "CLM-00000002"
+  ],
+  "description_claim_ids": [
+    "CLM-00000001",
+    "CLM-00000002",
+    "CLM-00000003"
+  ],
   "publication_sources": [
     "Tesorería General de la Seguridad Social / Ministerio de Inclusión, Seguridad Social y Migraciones",
     "Servicio Público de Empleo Estatal (SEPE) / Ministerio de Trabajo y Economía Social"
   ],
-  "claim_to_evidence_assessment": "Las afirmaciones numéricas publicadas están respaldadas por las publicaciones oficiales revisadas.",
+  "claim_to_evidence_assessment": "Las afirmaciones publicadas están vinculadas a evidencia documental procedente de las publicaciones oficiales revisadas. Las cifras del titular y de la entradilla están respaldadas por los datos oficiales de afiliación y paro registrado.",
   "temporal_check": "Los datos corresponden a agosto de 2026 y fueron publicados el 2 de septiembre de 2026.",
   "corroboration_contradiction_check": "No se identifica contradicción material en las cifras oficiales utilizadas.",
   "interpretation_risks": [
@@ -17,5 +28,5 @@
   ],
   "unresolved_points": [],
   "human_approval_status": "PENDING",
-  "notes": "Expediente creado para satisfacer la trazabilidad documental mínima del artículo legacy. No constituye aprobación humana ni certificación de migración."
+  "notes": "Expediente actualizado para documentar la trazabilidad del titular y la entradilla. No constituye aprobación humana ni certificación de migración. Los identificadores de claims deberán coincidir con el expediente de claims definitivo cuando se complete la migración legacy."
 }
