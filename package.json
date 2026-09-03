@@ -53,6 +53,7 @@
     "validate:lineage": "node scripts/validate-provenance-lineage.mjs",
     "audit:event": "node scripts/audit-event.mjs",
     "audit:validate": "node scripts/validate-audit-log.mjs",
+    "test:e2e:editorial": "node scripts/editorial-e2e-test.mjs",
     "check:publication": "node scripts/check-publication-gate.mjs"
   },
   "dependencies": {
