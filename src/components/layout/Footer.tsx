@@ -38,7 +38,16 @@ export function Footer() {
         </div>
 
         <div className="mt-10 border-t border-border pt-6 text-xs text-faint">
-          <p>© {year} MALDITOESPEJO. Contenido de demostración.</p>
+          <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
+            <p>© {year} MALDITOESPEJO. Contenido de demostración.</p>
+            <nav aria-label="Información legal">
+              <ul className="flex flex-wrap gap-x-5 gap-y-2">
+                <li><Link href="/aviso-legal" className="transition-colors hover:text-ink">Aviso Legal</Link></li>
+                <li><Link href="/politica-de-privacidad" className="transition-colors hover:text-ink">Privacidad</Link></li>
+                <li><Link href="/cookies" className="transition-colors hover:text-ink">Cookies</Link></li>
+              </ul>
+            </nav>
+          </div>
         </div>
       </div>
     </footer>
