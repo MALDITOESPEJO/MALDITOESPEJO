@@ -1,0 +1,21 @@
+{
+  "article_id": "empleo-agosto-2026",
+  "publication_date": "2026-09-02",
+  "section": "Economía",
+  "author": "Marta Robles Ferrer",
+  "editorial_status": "published",
+  "publication_sources": [
+    "Tesorería General de la Seguridad Social / Ministerio de Inclusión, Seguridad Social y Migraciones",
+    "Servicio Público de Empleo Estatal (SEPE) / Ministerio de Trabajo y Economía Social"
+  ],
+  "claim_to_evidence_assessment": "Las afirmaciones numéricas publicadas están respaldadas por las publicaciones oficiales revisadas.",
+  "temporal_check": "Los datos corresponden a agosto de 2026 y fueron publicados el 2 de septiembre de 2026.",
+  "corroboration_contradiction_check": "No se identifica contradicción material en las cifras oficiales utilizadas.",
+  "interpretation_risks": [
+    "La caída mensual de afiliación media no se presenta como destrucción equivalente de puestos de trabajo.",
+    "Se distingue entre serie original y serie desestacionalizada."
+  ],
+  "unresolved_points": [],
+  "human_approval_status": "PENDING",
+  "notes": "Expediente creado para satisfacer la trazabilidad documental mínima del artículo legacy. No constituye aprobación humana ni certificación de migración."
+}
