@@ -6,16 +6,17 @@ import path from "node:path";
 const ROOT = process.cwd();
 const ARTICLES_DIR = path.join(ROOT, "content", "articles");
 const VALIDATION_DIR = path.join(ROOT, "editorial", "validation");
-const REQUIRED_MARKERS = [
-  "article_id",
-  "publication sources",
-  "claim-to-evidence",
-  "temporal check",
-  "corroboration",
-  "contradiction",
-  "interpretation risks",
-  "unresolved",
-  "human approval",
+
+const REQUIRED_FIELDS = [
+  ["article_id", ["article_id"]],
+  ["publication sources", ["publication_sources", "publication sources"]],
+  ["claim-to-evidence", ["claim_to_evidence", "claim-to-evidence", "claim-to-evidence-assessment", "claim_to_evidence_assessment"]],
+  ["temporal check", ["temporal_check", "temporal check"]],
+  ["corroboration", ["corroboration", "corroboration_contradiction_check"]],
+  ["contradiction", ["contradiction", "corroboration_contradiction_check"]],
+  ["interpretation risks", ["interpretation_risks", "interpretation risks"]],
+  ["unresolved", ["unresolved_points", "unresolved"]],
+  ["human approval", ["human_approval", "human_approval_status", "human_editorial_approval", "human approval"]],
 ];
 
 function parseFrontmatter(content) {
@@ -42,12 +43,28 @@ function collectMarkdownFiles(directory) {
   return result;
 }
 
-function findVerificationRecord(articleId) {
+function readVerificationRecord(articleId) {
   const candidates = [
     path.join(VALIDATION_DIR, `${articleId}.md`),
     path.join(VALIDATION_DIR, `${articleId}.json`),
   ];
-  return candidates.find((candidate) => fs.existsSync(candidate)) || null;
+  for (const recordPath of candidates) {
+    if (!fs.existsSync(recordPath)) continue;
+    const raw = fs.readFileSync(recordPath, "utf8");
+    try {
+      return { path: recordPath, data: JSON.parse(raw), text: raw.toLowerCase() };
+    } catch {
+      return { path: recordPath, data: null, text: raw.toLowerCase() };
+    }
+  }
+  return null;
+}
+
+function hasField(record, aliases) {
+  if (record.data && typeof record.data === "object") {
+    return aliases.some((key) => Object.prototype.hasOwnProperty.call(record.data, key));
+  }
+  return aliases.some((key) => record.text.includes(`"${key.toLowerCase()}"`));
 }
 
 const articles = collectMarkdownFiles(ARTICLES_DIR);
@@ -60,20 +77,27 @@ for (const articleFile of articles) {
   if (!data || !["verified", "published"].includes(data.status)) continue;
 
   const articleId = data.id || path.basename(articleFile, path.extname(articleFile));
-  const recordPath = findVerificationRecord(articleId);
-  if (!recordPath) {
-    errors.push(`${articleId}: falta el expediente ${path.relative(ROOT, path.join(VALIDATION_DIR, `${articleId}.{md,json}`))}`);
+  const record = readVerificationRecord(articleId);
+  if (!record) {
+    errors.push(`${articleId}: falta el expediente en .md o .json`);
     continue;
   }
 
-  const record = fs.readFileSync(recordPath, "utf8").toLowerCase();
-  for (const marker of REQUIRED_MARKERS) {
-    if (!record.includes(marker.toLowerCase())) {
-      errors.push(`${articleId}: el expediente no documenta '${marker}'`);
+  if (record.data === null && record.path.endsWith(".json")) {
+    errors.push(`${articleId}: expediente JSON inválido`);
+    continue;
+  }
+
+  for (const [label, aliases] of REQUIRED_FIELDS) {
+    if (!hasField(record, aliases)) {
+      errors.push(`${articleId}: el expediente no documenta '${label}'`);
     }
   }
 
-  if (!record.includes(articleId.toLowerCase())) {
+  const recordArticleId = record.data?.article_id;
+  if (recordArticleId && recordArticleId !== articleId) {
+    errors.push(`${articleId}: el expediente identifica article_id '${recordArticleId}'`);
+  } else if (!recordArticleId && !record.text.includes(articleId.toLowerCase())) {
     errors.push(`${articleId}: el expediente no identifica correctamente el article_id`);
   }
 
