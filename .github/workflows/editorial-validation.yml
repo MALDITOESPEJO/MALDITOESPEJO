@@ -53,6 +53,10 @@ jobs:
       - name: Run editorial E2E acceptance tests
         run: npm run test:e2e:editorial
 
-# Publication Gate becomes globally enforceable only when the legacy readiness check passes.
-# Until then, legacy articles remain explicitly outside certification and must be
-# CERTIFIED or WITHDRAWN through the documented migration workflow.
+      - name: Enforce Publication Gate
+        run: npm run check:publication
+
+# Publication Gate is globally enforced.
+# A published article must have a valid publication-gate record with verified
+# publication claims, supporting publication sources, resolved material contradictions,
+# and explicit human editorial approval. Legacy articles must first be CERTIFIED or WITHDRAWN.
