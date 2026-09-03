@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "version": "1.0.0",
+  "purpose": "Official-feed discovery layer for MALDITOESPEJO daily news selection.",
+  "principles": [
+    "discovery_is_not_publication",
+    "unknown_is_not_zero",
+    "preserve_source_identity",
+    "preserve_first_seen_timestamp",
+    "do_not_publish_from_feed_alone"
+  ],
+  "feeds": [
+    {
+      "feed_id": "FEED-BLS-LATEST",
+      "source_id": "BLS-001",
+      "endpoint_id": "EP-BLS-RSS-001",
+      "name": "BLS latest releases",
+      "type": "rss",
+      "url": "https://www.bls.gov/feed/bls_latest.rss",
+      "language": "en",
+      "geography": "US",
+      "section_candidate": "Economía",
+      "authority_level": "A",
+      "enabled": true
+    },
+    {
+      "feed_id": "FEED-AEMET-CAP",
+      "source_id": "AEMET-001",
+      "endpoint_id": "EP-AEMET-CAP-001",
+      "name": "AEMET severe weather alerts",
+      "type": "rss_discovery_page",
+      "url": "https://www.aemet.es/es/rss_info/avisos/esp",
+      "language": "es",
+      "geography": "España",
+      "section_candidate": "Sociedad",
+      "authority_level": "A+",
+      "enabled": true,
+      "notes": "AEMET publishes RSS/Atom channels by geographic area; the discovery page is retained as the configured endpoint rather than guessing a hidden feed URL."
+    }
+  ]
+}
