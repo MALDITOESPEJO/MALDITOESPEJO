@@ -41,6 +41,9 @@ jobs:
       - name: Validate audit logs
         run: npm run audit:validate
 
+      - name: Validate failure and recovery records
+        run: npm run recovery:validate
+
       - name: Run editorial E2E acceptance tests
         run: npm run test:e2e:editorial
 
