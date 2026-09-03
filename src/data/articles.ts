@@ -33,6 +33,11 @@ function markdownBody(markdown: string): string[] {
     .filter((block) => block && !block.startsWith("#"));
 }
 
+function publicationTimestamp(meta: Record<string, string>): string {
+  const time = meta.time?.match(/^(?:[01]\d|2[0-3]):[0-5]\d$/)?.[0];
+  return `${meta.date}T${time ?? "00:00"}`;
+}
+
 function loadApprovedArticles(): Article[] {
   if (!fs.existsSync(CONTENT_DIR)) return [];
 
@@ -56,7 +61,7 @@ function loadApprovedArticles(): Article[] {
         title: meta.title,
         dek: meta.description ?? "",
         section,
-        publishedAt: `${meta.date}T00:00:00`,
+        publishedAt: publicationTimestamp(meta),
         author: { name: meta.author ?? "MALDITOESPEJO" },
         keyFacts: paragraphs.slice(0, 4),
         body: paragraphs.map((content) => ({ type: "fact", content })),
