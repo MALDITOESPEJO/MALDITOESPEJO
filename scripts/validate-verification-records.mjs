@@ -42,6 +42,14 @@ function collectMarkdownFiles(directory) {
   return result;
 }
 
+function findVerificationRecord(articleId) {
+  const candidates = [
+    path.join(VALIDATION_DIR, `${articleId}.md`),
+    path.join(VALIDATION_DIR, `${articleId}.json`),
+  ];
+  return candidates.find((candidate) => fs.existsSync(candidate)) || null;
+}
+
 const articles = collectMarkdownFiles(ARTICLES_DIR);
 const errors = [];
 const checked = [];
@@ -52,9 +60,9 @@ for (const articleFile of articles) {
   if (!data || !["verified", "published"].includes(data.status)) continue;
 
   const articleId = data.id || path.basename(articleFile, path.extname(articleFile));
-  const recordPath = path.join(VALIDATION_DIR, `${articleId}.md`);
-  if (!fs.existsSync(recordPath)) {
-    errors.push(`${articleId}: falta el expediente ${path.relative(ROOT, recordPath)}`);
+  const recordPath = findVerificationRecord(articleId);
+  if (!recordPath) {
+    errors.push(`${articleId}: falta el expediente ${path.relative(ROOT, path.join(VALIDATION_DIR, `${articleId}.{md,json}`))}`);
     continue;
   }
 
