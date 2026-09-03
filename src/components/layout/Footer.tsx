@@ -26,6 +26,7 @@ export function Footer() {
                 { name: "Sociedad", url: "/sociedad" },
                 { name: "Mundo", url: "/mundo" },
                 { name: "Tecnología", url: "/tecnologia" },
+                { name: "Cartagena", url: "/cartagena" },
               ].map((s) => (
                 <li key={s.url}>
                   <Link href={s.url} className="transition-colors hover:text-ink">
@@ -39,7 +40,7 @@ export function Footer() {
 
         <div className="mt-10 border-t border-border pt-6 text-xs text-faint">
           <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
-            <p>© {year} MALDITOESPEJO. Contenido de demostración.</p>
+            <p>© {year} MALDITOESPEJO. Todos los derechos reservados.</p>
             <nav aria-label="Información legal">
               <ul className="flex flex-wrap gap-x-5 gap-y-2">
                 <li><Link href="/aviso-legal" className="transition-colors hover:text-ink">Aviso Legal</Link></li>
