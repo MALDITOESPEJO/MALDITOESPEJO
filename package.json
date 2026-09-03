@@ -51,6 +51,8 @@
     "validate:claims": "node scripts/validate-claim-evidence.mjs",
     "validate:independence": "node scripts/validate-source-independence.mjs",
     "validate:lineage": "node scripts/validate-provenance-lineage.mjs",
+    "audit:event": "node scripts/audit-event.mjs",
+    "audit:validate": "node scripts/validate-audit-log.mjs",
     "check:publication": "node scripts/check-publication-gate.mjs"
   },
   "dependencies": {
