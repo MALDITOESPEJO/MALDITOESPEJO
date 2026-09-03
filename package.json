@@ -60,7 +60,8 @@
     "legacy:inventory": "node scripts/inventory-legacy-articles.mjs",
     "legacy:certify:validate": "node scripts/validate-legacy-certifications.mjs",
     "legacy:review:init": "node scripts/legacy-review-init.mjs",
-    "legacy:gate:readiness": "node scripts/check-legacy-gate-readiness.mjs"
+    "legacy:gate:readiness": "node scripts/check-legacy-gate-readiness.mjs",
+    "news:rank": "node scripts/rank-news.mjs"
   },
   "dependencies": {
     "next": "16.3.3",
