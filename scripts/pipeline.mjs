@@ -13,7 +13,15 @@ if (!title && !inputPath && !jsonPath) { usage(); process.exit(1); }
 function run(script, args, options = {}) {
   console.log(`\n▶ ${script} ${args.join(" ")}`);
   const result = spawnSync(process.execPath, [path.join(ROOT, "scripts", script), ...args], { cwd: ROOT, stdio: "inherit" });
-  if (result.status !== 0) { if (options.allowFailure) { console.log(`\n⚠ ${script} no pudo completarse; el caso queda detenido para intervención.`); return false; } console.log(`\n⚠ El pipeline se detiene en ${script}.`); process.exitCode = result.status ?? 1; return false; }
+  if (result.status !== 0) {
+    if (options.allowFailure) {
+      console.log(`\n⚠ ${script} no pudo completarse; el caso queda detenido para intervención.`);
+      return false;
+    }
+    console.log(`\n⚠ El pipeline se detiene en ${script}.`);
+    process.exitCode = result.status ?? 1;
+    return false;
+  }
   return true;
 }
 let investigateArgs; if (title) investigateArgs = ["--title", title]; else if (inputPath) investigateArgs = ["--input", inputPath]; else investigateArgs = ["--json", jsonPath];
@@ -55,12 +63,20 @@ const postRetrievalStages = [
   ["check-originality.mjs", ["--case", caseId]],
 ];
 for (const [script, args] of postRetrievalStages) { if (!run(script, args, { allowFailure: true })) break; }
+
+// El gate es deliberadamente una barrera final: no hereda allowFailure.
+// La automatización puede investigar y redactar, pero solo el registro de
+// aprobación editorial permite considerar una pieza publicable.
+const gateOk = run("check-publication-gate.mjs", []);
+
 console.log("\nMALDITOESPEJO — PIPELINE FINALIZADO");
 console.log(`Caso: ${caseId}`);
-console.log("Secuencia: investigación → claims → dependencias → plan → recuperación web → importación → resolución → autoridad → recuperación documental → preparación de evidencia → procedencia → contraste → conflictos → suficiencia → cobertura → independencia → temporalidad → verificación → propagación de incertidumbre → alcance → redacción → controles → trazabilidad de frases → validación de cálculos → propagación de impacto → originalidad.");
+console.log("Secuencia: investigación → claims → dependencias → plan → recuperación web → importación → resolución → autoridad → recuperación documental → preparación de evidencia → procedencia → contraste → conflictos → suficiencia → cobertura → independencia → temporalidad → verificación → propagación de incertidumbre → alcance → redacción → controles → trazabilidad de frases → validación de cálculos → propagación de impacto → originalidad → Publication Gate.");
 console.log("Las reproducciones del mismo origen no se contabilizan como corroboraciones independientes.");
 console.log("Cada afirmación factual material debe poder remontarse internamente a claims y evidencia documental.");
 console.log("Las cifras derivadas deben conservar sus datos de entrada y quedar sujetas a reverificación si estos cambian.");
 console.log("Todo cambio material en evidencia se propaga hasta claims, cálculos y frases dependientes antes de mantener la publicación.");
 console.log("La automatización nunca concede aprobación editorial ni publica por sí sola.");
-console.log("Siguiente etapa: revisión humana y Publication Gate.");
+console.log(gateOk ? "Publication Gate: SUPERADO." : "Publication Gate: BLOQUEADO.");
+
+if (!gateOk) process.exitCode = 1;
