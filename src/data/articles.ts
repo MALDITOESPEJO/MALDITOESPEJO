@@ -35,10 +35,10 @@ function markdownBody(markdown: string): string[] {
 function loadApprovedArticles(): Article[] {
   if (!fs.existsSync(CONTENT_DIR)) return [];
 
-  return fs
+  const loaded: Array<Article | null> = fs
     .readdirSync(CONTENT_DIR)
     .filter((file) => file.endsWith(".md") || file.endsWith(".mdx"))
-    .map((file) => {
+    .map((file): Article | null => {
       const fullPath = path.join(CONTENT_DIR, file);
       const markdown = fs.readFileSync(fullPath, "utf8");
       const meta = parseFrontmatter(markdown);
@@ -50,7 +50,7 @@ function loadApprovedArticles(): Article[] {
       }
 
       const slug = file.replace(/\.(md|mdx)$/, "");
-      return {
+      const article: Article = {
         slug,
         title: meta.title,
         dek: meta.description ?? "",
@@ -58,11 +58,14 @@ function loadApprovedArticles(): Article[] {
         publishedAt: `${meta.date}T00:00:00`,
         author: { name: meta.author ?? "MALDITOESPEJO" },
         keyFacts: paragraphs.slice(0, 4),
-        body: paragraphs.map((content) => ({ type: "fact" as const, content })),
+        body: paragraphs.map((content) => ({ type: "fact", content })),
         sources: [],
         isDemo: false,
-      } satisfies Article;
-    })
+      };
+      return article;
+    });
+
+  return loaded
     .filter((article): article is Article => article !== null)
     .sort((a, b) => b.publishedAt.localeCompare(a.publishedAt));
 }
