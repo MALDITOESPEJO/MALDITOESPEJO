@@ -12,7 +12,8 @@ export type SectionSlug =
   | "sociedad"
   | "mundo"
   | "tecnologia"
-  | "cartagena";
+  | "cartagena"
+  | "cultura";
 
 export interface Section {
   slug: SectionSlug;
