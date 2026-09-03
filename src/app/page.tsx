@@ -7,7 +7,6 @@ import { FeaturedStory } from "@/components/editorial/FeaturedStory";
 import { StoryCard } from "@/components/editorial/StoryCard";
 import { LatestItem } from "@/components/editorial/LatestItem";
 import { KeyFacts } from "@/components/article/KeyFacts";
-import { NewsletterBlock } from "@/components/editorial/NewsletterBlock";
 
 export const metadata: Metadata = {
   title: { absolute: "MALDITOESPEJO — Solo hechos" },
@@ -81,10 +80,6 @@ export default function HomePage() {
           </div>
         </section>
       )}
-
-      <section aria-label="Boletín" className="section-space" id="newsletter">
-        <NewsletterBlock />
-      </section>
     </div>
   );
 }
