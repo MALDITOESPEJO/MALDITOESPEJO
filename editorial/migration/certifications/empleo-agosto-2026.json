@@ -1,0 +1,31 @@
+{
+  "article": "empleo-agosto-2026.md",
+  "migration_status": "LEGACY_IN_REVIEW",
+  "claims_reconstructed": true,
+  "evidence_mapped": true,
+  "verification_completed": true,
+  "human_editorial_approval": false,
+  "publication_gate_id": null,
+  "audit_event_id": null,
+  "reviewed_at": "2026-09-03",
+  "verification_notes": [
+    "Official Social Security publication dated 2026-09-02 supports the affiliation figures and the distinction between original and seasonally adjusted series.",
+    "Official SEPE publication dated 2026-09-02 supports the registered-unemployment figures and annual comparison.",
+    "The article's numerical claims are consistent with the official publications reviewed.",
+    "No certification is granted because explicit human editorial approval and a publication-gate decision are still required."
+  ],
+  "evidence": [
+    {
+      "claim_group": "afiliacion",
+      "source": "Tesoreria General de la Seguridad Social / Revista Seguridad Social",
+      "url": "https://revista.seg-social.es/-/espa%C3%B1a-suma-mas-de-679.000-afiliados-a-la-seguridad-social-en-el-ultimo-a%C3%B1o-con-un-ritmo-de-crecimiento-interanual-del-3-1-",
+      "publication_date": "2026-09-02"
+    },
+    {
+      "claim_group": "paro_registrado",
+      "source": "Servicio Publico de Empleo Estatal (SEPE)",
+      "url": "https://www.sepe.es/noticia/SEPE/2026/Septiembre/paro-registrado-sube-agosto-44419-personas",
+      "publication_date": "2026-09-02"
+    }
+  ]
+}
