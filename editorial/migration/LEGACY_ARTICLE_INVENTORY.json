@@ -4,10 +4,10 @@
   "source_directory": "content/articles",
   "total": 5,
   "articles": [
-    {"file":"empleo-agosto-2026.md","migration_status":"LEGACY_UNREVIEWED","requires_editorial_audit":true},
-    {"file":"onu-calentamiento-global-15-grados-2026.md","migration_status":"LEGACY_UNREVIEWED","requires_editorial_audit":true},
-    {"file":"renfe-beneficios-60-2-millones-2025.md","migration_status":"LEGACY_UNREVIEWED","requires_editorial_audit":true},
-    {"file":"sean-ono-lennon-padre-primera-vez-2026.md","migration_status":"LEGACY_UNREVIEWED","requires_editorial_audit":true},
-    {"file":"telefonica-gran-via-tomas-olivo-2026.md","migration_status":"LEGACY_UNREVIEWED","requires_editorial_audit":true}
+    {"file":"empleo-agosto-2026.md","migration_status":"LEGACY_IN_REVIEW","requires_editorial_audit":true},
+    {"file":"onu-calentamiento-global-15-grados-2026.md","migration_status":"LEGACY_IN_REVIEW","requires_editorial_audit":true},
+    {"file":"renfe-beneficios-60-2-millones-2025.md","migration_status":"LEGACY_IN_REVIEW","requires_editorial_audit":true},
+    {"file":"sean-ono-lennon-padre-primera-vez-2026.md","migration_status":"LEGACY_IN_REVIEW","requires_editorial_audit":true},
+    {"file":"telefonica-gran-via-tomas-olivo-2026.md","migration_status":"LEGACY_IN_REVIEW","requires_editorial_audit":true,"decision":"REQUIRES_CORRECTION"}
   ]
 }
