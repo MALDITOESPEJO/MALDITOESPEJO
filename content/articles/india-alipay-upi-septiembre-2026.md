@@ -2,8 +2,8 @@
 title: "India frena la conexión de Alipay+ con UPI por dudas sobre seguridad y protección de datos"
 description: "India revisa la conexión entre Alipay+ y UPI por dudas sobre seguridad, datos, fraude y control de una infraestructura financiera estratégica."
 date: "2026-09-03"
-section: "Economía"
-author: "Nerea Villacorta Beltrán"
+section: "Tecnología"
+author: "Vera Alcántara Robledo"
 type: "news"
 status: "approved"
 ---
