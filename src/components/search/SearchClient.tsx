@@ -3,10 +3,14 @@
 import Link from "next/link";
 import { useMemo, useState } from "react";
 
-import { articles } from "@/data/articles";
+import type { Article } from "@/data/types";
 import { sectionName } from "@/data/sections";
 
-export function SearchClient() {
+type SearchClientProps = {
+  articles: Article[];
+};
+
+export function SearchClient({ articles }: SearchClientProps) {
   const [query, setQuery] = useState("");
 
   const results = useMemo(() => {
@@ -19,7 +23,7 @@ export function SearchClient() {
         a.body.map((b) => b.content).join(" ").toLowerCase().includes(q) ||
         sectionName(a.section).toLowerCase().includes(q)
     );
-  }, [query]);
+  }, [articles, query]);
 
   return (
     <div className="mt-8">
@@ -39,7 +43,7 @@ export function SearchClient() {
 
       {query.trim() === "" ? (
         <p className="mt-6 text-sm text-muted">
-          Escribe un término para buscar en el contenido de demostración.
+          Escribe un término para buscar en el contenido publicado de MALDITOESPEJO.
         </p>
       ) : results.length === 0 ? (
         <p className="mt-6 text-sm text-muted">No se encontraron resultados.</p>
@@ -47,10 +51,7 @@ export function SearchClient() {
         <ul className="mt-6 max-w-xl divide-y divide-border border-y border-border">
           {results.map((a) => (
             <li key={a.slug}>
-              <Link
-                href={`/${a.slug}`}
-                className="group block py-4"
-              >
+              <Link href={`/${a.slug}`} className="group block py-4">
                 <span className="text-[0.72rem] font-semibold uppercase tracking-[0.12em] text-accent">
                   {sectionName(a.section)}
                 </span>
