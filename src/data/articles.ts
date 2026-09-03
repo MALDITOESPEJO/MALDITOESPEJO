@@ -11,7 +11,23 @@ const VALID_SECTIONS = new Set<SectionSlug>([
   "mundo",
   "tecnologia",
   "cartagena",
+  "cultura",
 ]);
+
+const LEGACY_PUBLICATION_TIMES: Record<string, string> = {
+  "ceuta-crisis-marruecos-septiembre-2026": "11:07",
+  "finlandia-defensa-civil-ejercicio-2026": "11:07",
+  "petroleo-economia-mundial-septiembre-2026": "11:07",
+  "australia-estados-unidos-cooperacion-pacifico-septiembre-2026": "11:18",
+  "india-alipay-upi-septiembre-2026": "11:19",
+  "ctrack-acceso-archivos-judiciales-septiembre-2026": "11:19",
+  "nueva-york-ia-escuelas-septiembre-2026": "11:19",
+  "el-nino-intensidad-2026-2027": "11:20",
+  "suecia-elecciones-septiembre-2026": "11:20",
+  "openai-hugging-face-incidente-ciberseguridad-septiembre-2026": "16:56",
+  "cartagena-plan-barrios-diputaciones-2026-2027": "17:01",
+  "tres-peliculas-espanolas-preseleccionadas-oscar-septiembre-2026": "17:04",
+};
 
 function parseFrontmatter(markdown: string): Record<string, string> {
   const match = markdown.match(/^---\r?\n([\s\S]*?)\r?\n---/);
@@ -33,9 +49,10 @@ function markdownBody(markdown: string): string[] {
     .filter((block) => block && !block.startsWith("#"));
 }
 
-function publicationTimestamp(meta: Record<string, string>): string {
-  const time = meta.time?.match(/^(?:[01]\d|2[0-3]):[0-5]\d$/)?.[0];
-  return `${meta.date}T${time ?? "00:00"}`;
+function publicationTimestamp(slug: string, meta: Record<string, string>): string {
+  const explicitTime = meta.time?.match(/^(?:[01]\d|2[0-3]):[0-5]\d$/)?.[0];
+  const time = explicitTime ?? LEGACY_PUBLICATION_TIMES[slug] ?? "00:00";
+  return `${meta.date}T${time}`;
 }
 
 function loadApprovedArticles(): Article[] {
@@ -61,7 +78,7 @@ function loadApprovedArticles(): Article[] {
         title: meta.title,
         dek: meta.description ?? "",
         section,
-        publishedAt: publicationTimestamp(meta),
+        publishedAt: publicationTimestamp(slug, meta),
         author: { name: meta.author ?? "MALDITOESPEJO" },
         keyFacts: paragraphs.slice(0, 4),
         body: paragraphs.map((content) => ({ type: "fact", content })),
