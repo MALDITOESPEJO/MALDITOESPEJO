@@ -1,0 +1,32 @@
+{
+  "article": "renfe-beneficios-60-2-millones-2025.md",
+  "migration_status": "LEGACY_IN_REVIEW",
+  "claims_reconstructed": true,
+  "evidence_mapped": true,
+  "verification_completed": true,
+  "human_editorial_approval": false,
+  "publication_gate_id": null,
+  "audit_event_id": null,
+  "reviewed_at": "2026-09-03",
+  "verification_notes": [
+    "Grupo Renfe published on 2026-09-02 that the consolidated group result for 2025 was a net profit of 60.2 million euros, versus a loss of 2.9 million in 2024.",
+    "The official Renfe publication supports the 2025 revenue, ticket-sales revenue, EBITDA, passenger-volume and subsidiary-result figures used in the article.",
+    "The article correctly distinguishes consolidated group profit from the results of individual businesses and does not infer that every Renfe activity was profitable.",
+    "The March 2026 Renfe publication described the accounts as pending audit; the September 2026 publication reports the final 60.2 million euro result.",
+    "No certification is granted because explicit human editorial approval and a publication-gate decision are still required."
+  ],
+  "evidence": [
+    {
+      "claim_group": "resultado_consolidado",
+      "source": "Grupo Renfe",
+      "url": "https://grupo.renfe.com/es/es/sala-de-prensa/noticias/2026/09/renfe-vuelve-beneficios-resultado-neto-favorable",
+      "publication_date": "2026-09-02"
+    },
+    {
+      "claim_group": "resultados_y_cuentas",
+      "source": "Grupo Renfe - Gobierno y transparencia",
+      "url": "https://grupo.renfe.com/es/es/gobierno-y-transparencia/informacion-economica",
+      "publication_date": "2026-03"
+    }
+  ]
+}
