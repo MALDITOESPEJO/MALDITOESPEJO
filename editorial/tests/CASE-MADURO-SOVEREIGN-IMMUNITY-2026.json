@@ -1,0 +1,57 @@
+{
+  "test_id": "CASE-MADURO-SOVEREIGN-IMMUNITY-2026",
+  "input": "Maduro pide desestimar su caso en EEUU argumentando su inmunidad soberana",
+  "expected": {
+    "status": "PARTIALLY_VERIFIED",
+    "publication_allowed": false,
+    "requires_human_editorial_approval": true,
+    "must_distinguish_defense_argument_from_court_decision": true,
+    "blocked_claims": [
+      "CLAIM-MADURO-COURT-GRANTS-IMMUNITY"
+    ],
+    "verified_claims": [
+      "CLAIM-MADURO-SEEKS-DISMISSAL",
+      "CLAIM-MADURO-DEFENSE-ASSERTS-SOVEREIGN-IMMUNITY",
+      "CLAIM-MADURO-HEARING-NOVEMBER-17"
+    ]
+  },
+  "sources": [
+    {
+      "source_id": "REUTERS-2026-09-02-MADURO",
+      "role": "DISCOVERY_AND_CORROBORATION",
+      "url": "https://www.reuters.com/world/americas/venezuela-s-maduro-asserts-immunity-urges-us-judge-dismiss-charges-2026-09-02/"
+    },
+    {
+      "source_id": "AP-2026-09-02-MADURO",
+      "role": "CORROBORATION",
+      "url": "https://apnews.com/article/000ee40342a3ace42d8fac3ea19b102e"
+    }
+  ],
+  "claims": [
+    {
+      "claim_id": "CLAIM-MADURO-SEEKS-DISMISSAL",
+      "statement": "La defensa de Nicolás Maduro pide a un juez federal de Estados Unidos que desestime los cargos penales contra él.",
+      "status": "VERIFIED"
+    },
+    {
+      "claim_id": "CLAIM-MADURO-DEFENSE-ASSERTS-SOVEREIGN-IMMUNITY",
+      "statement": "La defensa sostiene que Maduro debe estar protegido por inmunidad como jefe de Estado de un país soberano.",
+      "status": "VERIFIED"
+    },
+    {
+      "claim_id": "CLAIM-MADURO-HEARING-NOVEMBER-17",
+      "statement": "La vista sobre la solicitud de desestimación está prevista para el 17 de noviembre de 2026.",
+      "status": "VERIFIED"
+    },
+    {
+      "claim_id": "CLAIM-MADURO-COURT-GRANTS-IMMUNITY",
+      "statement": "Un tribunal estadounidense ha reconocido a Maduro inmunidad soberana frente al proceso penal.",
+      "status": "NOT_VERIFIED",
+      "blocking": true
+    }
+  ],
+  "editorial_assertion_rule": {
+    "defense_argument": "Puede atribuirse a la defensa.",
+    "judicial_decision": "No puede presentarse como hecho hasta que exista resolución judicial verificable."
+  }
+}
