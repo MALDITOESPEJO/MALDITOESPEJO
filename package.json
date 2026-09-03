@@ -57,7 +57,8 @@
     "check:publication": "node scripts/check-publication-gate.mjs",
     "recovery:record": "node scripts/record-editorial-failure.mjs",
     "recovery:validate": "node scripts/validate-failure-records.mjs",
-    "legacy:inventory": "node scripts/inventory-legacy-articles.mjs"
+    "legacy:inventory": "node scripts/inventory-legacy-articles.mjs",
+    "legacy:certify:validate": "node scripts/validate-legacy-certifications.mjs"
   },
   "dependencies": {
     "next": "16.3.3",
