@@ -11,7 +11,8 @@ export type SectionSlug =
   | "economia"
   | "sociedad"
   | "mundo"
-  | "tecnologia";
+  | "tecnologia"
+  | "cartagena";
 
 export interface Section {
   slug: SectionSlug;
@@ -68,7 +69,7 @@ export interface TimelineEntry {
 
 /** Anotacion de actualizacion posterior a la publicacion. */
 export interface UpdateEntry {
-  /** Hora de la actualizacion (p. ej. "13:04"). */
+  /** Hora de la actualizacion, distinguiendo Publicado/Actualizado. */
   time: string;
   text: string;
 }
