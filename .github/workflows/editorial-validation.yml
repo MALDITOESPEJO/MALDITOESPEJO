@@ -47,9 +47,12 @@ jobs:
       - name: Validate legacy certification records
         run: npm run legacy:certify:validate
 
+      - name: Check legacy gate readiness
+        run: npm run legacy:gate:readiness
+
       - name: Run editorial E2E acceptance tests
         run: npm run test:e2e:editorial
 
-# Publication Gate remains an explicit authorization barrier while legacy migration is open.
-# It will be promoted to mandatory CI enforcement after all published legacy articles
-# are CERTIFIED or WITHDRAWN through the documented migration workflow.
+# Publication Gate becomes globally enforceable only when the legacy readiness check passes.
+# Until then, legacy articles remain explicitly outside certification and must be
+# CERTIFIED or WITHDRAWN through the documented migration workflow.
