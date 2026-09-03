@@ -205,9 +205,11 @@ input:focus-visible,
 /* Cuerpo de articulo / desarrollo (voz editorial: Source Serif 4) */
 .prose-editorial {
   font-family: var(--font-display);
-  font-size: 1.0625rem;
+  font-size: 1.125rem;
   line-height: 1.75;
   color: var(--color-ink);
+  text-align: justify;
+  hyphens: auto;
 }
 
 .prose-editorial p + p {
