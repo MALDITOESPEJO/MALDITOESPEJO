@@ -1,0 +1,13 @@
+{
+  "article": "telefonica-gran-via-tomas-olivo-2026.md",
+  "case_id": "CASE-00000004",
+  "status": "CORRECTION_RECOMMENDED",
+  "decision": "CORRECTION",
+  "reason": "El titular de la entrada legacy incorporaba como hecho una cifra exacta de 200 millones de euros que no ha quedado resuelta documentalmente. La revisión conserva como hechos la venta, el comprador y la formalización, y elimina la cifra exacta del alcance factual.",
+  "affected_claim_ids": ["CLM-00000018"],
+  "replacement_scope": ["CLM-00000016", "CLM-00000017", "CLM-00000019", "CLM-00000020"],
+  "human_editorial_approval": false,
+  "publication_gate_required": true,
+  "public_notice_required": true,
+  "note": "No se aplica automáticamente la corrección ni se certifica el artículo. Requiere decisión y aprobación editorial humana."
+}
