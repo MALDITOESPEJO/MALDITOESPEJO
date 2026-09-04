@@ -10,12 +10,12 @@ const output = process.env.SOURCE_COVERAGE_OUTPUT || 'editorial/radars/daily-sou
 
 const channelFiles = channelsGlob.length
   ? channelsGlob
-  : fs.readdirSync(path.dirname(path.join(ROOT, 'editorial/sources')))
+  : fs.readdirSync(path.join(ROOT, 'editorial/sources'))
       .filter((name) => /^MASTER_SOURCE_CHANNELS_.*\.csv$/i.test(name))
       .sort()
       .map((name) => path.join('editorial/sources', name));
 
-const endpointFiles = fs.readdirSync(path.dirname(path.join(ROOT, 'editorial/sources')))
+const endpointFiles = fs.readdirSync(path.join(ROOT, 'editorial/sources'))
   .filter((name) => /^MASTER_SOURCE_ENDPOINTS_.*\.csv$/i.test(name))
   .sort()
   .map((name) => path.join('editorial/sources', name));
@@ -104,8 +104,26 @@ const checks = [];
 for (const source of sources) {
   const sid = normaliseSourceId(source.source_id);
   const sourceChannels = channels.filter((c) => normaliseSourceId(c.source_id) === sid || normaliseSourceId(c.source_id).startsWith(sid) || sid.startsWith(normaliseSourceId(c.source_id)));
-  const sourceEndpoints = endpoints.filter((e) => normaliseSourceId(e.source_id) === sid || normaliseSourceId(e.source_id).startsWith(sid) || sid.startsWith(normaliseSourceId(e.source_id)) || sourceChannels.some((c) => String(c.channel_id || '').trim() === String(e.channel_id || '').trim()));
-  const targets = sourceEndpoints.length ? sourceEndpoints : sourceChannels.map((c) => ({ ...c, endpoint_id: '', endpoint_name: c.channel_name, endpoint_type: c.channel_type, endpoint: c.endpoint, endpoint_verified: c.verification_status }));
+  // Cada canal es el objetivo real a comprobar (trae su propia URL en
+  // 'endpoint'). Si existe una fila correspondiente en el cat\u00e1logo de
+  // endpoints (por channel_id), se usa solo para enriquecer metadatos
+  // (endpoint_id, estado de verificaci\u00f3n) -- nunca para sustituir la URL
+  // real del canal, que es la \u00fanica columna que de verdad contiene un
+  // enlace comprobable. Antes, cualquier fila de endpoint sin URL propia
+  // descartaba por completo las URLs v\u00e1lidas de todos los canales de esa
+  // fuente; con esto cada canal se comprueba por separado.
+  const targets = sourceChannels.map((c) => {
+    const matchedEndpoint = endpointByChannel.get(String(c.channel_id || '').trim());
+    return {
+      channel_id: c.channel_id,
+      endpoint_id: matchedEndpoint?.endpoint_id || '',
+      endpoint_name: matchedEndpoint?.endpoint_name || c.channel_name,
+      endpoint_type: matchedEndpoint?.endpoint_type || c.channel_type,
+      endpoint: c.endpoint,
+      endpoint_verified: matchedEndpoint?.endpoint_verified || c.verification_status,
+      protocol: matchedEndpoint?.protocol || '',
+    };
+  });
 
   if (!targets.length) {
     checks.push({ source_id: source.source_id, status: 'NO_REGISTERED_ENDPOINT', coverage_role: 'SOURCE_REGISTERED_NO_CHANNEL' });
@@ -181,4 +199,4 @@ const result = {
 
 fs.mkdirSync(path.dirname(absolute(output)), { recursive: true });
 fs.writeFileSync(absolute(output), JSON.stringify(result, null, 2) + '\n');
-console.log(`Source universe checked: ${counts.ANALYZED}/${sources.length} sources with at least one reachable endpoint → ${output}`);
+console.log(`Source universe checked: ${counts.ANALYZED}/${sources.length} sources with at least one reachable endpoint \u2192 ${output}`);

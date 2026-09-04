@@ -39,3 +39,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Informes diarios del radar de noticias (se regeneran en cada ejecucion)
+editorial/radars/*.json
+editorial/radars/*.md
+!editorial/radars/README.md
