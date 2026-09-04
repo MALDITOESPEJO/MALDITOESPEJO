@@ -5,7 +5,7 @@ section: "tecnologia"
 author: "Vera Alcántara Robledo"
 date: "2026-09-04"
 time: "15:30"
-status: "review"
+status: "approved"
 ---
 
 # ChatGPT, Claude y Grok sufren una caída simultánea y reabren el debate sobre la dependencia de la IA
