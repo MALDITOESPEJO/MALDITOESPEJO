@@ -44,3 +44,8 @@ next-env.d.ts
 editorial/radars/*.json
 editorial/radars/*.md
 !editorial/radars/README.md
+
+# Informes diarios del radar de noticias (se regeneran en cada ejecucion)
+editorial/radars/*.json
+editorial/radars/*.md
+!editorial/radars/README.md
