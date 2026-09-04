@@ -2,7 +2,7 @@
 title: "Tres películas españolas quedan preseleccionadas para representar a España en los Oscar"
 description: "El ser querido, La bola negra y Los domingos continúan en la carrera para representar a España en la categoría de Mejor Película Internacional."
 date: "2026-09-03"
-section: "Cultura"
+section: "actualidad"
 author: "Clara Valdés Moreno"
 type: "news"
 status: "approved"
