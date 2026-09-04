@@ -7,11 +7,11 @@ const ROOT = process.cwd();
 const ARTICLES_DIR = path.join(ROOT, "content", "articles");
 const VALIDATION_DIR = path.join(ROOT, "editorial", "validation");
 
-// Secciones vÃ¡lidas: deben coincidir exactamente con VALID_SECTIONS en
+// Secciones v\u00e1lidas: deben coincidir exactamente con VALID_SECTIONS en
 // src/data/articles.ts (el frontend es la fuente de verdad del slug real).
-// La lista de firmas por secciÃ³n es orientativa (registro de bylines
-// conocidas), no una lista cerrada: MALDITOESPEJO puede tener mÃ¡s de una
-// firma por secciÃ³n. Un autor fuera de esta lista genera un aviso, no un
+// La lista de firmas por secci\u00f3n es orientativa (registro de bylines
+// conocidas), no una lista cerrada: MALDITOESPEJO puede tener m\u00e1s de una
+// firma por secci\u00f3n. Un autor fuera de esta lista genera un aviso, no un
 // error, hasta que exista un registro editorial de firmas autorizado.
 const VALID_SECTIONS = new Set([
   "actualidad",
@@ -24,32 +24,35 @@ const VALID_SECTIONS = new Set([
   "cultura",
 ]);
 
-const KNOWN_BYLINES = new Set([
-  "Clara ValdÃ©s Moreno",
-  "Ãlvaro Serrano Vidal",
-  "Marta Robles Ferrer",
-  "Elena Campos Navarro",
-  "Daniel Ortega Salvat",
-  "LucÃ­a MartÃ­n Vega",
-  "Ariadna Soler MontalbÃ¡n",
-  "Bruno Salvatierra Ledesma",
-  "Gael Santacruz FerrÃ¡n",
-  "Iria ValcÃ¡rcel Montoro",
-  "LucÃ­a Belmonte Navarro",
-  "Marina Torres Salcedo",
-  "Nerea Villacorta BeltrÃ¡n",
-  "Vera AlcÃ¡ntara Robledo",
-]);
+// Roster oficial confirmado por el Director/propietario el 2026-09-04.
+// Cultura no es una secci\u00f3n editorial independiente ni una ruta real del
+// sitio (no existe /cultura en src/app ni en src/data/sections.ts): el
+// contenido cultural se etiqueta como "actualidad", no como "cultura".
+const SECTION_AUTHORS = {
+  actualidad: "Iria Valc\u00e1rcel Montoro",
+  politica: "Bruno Salvatierra Ledesma",
+  economia: "Nerea Villacorta Beltr\u00e1n",
+  sociedad: "Ariadna Soler Montalb\u00e1n",
+  mundo: "Gael Santacruz Ferr\u00e1n",
+  tecnologia: "Vera Alc\u00e1ntara Robledo",
+  cartagena: "Luc\u00eda Belmonte Navarro",
+};
+
+// A partir de esta fecha (inclusive), todo art\u00edculo nuevo debe llevar la
+// firma fija de su secci\u00f3n: un desajuste es error, no aviso. Los art\u00edculos
+// con fecha anterior son legado publicado antes de esta pol\u00edtica y solo
+// generan un aviso, para no romper la validaci\u00f3n de contenido ya vivo.
+const AUTHOR_POLICY_EFFECTIVE_DATE = "2026-09-04";
 
 // "approved" es el estado terminal real que usa el frontend (ver
 // src/data/articles.ts: solo se publican archivos con status "approved").
-// Se mantienen ademÃ¡s los estados del pipeline editorial completo
-// (draft/review/verified/published) para casos que sÃ­ atraviesan
-// case -> claims -> evidencia -> verificaciÃ³n -> Publication Gate.
+// Se mantienen adem\u00e1s los estados del pipeline editorial completo
+// (draft/review/verified/published) para casos que s\u00ed atraviesan
+// case \u2192 claims \u2192 evidencia \u2192 verificaci\u00f3n \u2192 Publication Gate.
 const ALLOWED_STATUS = new Set(["draft", "review", "verified", "published", "approved"]);
-// Campos exigidos por el frontend real (src/data/articles.ts) mÃ¡s los
-// mÃ­nimos editoriales. 'description' y 'type' son recomendados pero no
-// bloquean la validaciÃ³n: su ausencia se reporta como aviso.
+// Campos exigidos por el frontend real (src/data/articles.ts) m\u00e1s los
+// m\u00ednimos editoriales. 'description' y 'type' son recomendados pero no
+// bloquean la validaci\u00f3n: su ausencia se reporta como aviso.
 const REQUIRED_FIELDS = ["title", "date", "section", "author", "status"];
 const RECOMMENDED_FIELDS = ["description", "type"];
 
@@ -86,7 +89,7 @@ function parseFrontmatter(content) {
       continue;
     }
 
-    return { data: null, error: `lÃ­nea de frontmatter no reconocida (${index + 2}): ${line}` };
+    return { data: null, error: `l\u00ednea de frontmatter no reconocida (${index + 2}): ${line}` };
   }
   return { data, error: null };
 }
@@ -108,17 +111,30 @@ function validateArticle(file) {
   for (const field of REQUIRED_FIELDS) if (!data[field] || (Array.isArray(data[field]) && data[field].length === 0)) errors.push(`falta el campo obligatorio '${field}'`);
   for (const field of RECOMMENDED_FIELDS) if (!data[field] || (Array.isArray(data[field]) && data[field].length === 0)) warnings.push(`falta el campo recomendado '${field}'`);
   if (data.date && !/^\d{4}-\d{2}-\d{2}$/.test(data.date)) errors.push(`'date' debe tener formato YYYY-MM-DD (valor: ${data.date})`);
-  // Misma normalizaciÃ³n que aplica el frontend real (src/data/articles.ts):
-  // minÃºsculas + eliminaciÃ³n de diacrÃ­ticos, para que "Mundo", "TecnologÃ­a"
+  // Misma normalizaci\u00f3n que aplica el frontend real (src/data/articles.ts):
+  // min\u00fasculas + eliminaci\u00f3n de diacr\u00edticos, para que "Mundo", "Tecnolog\u00eda"
   // y "tecnologia" se validen como el mismo slug.
   const normalizedSection = data.section?.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-  if (data.section && !VALID_SECTIONS.has(normalizedSection)) errors.push(`secciÃ³n desconocida '${data.section}' (debe normalizar a una de: ${[...VALID_SECTIONS].join(", ")})`);
-  if (data.author && !KNOWN_BYLINES.has(data.author)) warnings.push(`firma no registrada en el listado de bylines conocidas: '${data.author}'`);
+  if (data.section && !VALID_SECTIONS.has(normalizedSection)) errors.push(`secci\u00f3n desconocida '${data.section}' (debe normalizar a una de: ${[...VALID_SECTIONS].join(", ")})`);
+
+  // Normalizamos a NFC antes de comparar: un acento puede venir compuesto
+  // (\u00e9 = U+00E9) o descompuesto (e + \u00b4 = U+0065 U+0301); visualmente son
+  // id\u00e9nticos pero no coinciden byte a byte si no se normalizan igual.
+  const normalizedAuthor = data.author?.normalize("NFC");
+  const expectedAuthor = SECTION_AUTHORS[normalizedSection];
+  if (expectedAuthor && normalizedAuthor && normalizedAuthor !== expectedAuthor.normalize("NFC")) {
+    const isLegacy = data.date && data.date < AUTHOR_POLICY_EFFECTIVE_DATE;
+    const message = `la secci\u00f3n '${data.section}' tiene firma fija '${expectedAuthor}', pero este art\u00edculo figura con '${data.author}'`;
+    if (isLegacy) warnings.push(`${message} (contenido anterior al ${AUTHOR_POLICY_EFFECTIVE_DATE}: se permite como legado, no bloquea)`);
+    else errors.push(message);
+  } else if (!expectedAuthor && data.author) {
+    warnings.push(`la secci\u00f3n '${data.section}' todav\u00eda no tiene firma fija asignada en el roster oficial`);
+  }
   if (data.status && !ALLOWED_STATUS.has(data.status)) errors.push(`estado editorial no permitido '${data.status}'`);
 
   const articleId = data.id || path.basename(file, path.extname(file));
-  if ((data.status === "verified" || data.status === "published") && !verificationRecordExists(articleId)) errors.push(`estado '${data.status}' requiere un expediente de verificaciÃ³n en editorial/validation/${articleId}.md o .json`);
-  if (data.status === "published" || data.status === "approved") warnings.push(`estado '${data.status}': la validaciÃ³n automÃ¡tica comprueba estructura; la aprobaciÃ³n humana y el Publication Gate siguen siendo obligatorios para considerar la pieza publicable bajo el estÃ¡ndar completo`);
+  if ((data.status === "verified" || data.status === "published") && !verificationRecordExists(articleId)) errors.push(`estado '${data.status}' requiere un expediente de verificaci\u00f3n en editorial/validation/${articleId}.md o .json`);
+  if (data.status === "published" || data.status === "approved") warnings.push(`estado '${data.status}': la validaci\u00f3n autom\u00e1tica comprueba estructura; la aprobaci\u00f3n humana y el Publication Gate siguen siendo obligatorios para considerar la pieza publicable bajo el est\u00e1ndar completo`);
   return { errors, warnings };
 }
 
@@ -134,21 +150,21 @@ function collectMarkdownFiles(directory) {
 }
 
 const files = collectMarkdownFiles(ARTICLES_DIR);
-if (files.length === 0) { console.error(`X No se encontraron artÃ­culos Markdown en ${path.relative(ROOT, ARTICLES_DIR)}`); process.exit(1); }
+if (files.length === 0) { console.error(`X No se encontraron art\u00edculos Markdown en ${path.relative(ROOT, ARTICLES_DIR)}`); process.exit(1); }
 let totalErrors = 0, totalWarnings = 0;
-console.log("MALDITOESPEJO â€” validaciÃ³n automÃ¡tica de artÃ­culos");
-console.log(`ArtÃ­culos encontrados: ${files.length}`);
+console.log("MALDITOESPEJO \u2014 validaci\u00f3n autom\u00e1tica de art\u00edculos");
+console.log(`Art\u00edculos encontrados: ${files.length}`);
 console.log("");
 for (const file of files) {
   const relative = path.relative(ROOT, file);
   const { errors, warnings } = validateArticle(file);
   totalErrors += errors.length; totalWarnings += warnings.length;
-  if (errors.length === 0) console.log(`OK  ${relative}`);
-  else { console.log(`X   ${relative}`); for (const error of errors) fail(`  ${error}`); }
-  for (const warning of warnings) console.warn(`!   ${relative}: ${warning}`);
+  if (errors.length === 0) console.log(`OK ${relative}`);
+  else { console.log(`X ${relative}`); for (const error of errors) fail(`  ${error}`); }
+  for (const warning of warnings) console.warn(`! ${relative}: ${warning}`);
 }
 console.log("");
-console.log(`Resultado: ${totalErrors === 0 ? "APTO ESTRUCTURALMENTE" : "FALLA DE VALIDACIÃ“N"}`);
+console.log(`Resultado: ${totalErrors === 0 ? "APTO ESTRUCTURALMENTE" : "FALLA DE VALIDACI\u00d3N"}`);
 console.log(`Errores: ${totalErrors}`);
 console.log(`Avisos: ${totalWarnings}`);
 process.exit(totalErrors === 0 ? 0 : 1);
