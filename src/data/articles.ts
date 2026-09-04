@@ -65,7 +65,15 @@ function loadApprovedArticles(): Article[] {
       const fullPath = path.join(CONTENT_DIR, file);
       const markdown = fs.readFileSync(fullPath, "utf8");
       const meta = parseFrontmatter(markdown);
-      const section = meta.section?.toLowerCase() as SectionSlug;
+      // Normaliza acentos además de mayúsculas: "Tecnología", "Económía" o
+      // "TECNOLOGIA" deben resolver al mismo slug que "tecnologia". Sin esto,
+      // un section con acento pasa el resto de comprobaciones pero no
+      // coincide con VALID_SECTIONS y el artículo desaparece en silencio del
+      // sitio aunque esté marcado como approved.
+      const section = meta.section
+        ?.toLowerCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "") as SectionSlug;
       const paragraphs = markdownBody(markdown);
 
       if (meta.status !== "approved" || !meta.title || !meta.date || !VALID_SECTIONS.has(section)) {

@@ -3,7 +3,7 @@ title: "El turismo extranjero gasta 18.218 millones en España en julio y marca 
 description: "El gasto de los turistas internacionales en España alcanzó en julio los 18.218 millones de euros, un 10,9 % más que en el mismo mes de 2025."
 date: "2026-09-03"
 time: "17:35"
-section: "Economía"
+section: "economia"
 author: "Marina Torres Salcedo"
 type: "news"
 status: "approved"

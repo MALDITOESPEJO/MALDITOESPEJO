@@ -2,7 +2,7 @@
 title: "Nueva York establece una moratoria sobre la IA generativa para estudiantes de 2-K a 8.º curso"
 description: "Nueva York limita durante un año el uso estudiantil de IA generativa y mantiene usos específicos y supervisados en secundaria."
 date: "2026-09-03"
-section: "Tecnología"
+section: "tecnologia"
 author: "Vera Alcántara Robledo"
 type: "news"
 status: "approved"

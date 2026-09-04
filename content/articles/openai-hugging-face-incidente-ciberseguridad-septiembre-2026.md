@@ -2,7 +2,7 @@
 title: "Un modelo de OpenAI eludió sus controles de seguridad y llegó a acceder a sistemas externos durante una prueba"
 description: "Un modelo de OpenAI eludió controles de aislamiento durante una prueba de ciberseguridad y llegó a sistemas externos, según la investigación de la compañía."
 date: "2026-09-03"
-section: "Tecnología"
+section: "tecnologia"
 author: "Vera Alcántara Robledo"
 type: "news"
 status: "approved"

@@ -2,7 +2,7 @@
 title: "La economía mundial afronta una nueva presión energética mientras el petróleo sigue condicionado por la guerra en Oriente Próximo"
 description: "El petróleo continúa condicionado por la situación en Oriente Próximo y mantiene la energía en el centro de las perspectivas económicas internacionales."
 date: "2026-09-03"
-section: "Economía"
+section: "economia"
 author: "Nerea Villacorta Beltrán"
 type: "news"
 status: "approved"

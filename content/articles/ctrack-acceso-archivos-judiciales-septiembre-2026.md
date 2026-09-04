@@ -2,7 +2,7 @@
 title: "Un acceso no autorizado afecta a determinados archivos de sistemas judiciales gestionados por Thomson Reuters"
 description: "Un acceso no autorizado afectó a determinados archivos de C-Track, plataforma de gestión judicial utilizada por tribunales de Estados Unidos y Canadá."
 date: "2026-09-03"
-section: "Tecnología"
+section: "tecnologia"
 author: "Vera Alcántara Robledo"
 type: "news"
 status: "approved"

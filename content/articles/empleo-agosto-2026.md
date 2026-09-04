@@ -2,7 +2,7 @@
 title: "La afiliación a la Seguridad Social cae en 162.840 personas en agosto y el paro registrado aumenta en 44.419"
 description: "La afiliación media baja en agosto, mientras el paro registrado sube. La serie desestacionalizada de afiliación aumenta en 83.844 personas."
 date: "2026-09-02"
-section: "Economía"
+section: "economia"
 author: "Marta Robles Ferrer"
 type: "news"
 status: "published"

@@ -2,7 +2,7 @@
 title: "Suecia llega a las elecciones con la carrera abierta entre el Gobierno y la oposición"
 description: "Suecia afronta la recta final de las elecciones del 13 de septiembre con una diferencia reducida entre los bloques de Gobierno y oposición."
 date: "2026-09-03"
-section: "Política"
+section: "politica"
 author: "Bruno Salvatierra Ledesma"
 type: "news"
 status: "approved"

@@ -2,7 +2,7 @@
 title: "Telefónica cierra la venta de su histórica sede de Gran Vía a Tomás Olivo"
 description: "La operación sobre el edificio de Gran Vía 28 quedó formalizada el 1 de septiembre. El importe exacto sigue sin estar públicamente aclarado."
 date: "2026-09-02"
-section: "Economía"
+section: "economia"
 author: "Marta Robles Ferrer"
 type: "news"
 status: "review"
