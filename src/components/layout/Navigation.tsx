@@ -7,13 +7,12 @@ export function Wordmark() {
     <Link
       href="/"
       aria-label="MALDITOESPEJO — Hechos — portada"
-      className="inline-flex flex-col leading-none"
+      className="group inline-flex flex-col items-center leading-none"
     >
-      <span className="text-[1.15rem] font-black uppercase tracking-[0.04em] text-foreground">
-        Maldito
-        <span className="text-accent">espejo</span>
+      <span className="font-sans text-[1.65rem] font-black uppercase tracking-[-0.055em] text-foreground sm:text-[2rem] md:text-[2.35rem]">
+        Maldito<span className="text-accent">espejo</span>
       </span>
-      <span className="mt-1 text-[0.55rem] font-semibold uppercase tracking-[0.24em] text-ink/70">
+      <span className="mt-1.5 border-t border-ink px-2 pt-1 text-[0.52rem] font-bold uppercase tracking-[0.34em] text-ink">
         Hechos
       </span>
     </Link>
@@ -23,22 +22,16 @@ export function Wordmark() {
 export function Navigation() {
   return (
     <nav aria-label="Secciones principales">
-      <ul className="flex items-center gap-6">
+      <ul className="news-nav">
         {sections.map((section) => (
           <li key={section.slug}>
-            <Link
-              href={section.url}
-              className="text-[0.8rem] font-medium uppercase tracking-[0.06em] text-ink/80 transition-colors hover:text-accent"
-            >
+            <Link href={section.url} className="news-nav-link">
               {section.name}
             </Link>
           </li>
         ))}
         <li>
-          <Link
-            href="/lo-ultimo"
-            className="text-[0.8rem] font-medium uppercase tracking-[0.06em] text-accent transition-colors hover:text-accent/80"
-          >
+          <Link href="/lo-ultimo" className="news-nav-link news-nav-link-active">
             Lo último
           </Link>
         </li>
