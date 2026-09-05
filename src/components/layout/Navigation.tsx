@@ -9,10 +9,10 @@ export function Wordmark() {
       aria-label="MALDITOESPEJO — Hechos — portada"
       className="group inline-flex flex-col items-center leading-none"
     >
-      <span className="font-sans text-[1.65rem] font-black uppercase tracking-[-0.055em] text-foreground sm:text-[2rem] md:text-[2.35rem]">
+      <span className="font-sans text-[2rem] font-black uppercase tracking-[-0.055em] text-foreground sm:text-[2.45rem] md:text-[3rem]">
         Maldito<span className="text-accent">espejo</span>
       </span>
-      <span className="mt-1.5 border-t border-ink px-2 pt-1 text-[0.52rem] font-bold uppercase tracking-[0.34em] text-ink">
+      <span className="mt-2 border-t border-ink px-3 pt-1.5 text-[0.68rem] font-bold uppercase tracking-[0.34em] text-ink sm:text-[0.74rem] md:text-[0.8rem]">
         Hechos
       </span>
     </Link>
