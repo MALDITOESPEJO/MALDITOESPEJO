@@ -46,6 +46,11 @@ const endpointFiles = files.filter((n) => /^MASTER_SOURCE_ENDPOINTS_.*\.csv$/i.t
 const feedFiles = files.filter((n) => /^MASTER_SOURCE_FEED_CATALOG.*\.csv$/i.test(n)).sort();
 const channels = channelFiles.flatMap((n) => readCsv(path.join(SOURCES_DIR, n)));
 const endpoints = endpointFiles.flatMap((n) => readCsv(path.join(SOURCES_DIR, n)));
+// El catalogo de 43 endpoints no tiene columna de URL propia; la URL real
+// vive en el canal (259 filas tras la incorporacion del OPML). Se usa el
+// catalogo solo para enriquecer metadatos (tipo, autoridad) por
+// channel_id, nunca para sustituir la URL.
+const endpointByChannel = new Map(endpoints.map((e) => [String(e.channel_id || '').trim(), e]));
 const feeds = feedFiles.flatMap((n) => readCsv(path.join(SOURCES_DIR, n)));
 
 const sourceById = new Map(registry.map((s) => [String(s.source_id || '').trim().toUpperCase(), s]));
@@ -175,9 +180,23 @@ const candidates = [];
 const observations = [];
 const errors = [];
 
-// Every registered endpoint is attempted. Non-machine-readable endpoints are explicitly queued,
+// Every registered channel is attempted using its own URL. When a matching
+// row exists in the endpoint catalogue (by channel_id), its metadata
+// (type, authority level) enriches the target -- but the URL always comes
+// from the channel itself, never from the endpoint catalogue, which has
+// no URL column. Non-machine-readable endpoints are explicitly queued,
 // never treated as empty and never converted into false "no news" results.
-for (const endpoint of endpoints) {
+for (const channel of channels) {
+  const matchedEndpoint = endpointByChannel.get(String(channel.channel_id || '').trim()) || {};
+  const endpoint = {
+    source_id: channel.source_id,
+    channel_id: channel.channel_id,
+    endpoint_id: matchedEndpoint.endpoint_id || '',
+    endpoint_name: matchedEndpoint.endpoint_name || channel.channel_name,
+    endpoint_type: matchedEndpoint.endpoint_type || channel.channel_type,
+    endpoint: channel.endpoint,
+    authority_level: matchedEndpoint.authority_level || channel.authority_level,
+  };
   const sourceId = String(endpoint.source_id || '').trim();
   const mode = modeFor(endpoint);
   const base = {
@@ -235,24 +254,10 @@ for (const endpoint of endpoints) {
   }
 }
 
-// Channels without a corresponding endpoint remain visible in the coverage record.
-const endpointChannelIds = new Set(endpoints.map((e) => String(e.channel_id || '').trim()));
-for (const channel of channels) {
-  const cid = String(channel.channel_id || '').trim();
-  if (cid && !endpointChannelIds.has(cid)) {
-    observations.push({
-      source_id: channel.source_id || null,
-      channel_id: cid,
-      endpoint_id: null,
-      endpoint_name: channel.channel_name || '',
-      endpoint_type: channel.channel_type || '',
-      access_mode: isHttp(channel.endpoint) ? 'WEB' : 'MANUAL',
-      checked_at: run,
-      status: 'NO_REGISTERED_ENDPOINT',
-      reason: 'Channel is registered but no endpoint record is available in the endpoint registry.',
-    });
-  }
-}
+// Nota: ya no hace falta un bloque aparte para "canales sin endpoint
+// registrado" -- con el fix, cada canal se procesa directamente arriba
+// usando su propia URL, enriquecida con el catalogo de endpoints cuando
+// existe una fila correspondiente.
 
 const unique = new Map();
 for (const candidate of candidates) unique.set(candidate.candidate_id, candidate);
