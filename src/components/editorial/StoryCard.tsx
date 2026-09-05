@@ -3,7 +3,6 @@ import Link from "next/link";
 import { formatEditorialMeta } from "@/lib/utils";
 import type { Article } from "@/data/types";
 import { CategoryLabel } from "@/components/ui/CategoryLabel";
-import { ImageMarshal } from "@/components/ui/ImageMarshal";
 
 interface StoryCardProps {
   article: Article;
@@ -26,12 +25,9 @@ export function StoryCard({
 
   return (
     <article className="group flex flex-col gap-3">
-      {showImage && article.image && (
+      {showImage && (
         <Link href={`/${article.slug}`} aria-label={`Leer: ${article.title}`} className="block overflow-hidden rounded-sm bg-surface">
-          <ImageMarshal
-            article={article}
-            sizes="(max-width: 699px) 100vw, (max-width: 1049px) 50vw, 33vw"
-          />
+          <div className="editorial-image-placeholder" aria-hidden="true" />
         </Link>
       )}
       <div className="flex flex-col gap-2">
