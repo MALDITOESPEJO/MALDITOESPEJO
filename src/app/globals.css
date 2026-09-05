@@ -1,61 +1,39 @@
 @import "tailwindcss";
 
 /* ============================================================
-   MALDITOESPEJO — DESIGN TOKENS (FUNDACIONES)
-   ------------------------------------------------------------
-   Todos los valores cromaticos y tipograficos viven aqui como
-   variables CSS. Para sustituir la tipografia definitiva o el
-   color de acento, basta con editar estas variables.
-
-   NOTA TIPOGRAFIA:
-   --font-display (titulares editoriales) y --font-sans
-   (navegacion, metadatos, interfaz) son hoy pilas de sistema
-   como colocacion temporal y reversible. La seleccion de las
-   dos familias web definitivas se decide tras revisar el
-   preview. Cambiar estas variables no requiere tocar ningun
-   componente.
+   MALDITOESPEJO — VISUAL SYSTEM
+   Inspired by contemporary digital newsrooms, with an original
+   identity: warm paper-white, graphite, deep red and editorial
+   serif/sans pairing. Content and editorial logic remain intact.
    ============================================================ */
 
 :root {
-  /* ---- COLOR: PALETA BASE (blanco / negro / grises neutros) ---- */
   --color-background: #ffffff;
   --color-foreground: #141414;
   --color-ink: #141414;
-  --color-surface: #f6f6f4;
-  --color-muted: #6d6d6d;
-  /* faint cumple WCAG AA (>=4.5:1 sobre blanco) para texto pequeno */
+  --color-surface: #f5f5f2;
+  --color-muted: #666666;
   --color-faint: #757575;
-  --color-border: #e4e4e2;
-  --color-border-strong: #d5d5d2;
+  --color-border: #deded9;
+  --color-border-strong: #c9c9c3;
+  --color-accent: #b4231f;
+  --color-accent-soft: #f4e6e3;
+  --color-masthead: #111111;
+  --color-masthead-ink: #ffffff;
 
-  /* ---- COLOR: ACENTO UNICO DE MARCA (rojo editorial sobrio) ---- */
-  --color-accent: #c4302b;
-  --color-accent-soft: #f5e4e2;
-
-  /* ---- TIPOGRAFIA ----
-     --font-display (titulares editoriales) y --font-sans
-     (navegacion, metadatos, interfaz) se definen en layout.tsx
-     via next/font/google (Source Serif 4 + Inter). Estas son las
-     unicas dos familias del producto; las demas del preview /design
-     no se cargan en el bundle de la Home. */
-
-  /* ---- LAYOUT ---- */
-  --max-width: 1180px;
+  --max-width: 1240px;
   --max-width-reading: 700px;
-  --gutter-mobile: 1.25rem;   /* 20px */
-  --gutter-tablet: 2rem;      /* 32px */
-  --gutter-desktop: 2.5rem;   /* 40px */
+  --gutter-mobile: 1rem;
+  --gutter-tablet: 2rem;
+  --gutter-desktop: 2.75rem;
 
-  /* ---- ESPACIADO VERTICAL ENTRE BLOQUES ---- */
-  --section-space-y-mobile: 3rem;
-  --section-space-y-desktop: 4.5rem;
+  --section-space-y-mobile: 2.75rem;
+  --section-space-y-desktop: 4rem;
 
-  /* ---- RADIO ---- */
   --radius-sm: 2px;
-  --radius-md: 4px;
+  --radius-md: 6px;
 }
 
-/* Mapear tokens al sistema de utilitarios de Tailwind v4 */
 @theme inline {
   --color-background: var(--color-background);
   --color-foreground: var(--color-foreground);
@@ -67,18 +45,13 @@
   --color-border-strong: var(--color-border-strong);
   --color-accent: var(--color-accent);
   --color-accent-soft: var(--color-accent-soft);
-
+  --color-masthead: var(--color-masthead);
+  --color-masthead-ink: var(--color-masthead-ink);
   --font-display: var(--font-display);
   --font-sans: var(--font-sans);
 }
 
-/* ============================================================
-   BASE
-   ============================================================ */
-
-* {
-  border-color: var(--color-border);
-}
+* { border-color: var(--color-border); }
 
 html {
   -webkit-text-size-adjust: 100%;
@@ -90,31 +63,22 @@ body {
   color: var(--color-foreground);
   font-family: var(--font-sans);
   font-size: 1rem;
-  line-height: 1.6;
+  line-height: 1.55;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
 
-/* Enlaces: distincion clara, foco accesible */
-a {
-  color: inherit;
-  text-decoration: none;
-}
+a { color: inherit; text-decoration: none; }
 
 a:focus-visible,
 button:focus-visible,
 input:focus-visible,
 [tabindex]:focus-visible {
   outline: 2px solid var(--color-accent);
-  outline-offset: 2px;
+  outline-offset: 3px;
   border-radius: var(--radius-sm);
 }
 
-/* ============================================================
-   UTILIDADES DE DISENO REUTILIZABLES
-   ============================================================ */
-
-/* Contenedor principal. Ancho maximo + gutters responsive. */
 .container-editorial {
   width: 100%;
   margin-inline: auto;
@@ -136,73 +100,57 @@ input:focus-visible,
   }
 }
 
-/* Separacion vertical estandar entre bloques de la portada */
-.section-space {
-  margin-top: var(--section-space-y-mobile);
-}
+.section-space { margin-top: var(--section-space-y-mobile); }
 
 @media (min-width: 768px) {
-  .section-space {
-    margin-top: var(--section-space-y-desktop);
-  }
+  .section-space { margin-top: var(--section-space-y-desktop); }
 }
 
-/* ============================================================
-   TIPOGRAFIA EDITORIAL (jerarquia)
-   ============================================================ */
-
-.headline-display {
-  font-family: var(--font-display);
-  font-weight: 700;
-  line-height: 1.06;
-  letter-spacing: -0.015em;
-  text-wrap: balance;
-}
-
-.headline-xl {
-  font-family: var(--font-display);
-  font-weight: 700;
-  line-height: 1.05;
-  letter-spacing: -0.02em;
-  font-size: clamp(2.1rem, 6vw, 3.5rem);
-  text-wrap: balance;
-}
-
-.headline-lg {
-  font-family: var(--font-display);
-  font-weight: 700;
-  line-height: 1.1;
-  letter-spacing: -0.015em;
-  font-size: clamp(1.6rem, 4.5vw, 2.4rem);
-  text-wrap: balance;
-}
-
-.headline-md {
-  font-family: var(--font-display);
-  font-weight: 700;
-  line-height: 1.18;
-  letter-spacing: -0.01em;
-  font-size: clamp(1.15rem, 2.8vw, 1.5rem);
-  text-wrap: balance;
-}
-
+.headline-display,
+.headline-xl,
+.headline-lg,
+.headline-md,
 .headline-sm {
   font-family: var(--font-display);
   font-weight: 700;
-  line-height: 1.25;
-  font-size: clamp(1rem, 2.2vw, 1.15rem);
   text-wrap: balance;
 }
 
-/* Entradilla / subheadline (voz editorial: Source Serif 4) */
+.headline-display {
+  line-height: 1.04;
+  letter-spacing: -0.018em;
+}
+
+.headline-xl {
+  line-height: 1.03;
+  letter-spacing: -0.026em;
+  font-size: clamp(2.25rem, 5vw, 4.35rem);
+}
+
+.headline-lg {
+  line-height: 1.08;
+  letter-spacing: -0.018em;
+  font-size: clamp(1.65rem, 3.5vw, 2.65rem);
+}
+
+.headline-md {
+  line-height: 1.14;
+  letter-spacing: -0.012em;
+  font-size: clamp(1.2rem, 2vw, 1.55rem);
+}
+
+.headline-sm {
+  line-height: 1.2;
+  font-size: clamp(1rem, 1.6vw, 1.18rem);
+}
+
 .dek {
   font-family: var(--font-display);
-  font-size: clamp(1.05rem, 2.2vw, 1.25rem);
-  line-height: 1.5;
+  font-size: clamp(1.05rem, 1.7vw, 1.25rem);
+  line-height: 1.45;
   color: var(--color-ink);
 }
 
-/* Cuerpo de articulo / desarrollo (voz editorial: Source Serif 4) */
 .prose-editorial {
   font-family: var(--font-display);
   font-size: 1.125rem;
@@ -212,21 +160,103 @@ input:focus-visible,
   hyphens: auto;
 }
 
-.prose-editorial p + p {
-  margin-top: 1.25rem;
-}
+.prose-editorial p + p { margin-top: 1.25rem; }
 
-/* Metadatos (fecha, hora, autor) */
 .metadata {
   font-family: var(--font-sans);
-  font-size: 0.8125rem;
+  font-size: 0.75rem;
   line-height: 1.4;
   color: var(--color-muted);
+  letter-spacing: 0.01em;
 }
 
-/* Etiqueta de datos numero */
 .data-value {
   font-family: var(--font-sans);
   font-weight: 700;
   font-variant-numeric: tabular-nums;
+}
+
+/* Original newsroom primitives */
+.masthead-strip {
+  background: var(--color-masthead);
+  color: var(--color-masthead-ink);
+}
+
+.masthead-strip a { color: inherit; }
+
+.news-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  flex-wrap: wrap;
+}
+
+.news-nav-link {
+  display: inline-flex;
+  min-height: 2rem;
+  align-items: center;
+  padding: 0.4rem 0.8rem;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.045em;
+  text-transform: uppercase;
+  transition: background-color 160ms ease, border-color 160ms ease, color 160ms ease;
+}
+
+.news-nav-link:hover {
+  background: var(--color-surface);
+  border-color: var(--color-border);
+}
+
+.news-nav-link-active {
+  background: var(--color-accent-soft);
+  color: var(--color-accent);
+  border-color: transparent;
+}
+
+.home-lead {
+  display: grid;
+  gap: 2rem;
+  align-items: stretch;
+}
+
+@media (min-width: 900px) {
+  .home-lead { grid-template-columns: minmax(0, 1fr) minmax(0, 1.18fr); }
+}
+
+.story-grid {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 1px;
+  background: var(--color-border);
+  border-block: 1px solid var(--color-border);
+}
+
+@media (min-width: 700px) {
+  .story-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (min-width: 1050px) {
+  .story-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+.story-grid > article { background: var(--color-background); padding: 1.5rem; }
+
+.section-rule {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  border-bottom: 1px solid var(--color-border-strong);
+  padding-bottom: 0.65rem;
+}
+
+.section-rule::after {
+  content: "";
+  width: 2.25rem;
+  height: 3px;
+  background: var(--color-accent);
+  flex: none;
 }
