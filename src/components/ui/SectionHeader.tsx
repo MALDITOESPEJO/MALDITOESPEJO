@@ -17,17 +17,16 @@ export function SectionHeader({
   as: Heading = "h1",
   variant = "page",
 }: SectionHeaderProps) {
+  const Tag = Heading as ElementType;
+
   if (variant === "kicker") {
-    const Tag = Heading as ElementType;
     return (
-      <Tag className="mb-5 flex items-center gap-3 text-[0.78rem] font-semibold uppercase tracking-[0.16em] text-accent">
-        <span>{title}</span>
-        <span aria-hidden="true" className="h-px flex-1 bg-border" />
+      <Tag className="m-0 text-[0.72rem] font-bold uppercase tracking-[0.15em] text-ink">
+        {title}
       </Tag>
     );
   }
 
-  const Tag = Heading as ElementType;
   return (
     <div className="border-b border-border pb-6">
       {eyebrow && (

@@ -46,26 +46,27 @@ export default function HomePage() {
 
       {lead && (
         <section aria-label="Más noticias" className="section-space" id="mas-noticias">
-          <SectionHeader title="Más noticias" as="h2" variant="kicker" />
-          <div className="mt-8 space-y-12">
+          <div className="section-rule">
+            <SectionHeader title="Más noticias" as="h2" variant="kicker" />
+          </div>
+
+          <div className="mt-7">
             <StoryCard article={lead} size="lg" showDek />
-            <div className="grid grid-cols-1 gap-10 sm:grid-cols-2">
-              {grid.slice(0, 2).map((a) => (
-                <StoryCard key={a.slug} article={a} size="md" />
-              ))}
-            </div>
-            <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3">
-              {grid.slice(2, 5).map((a) => (
-                <StoryCard key={a.slug} article={a} size="sm" />
-              ))}
-            </div>
+          </div>
+
+          <div className="story-grid mt-1">
+            {grid.map((a, index) => (
+              <StoryCard key={a.slug} article={a} size={index < 2 ? "md" : "sm"} />
+            ))}
           </div>
         </section>
       )}
 
       <section aria-label="Lo último" className="section-space" id="lo-ultimo">
-        <SectionHeader title="Lo último" as="h2" variant="kicker" />
-        <ol className="mt-6 max-w-2xl">
+        <div className="section-rule">
+          <SectionHeader title="Lo último" as="h2" variant="kicker" />
+        </div>
+        <ol className="mt-3 max-w-3xl">
           {loUltimo.map((a) => (
             <LatestItem key={a.slug} article={a} />
           ))}
@@ -73,9 +74,11 @@ export default function HomePage() {
       </section>
 
       {featured && featured.keyFacts.length > 0 && (
-        <section aria-label="Lo que sabemos" className="section-space" id="lo-que-sabemos">
-          <SectionHeader title="Lo que sabemos" as="h2" variant="kicker" />
-          <div className="mt-6 max-w-2xl">
+        <section aria-label="Lo que sabemos" className="section-space pb-16 md:pb-24" id="lo-que-sabemos">
+          <div className="section-rule">
+            <SectionHeader title="Lo que sabemos" as="h2" variant="kicker" />
+          </div>
+          <div className="mt-6 max-w-3xl">
             <KeyFacts facts={featured.keyFacts} />
           </div>
         </section>
