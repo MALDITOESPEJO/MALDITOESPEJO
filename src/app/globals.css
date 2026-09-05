@@ -260,3 +260,16 @@ input:focus-visible,
   background: var(--color-accent);
   flex: none;
 }
+
+/* Reserved editorial image area — intentionally empty until artwork is supplied. */
+.editorial-image-placeholder {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+}
+
+.editorial-image-placeholder-featured {
+  aspect-ratio: 16 / 10;
+  border-radius: var(--radius-md);
+}
