@@ -3,7 +3,6 @@ import Link from "next/link";
 import type { Article } from "@/data/types";
 import { formatEditorialMeta } from "@/lib/utils";
 import { CategoryLabel } from "@/components/ui/CategoryLabel";
-import { ImageMarshal } from "@/components/ui/ImageMarshal";
 
 interface FeaturedStoryProps {
   article: Article;
@@ -29,12 +28,7 @@ export function FeaturedStory({ article, as: Heading = "h2" }: FeaturedStoryProp
         </div>
 
         <Link href={`/${article.slug}`} aria-label={`Leer: ${article.title}`} className="block">
-          <ImageMarshal
-            article={article}
-            priority
-            sizes="(max-width: 899px) 100vw, 55vw"
-            className="rounded-md"
-          />
+          <div className="editorial-image-placeholder editorial-image-placeholder-featured" aria-hidden="true" />
         </Link>
       </div>
     </article>
