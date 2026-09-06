@@ -19,26 +19,40 @@ const steps = [
 const executionId = `RUN-${new Date().toISOString().replace(/[-:.TZ]/g, '').slice(0,14)}`;
 const started = new Date().toISOString();
 const results = [];
+const STEP_TIMEOUT_MS = Math.max(60_000, Number(process.env.DAILY_INTELLIGENCE_STEP_TIMEOUT_MS || 900_000));
 
 function runStep(name, script) {
   return new Promise((resolve) => {
     console.log(`\n=== Daily intelligence step: ${name} (${script}) ===`);
     const child = spawn(process.execPath, [script], {
       cwd: root,
-      stdio: ['inherit', 'pipe', 'pipe'],
+      stdio: 'inherit',
       windowsHide: false,
     });
 
-    child.stdout.on('data', (chunk) => process.stdout.write(chunk));
-    child.stderr.on('data', (chunk) => process.stderr.write(chunk));
+    let settled = false;
+    const finish = (result) => {
+      if (settled) return;
+      settled = true;
+      clearTimeout(timeout);
+      resolve(result);
+    };
+
+    const timeout = setTimeout(() => {
+      console.error(`Daily intelligence step ${name} exceeded timeout (${STEP_TIMEOUT_MS}ms). Terminating child process.`);
+      try { child.kill(); } catch (error) { console.error(`Could not terminate ${name}: ${error.message}`); }
+      finish({ step: name, script, exit_code: 124, ok: false, timeout_ms: STEP_TIMEOUT_MS });
+    }, STEP_TIMEOUT_MS);
+
     child.on('error', (error) => {
       console.error(`Daily intelligence step ${name} failed to start: ${error.message}`);
-      resolve({ step: name, script, exit_code: 1, ok: false });
+      finish({ step: name, script, exit_code: 1, ok: false, error: error.message });
     });
-    child.on('close', (code, signal) => {
+
+    child.on('exit', (code, signal) => {
       const exitCode = typeof code === 'number' ? code : 1;
       if (signal) console.error(`Daily intelligence step ${name} terminated by signal ${signal}`);
-      resolve({ step: name, script, exit_code: exitCode, ok: exitCode === 0 });
+      finish({ step: name, script, exit_code: exitCode, ok: exitCode === 0 });
     });
   });
 }
