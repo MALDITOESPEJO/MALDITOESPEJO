@@ -1,0 +1,24 @@
+{
+  "version": "1.0.0",
+  "purpose": "Mapeo conservador de hosts editoriales a su organización matriz para no confundir dominios distintos con independencia editorial.",
+  "default_policy": "UNKNOWN_PARENT_IS_HOST",
+  "organizations": {
+    "PRENSA_ IBERICA": {
+      "canonical_name": "Prensa Ibérica",
+      "hosts": [
+        "laprovincia.es",
+        "eldia.es",
+        "laopiniondemalaga.es",
+        "diariodemallorca.es",
+        "diariodeibiza.es",
+        "elperiodicodearagon.com"
+      ]
+    }
+  },
+  "notes": [
+    "El mapeo no afirma independencia real; solo evita sobrecontar organizaciones conocidas.",
+    "Los hosts no incluidos conservan como parent_organization el propio host para mantener UNKNOWN_PARENT_IS_HOST.",
+    "La lista debe ampliarse únicamente con evidencia editorial verificable.",
+    "El nombre PRENSA_ IBERICA contiene un espacio intencionado solo como clave interna estable; canonical_name es la etiqueta visible."
+  ]
+}
