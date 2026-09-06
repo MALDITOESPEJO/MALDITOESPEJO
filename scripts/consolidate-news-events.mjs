@@ -147,6 +147,7 @@ const consolidated = [...groups.values()].map(group => {
   const sourceHosts = [...new Set(group.flatMap(e => e.source_hosts || []))];
   const first = group.map(e => Date.parse(e.temporal?.first_seen || '')).filter(Number.isFinite).sort((a,b) => a-b)[0];
   const last = group.map(e => Date.parse(e.temporal?.last_seen || '')).filter(Number.isFinite).sort((a,b) => b-a)[0];
+  const maxSimilarity = similarities.reduce((max, value) => Math.max(max, value), 0);
   return {
     ...lead,
     event_id: eventId,
@@ -155,7 +156,7 @@ const consolidated = [...groups.values()].map(group => {
     source_ids: sourceIds,
     source_count: sourceIds.length,
     source_hosts: sourceHosts,
-    similarity_max: Math.max(lead.similarity_max || 0, ...similarities),
+    similarity_max: Math.max(Number(lead.similarity_max || 0), maxSimilarity),
     temporal: {
       first_seen: Number.isFinite(first) ? new Date(first).toISOString() : lead.temporal?.first_seen,
       last_seen: Number.isFinite(last) ? new Date(last).toISOString() : lead.temporal?.last_seen,
@@ -164,7 +165,7 @@ const consolidated = [...groups.values()].map(group => {
       type: 'SAME_EVENT',
       merged_event_ids: group.map(e => e.event_id),
       merged_event_count: group.length,
-      similarity_basis: Number(Math.max(...similarities).toFixed(3)),
+      similarity_basis: Number(maxSimilarity.toFixed(3)),
       reason: 'Clusters con alta similitud semántica de título y contexto, misma geografía/sección compatible y ventana temporal de 48 horas.',
     },
   };
@@ -177,6 +178,7 @@ const result = {
   version: '1.0.0',
   input_event_count: events.length,
   output_event_count: consolidated.length,
+  event_count: consolidated.length,
   merged_cluster_count: consolidated.filter(e => e.consolidation?.type === 'SAME_EVENT').length,
   merged_event_count: merges,
   classification_policy: {
