@@ -19,31 +19,27 @@ const events = Array.isArray(data) ? data : (data.events || []);
 const STOP = new Set([
   'para','como','desde','entre','sobre','tras','ante','esta','este','estos','estas',
   'una','uno','unos','unas','del','las','los','por','con','sin','sus','que','han',
-  'hay','más','menos','segun','según','tambien','también','ahora','hoy','ayer'
+  'hay','más','menos','segun','según','tambien','también','ahora','hoy','ayer',
+  'todos','todas','cada','donde','cuando','quien','quién','esta','ese','esa'
 ]);
 
 const normalize = value => String(value || '')
   .toLowerCase()
   .normalize('NFD')
-  .replace(/[\\u0300-\\u036f]/g, '')
+  .replace(/[\u0300-\u036f]/g, '')
   .replace(/[^a-z0-9ñ]+/g, ' ')
   .trim();
 
-const tokens = value => new Set(normalize(value).split(/\\s+/).filter(x => x.length > 3 && !STOP.has(x)));
+const tokens = value => new Set(normalize(value).split(/\s+/).filter(x => x.length > 3 && !STOP.has(x)));
 const jaccard = (a, b) => {
   if (!a.size || !b.size) return 0;
   let intersection = 0;
   for (const token of a) if (b.has(token)) intersection++;
   return intersection / (a.size + b.size - intersection);
 };
-const numbers = value => new Set((String(value || '').match(/\\b\\d+(?:[.,]\\d+)?\\b/g) || []));
+const numbers = value => new Set((String(value || '').match(/\b\d+(?:[.,]\d+)?\b/g) || []));
 const geo = e => String(e.geography || '').trim().toLowerCase();
 const section = e => String(e.section_candidate || '').trim().toLowerCase();
-const compatibleBlock = (a, b) => {
-  const sameGeo = geo(a) && geo(b) ? geo(a) === geo(b) : true;
-  const sameSection = section(a) && section(b) ? section(a) === section(b) : true;
-  return sameGeo && sameSection;
-};
 const withinWindow = (a, b) => {
   const ta = Date.parse(a.temporal?.first_seen || a.temporal?.last_seen || '');
   const tb = Date.parse(b.temporal?.first_seen || b.temporal?.last_seen || '');
@@ -59,10 +55,25 @@ const representative = e => ({
 });
 const reps = new Map(events.map(e => [e.event_id, representative(e)]));
 
-// Blocking keeps the pass deterministic and bounded even when the feed grows.
+// Blocking remains deterministic and bounded, but no longer requires an exact
+// geography/section match. Near-identical headlines can legitimately carry
+// different metadata after ingestion (e.g. Ceuta vs. España). Strong title
+// evidence is therefore allowed to bridge metadata differences.
 const blocks = new Map();
 for (const event of events) {
-  const key = `${geo(event) || '*'}|${section(event) || '*'}`;
+  const r = reps.get(event.event_id);
+  const anchor = [...r.titleTokens].sort().slice(0, 3).join('|') || '*';
+  const key = `${anchor}|${section(event) || '*'}|${geo(event) || '*'}`;
+  if (!blocks.has(key)) blocks.set(key, []);
+  blocks.get(key).push(event);
+}
+
+// Secondary broad blocks catch the same headline when geography or section
+// differs, while still keeping comparisons bounded by the first title token.
+for (const event of events) {
+  const r = reps.get(event.event_id);
+  const firstToken = [...r.titleTokens].sort()[0] || '*';
+  const key = `TITLE|${firstToken}`;
   if (!blocks.has(key)) blocks.set(key, []);
   blocks.get(key).push(event);
 }
@@ -85,26 +96,35 @@ const union = (a, b) => {
 };
 
 let merges = 0;
+const comparedPairs = new Set();
 for (const block of blocks.values()) {
   for (let i = 0; i < block.length; i++) {
     const a = block[i];
     const ar = reps.get(a.event_id);
     for (let j = i + 1; j < block.length; j++) {
       const b = block[j];
-      if (!compatibleBlock(a, b) || !withinWindow(a, b)) continue;
+      if (a.event_id === b.event_id) continue;
+      const pairKey = [a.event_id, b.event_id].sort().join('|');
+      if (comparedPairs.has(pairKey)) continue;
+      comparedPairs.add(pairKey);
+      if (!withinWindow(a, b)) continue;
+
       const br = reps.get(b.event_id);
       const titleSimilarity = jaccard(ar.titleTokens, br.titleTokens);
       const fullSimilarity = jaccard(ar.fullTokens, br.fullTokens);
+      const sameGeo = geo(a) && geo(b) ? geo(a) === geo(b) : false;
+      const sameSection = section(a) && section(b) ? section(a) === section(b) : false;
       const aNumbers = numbers(`${a.title || ''} ${a.summary || ''}`);
       const bNumbers = numbers(`${b.title || ''} ${b.summary || ''}`);
       const conflictingNumbers = aNumbers.size && bNumbers.size &&
         [...aNumbers].some(n => !bNumbers.has(n)) && [...bNumbers].some(n => !aNumbers.has(n));
 
-      // High title overlap is the strongest duplicate signal. A slightly lower
-      // title overlap is accepted only when the complete event text also agrees.
+      // High title overlap is the strongest duplicate signal. A lower title
+      // overlap requires both contextual compatibility and strong full-text
+      // agreement. This prevents evolving but related stories from collapsing.
       const sameEvent = !conflictingNumbers && (
-        titleSimilarity >= 0.78 ||
-        (titleSimilarity >= 0.68 && fullSimilarity >= 0.60)
+        (titleSimilarity >= 0.78) ||
+        (titleSimilarity >= 0.68 && fullSimilarity >= 0.60 && (sameGeo || sameSection))
       );
       if (sameEvent) {
         union(a.event_id, b.event_id);
@@ -166,7 +186,7 @@ const consolidated = [...groups.values()].map(group => {
       merged_event_ids: group.map(e => e.event_id),
       merged_event_count: group.length,
       similarity_basis: Number(maxSimilarity.toFixed(3)),
-      reason: 'Clusters con alta similitud semántica de título y contexto, misma geografía/sección compatible y ventana temporal de 48 horas.',
+      reason: 'Clusters con alta similitud semántica de título y contexto compatible, con ventana temporal de 48 horas.',
     },
   };
 });
@@ -175,7 +195,7 @@ consolidated.sort((a, b) => Number(b.signals?.trend_score || 0) - Number(a.signa
 const result = {
   generated_at: new Date().toISOString(),
   engine: 'MALDITOESPEJO_SEMANTIC_EVENT_CONSOLIDATION',
-  version: '1.0.0',
+  version: '1.1.0',
   input_event_count: events.length,
   output_event_count: consolidated.length,
   event_count: consolidated.length,
