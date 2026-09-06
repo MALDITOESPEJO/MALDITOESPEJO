@@ -7,7 +7,7 @@ section: "Actualidad"
 author: "Ariadna Soler Montalbán"
 type: "news"
 status: "approved"
-image: "/images/2026-09-06-accidente-autobus-cabo-verde.png"
+image: "/images/2026-09-06-accidente-autobus-cabo-verde.svg"
 ---
 
 Al menos **25 personas han muerto**, muchas de ellas adolescentes, después de que un autobús se precipitara por un barranco en la isla de Fogo, en Cabo Verde, durante la noche del sábado.
