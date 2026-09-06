@@ -7,6 +7,8 @@ const ROOT = process.cwd();
 const registryPath = process.argv[2] || 'editorial/sources/MASTER_SOURCE_REGISTRY_NORMALIZED.csv';
 const channelsGlob = process.argv.slice(3);
 const output = process.env.SOURCE_COVERAGE_OUTPUT || 'editorial/radars/daily-source-coverage.json';
+const PROBE_TIMEOUT_MS = Number(process.env.SOURCE_PROBE_TIMEOUT_MS || 12000);
+const PROBE_CONCURRENCY = Math.max(1, Number(process.env.SOURCE_PROBE_CONCURRENCY || 12));
 
 const channelFiles = channelsGlob.length
   ? channelsGlob
@@ -68,7 +70,7 @@ function classifyEndpoint(endpoint) {
 
 async function probe(url) {
   const controller = new AbortController();
-  const timeout = setTimeout(() => controller.abort(), 12000);
+  const timeout = setTimeout(() => controller.abort(), PROBE_TIMEOUT_MS);
   const started = Date.now();
   try {
     const response = await fetch(url, {
@@ -94,23 +96,40 @@ async function probe(url) {
   } finally { clearTimeout(timeout); }
 }
 
+async function runWithConcurrency(items, worker, concurrency) {
+  const results = new Array(items.length);
+  let nextIndex = 0;
+  async function consume() {
+    while (true) {
+      const index = nextIndex++;
+      if (index >= items.length) return;
+      results[index] = await worker(items[index], index);
+    }
+  }
+  const workers = Array.from({ length: Math.min(concurrency, items.length) }, () => consume());
+  await Promise.all(workers);
+  return results;
+}
+
 const sources = readCsv(absolute(registryPath));
 const channels = channelFiles.flatMap((file) => readCsv(absolute(file)));
 const endpoints = endpointFiles.flatMap((file) => readCsv(absolute(file)));
 const endpointByChannel = new Map(endpoints.map((e) => [String(e.channel_id || '').trim(), e]));
-const sourceById = new Map(sources.map((s) => [normaliseSourceId(s.source_id), s]));
+
+console.log(`Source coverage: ${sources.length} sources, ${channels.length} channels, ${endpoints.length} endpoints`);
+console.log(`Probe configuration: concurrency=${PROBE_CONCURRENCY}, timeout=${PROBE_TIMEOUT_MS}ms`);
 
 const checks = [];
 for (const source of sources) {
   const sid = normaliseSourceId(source.source_id);
   const sourceChannels = channels.filter((c) => normaliseSourceId(c.source_id) === sid || normaliseSourceId(c.source_id).startsWith(sid) || sid.startsWith(normaliseSourceId(c.source_id)));
   // Cada canal es el objetivo real a comprobar (trae su propia URL en
-  // 'endpoint'). Si existe una fila correspondiente en el cat\u00e1logo de
+  // 'endpoint'). Si existe una fila correspondiente en el catálogo de
   // endpoints (por channel_id), se usa solo para enriquecer metadatos
-  // (endpoint_id, estado de verificaci\u00f3n) -- nunca para sustituir la URL
-  // real del canal, que es la \u00fanica columna que de verdad contiene un
+  // (endpoint_id, estado de verificación) -- nunca para sustituir la URL
+  // real del canal, que es la única columna que de verdad contiene un
   // enlace comprobable. Antes, cualquier fila de endpoint sin URL propia
-  // descartaba por completo las URLs v\u00e1lidas de todos los canales de esa
+  // descartaba por completo las URLs válidas de todos los canales de esa
   // fuente; con esto cada canal se comprueba por separado.
   const targets = sourceChannels.map((c) => {
     const matchedEndpoint = endpointByChannel.get(String(c.channel_id || '').trim());
@@ -130,14 +149,24 @@ for (const source of sources) {
     continue;
   }
 
+  const pending = targets.filter((endpoint) => {
+    const mode = classifyEndpoint(endpoint);
+    return mode !== 'MANUAL_TOOL' && mode !== 'NON_URL';
+  });
+
+  const probeResults = await runWithConcurrency(
+    pending,
+    async (endpoint) => ({ endpoint, result: await probe(endpoint.endpoint) }),
+    PROBE_CONCURRENCY,
+  );
+
+  const resultByChannel = new Map(probeResults.map(({ endpoint, result }) => [String(endpoint.channel_id || '').trim(), result]));
+
   for (const endpoint of targets) {
     const mode = classifyEndpoint(endpoint);
-    let result;
-    if (mode === 'MANUAL_TOOL' || mode === 'NON_URL') {
-      result = { status: 'MANUAL_CHECK_REQUIRED' };
-    } else {
-      result = await probe(endpoint.endpoint);
-    }
+    const result = (mode === 'MANUAL_TOOL' || mode === 'NON_URL')
+      ? { status: 'MANUAL_CHECK_REQUIRED' }
+      : (resultByChannel.get(String(endpoint.channel_id || '').trim()) || { status: 'NETWORK_ERROR', error: 'Probe result missing' });
     checks.push({
       source_id: source.source_id,
       source_name: source.source_name,
@@ -150,6 +179,8 @@ for (const source of sources) {
       ...result,
     });
   }
+
+  console.log(`Source coverage progress: ${source.source_id} (${checks.length} checks)`);
 }
 
 const bySource = new Map();
@@ -199,4 +230,4 @@ const result = {
 
 fs.mkdirSync(path.dirname(absolute(output)), { recursive: true });
 fs.writeFileSync(absolute(output), JSON.stringify(result, null, 2) + '\n');
-console.log(`Source universe checked: ${counts.ANALYZED}/${sources.length} sources with at least one reachable endpoint \u2192 ${output}`);
+console.log(`Source universe checked: ${counts.ANALYZED}/${sources.length} sources with at least one reachable endpoint → ${output}`);
