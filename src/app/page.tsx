@@ -1,56 +1,30 @@
 import type { Metadata } from "next";
+
 import { articles } from "@/data/articles";
 import { sortByNewest } from "@/lib/utils";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { FeaturedStory } from "@/components/editorial/FeaturedStory";
 import { StoryCard } from "@/components/editorial/StoryCard";
 import { LatestItem } from "@/components/editorial/LatestItem";
+import { KeyFacts } from "@/components/article/KeyFacts";
 
-export const metadata: Metadata = {
-  title: { absolute: "MALDITOESPEJO — Solo hechos" },
-  description: "Información basada en hechos, datos y declaraciones atribuibles. Sin opinión ni interpretación.",
-  alternates: { canonical: "/" },
-  openGraph: { siteName: "MALDITOESPEJO", title: "MALDITOESPEJO — Solo hechos", description: "Información basada en hechos, datos y declaraciones atribuibles.", type: "website", locale: "es_ES" },
-  twitter: { card: "summary", title: "MALDITOESPEJO — Solo hechos", description: "Información basada en hechos, datos y declaraciones atribuibles." },
-};
-
+export const metadata: Metadata = { title: { absolute: "MALDITOESPEJO — Solo hechos" }, description: "MALDITOESPEJO es un medio de información basado exclusivamente en hechos, datos y declaraciones atribuibles. Sin opinión ni interpretación.", alternates: { canonical: "/" }, openGraph: { siteName: "MALDITOESPEJO", title: "MALDITOESPEJO — Solo hechos", description: "Información basada en hechos, datos y declaraciones atribuibles. Sin opinión ni interpretación.", type: "website", locale: "es_ES" }, twitter: { card: "summary", title: "MALDITOESPEJO — Solo hechos", description: "Información basada en hechos, datos y declaraciones atribuibles." } };
 const byNewest = sortByNewest(articles);
 const featured = byNewest[0];
-const secondary = byNewest.slice(1, 5);
-const latest = byNewest.slice(5);
+const masNoticias = byNewest.slice(1, 7);
+const lead = masNoticias[0];
+const grid = masNoticias.slice(1);
+const loUltimo = byNewest.slice(1);
 
 export default function HomePage() {
-  return (
-    <div className="container-editorial pb-20 md:pb-28">
-      <section className="pt-8 md:pt-10" aria-label="Actualidad">
-        <div className="home-rule mb-5 flex items-center justify-between pt-3">
-          <span className="text-[.7rem] font-black uppercase tracking-[.12em]">Las noticias de hoy</span>
-          <time className="metadata">6 SEP 2026</time>
-        </div>
-        {featured && <FeaturedStory article={featured} as="h1" />}
-      </section>
-
-      {secondary.length > 0 && (
-        <section className="mt-10 border-y-2 border-ink py-7 md:mt-14 md:py-9" aria-label="Más noticias">
-          <SectionHeader title="Más noticias" as="h2" variant="kicker" />
-          <div className="mt-6 grid grid-cols-1 gap-0 md:grid-cols-2 md:divide-x md:divide-border">
-            {secondary.map((article, index) => (
-              <div key={article.slug} className={`${index % 2 === 0 ? "md:pr-7" : "md:pl-7"} ${index > 0 ? "border-t border-border pt-7 md:border-t-0 md:pt-0" : ""} ${index > 1 ? "md:mt-8 md:border-t md:pt-8" : ""}`}>
-                <StoryCard article={article} size="md" showImage showDek />
-              </div>
-            ))}
-          </div>
-        </section>
-      )}
-
-      <section className="mt-12 md:mt-16" id="lo-ultimo" aria-label="Lo último">
-        <div className="home-rule pt-3">
-          <SectionHeader title="Lo último" as="h2" variant="kicker" />
-        </div>
-        <div className="mt-2 max-w-4xl">
-          {latest.map((article) => <LatestItem key={article.slug} article={article} />)}
-        </div>
-      </section>
-    </div>
-  );
+  return <div className="container-editorial">
+    {featured && <section aria-label="Noticia principal" className="section-space"><FeaturedStory article={featured} as="h1" /></section>}
+    {lead && <section aria-label="Más noticias" className="section-space" id="mas-noticias">
+      <div className="section-rule"><SectionHeader title="Más noticias" as="h2" variant="kicker" /></div>
+      <div className="mt-7"><StoryCard article={lead} size="lg" showDek /></div>
+      <div className="story-grid mt-1">{grid.map((a,index)=><StoryCard key={a.slug} article={a} size={index<2?"md":"sm"} />)}</div>
+    </section>}
+    <section aria-label="Lo último" className="section-space" id="lo-ultimo"><div className="section-rule"><SectionHeader title="Lo último" as="h2" variant="kicker" /></div><ol className="mt-3 max-w-3xl">{loUltimo.map(a=><LatestItem key={a.slug} article={a}/>)}</ol></section>
+    {featured && featured.keyFacts.length>0 && <section aria-label="Lo que sabemos" className="section-space pb-16 md:pb-24" id="lo-que-sabemos"><div className="section-rule"><SectionHeader title="Lo que sabemos" as="h2" variant="kicker" /></div><div className="mt-6 max-w-3xl"><KeyFacts facts={featured.keyFacts}/></div></section>}
+  </div>;
 }
