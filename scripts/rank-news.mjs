@@ -12,20 +12,30 @@ const eventsPath = process.env.NEWS_EVENTS || 'editorial/radars/daily-news-event
 const clamp = (n, min = 0, max = 100) => Math.max(min, Math.min(max, Number.isFinite(n) ? n : 0));
 const finite = (v) => typeof v === 'number' && Number.isFinite(v);
 const scoreOrNull = (v) => finite(v) ? clamp(v) : null;
-const avg = (values) => {
-  const known = values.filter(finite);
-  return known.length ? known.reduce((a, b) => a + b, 0) / known.length : null;
+
+// Diminishing returns: four genuinely distinct organizations should be strong
+// evidence of spread, but the fifth, tenth or twentieth outlet must not turn
+// syndication into an ever-growing independence score.
+const independenceScore = count => {
+  const n = Math.max(0, Number(count) || 0);
+  if (n <= 0) return 0;
+  if (n === 1) return 25;
+  if (n === 2) return 50;
+  if (n === 3) return 65;
+  if (n === 4) return 75;
+  return Math.min(90, 75 + (n - 4) * 3);
 };
 
-const buildReason = ({ signal, emerging, correlation, confidence, trend, independence, risk, maturityCap }) => {
+const buildReason = ({ signal, emerging, correlation, confidence, trend, independence, risk, maturityCap, independentCount }) => {
   const parts = [];
   if (signal >= 80) parts.push('señal de radar muy fuerte');
   else if (signal >= 65) parts.push('señal de radar fuerte');
   else if (signal >= 50) parts.push('señal de radar relevante');
   if (emerging >= 75) parts.push('emergencia elevada');
   if (correlation >= 75) parts.push('convergencia alta');
-  if (independence >= 75) parts.push('diversidad de fuentes alta');
-  else if (independence >= 50) parts.push('diversidad de fuentes apreciable');
+  if (independence >= 75) parts.push(`corroboración aparente de ${independentCount} organizaciones`);
+  else if (independence >= 50) parts.push(`corroboración aparente de ${independentCount} organizaciones`);
+  else if (independentCount === 1) parts.push('señal procedente de una sola organización observada');
   if (confidence >= 80) parts.push('confianza de correlación alta');
   else if (confidence >= 60) parts.push('confianza de correlación moderada');
   if (trend >= 75) parts.push('tendencia elevada');
@@ -44,21 +54,25 @@ const rankEvent = (correlation, eventById, candidateById) => {
   const convergence = scoreOrNull(correlation.correlation_score);
   const confidence = scoreOrNull(correlation.confidence);
   const timeliness = scoreOrNull(eventSignals.trend_score);
-  const independentCount = Number(correlation.independent_source_count ?? event?.independent_source_count ?? 0);
+  const independentCount = Number(
+    correlation.apparent_independent_parent_organization_count
+      ?? correlation.independent_source_count
+      ?? event?.independent_source_count
+      ?? 0
+  );
+  const observedCount = Number(correlation.observed_source_count ?? event?.source_count ?? 0);
 
-  // Independence is a supporting signal, not a proxy for editorial importance.
-  // Four independent sources are sufficient to reach the ceiling; additional
-  // sources do not keep increasing the score.
-  const independence = clamp(independentCount * 25);
+  const independence = independenceScore(independentCount);
   const risk = finite(candidate?.signals?.risk) ? clamp(candidate.signals.risk) : null;
 
-  // Signal strength answers: "how strongly is the radar detecting this event?"
-  // It deliberately excludes editorial value and evidence readiness.
+  // Radar signal is deliberately independent from editorial value. The new
+  // balance gives more weight to timeliness and emergence while preventing
+  // source multiplication from dominating the score.
   const signal = (
-    (emerging ?? 0) * 0.30 +
-    (convergence ?? 0) * 0.25 +
+    (emerging ?? 0) * 0.25 +
+    (convergence ?? 0) * 0.20 +
     (confidence ?? 0) * 0.20 +
-    (timeliness ?? 0) * 0.10 +
+    (timeliness ?? 0) * 0.20 +
     independence * 0.15
   );
 
@@ -66,8 +80,7 @@ const rankEvent = (correlation, eventById, candidateById) => {
   const rawPriority = clamp(signal - riskPenalty);
 
   // Editorial value and evidence readiness are intentionally unassessed at
-  // radar stage. Without those dimensions, the radar may recommend attention
-  // but cannot justify an immediate newsroom P1 decision.
+  // radar stage. The radar can recommend attention, but not publication.
   const editorialAssessed = false;
   const evidenceAssessed = false;
   const maturityCap = !editorialAssessed || !evidenceAssessed;
@@ -108,6 +121,8 @@ const rankEvent = (correlation, eventById, candidateById) => {
       confidence,
       timeliness,
       source_independence: independence,
+      independent_organization_count: independentCount,
+      observed_source_count: observedCount,
       risk,
       newsroom_priority: Number(priority.toFixed(2)),
       raw_radar_priority: Number(rawPriority.toFixed(2)),
@@ -130,6 +145,7 @@ const rankEvent = (correlation, eventById, candidateById) => {
         independence,
         risk,
         maturityCap,
+        independentCount,
       }),
     },
   };
@@ -159,13 +175,14 @@ const ranked = data.correlations
   // Sort by the uncapped radar signal. newsroom_priority may be capped by
   // editorial maturity, so it must not distort the radar's actual ordering.
   .sort((a, b) => b.scores.raw_radar_priority - a.scores.raw_radar_priority
-    || b.scores.newsroom_priority - a.scores.newsroom_priority
+    || b.scores.emerging_score - a.scores.emerging_score
+    || b.scores.confidence - a.scores.confidence
     || String(a.event_id).localeCompare(String(b.event_id)))
   .map((item, index) => ({ rank: index + 1, ...item }));
 
 const result = {
   engine: 'MALDITOESPEJO_DAILY_NEWS_SELECTION_ENGINE',
-  version: '2.2.1',
+  version: '2.3.0',
   mode: 'event-radar-ranking',
   generated_at: new Date().toISOString(),
   candidates_analyzed: candidates.length,
