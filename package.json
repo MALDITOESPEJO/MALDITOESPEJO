@@ -53,6 +53,7 @@
     "validate:lineage": "node scripts/validate-provenance-lineage.mjs",
     "audit:event": "node scripts/audit-event.mjs",
     "audit:validate": "node scripts/validate-audit-log.mjs",
+    "audit:news:provenance": "node scripts/audit-news-provenance.mjs",
     "test:e2e:editorial": "node scripts/editorial-e2e-test.mjs",
     "check:publication": "node scripts/check-publication-gate.mjs",
     "recovery:record": "node scripts/record-editorial-failure.mjs",
@@ -78,7 +79,6 @@
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
-    "@types/react-dom": "^19",
-    "typescript": "^5.0.0"
+    "@types/react-dom": "^19"
   }
 }
