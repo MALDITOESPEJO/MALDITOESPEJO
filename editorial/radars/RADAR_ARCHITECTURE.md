@@ -96,7 +96,38 @@ A radar is a detector, not an editorial authority. Detection creates a candidate
 
 ## Processing chain
 
-SOURCE → CHANNEL → FEED → EVENT/DATA/CLAIM → SIGNAL → CORRELATION → VERIFICATION → PRIORITY → HUMAN EDITOR → PUBLICATION
+SOURCE → CHANNEL → FEED → EVENT/DATA/CLAIM → SIGNAL → CORRELATION → PRIORITY → EDITORIAL INTAKE → HUMAN EDITOR → CASE → INVESTIGATION → VERIFICATION → ARTICLE → PUBLICATION GATE → PUBLICATION
+
+The `EDITORIAL INTAKE` stage is an explicit bridge between automated newsroom intelligence and the editorial case engine. It transfers selected radar signals, together with their event, correlation, relation and provenance context, without transferring publication authority.
+
+## Editorial intake bridge
+
+`scripts/create-news-editorial-intake.mjs` consumes the daily event ranking and creates `editorial/radars/daily-news-editorial-intake.json`.
+
+The intake preserves:
+
+- the originating `event_id` and `correlation_id`;
+- the radar rank and scoring context;
+- observed and apparent independent source counts;
+- relevant event relations;
+- provenance context;
+- SHA-256 fingerprints of the upstream ranking, correlation, relation and provenance files.
+
+The bridge deliberately has three hard boundaries:
+
+1. **It does not create cases.** A human editor selects an intake item for investigation.
+2. **It does not verify claims.** Radar correlation, ranking and provenance remain intelligence signals, not evidence of truth.
+3. **It does not publish.** Every resulting case still passes through the existing evidence, verification, traceability, originality and Publication Gate controls.
+
+An intake item can enter the editorial case engine with:
+
+`npm run investigate -- --intake INTAKE-YYYYMMDDHHMMSS-001`
+
+or directly through the full pipeline:
+
+`npm run pipeline -- --intake INTAKE-YYYYMMDDHHMMSS-001`
+
+The resulting case stores a snapshot of the intake item and its radar execution identifier, so subsequent changes to the daily radar output do not rewrite the provenance of the investigation that was actually initiated.
 
 ## Independence rule
 
