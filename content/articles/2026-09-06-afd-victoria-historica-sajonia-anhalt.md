@@ -7,6 +7,7 @@ section: "Actualidad"
 author: "Ariadna Soler Montalbán"
 type: "news"
 status: "approved"
+image: "/images/2026-09-06-afd-victoria-historica-sajonia-anhalt.svg"
 ---
 
 La ultraderechista Alternativa para Alemania (AfD) ha logrado una victoria histórica en las elecciones regionales de Sajonia-Anhalt, según los sondeos a pie de urna, y se convierte en la fuerza más votada en este estado del este de Alemania.
