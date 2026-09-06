@@ -50,6 +50,9 @@ jobs:
       - name: Check legacy gate readiness
         run: npm run legacy:gate:readiness
 
+      - name: Run news consolidation regression audit
+        run: npm run test:news:consolidation
+
       - name: Run editorial E2E acceptance tests
         run: npm run test:e2e:editorial
 
