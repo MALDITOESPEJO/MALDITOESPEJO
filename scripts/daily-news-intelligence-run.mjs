@@ -9,6 +9,7 @@ const steps = [
   ['source-check', 'scripts/check-source-universe.mjs'],
   ['ingest', 'scripts/ingest-news-feeds.mjs'],
   ['events', 'scripts/cluster-news-events.mjs'],
+  ['provenance', 'scripts/derive-news-provenance.mjs'],
   ['correlate', 'scripts/correlate-news-signals.mjs'],
   ['rank', 'scripts/rank-news.mjs'],
   ['report', 'scripts/daily-news-report.mjs']
@@ -26,6 +27,7 @@ for (const [name, script] of steps) {
 const readJson = p => fs.existsSync(p) ? JSON.parse(fs.readFileSync(p, 'utf8')) : null;
 const coverage = readJson('editorial/radars/daily-source-coverage.json');
 const events = readJson('editorial/radars/daily-news-events.json');
+const provenance = readJson('editorial/radars/daily-news-provenance.json');
 const correlations = readJson('editorial/radars/daily-news-correlations.json');
 const ranking = readJson('editorial/radars/daily-news-ranking.json');
 const finished = new Date().toISOString();
@@ -44,23 +46,33 @@ const report = {
     coverage_percentage: coverage.coverage_percentage
   } : null,
   intelligence: {
-    candidates_detected: ranking?.candidate_count ?? null,
+    candidates_detected: ranking?.candidates_analyzed ?? null,
     events_detected: events?.event_count ?? events?.events?.length ?? null,
+    provenance_events: provenance?.events_analyzed ?? provenance?.provenance?.length ?? null,
     correlations_detected: correlations?.correlation_count ?? correlations?.correlations?.length ?? null,
     top_emerging: (correlations?.correlations || []).filter(x => x.investigation_priority === 'HIGH').slice(0, 20).map(x => ({
       event_id: x.event_id,
       classification: x.classification,
       emerging_score: x.emerging_score,
       confidence: x.confidence,
+      observed_source_count: x.observed_source_count,
       independent_source_count: x.independent_source_count,
+      provenance_confidence: x.provenance_confidence,
       rationale: x.rationale
     })),
-    ranked_stories: (ranking?.ranked_candidates || ranking?.candidates || []).slice(0, 20)
+    ranked_stories: (ranking?.ranking || []).slice(0, 20).map(x => ({
+      rank: x.rank,
+      event_id: x.event_id,
+      raw_radar_priority: x.scores?.raw_radar_priority,
+      newsroom_priority: x.scores?.newsroom_priority,
+      tier: x.selection?.tier
+    }))
   },
   editorial_boundary: {
     ranking_is_not_publication: true,
     correlation_is_not_truth: true,
     source_count_is_not_independence: true,
+    provenance_is_inference_not_fact: true,
     human_editorial_approval_required: true
   }
 };
