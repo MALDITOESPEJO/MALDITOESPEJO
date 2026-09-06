@@ -105,6 +105,21 @@ const existing = fs.existsSync(CASES_DIR)
   ? fs.readdirSync(CASES_DIR).filter((name) => /^CASE-\d{8}\.json$/.test(name))
   : [];
 
+if (intakeId) {
+  for (const name of existing) {
+    const existingPath = path.join(CASES_DIR, name);
+    try {
+      const existingCase = JSON.parse(fs.readFileSync(existingPath, "utf8"));
+      if (existingCase?.input?.input_type === "news_radar_intake" && existingCase?.input?.input_reference === intakeId) {
+        console.error(`✖ El intake ${intakeId} ya originó el caso ${existingCase.case_id}.`);
+        process.exit(1);
+      }
+    } catch {
+      // A malformed historical case is handled by the existing case validators.
+    }
+  }
+}
+
 const numbers = existing.map((name) => Number(name.slice(5, 13))).filter(Number.isFinite);
 const nextNumber = (numbers.length ? Math.max(...numbers) : 0) + 1;
 const caseId = `CASE-${String(nextNumber).padStart(8, "0")}`;
