@@ -1,0 +1,98 @@
+[
+  {
+    "case_id": "NEG-001",
+    "event_a": {
+      "title": "Sánchez anuncia que la visita del Rey a Ceuta y a Melilla será \"en las próximas semanas\""
+    },
+    "event_b": {
+      "title": "Zarzuela conocía previamente el anuncio de Sánchez sobre el viaje del Rey a Ceuta"
+    },
+    "expected": "DO_NOT_MERGE",
+    "classification": "RELATED_EVENT",
+    "reason": "Misma historia política y mismo desplazamiento, pero describen hechos distintos: anuncio público del Gobierno frente a conocimiento previo por Zarzuela."
+  },
+  {
+    "case_id": "NEG-002",
+    "event_a": {
+      "title": "Sánchez anuncia que la visita del Rey a Ceuta y a Melilla será \"en las próximas semanas\""
+    },
+    "event_b": {
+      "title": "El Gobierno niega reproche alguno a Felipe VI por no haber visitado aún Ceuta"
+    },
+    "expected": "DO_NOT_MERGE",
+    "classification": "RELATED_EVENT",
+    "reason": "Comparten asunto y protagonistas, pero una noticia trata del anuncio de una futura visita y la otra de la respuesta del Gobierno a las críticas por una visita no realizada."
+  },
+  {
+    "case_id": "NEG-003",
+    "event_a": {
+      "title": "Sánchez anuncia que el Rey irá a Ceuta “en las próximas semanas” aunque aún no trabajan en la visita"
+    },
+    "event_b": {
+      "title": "El Rey traslada al presidente de Ceuta su «compromiso personal» de visitar la ciudad"
+    },
+    "expected": "DO_NOT_MERGE",
+    "classification": "RELATED_EVENT",
+    "reason": "Ambos apuntan a una futura visita del Rey, pero son actos y declaraciones diferentes; no deben convertirse automáticamente en un único acontecimiento."
+  },
+  {
+    "case_id": "NEG-004",
+    "event_a": {
+      "title": "Trump vuelve a usar la “triste” crisis de Ceuta para criticar a España, “país con cero control de su frontera”"
+    },
+    "event_b": {
+      "title": "Trump califica a España de \"país arruinado\" y considera \"muy triste\" lo ocurrido en Ceuta"
+    },
+    "expected": "DO_NOT_MERGE",
+    "classification": "RELATED_EVENT",
+    "reason": "Comparten la misma crisis y al mismo protagonista, pero pueden corresponder a declaraciones sucesivas o a formulaciones emitidas en momentos distintos; el título por sí solo no acredita un único acontecimiento."
+  },
+  {
+    "case_id": "NEG-005",
+    "event_a": {
+      "title": "Trump califica de \"triste\" lo ocurrido en Ceuta y acusa a España de no controlar su frontera"
+    },
+    "event_b": {
+      "title": "Trump se refiere a España como “país arruinado” y afirma que la crisis de Ceuta “es triste de ver”"
+    },
+    "expected": "DO_NOT_MERGE",
+    "classification": "RELATED_EVENT",
+    "reason": "La coincidencia temática es muy alta, pero las afirmaciones atribuidas a Trump no son necesariamente la misma declaración ni el mismo momento informativo."
+  },
+  {
+    "case_id": "NEG-006",
+    "event_a": {
+      "title": "21 migrantes detenidos en Ceuta por lanzar piedras a militares y guardias civiles"
+    },
+    "event_b": {
+      "title": "Detenidos 21 inmigrantes marroquíes por apedrear a militares y guardias civiles en Ceuta"
+    },
+    "expected": "REVIEW_BEFORE_MERGE",
+    "classification": "POTENTIAL_DUPLICATE_OR_SAME_EVENT",
+    "reason": "Caso deliberadamente fronterizo: títulos casi equivalentes y mismo número, lugar y conducta. Sirve para comprobar que una futura batería negativa no confunda un verdadero duplicado con un evento distinto."
+  },
+  {
+    "case_id": "NEG-007",
+    "event_a": {
+      "title": "21 migrantes detenidos en Ceuta por lanzar piedras a militares y guardias civiles"
+    },
+    "event_b": {
+      "title": "Detenidos 21 inmigrantes tras lanzar piedras contra varios agentes y militares"
+    },
+    "expected": "REVIEW_BEFORE_MERGE",
+    "classification": "POTENTIAL_DUPLICATE_OR_SAME_EVENT",
+    "reason": "Mismo asunto, cifra y patrón de conducta; el sistema debe resolverlo con contexto temporal y evidencias, no únicamente por similitud léxica."
+  },
+  {
+    "case_id": "NEG-008",
+    "event_a": {
+      "title": "21 detenidos tras un nuevo ataque con piedras a militares en Ceuta"
+    },
+    "event_b": {
+      "title": "Devueltos a Marruecos 21 migrantes por apedrear a militares y guardias civiles en Ceuta"
+    },
+    "expected": "DO_NOT_MERGE_WITHOUT_CONTEXT",
+    "classification": "RELATED_EVENT_OR_EVOLVING_REPORT",
+    "reason": "La expresión “nuevo ataque” introduce la posibilidad de un incidente distinto aunque coincidan cifra, lugar y conducta; no debe fusionarse automáticamente sin verificar identidad del episodio."
+  }
+]
