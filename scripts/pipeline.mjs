@@ -6,10 +6,11 @@ import { spawnSync } from "node:child_process";
 
 const ROOT = process.cwd();
 function getArg(name) { const index = process.argv.indexOf(name); return index >= 0 ? process.argv[index + 1] : null; }
-function usage() { console.log(`MALDITOESPEJO — AUTOMATED NEWS PIPELINE\n\nUso:\n  npm run pipeline -- --title "Título de la noticia"\n  npm run pipeline -- --input ruta/al/archivo.txt\n  npm run pipeline -- --json ruta/al/entrada.json\n\nEl pipeline investiga, recupera candidatos documentales, resuelve y clasifica fuentes, prepara evidencia para evaluación explícita y controla su trazabilidad antes de redactar.`); }
+function usage() { console.log(`MALDITOESPEJO — AUTOMATED NEWS PIPELINE\n\nUso:\n  npm run pipeline -- --title "Título de la noticia"\n  npm run pipeline -- --input ruta/al/archivo.txt\n  npm run pipeline -- --json ruta/al/entrada.json\n  npm run pipeline -- --intake INTAKE-YYYYMMDDHHMMSS-001\n\nEl pipeline investiga, recupera candidatos documentales, resuelve y clasifica fuentes, prepara evidencia para evaluación explícita y controla su trazabilidad antes de redactar.`); }
 if (process.argv.includes("--help") || process.argv.includes("-h")) { usage(); process.exit(0); }
-const title = getArg("--title"); const inputPath = getArg("--input"); const jsonPath = getArg("--json");
-if (!title && !inputPath && !jsonPath) { usage(); process.exit(1); }
+const title = getArg("--title"); const inputPath = getArg("--input"); const jsonPath = getArg("--json"); const intakeId = getArg("--intake");
+const modes = [Boolean(title), Boolean(inputPath), Boolean(jsonPath), Boolean(intakeId)].filter(Boolean).length;
+if (modes !== 1) { usage(); process.exit(1); }
 function run(script, args, options = {}) {
   console.log(`\n▶ ${script} ${args.join(" ")}`);
   const result = spawnSync(process.execPath, [path.join(ROOT, "scripts", script), ...args], { cwd: ROOT, stdio: "inherit" });
@@ -27,14 +28,22 @@ function run(script, args, options = {}) {
 function audit(caseId, stage, status = "PASS", details = {}) {
   return run("audit-event.mjs", ["--case", caseId, "--stage", stage, "--status", status, "--details", JSON.stringify(details)]);
 }
-let investigateArgs; if (title) investigateArgs = ["--title", title]; else if (inputPath) investigateArgs = ["--input", inputPath]; else investigateArgs = ["--json", jsonPath];
+
+const investigateArgs = title
+  ? ["--title", title]
+  : inputPath
+    ? ["--input", inputPath]
+    : jsonPath
+      ? ["--json", jsonPath]
+      : ["--intake", intakeId];
+
 if (!run("investigate.mjs", investigateArgs)) process.exit(process.exitCode ?? 1);
 const casesDir = path.join(ROOT, "editorial", "cases");
 const caseFiles = fs.readdirSync(casesDir).filter((name) => /^CASE-\d{8}\.json$/.test(name));
 if (!caseFiles.length) { console.error("✖ No se pudo localizar el caso creado."); process.exit(1); }
 const latest = caseFiles.map((name) => ({ name, mtime: fs.statSync(path.join(casesDir, name)).mtimeMs })).sort((a, b) => b.mtime - a.mtime)[0].name;
 const caseId = path.basename(latest, ".json");
-if (!audit(caseId, "investigate", "PASS", { input: title ?? inputPath ?? jsonPath })) process.exit(1);
+if (!audit(caseId, "investigate", "PASS", { input: title ?? inputPath ?? jsonPath ?? intakeId, input_mode: intakeId ? "news_radar_intake" : "direct" })) process.exit(1);
 const stages = [["claims.mjs", ["--case", caseId]], ["dependencies.mjs", ["--case", caseId]], ["research-plan.mjs", ["--case", caseId]], ["web-research.mjs", ["--case", caseId]]];
 for (const [script, args] of stages) { if (!run(script, args)) process.exit(process.exitCode ?? 1); if (!audit(caseId, script.replace(/\.mjs$/, ""))) process.exit(1); }
 const webSearchOk = run("search-web.mjs", ["--case", caseId], { allowFailure: true });
