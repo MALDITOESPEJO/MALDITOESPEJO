@@ -20,7 +20,8 @@ const executionId = `RUN-${new Date().toISOString().replace(/[-:.TZ]/g, '').slic
 const started = new Date().toISOString();
 const results = [];
 for (const [name, script] of steps) {
-  const r = spawnSync(process.execPath, [script], { cwd: root, encoding: 'utf8' });
+  console.log(`\n=== Daily intelligence step: ${name} (${script}) ===`);
+  const r = spawnSync(process.execPath, [script], { cwd: root, stdio: 'inherit' });
   results.push({ step: name, script, exit_code: r.status ?? 1, ok: r.status === 0 });
   if (r.status !== 0) break;
 }
