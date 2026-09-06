@@ -1,0 +1,122 @@
+﻿[
+    {
+        "event_id":  "EVT-14E32C95",
+        "title":  "Herido crítico tras saltar desde un cuarto piso después de apuñalar a tres personas",
+        "consolidation":  {
+                              "type":  "SAME_EVENT",
+                              "merged_event_ids":  [
+                                                       "EVT-B0234DCC",
+                                                       "EVT-9E2C74F0"
+                                                   ],
+                              "merged_event_count":  2,
+                              "similarity_basis":  0.8,
+                              "reason":  "Clusters con alta similitud semántica de título y contexto compatible, con ventana temporal de 48 horas."
+                          },
+        "sources":  null
+    },
+    {
+        "event_id":  "EVT-4D859D18",
+        "title":  "US envoys Kushner and Witkoff arrive in Kyiv after talks with Putin",
+        "consolidation":  {
+                              "type":  "SAME_EVENT",
+                              "merged_event_ids":  [
+                                                       "EVT-F53CB530",
+                                                       "EVT-37D2F3CB"
+                                                   ],
+                              "merged_event_count":  2,
+                              "similarity_basis":  1,
+                              "reason":  "Clusters con alta similitud semántica de título y contexto compatible, con ventana temporal de 48 horas."
+                          },
+        "sources":  null
+    },
+    {
+        "event_id":  "EVT-5E422D2A",
+        "title":  "Al menos 25 muertos tras caer un autobús con estudiantes por un precipicio en Cabo Verde",
+        "consolidation":  {
+                              "type":  "SAME_EVENT",
+                              "merged_event_ids":  [
+                                                       "EVT-5A02FDE3",
+                                                       "EVT-B8A84F7B"
+                                                   ],
+                              "merged_event_count":  2,
+                              "similarity_basis":  1,
+                              "reason":  "Clusters con alta similitud semántica de título y contexto compatible, con ventana temporal de 48 horas."
+                          },
+        "sources":  null
+    },
+    {
+        "event_id":  "EVT-88D3F651",
+        "title":  "Ceuta agudiza la precariedad del Gobierno",
+        "consolidation":  {
+                              "type":  "SAME_EVENT",
+                              "merged_event_ids":  [
+                                                       "EVT-D6BE6EA9",
+                                                       "EVT-1A8BA6D7"
+                                                   ],
+                              "merged_event_count":  2,
+                              "similarity_basis":  0.8,
+                              "reason":  "Clusters con alta similitud semántica de título y contexto compatible, con ventana temporal de 48 horas."
+                          },
+        "sources":  null
+    },
+    {
+        "event_id":  "EVT-295D147B",
+        "title":  "Un español, secuestrado por un supuesto grupo terrorista en Burkina Faso",
+        "consolidation":  {
+                              "type":  "SAME_EVENT",
+                              "merged_event_ids":  [
+                                                       "EVT-FC692E25",
+                                                       "EVT-E3961698"
+                                                   ],
+                              "merged_event_count":  2,
+                              "similarity_basis":  1,
+                              "reason":  "Clusters con alta similitud semántica de título y contexto compatible, con ventana temporal de 48 horas."
+                          },
+        "sources":  null
+    },
+    {
+        "event_id":  "EVT-C1C8737D",
+        "title":  "Milei se escuda en Trump para reivindicar su soberanía sobre las Malvinas",
+        "consolidation":  {
+                              "type":  "SAME_EVENT",
+                              "merged_event_ids":  [
+                                                       "EVT-21101798",
+                                                       "EVT-8A362205"
+                                                   ],
+                              "merged_event_count":  2,
+                              "similarity_basis":  1,
+                              "reason":  "Clusters con alta similitud semántica de título y contexto compatible, con ventana temporal de 48 horas."
+                          },
+        "sources":  null
+    },
+    {
+        "event_id":  "EVT-F935A2A5",
+        "title":  "Trump amenaza con cortar comercio con países que tienen superávit si la Fed no baja los tipos",
+        "consolidation":  {
+                              "type":  "SAME_EVENT",
+                              "merged_event_ids":  [
+                                                       "EVT-72D473C2",
+                                                       "EVT-B55FAEB5"
+                                                   ],
+                              "merged_event_count":  2,
+                              "similarity_basis":  0.8,
+                              "reason":  "Clusters con alta similitud semántica de título y contexto compatible, con ventana temporal de 48 horas."
+                          },
+        "sources":  null
+    },
+    {
+        "event_id":  "EVT-F672B97E",
+        "title":  "Fundación Mutua Madrileña destinará un millón de euros a nuevos proyectos sociales de entidades sin ánimo de lucro",
+        "consolidation":  {
+                              "type":  "SAME_EVENT",
+                              "merged_event_ids":  [
+                                                       "EVT-03AC515C",
+                                                       "EVT-E596BF4E"
+                                                   ],
+                              "merged_event_count":  2,
+                              "similarity_basis":  1,
+                              "reason":  "Clusters con alta similitud semántica de título y contexto compatible, con ventana temporal de 48 horas."
+                          },
+        "sources":  null
+    }
+]
