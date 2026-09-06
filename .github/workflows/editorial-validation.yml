@@ -53,6 +53,9 @@ jobs:
       - name: Run news consolidation regression audit
         run: npm run test:news:consolidation
 
+      - name: Run news event relation regression audit
+        run: npm run test:news:relations
+
       - name: Run editorial E2E acceptance tests
         run: npm run test:e2e:editorial
 
