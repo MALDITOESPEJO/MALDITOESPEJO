@@ -156,13 +156,16 @@ const eventById = new Map(events.map(x => [x.event_id, x]));
 
 const ranked = data.correlations
   .map(x => rankEvent(x, eventById, candidateById))
-  .sort((a, b) => b.scores.newsroom_priority - a.scores.newsroom_priority
+  // Sort by the uncapped radar signal. newsroom_priority may be capped by
+  // editorial maturity, so it must not distort the radar's actual ordering.
+  .sort((a, b) => b.scores.raw_radar_priority - a.scores.raw_radar_priority
+    || b.scores.newsroom_priority - a.scores.newsroom_priority
     || String(a.event_id).localeCompare(String(b.event_id)))
   .map((item, index) => ({ rank: index + 1, ...item }));
 
 const result = {
   engine: 'MALDITOESPEJO_DAILY_NEWS_SELECTION_ENGINE',
-  version: '2.2.0',
+  version: '2.2.1',
   mode: 'event-radar-ranking',
   generated_at: new Date().toISOString(),
   candidates_analyzed: candidates.length,
