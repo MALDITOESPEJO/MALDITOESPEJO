@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import fs from 'node:fs';
-import { spawnSync } from 'node:child_process';
+import { spawn } from 'node:child_process';
 
 const root = process.cwd();
 const out = 'editorial/radars/daily-news-intelligence.json';
@@ -19,11 +19,34 @@ const steps = [
 const executionId = `RUN-${new Date().toISOString().replace(/[-:.TZ]/g, '').slice(0,14)}`;
 const started = new Date().toISOString();
 const results = [];
+
+function runStep(name, script) {
+  return new Promise((resolve) => {
+    console.log(`\n=== Daily intelligence step: ${name} (${script}) ===`);
+    const child = spawn(process.execPath, [script], {
+      cwd: root,
+      stdio: ['inherit', 'pipe', 'pipe'],
+      windowsHide: false,
+    });
+
+    child.stdout.on('data', (chunk) => process.stdout.write(chunk));
+    child.stderr.on('data', (chunk) => process.stderr.write(chunk));
+    child.on('error', (error) => {
+      console.error(`Daily intelligence step ${name} failed to start: ${error.message}`);
+      resolve({ step: name, script, exit_code: 1, ok: false });
+    });
+    child.on('close', (code, signal) => {
+      const exitCode = typeof code === 'number' ? code : 1;
+      if (signal) console.error(`Daily intelligence step ${name} terminated by signal ${signal}`);
+      resolve({ step: name, script, exit_code: exitCode, ok: exitCode === 0 });
+    });
+  });
+}
+
 for (const [name, script] of steps) {
-  console.log(`\n=== Daily intelligence step: ${name} (${script}) ===`);
-  const r = spawnSync(process.execPath, [script], { cwd: root, stdio: 'inherit' });
-  results.push({ step: name, script, exit_code: r.status ?? 1, ok: r.status === 0 });
-  if (r.status !== 0) break;
+  const result = await runStep(name, script);
+  results.push(result);
+  if (!result.ok) break;
 }
 
 const readJson = p => fs.existsSync(p) ? JSON.parse(fs.readFileSync(p, 'utf8')) : null;
