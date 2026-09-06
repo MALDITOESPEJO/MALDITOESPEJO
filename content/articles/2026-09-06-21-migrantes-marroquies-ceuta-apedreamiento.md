@@ -7,7 +7,7 @@ section: "Actualidad"
 author: "Ariadna Soler Montalbán"
 type: "news"
 status: "approved"
-image: "/images/2026-09-06-21-migrantes-marroquies-ceuta-apedreamiento.png"
+image: "/images/2026-09-06-21-migrantes-marroquies-ceuta-apedreamiento.svg"
 ---
 
 Un total de 21 migrantes marroquíes fueron identificados en Ceuta después de que, durante la madrugada del domingo, un grupo lanzara piedras contra una patrulla de las Fuerzas Armadas y agentes de la Guardia Civil en las inmediaciones de la playa de El Trampolín.
