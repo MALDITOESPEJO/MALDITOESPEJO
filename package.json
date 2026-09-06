@@ -71,6 +71,7 @@
     "news:rank": "node scripts/rank-news.mjs",
     "news:report": "node scripts/daily-news-report.mjs",
     "news:source-check": "node scripts/check-source-universe.mjs",
+    "news:editorial-intake": "node scripts/create-news-editorial-intake.mjs",
     "news:intelligence": "node scripts/daily-news-intelligence-run.mjs"
   },
   "dependencies": {
