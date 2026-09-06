@@ -1,0 +1,38 @@
+[
+  {
+    "case_id": "REL-001",
+    "event_a": {"event_id":"A1","title":"Sánchez anuncia que la visita del Rey a Ceuta y a Melilla será \"en las próximas semanas\"","geography":"Ceuta","section_candidate":"politica"},
+    "event_b": {"event_id":"B1","title":"Zarzuela conocía previamente el anuncio de Sánchez sobre el viaje del Rey a Ceuta","geography":"Ceuta","section_candidate":"politica"},
+    "expected":"RELATED_EVENT"
+  },
+  {
+    "case_id": "REL-002",
+    "event_a": {"event_id":"A2","title":"Sánchez anuncia que la visita del Rey a Ceuta y a Melilla será \"en las próximas semanas\"","geography":"Ceuta","section_candidate":"politica"},
+    "event_b": {"event_id":"B2","title":"El Gobierno niega reproche alguno a Felipe VI por no haber visitado aún Ceuta","geography":"Ceuta","section_candidate":"politica"},
+    "expected":"RELATED_EVENT"
+  },
+  {
+    "case_id": "REL-003",
+    "event_a": {"event_id":"A3","title":"Trump califica de \"triste\" lo ocurrido en Ceuta y acusa a España de no controlar su frontera","geography":"Ceuta","section_candidate":"internacional"},
+    "event_b": {"event_id":"B3","title":"Trump se refiere a España como \"país arruinado\" y afirma que la crisis de Ceuta \"es triste de ver\"","geography":"Ceuta","section_candidate":"internacional"},
+    "expected":"RELATED_EVENT"
+  },
+  {
+    "case_id": "REL-004",
+    "event_a": {"event_id":"A4","title":"21 detenidos tras un nuevo ataque con piedras a militares en Ceuta","geography":"Ceuta","section_candidate":"sociedad"},
+    "event_b": {"event_id":"B4","title":"Devueltos a Marruecos 21 migrantes por apedrear a militares y guardias civiles en Ceuta","geography":"Ceuta","section_candidate":"sociedad"},
+    "expected":"RELATED_EVENT"
+  },
+  {
+    "case_id": "REL-005",
+    "event_a": {"event_id":"A5","title":"Sánchez anuncia que el Rey irá a Ceuta en las próximas semanas","geography":"Ceuta","section_candidate":"politica"},
+    "event_b": {"event_id":"B5","title":"El Rey traslada al presidente de Ceuta su compromiso personal de visitar la ciudad","geography":"Ceuta","section_candidate":"politica"},
+    "expected":"RELATED_EVENT"
+  },
+  {
+    "case_id": "PAR-001",
+    "event_a": {"event_id":"A6","title":"Sánchez anuncia que el Rey irá a Ceuta en las próximas semanas","geography":"Ceuta","section_candidate":"politica"},
+    "event_b": {"event_id":"B6","title":"Marruecos refuerza los controles en el entorno de la frontera de Ceuta","geography":"Ceuta","section_candidate":"politica"},
+    "expected":"PARALLEL_SIGNAL"
+  }
+]
