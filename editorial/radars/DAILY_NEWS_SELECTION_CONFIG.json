@@ -1,14 +1,13 @@
 {
   "engine": "MALDITOESPEJO_DAILY_NEWS_SELECTION_ENGINE",
-  "version": "1.1.0",
+  "version": "2.3.0",
   "weights": {
-    "virality": {
-      "volume": 0.20,
-      "velocity": 0.25,
-      "acceleration": 0.20,
-      "cross_source_spread": 0.15,
-      "search_interest": 0.10,
-      "persistence": 0.10
+    "radar_signal": {
+      "emerging": 0.25,
+      "convergence": 0.20,
+      "confidence": 0.20,
+      "timeliness": 0.20,
+      "source_independence": 0.15
     },
     "editorial": {
       "relevance": 0.20,
@@ -20,9 +19,7 @@
       "source_independence": 0.05
     },
     "priority": {
-      "virality": 0.40,
-      "editorial": 0.50,
-      "timeliness": 0.10
+      "radar_signal": 1.00
     }
   },
   "thresholds": {
@@ -34,18 +31,18 @@
   "principles": {
     "unknown_is_not_zero": true,
     "source_count_is_not_independence": true,
+    "parent_organization_is_not_independence": true,
+    "diffusion_is_not_corroboration": true,
     "virality_is_not_truth": true,
+    "single_source_high_impact_can_surface": true,
     "ranking_does_not_publish": true,
     "human_editorial_approval_required": true
   },
   "daily_outputs": [
-    "TOP_PUBLICATION_OPPORTUNITIES",
-    "TOP_EMERGING_TRENDS",
-    "TOP_UNDERCOVERED",
-    "FASTEST_RISING",
-    "HIGH_VIRALITY_LOW_EDITORIAL_VALUE",
-    "HIGH_EDITORIAL_VALUE_LOW_VIRALITY",
-    "IMMEDIATE_VERIFICATION",
-    "BLOCKED"
+    "TOP_INVESTIGATION_OPPORTUNITIES",
+    "TOP_EMERGING_EVENTS",
+    "HIGH_SIGNAL_LOW_CONFIDENCE",
+    "HIGHEST_APPARENT_SOURCE_INDEPENDENCE",
+    "BLOCKED_REQUIRES_CAUTION"
   ]
 }
