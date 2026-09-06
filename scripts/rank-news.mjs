@@ -3,132 +3,164 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
-const input = process.argv[2] || 'editorial/radars/daily-news-candidates.json';
+// The default input is the correlation layer: ranking is event/story-level.
+const input = process.argv[2] || 'editorial/radars/daily-news-correlations.json';
 const output = process.argv[3] || 'editorial/radars/daily-news-ranking.json';
+const candidatesPath = process.env.NEWS_CANDIDATES || 'editorial/radars/daily-news-candidates.json';
+const eventsPath = process.env.NEWS_EVENTS || 'editorial/radars/daily-news-events.json';
 
 const clamp = (n, min = 0, max = 100) => Math.max(min, Math.min(max, Number.isFinite(n) ? n : 0));
-const num = (v) => (typeof v === 'number' && Number.isFinite(v) ? clamp(v) : null);
-const avgKnown = (values) => {
-  const known = values.filter((v) => v !== null);
+const finite = (v) => typeof v === 'number' && Number.isFinite(v);
+const scoreOrNull = (v) => finite(v) ? clamp(v) : null;
+const avg = (values) => {
+  const known = values.filter(finite);
   return known.length ? known.reduce((a, b) => a + b, 0) / known.length : null;
 };
 
-const weighted = (obj, weights) => {
-  if (!obj || typeof obj !== 'object') return null;
-  let total = 0;
-  let weight = 0;
-  for (const [key, w] of Object.entries(weights)) {
-    const value = num(obj[key]);
-    if (value !== null) {
-      total += value * w;
-      weight += w;
-    }
-  }
-  return weight ? total / weight : null;
+const sourceIndependence = (correlation, event) => {
+  const count = Number(correlation.independent_source_count ?? event?.independent_source_count ?? 0);
+  return clamp(count * 25);
 };
 
-const virality = (s) => weighted(s?.virality, {
-  volume: 0.20, velocity: 0.25, acceleration: 0.20,
-  cross_source_spread: 0.15, search_interest: 0.10, persistence: 0.10,
-});
+const buildReason = ({ signal, emerging, correlation, confidence, trend, independence, risk }) => {
+  const parts = [];
+  if (signal >= 80) parts.push('señal de radar muy fuerte');
+  else if (signal >= 65) parts.push('señal de radar fuerte');
+  else if (signal >= 50) parts.push('señal de radar relevante');
+  if (emerging >= 75) parts.push('emergencia elevada');
+  if (correlation >= 75) parts.push('convergencia alta');
+  if (independence >= 75) parts.push('diversidad de fuentes alta');
+  else if (independence >= 50) parts.push('diversidad de fuentes apreciable');
+  if (confidence >= 80) parts.push('confianza alta');
+  else if (confidence >= 60) parts.push('confianza moderada');
+  if (trend >= 75) parts.push('tendencia elevada');
+  if (risk === null) parts.push('riesgo aún no evaluado');
+  else if (risk >= 70) parts.push('riesgo elevado: requiere verificación adicional');
+  return parts.length ? parts.join('; ') + '.' : 'señales insuficientes para una prioridad alta.';
+};
 
-const editorial = (s) => weighted(s?.editorial, {
-  relevance: 0.20, impact: 0.20, novelty: 0.15, editorial_fit: 0.15,
-  public_interest: 0.10, investigation_potential: 0.10,
-  originality_opportunity: 0.10,
-});
+const rankEvent = (correlation, eventById, candidateById) => {
+  const event = eventById.get(correlation.event_id);
+  const candidate = candidateById.get(correlation.candidate_ids?.[0]);
+  const eventSignals = event?.signals || {};
 
-const evidence = (s) => weighted(s?.editorial, {
-  verification_readiness: 0.35, source_independence: 0.25,
-  evidence_quality: 0.25, confidence: 0.15,
-});
+  const emerging = scoreOrNull(correlation.emerging_score);
+  const correlationScore = scoreOrNull(correlation.correlation_score);
+  const confidence = scoreOrNull(correlation.confidence);
+  const trend = scoreOrNull(eventSignals.trend_score);
+  const independence = sourceIndependence(correlation, event);
+  const risk = finite(candidate?.signals?.risk) ? clamp(candidate.signals.risk) : null;
 
-const signalStrength = (candidate) => {
-  const signals = candidate.signals || {};
-  const emerging = num(signals.emerging_score);
-  const correlation = num(signals.correlation_score);
-  const v = virality(signals);
-  const trend = num(signals.trend);
-  return avgKnown([
+  // Radar signal answers: "what deserves investigation now?"
+  // It deliberately does NOT masquerade as editorial value or publication readiness.
+  const signal = avg([
     emerging,
-    correlation,
-    v,
+    correlationScore,
+    confidence,
     trend,
+    independence,
   ]);
-};
 
-const score = (candidate) => {
-  const signals = candidate.signals || {};
-  const v = virality(signals);
-  const e = editorial(signals);
-  const ev = evidence(signals);
-  const t = num(signals.timeliness);
-  const r = num(signals.risk);
-  const signal = signalStrength(candidate);
+  const riskPenalty = risk === null ? 0 : Math.max(0, risk - 60) * 0.15;
+  const priority = clamp((signal ?? 0) - riskPenalty);
 
-  // Signal strength tells the newsroom what deserves attention; it is not editorial value.
-  // Missing editorial/evidence dimensions reduce confidence instead of becoming zero-value facts.
-  const editorialCoverage = e === null ? 0 : 1;
-  const evidenceCoverage = ev === null ? 0 : 1;
-  const coverage = [signal, e, ev, t].filter((x) => x !== null).length / 4;
-
-  const raw = (signal ?? 0) * 0.30
-    + (e ?? 0) * 0.40
-    + (ev ?? 0) * 0.20
-    + (t ?? 0) * 0.10;
-
-  const confidenceAdjusted = raw * (0.70 + 0.30 * coverage);
-  const riskPenalty = r === null ? 0 : Math.max(0, r - 60) * 0.15;
-  let priority = clamp(confidenceAdjusted - riskPenalty);
-
-  // A strong radar signal without editorial/evidence assessment is an investigation lead,
-  // not a P1 recommendation. Unknown risk is explicitly marked as unresolved.
   let tier = 'PRIORIDAD 4 — DESCARTAR';
-  if (candidate.duplicate_cluster_id) {
-    priority = Math.min(priority, 20);
-  } else if (editorialCoverage === 0 || evidenceCoverage === 0) {
-    priority = Math.min(priority, 64.99);
-    tier = priority >= 45 ? 'PRIORIDAD 3 — TENDENCIA / VALORAR' : 'PRIORIDAD 4 — DESCARTAR';
-  } else if (priority >= 80) tier = 'PRIORIDAD 1 — INVESTIGAR AHORA';
-  else if (priority >= 65) tier = 'PRIORIDAD 2 — VIGILAR / INVESTIGAR';
-  else if (priority >= 45) tier = 'PRIORIDAD 3 — TENDENCIA';
+  if (correlation.classification === 'DUPLICATE') {
+    tier = 'PRIORIDAD 4 — DUPLICADO';
+  } else if (priority >= 80) {
+    tier = 'PRIORIDAD 1 — INVESTIGAR AHORA';
+  } else if (priority >= 65) {
+    tier = 'PRIORIDAD 2 — VIGILAR / INVESTIGAR';
+  } else if (priority >= 45) {
+    tier = 'PRIORIDAD 3 — TENDENCIA / VALORAR';
+  }
 
   return {
-    ...candidate,
+    ...(event || {}),
+    event_id: correlation.event_id,
+    correlation_id: correlation.correlation_id,
+    candidate_ids: correlation.candidate_ids || event?.candidate_ids || [],
+    candidate_count: correlation.candidate_ids?.length || event?.candidate_count || 0,
+    source_ids: correlation.source_ids || event?.source_ids || [],
+    source_count: correlation.source_ids?.length || event?.source_count || 0,
+    independent_source_count: correlation.independent_source_count ?? event?.independent_source_count ?? 0,
+    intelligence: {
+      correlation_score: correlationScore,
+      emerging_score: emerging,
+      confidence,
+      classification: correlation.classification,
+      investigation_priority: correlation.investigation_priority,
+      rationale: correlation.rationale,
+    },
     scores: {
       signal_strength: signal === null ? null : Number(signal.toFixed(2)),
-      virality: v === null ? null : Number(v.toFixed(2)),
-      editorial_value: e === null ? null : Number(e.toFixed(2)),
-      evidence_readiness: ev === null ? null : Number(ev.toFixed(2)),
-      timeliness: t,
-      risk: r,
+      virality: emerging,
+      convergence: correlationScore,
+      confidence,
+      timeliness: trend,
+      source_independence: independence,
+      risk,
       newsroom_priority: Number(priority.toFixed(2)),
-      signal_coverage: Number((coverage * 100).toFixed(1)),
-      editorial_assessed: editorialCoverage === 1,
-      evidence_assessed: evidenceCoverage === 1,
-      risk_assessed: r !== null,
+      editorial_value: null,
+      evidence_readiness: null,
+      editorial_assessed: false,
+      evidence_assessed: false,
+      risk_assessed: risk !== null,
+      signal_coverage: Number(([
+        emerging, correlationScore, confidence, trend, independence,
+      ].filter(finite).length / 5 * 100).toFixed(1)),
     },
     selection: {
       tier,
       publishable: false,
-      reason: buildReason(signal, e, ev, t, r),
+      reason: buildReason({
+        signal: signal ?? 0,
+        emerging: emerging ?? 0,
+        correlation: correlationScore ?? 0,
+        confidence: confidence ?? 0,
+        trend: trend ?? 0,
+        independence,
+        risk,
+      }),
     },
   };
 };
 
-function buildReason(signal, e, ev, t, r) {
-  const parts = [];
-  if (signal !== null && signal >= 75) parts.push('señal de radar fuerte');
-  else if (signal !== null && signal >= 55) parts.push('señal relevante');
-  if (e !== null && e >= 75) parts.push('alto valor editorial');
-  else if (e !== null && e >= 55) parts.push('valor editorial apreciable');
-  if (ev !== null && ev >= 75) parts.push('buena preparación para verificación');
-  if (t !== null && t >= 75) parts.push('gran actualidad');
-  if (r === null) parts.push('riesgo aún no evaluado');
-  else if (r >= 70) parts.push('riesgo elevado: requiere verificación adicional');
-  if (!parts.length) parts.push('señales insuficientes para una prioridad alta');
-  return parts.join('; ') + '.';
-}
+const rankLegacyCandidates = (candidates) => candidates.map((candidate) => {
+  const s = candidate.signals || {};
+  const virality = s.virality || {};
+  const editorial = s.editorial || {};
+  const v = avg([
+    virality.volume, virality.velocity, virality.acceleration,
+    virality.cross_source_spread, virality.search_interest, virality.persistence,
+  ]);
+  const e = avg([
+    editorial.relevance, editorial.impact, editorial.novelty,
+    editorial.editorial_fit, editorial.verification_readiness,
+    editorial.originality_opportunity, editorial.source_independence,
+  ]);
+  const t = scoreOrNull(s.timeliness);
+  const r = scoreOrNull(s.risk);
+  const priority = clamp((v ?? 0) * 0.40 + (e ?? 0) * 0.50 + (t ?? 0) * 0.10);
+  return {
+    ...candidate,
+    scores: {
+      virality: v,
+      editorial_value: e,
+      timeliness: t,
+      risk: r,
+      newsroom_priority: Number(priority.toFixed(2)),
+      signal_coverage: Number(([v, e, t].filter(finite).length / 3 * 100).toFixed(1)),
+      editorial_assessed: e !== null,
+      evidence_assessed: false,
+      risk_assessed: r !== null,
+    },
+    selection: {
+      tier: priority >= 80 ? 'PRIORIDAD 1 — INVESTIGAR AHORA' : priority >= 65 ? 'PRIORIDAD 2 — VIGILAR / INVESTIGAR' : priority >= 45 ? 'PRIORIDAD 3 — TENDENCIA / VALORAR' : 'PRIORIDAD 4 — DESCARTAR',
+      publishable: false,
+      reason: 'Modo legacy de candidatos; no sustituye al ranking de eventos.',
+    },
+  };
 
 if (!fs.existsSync(input)) {
   console.error(`Input not found: ${input}`);
@@ -136,28 +168,50 @@ if (!fs.existsSync(input)) {
 }
 
 const data = JSON.parse(fs.readFileSync(input, 'utf8'));
-const candidates = Array.isArray(data) ? data : data.candidates;
-if (!Array.isArray(candidates)) {
-  console.error('Input must be an array or an object with a candidates array.');
-  process.exit(1);
+let ranked;
+let rankingMode;
+let candidatesAnalyzed = 0;
+let eventsAnalyzed = 0;
+
+if (Array.isArray(data.correlations)) {
+  const candidatesData = fs.existsSync(candidatesPath) ? JSON.parse(fs.readFileSync(candidatesPath, 'utf8')) : [];
+  const eventsData = fs.existsSync(eventsPath) ? JSON.parse(fs.readFileSync(eventsPath, 'utf8')) : [];
+  const candidates = Array.isArray(candidatesData) ? candidatesData : (candidatesData.candidates || []);
+  const events = Array.isArray(eventsData) ? eventsData : (eventsData.events || []);
+  const candidateById = new Map(candidates.map(x => [x.candidate_id, x]));
+  const eventById = new Map(events.map(x => [x.event_id, x]));
+
+  ranked = data.correlations.map(x => rankEvent(x, eventById, candidateById));
+  rankingMode = 'event';
+  candidatesAnalyzed = candidates.length;
+  eventsAnalyzed = events.length;
+} else {
+  const candidates = Array.isArray(data) ? data : data.candidates;
+  if (!Array.isArray(candidates)) {
+    console.error('Input must be correlations or an array/object with candidates.');
+    process.exit(1);
+  }
+  ranked = rankLegacyCandidates(candidates);
+  rankingMode = 'candidate-legacy';
+  candidatesAnalyzed = candidates.length;
 }
 
-const ranked = candidates
-  .map(score)
+ranked = ranked
   .sort((a, b) => b.scores.newsroom_priority - a.scores.newsroom_priority
-    || String(a.candidate_id).localeCompare(String(b.candidate_id)))
+    || String(a.event_id || a.candidate_id).localeCompare(String(b.event_id || b.candidate_id)))
   .map((item, index) => ({ rank: index + 1, ...item }));
 
 const result = {
   engine: 'MALDITOESPEJO_DAILY_NEWS_SELECTION_ENGINE',
-  version: '2.0.0',
-  mode: 'event-aware-editorial-ranking',
+  version: '2.1.0',
+  mode: rankingMode,
   generated_at: new Date().toISOString(),
-  candidates_analyzed: candidates.length,
+  candidates_analyzed: candidatesAnalyzed,
+  events_analyzed: eventsAnalyzed,
   ranking_items: ranked.length,
   ranking: ranked,
 };
 
 fs.mkdirSync(path.dirname(output), { recursive: true });
 fs.writeFileSync(output, JSON.stringify(result, null, 2) + '\n');
-console.log(`Ranked ${ranked.length} candidates → ${output}`);
+console.log(`Ranked ${ranked.length} ${rankingMode === 'event' ? 'events' : 'candidates'} → ${output}`);
