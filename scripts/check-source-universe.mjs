@@ -79,12 +79,20 @@ async function probe(url) {
       signal: controller.signal,
       headers: { 'user-agent': 'MALDITOESPEJO-source-coverage/1.0' },
     });
-    return {
+    const result = {
       status: response.ok ? 'AVAILABLE' : (response.status === 401 || response.status === 403 ? 'AUTH_REQUIRED' : 'HTTP_ERROR'),
       http_status: response.status,
       final_url: response.url,
       latency_ms: Date.now() - started,
     };
+    // Consume/cancel the response body so Node/Undici can release the
+    // connection and the child process can terminate cleanly after probes.
+    try {
+      if (response.body) await response.body.cancel();
+    } catch {
+      // Body cleanup is best-effort; the probe result itself remains valid.
+    }
+    return result;
   } catch (error) {
     return {
       status: error?.name === 'AbortError' ? 'TIMEOUT' : 'NETWORK_ERROR',
