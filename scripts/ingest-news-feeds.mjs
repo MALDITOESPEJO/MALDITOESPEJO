@@ -10,6 +10,7 @@ const OUTPUT = path.join(ROOT, 'editorial/radars/daily-news-candidates.json');
 const COVERAGE_OUTPUT = path.join(ROOT, 'editorial/radars/daily-source-coverage.json');
 const STATE = path.join(ROOT, 'editorial/radars/.daily-news-ingest-state.json');
 const TIMEOUT_MS = Number(process.env.NEWS_INGEST_TIMEOUT_MS || 15000);
+const CONCURRENCY = Math.max(1, Number(process.env.NEWS_INGEST_CONCURRENCY || 12));
 
 function parseCsvLine(line) {
   const out = [];
@@ -180,15 +181,9 @@ const candidates = [];
 const observations = [];
 const errors = [];
 
-// Every registered channel is attempted using its own URL. When a matching
-// row exists in the endpoint catalogue (by channel_id), its metadata
-// (type, authority level) enriches the target -- but the URL always comes
-// from the channel itself, never from the endpoint catalogue, which has
-// no URL column. Non-machine-readable endpoints are explicitly queued,
-// never treated as empty and never converted into false "no news" results.
-for (const channel of channels) {
+function buildChannelTarget(channel) {
   const matchedEndpoint = endpointByChannel.get(String(channel.channel_id || '').trim()) || {};
-  const endpoint = {
+  return {
     source_id: channel.source_id,
     channel_id: channel.channel_id,
     endpoint_id: matchedEndpoint.endpoint_id || '',
@@ -197,6 +192,10 @@ for (const channel of channels) {
     endpoint: channel.endpoint,
     authority_level: matchedEndpoint.authority_level || channel.authority_level,
   };
+}
+
+async function processChannel(channel) {
+  const endpoint = buildChannelTarget(channel);
   const sourceId = String(endpoint.source_id || '').trim();
   const mode = modeFor(endpoint);
   const base = {
@@ -210,32 +209,39 @@ for (const channel of channels) {
   };
 
   if (mode === 'MANUAL' || mode === 'WEB' || !isHttp(endpoint.endpoint)) {
-    observations.push({ ...base, status: 'MANUAL_CHECK_REQUIRED', reason: 'Endpoint requires browser, document, interactive tool, or unresolved URL handling.' });
-    continue;
+    return {
+      observations: [{ ...base, status: 'MANUAL_CHECK_REQUIRED', reason: 'Endpoint requires browser, document, interactive tool, or unresolved URL handling.' }],
+      candidates: [],
+      errors: [],
+    };
   }
 
   try {
     const response = await fetchText(endpoint.endpoint);
     const status = response.ok ? 'AVAILABLE' : (response.status === 401 || response.status === 403 ? 'AUTH_REQUIRED' : 'HTTP_ERROR');
-    observations.push({ ...base, status, http_status: response.status, final_url: response.url, content_type: response.content_type });
-    if (!response.ok) continue;
+    const observation = { ...base, status, http_status: response.status, final_url: response.url, content_type: response.content_type };
+    const localCandidates = [];
+
+    if (!response.ok) {
+      return { observations: [observation], candidates: localCandidates, errors: [] };
+    }
 
     if (mode === 'FEED' || /xml|rss|atom/i.test(response.content_type) || /<rss[\s>]|<feed[\s>]|<item[\s>]/i.test(response.text)) {
       const items = parseFeed(response.text);
-      for (const item of items) candidates.push(candidateFromItem(sourceId, endpoint, item, run));
-      observations[observations.length - 1].items_detected = items.length;
-      observations[observations.length - 1].extraction = 'feed_items';
+      for (const item of items) localCandidates.push(candidateFromItem(sourceId, endpoint, item, run));
+      observation.items_detected = items.length;
+      observation.extraction = 'feed_items';
     } else if (/json/i.test(response.content_type) || /^[\s\r\n]*[{[]/.test(response.text)) {
       let parsed = null;
       try { parsed = JSON.parse(response.text); } catch { parsed = null; }
-      observations[observations.length - 1].extraction = parsed ? 'json_observation' : 'non_json_payload';
-      if (parsed) observations[observations.length - 1].json_top_level = Array.isArray(parsed) ? 'array' : typeof parsed;
+      observation.extraction = parsed ? 'json_observation' : 'non_json_payload';
+      if (parsed) observation.json_top_level = Array.isArray(parsed) ? 'array' : typeof parsed;
       // Dataset/API payloads are recorded as observations. They become news candidates only
       // when an explicit feed-like item title + URL is present; we never invent headlines from data.
       const rows = Array.isArray(parsed) ? parsed : (Array.isArray(parsed?.data) ? parsed.data : []);
       const feedLike = rows.filter((r) => r && typeof r === 'object' && (r.title || r.name) && (r.url || r.link));
       for (const row of feedLike.slice(0, 100)) {
-        candidates.push(candidateFromItem(sourceId, endpoint, {
+        localCandidates.push(candidateFromItem(sourceId, endpoint, {
           title: clean(row.title || row.name),
           summary: clean(row.summary || row.description || ''),
           published: row.published || row.date || row.updated || '',
@@ -243,21 +249,56 @@ for (const channel of channels) {
           guid: row.id || row.guid || row.url || row.link,
         }, run));
       }
-      observations[observations.length - 1].items_detected = feedLike.length;
+      observation.items_detected = feedLike.length;
     } else {
-      observations[observations.length - 1].extraction = 'payload_not_news_feed';
+      observation.extraction = 'payload_not_news_feed';
     }
+
+    return { observations: [observation], candidates: localCandidates, errors: [] };
   } catch (error) {
     const status = error?.name === 'AbortError' ? 'TIMEOUT' : 'NETWORK_ERROR';
-    observations.push({ ...base, status, error: String(error?.message || error) });
-    errors.push({ ...base, status, error: String(error?.message || error) });
+    const message = String(error?.message || error);
+    const observation = { ...base, status, error: message };
+    return { observations: [observation], candidates: [], errors: [{ ...base, status, error: message }] };
   }
 }
 
-// Nota: ya no hace falta un bloque aparte para "canales sin endpoint
-// registrado" -- con el fix, cada canal se procesa directamente arriba
-// usando su propia URL, enriquecida con el catalogo de endpoints cuando
-// existe una fila correspondiente.
+async function mapConcurrent(items, worker, concurrency) {
+  const results = new Array(items.length);
+  let nextIndex = 0;
+
+  async function consume() {
+    while (true) {
+      const index = nextIndex;
+      nextIndex += 1;
+      if (index >= items.length) return;
+      results[index] = await worker(items[index], index);
+    }
+  }
+
+  const workers = Array.from({ length: Math.min(concurrency, items.length) }, () => consume());
+  await Promise.all(workers);
+  return results;
+}
+
+console.log(`Universal ingest: ${channels.length} channels; concurrency=${CONCURRENCY}, timeout=${TIMEOUT_MS}ms`);
+
+// Every registered channel is attempted using its own URL. When a matching
+// row exists in the endpoint catalogue (by channel_id), its metadata
+// (type, authority level) enriches the target -- but the URL always comes
+// from the channel itself, never from the endpoint catalogue, which has
+// no URL column. Non-machine-readable endpoints are explicitly queued,
+// never treated as empty and never converted into false "no news" results.
+const results = await mapConcurrent(channels, processChannel, CONCURRENCY);
+
+for (let i = 0; i < results.length; i += 1) {
+  const result = results[i];
+  observations.push(...result.observations);
+  candidates.push(...result.candidates);
+  errors.push(...result.errors);
+  const channel = channels[i];
+  console.log(`Universal ingest progress: ${channel?.source_id || 'UNKNOWN'} / ${channel?.channel_id || i + 1} (${i + 1}/${channels.length})`);
+}
 
 const unique = new Map();
 for (const candidate of candidates) unique.set(candidate.candidate_id, candidate);
@@ -320,5 +361,5 @@ fs.writeFileSync(OUTPUT, JSON.stringify({ generated_at: run, candidates: [...uni
 fs.writeFileSync(COVERAGE_OUTPUT, JSON.stringify(coverage, null, 2) + '\n');
 fs.writeFileSync(STATE, JSON.stringify(state, null, 2) + '\n');
 
-console.log(`Universal ingest: ${unique.size} candidates; ${observations.length} endpoint/channel checks across ${registry.length} registered sources.`);
+console.log(`Universal ingest complete: ${unique.size} candidates; ${observations.length} endpoint/channel checks across ${registry.length} registered sources.`);
 if (errors.length) console.error(`Endpoint errors: ${errors.length}`);
