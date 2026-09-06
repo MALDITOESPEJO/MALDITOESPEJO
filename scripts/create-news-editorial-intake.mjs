@@ -33,8 +33,7 @@ function sha256File(file) {
 function selected(item) {
   const tier = item?.selection?.tier || '';
   const classification = item?.intelligence?.classification || '';
-  return classification !== 'DUPLICATE'
-    && (tier.startsWith('PRIORIDAD 2') || tier.startsWith('PRIORIDAD 3'));
+  return classification !== 'DUPLICATE' && !tier.startsWith('PRIORIDAD 4');
 }
 
 const ranking = readJson(RANKING_PATH);
