@@ -6,6 +6,7 @@ section: "Actualidad"
 author: "Ariadna Soler Montalbán"
 type: "news"
 status: "approved"
+image: "/images/2026-09-06-tesla-cybercab-investigacion.svg"
 ---
 
 La Administración Nacional de Seguridad del Tráfico en las Carreteras de Estados Unidos (NHTSA) ha abierto una investigación sobre el proceso de certificación del Tesla Cybercab, el nuevo vehículo autónomo de la compañía que ha comenzado a operar de forma limitada en Austin, Texas.
