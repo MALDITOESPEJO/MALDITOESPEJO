@@ -1,5 +1,11 @@
 #!/usr/bin/env node
 
+/**
+ * MALDITOESPEJO daily newsroom intelligence runner.
+ * The pipeline explicitly consolidates semantically identical events before
+ * provenance, correlation and ranking so republication does not create fake
+ * event multiplication.
+ */
 import fs from 'node:fs';
 import { spawn } from 'node:child_process';
 
@@ -9,6 +15,7 @@ const steps = [
   ['source-check', 'scripts/check-source-universe.mjs'],
   ['ingest', 'scripts/ingest-news-feeds.mjs'],
   ['events', 'scripts/cluster-news-events.mjs'],
+  ['event-consolidation', 'scripts/consolidate-news-events.mjs'],
   ['provenance', 'scripts/derive-news-provenance.mjs'],
   ['provenance-audit', 'scripts/audit-news-provenance.mjs'],
   ['correlate', 'scripts/correlate-news-signals.mjs'],
@@ -67,6 +74,7 @@ const readJson = p => fs.existsSync(p) ? JSON.parse(fs.readFileSync(p, 'utf8')) 
 const coverage = readJson('editorial/radars/daily-source-coverage.json');
 const candidates = readJson('editorial/radars/daily-news-candidates.json');
 const events = readJson('editorial/radars/daily-news-events.json');
+const clusteredEvents = readJson('editorial/radars/daily-news-events-clustered.json');
 const provenance = readJson('editorial/radars/daily-news-provenance.json');
 const provenanceAudit = readJson('editorial/radars/daily-news-provenance-audit.json');
 const correlations = readJson('editorial/radars/daily-news-correlations.json');
@@ -75,6 +83,7 @@ const finished = new Date().toISOString();
 
 const candidatesDetected = Array.isArray(candidates) ? candidates.length : candidates?.candidates?.length ?? 0;
 const eventsDetected = events?.event_count ?? events?.events?.length ?? 0;
+const clusteredEventsDetected = clusteredEvents?.event_count ?? clusteredEvents?.events?.length ?? null;
 const provenanceDetected = provenance?.events_analyzed ?? provenance?.provenance?.length ?? 0;
 const correlationsDetected = correlations?.correlation_count ?? correlations?.correlations?.length ?? 0;
 const rankedStories = ranking?.ranking || ranking?.candidates || ranking?.ranked_candidates || [];
@@ -84,7 +93,7 @@ if (results.every(x => x.ok) && candidatesDetected === 0) {
   dataIntegrityIssues.push('No candidates detected after a successful ingest.');
 }
 if (results.every(x => x.ok) && eventsDetected === 0) {
-  dataIntegrityIssues.push('No events detected after clustering.');
+  dataIntegrityIssues.push('No events detected after clustering/consolidation.');
 }
 if (results.every(x => x.ok) && provenanceDetected !== eventsDetected) {
   dataIntegrityIssues.push(`Provenance event count (${provenanceDetected}) does not match event count (${eventsDetected}).`);
@@ -118,6 +127,12 @@ const report = {
     pending_verification_sources: coverage.pending_verification_sources,
     coverage_percentage: coverage.coverage_percentage
   } : null,
+  event_consolidation: {
+    clustered_events: clusteredEventsDetected,
+    consolidated_events: eventsDetected,
+    merged_event_clusters: events?.merged_cluster_count ?? null,
+    merged_event_count: events?.merged_event_count ?? null
+  },
   provenance_audit: auditSummary ? {
     events_analyzed: provenanceAudit.events_analyzed,
     zero_independence_events: provenanceAudit.zero_independence_events,
@@ -157,6 +172,7 @@ const report = {
     source_count_is_not_independence: true,
     provenance_is_inference_not_fact: true,
     provenance_audit_is_observational_not_truth: true,
+    semantic_consolidation_is_conservative: true,
     human_editorial_approval_required: true
   }
 };
