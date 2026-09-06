@@ -6,6 +6,7 @@ section: "Actualidad"
 author: "Ariadna Soler Montalbán"
 type: "news"
 status: "approved"
+image: "/images/2026-09-06-tres-heridos-ataque-arma-blanca-barcelona.png"
 ---
 
 # Tres personas heridas en un ataque con arma blanca en Barcelona; el presunto agresor queda crítico
