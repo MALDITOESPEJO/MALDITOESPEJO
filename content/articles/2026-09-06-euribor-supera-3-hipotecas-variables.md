@@ -6,7 +6,7 @@ section: "Economía"
 author: "Ariadna Soler Montalbán"
 type: "news"
 status: "approved"
-image: "/images/2026-09-06-euribor-supera-3-hipotecas-variables.png"
+image: "/images/2026-09-06-euribor-supera-3-hipotecas-variables.svg"
 ---
 
 El Euríbor a 12 meses mantiene su escalada en septiembre y se sitúa por encima del 3%, elevando de nuevo la presión sobre los hogares con hipotecas a tipo variable.
