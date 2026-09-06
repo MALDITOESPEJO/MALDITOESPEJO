@@ -21,6 +21,7 @@ const steps = [
   ['provenance-audit', 'scripts/audit-news-provenance.mjs'],
   ['correlate', 'scripts/correlate-news-signals.mjs'],
   ['rank', 'scripts/rank-news.mjs'],
+  ['editorial-intake', 'scripts/create-news-editorial-intake.mjs'],
   ['report', 'scripts/daily-news-report.mjs']
 ];
 
@@ -81,6 +82,7 @@ const provenance = readJson('editorial/radars/daily-news-provenance.json');
 const provenanceAudit = readJson('editorial/radars/daily-news-provenance-audit.json');
 const correlations = readJson('editorial/radars/daily-news-correlations.json');
 const ranking = readJson('editorial/radars/daily-news-ranking.json');
+const editorialIntake = readJson('editorial/radars/daily-news-editorial-intake.json');
 const finished = new Date().toISOString();
 
 const candidatesDetected = Array.isArray(candidates) ? candidates.length : candidates?.candidates?.length ?? 0;
@@ -89,6 +91,7 @@ const clusteredEventsDetected = clusteredEvents?.event_count ?? clusteredEvents?
 const provenanceDetected = provenance?.events_analyzed ?? provenance?.provenance?.length ?? 0;
 const correlationsDetected = correlations?.correlation_count ?? correlations?.correlations?.length ?? 0;
 const rankedStories = ranking?.ranking || ranking?.candidates || ranking?.ranked_candidates || [];
+const intakeCount = editorialIntake?.intake_count ?? editorialIntake?.items?.length ?? 0;
 
 const dataIntegrityIssues = [];
 if (results.every(x => x.ok) && candidatesDetected === 0) {
@@ -108,6 +111,9 @@ if (results.every(x => x.ok) && correlationsDetected > 0 && rankedStories.length
 }
 if (results.every(x => x.ok) && ranking?.mode === 'event-radar-ranking' && ranking.events_analyzed !== eventsDetected) {
   dataIntegrityIssues.push('Event ranking count does not match event count.');
+}
+if (results.every(x => x.ok) && !editorialIntake) {
+  dataIntegrityIssues.push('Editorial intake output is missing after a successful ranking stage.');
 }
 
 const auditSummary = provenanceAudit?.summary || null;
@@ -156,6 +162,7 @@ const report = {
     events_detected: eventsDetected,
     provenance_events: provenanceDetected,
     correlations_detected: correlationsDetected,
+    editorial_intake_count: intakeCount,
     top_emerging: (correlations?.correlations || []).filter(x => x.investigation_priority === 'HIGH').slice(0, 20).map(x => ({
       event_id: x.event_id,
       classification: x.classification,
@@ -182,6 +189,7 @@ const report = {
     provenance_audit_is_observational_not_truth: true,
     semantic_consolidation_is_conservative: true,
     event_relations_do_not_merge_events: true,
+    editorial_intake_is_not_case_creation: true,
     human_editorial_approval_required: true
   }
 };
