@@ -8,6 +8,9 @@
  *
  * It NEVER merges events. It emits conservative pair-level relations for
  * editorial review: RELATED_EVENT, PARALLEL_SIGNAL, or SAME_EVENT_BOUNDARY.
+ *
+ * Performance invariant: candidate generation is bounded. We never build the
+ * full Cartesian product of large geography/section blocks.
  */
 import fs from 'node:fs';
 import crypto from 'node:crypto';
@@ -23,6 +26,8 @@ const STOP = new Set([
   'hay','mas','menos','segun','tambien','ahora','hoy','ayer','todos','todas',
   'cada','donde','cuando','quien','quienes','aquel','aquella','esto','eso'
 ]);
+const MAX_CANDIDATES_PER_EVENT = 120;
+const MAX_BLOCK_SIZE = 80;
 
 const normalize = value => String(value || '')
   .toLowerCase()
@@ -98,45 +103,100 @@ const relationFor = (a, b) => {
   return null;
 };
 
+const candidateKey = e => `${geo(e)}|${section(e)}`;
 const blocks = new Map();
 for (const event of events) {
-  const key = `${geo(event) || '*'}|${section(event) || '*'}`;
+  const key = candidateKey(event);
   if (!blocks.has(key)) blocks.set(key, []);
   blocks.get(key).push(event);
 }
 
-const relations = [];
-const seen = new Set();
+// For small blocks retain the original complete comparison semantics.
+// For large blocks, use token indexes to produce only plausible candidates.
+const tokenIndex = new Map();
+for (const event of events) {
+  for (const token of reps.get(event.event_id).title) {
+    if (!tokenIndex.has(token)) tokenIndex.set(token, new Set());
+    tokenIndex.get(token).add(event.event_id);
+  }
+}
+
+const candidatePairs = new Set();
+const addPair = (a, b) => {
+  if (a.event_id === b.event_id || !withinWindow(a, b)) return;
+  const key = [a.event_id, b.event_id].sort().join('|');
+  candidatePairs.add(key);
+};
+
 for (const block of blocks.values()) {
-  for (let i = 0; i < block.length; i++) {
-    for (let j = i + 1; j < block.length; j++) {
-      const a = block[i]; const b = block[j];
-      if (a.event_id === b.event_id || !withinWindow(a, b)) continue;
-      const key = [a.event_id, b.event_id].sort().join('|');
-      if (seen.has(key)) continue;
-      seen.add(key);
-      const relation = relationFor(a, b);
-      if (!relation) continue;
-      const ar = reps.get(a.event_id); const br = reps.get(b.event_id);
-      relations.push({
-        relation_id: 'REL-' + crypto.createHash('sha256').update(key).digest('hex').slice(0, 8).toUpperCase(),
-        event_a: a.event_id,
-        event_b: b.event_id,
-        title_a: a.title,
-        title_b: b.title,
-        title_similarity: Number(jaccard(ar.title, br.title).toFixed(3)),
-        full_similarity: Number(jaccard(ar.full, br.full).toFixed(3)),
-        same_geography: Boolean(geo(a) && geo(b) && geo(a) === geo(b)),
-        same_section: Boolean(section(a) && section(b) && section(a) === section(b)),
-        ...relation,
-        editorial_action: relation.classification === 'SAME_EVENT_BOUNDARY'
-          ? 'VERIFY_CONSOLIDATION_CONTEXT'
-          : relation.classification === 'RELATED_EVENT'
-            ? 'KEEP_SEPARATE_REVIEW_RELATION'
-            : 'KEEP_SEPARATE_PARALLEL_SIGNAL'
-      });
+  if (block.length <= MAX_BLOCK_SIZE) {
+    for (let i = 0; i < block.length; i++) {
+      for (let j = i + 1; j < block.length; j++) addPair(block[i], block[j]);
+    }
+    continue;
+  }
+
+  // Large blocks are common in broad sections. Each event gets candidates
+  // from shared title tokens first, then a small temporal neighbourhood.
+  const ordered = [...block].sort((a, b) => firstSeen(a) - firstSeen(b));
+  const byId = new Map(ordered.map(e => [e.event_id, e]));
+  for (let i = 0; i < ordered.length; i++) {
+    const event = ordered[i];
+    const ids = new Set();
+    for (const token of reps.get(event.event_id).title) {
+      for (const id of (tokenIndex.get(token) || [])) ids.add(id);
+    }
+    ids.delete(event.event_id);
+    const ranked = [...ids]
+      .map(id => byId.get(id))
+      .filter(Boolean)
+      .sort((a, b) => {
+        const sa = jaccard(reps.get(event.event_id).title, reps.get(a.event_id).title);
+        const sb = jaccard(reps.get(event.event_id).title, reps.get(b.event_id).title);
+        return sb - sa;
+      })
+      .slice(0, MAX_CANDIDATES_PER_EVENT);
+    for (const candidate of ranked) addPair(event, candidate);
+
+    // Preserve detection of low-similarity parallel signals without exploding
+    // pair count: inspect only a bounded temporal neighbourhood.
+    let added = 0;
+    for (let j = Math.max(0, i - 20); j <= Math.min(ordered.length - 1, i + 20); j++) {
+      if (j === i) continue;
+      const candidate = ordered[j];
+      if (!withinWindow(event, candidate)) continue;
+      addPair(event, candidate);
+      if (++added >= 40) break;
     }
   }
+}
+
+const eventById = new Map(events.map(e => [e.event_id, e]));
+const relations = [];
+for (const key of candidatePairs) {
+  const [aId, bId] = key.split('|');
+  const a = eventById.get(aId); const b = eventById.get(bId);
+  if (!a || !b) continue;
+  const relation = relationFor(a, b);
+  if (!relation) continue;
+  const ar = reps.get(a.event_id); const br = reps.get(b.event_id);
+  relations.push({
+    relation_id: 'REL-' + crypto.createHash('sha256').update(key).digest('hex').slice(0, 8).toUpperCase(),
+    event_a: a.event_id,
+    event_b: b.event_id,
+    title_a: a.title,
+    title_b: b.title,
+    title_similarity: Number(jaccard(ar.title, br.title).toFixed(3)),
+    full_similarity: Number(jaccard(ar.full, br.full).toFixed(3)),
+    same_geography: Boolean(geo(a) && geo(b) && geo(a) === geo(b)),
+    same_section: Boolean(section(a) && section(b) && section(a) === section(b)),
+    ...relation,
+    editorial_action: relation.classification === 'SAME_EVENT_BOUNDARY'
+      ? 'VERIFY_CONSOLIDATION_CONTEXT'
+      : relation.classification === 'RELATED_EVENT'
+        ? 'KEEP_SEPARATE_REVIEW_RELATION'
+        : 'KEEP_SEPARATE_PARALLEL_SIGNAL'
+  });
 }
 
 relations.sort((a, b) => {
@@ -153,9 +213,15 @@ fs.mkdirSync('editorial/radars', { recursive: true });
 fs.writeFileSync(output, JSON.stringify({
   generated_at: new Date().toISOString(),
   engine: 'MALDITOESPEJO_EVENT_RELATION_ANALYSIS',
-  version: '1.0.0',
+  version: '1.1.0',
   input_event_count: events.length,
+  candidate_pair_count: candidatePairs.size,
   relation_count: relations.length,
+  candidate_policy: {
+    max_candidates_per_event: MAX_CANDIDATES_PER_EVENT,
+    max_complete_block_size: MAX_BLOCK_SIZE,
+    temporal_window_hours: 48
+  },
   classification_policy: {
     SAME_EVENT_BOUNDARY: 'No consolida. Señala una pareja que debería ser revisada contra la capa de consolidación.',
     RELATED_EVENT: 'Eventos distintos dentro de una misma historia, secuencia o contexto; permanecen separados.',
@@ -164,4 +230,4 @@ fs.writeFileSync(output, JSON.stringify({
   counts,
   relations
 }, null, 2) + '\n');
-console.log(`Analyzed relations among ${events.length} events → ${relations.length} relations → ${output}`);
+console.log(`Analyzed relations among ${events.length} events → ${candidatePairs.size} candidate pairs → ${relations.length} relations → ${output}`);
