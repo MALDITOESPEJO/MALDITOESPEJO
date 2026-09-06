@@ -16,6 +16,7 @@ const steps = [
   ['ingest', 'scripts/ingest-news-feeds.mjs'],
   ['events', 'scripts/cluster-news-events.mjs'],
   ['event-consolidation', 'scripts/consolidate-news-events.mjs'],
+  ['event-relations', 'scripts/analyze-news-event-relations.mjs'],
   ['provenance', 'scripts/derive-news-provenance.mjs'],
   ['provenance-audit', 'scripts/audit-news-provenance.mjs'],
   ['correlate', 'scripts/correlate-news-signals.mjs'],
@@ -75,6 +76,7 @@ const coverage = readJson('editorial/radars/daily-source-coverage.json');
 const candidates = readJson('editorial/radars/daily-news-candidates.json');
 const events = readJson('editorial/radars/daily-news-events.json');
 const clusteredEvents = readJson('editorial/radars/daily-news-events-clustered.json');
+const eventRelations = readJson('editorial/radars/daily-news-event-relations.json');
 const provenance = readJson('editorial/radars/daily-news-provenance.json');
 const provenanceAudit = readJson('editorial/radars/daily-news-provenance-audit.json');
 const correlations = readJson('editorial/radars/daily-news-correlations.json');
@@ -133,6 +135,12 @@ const report = {
     merged_event_clusters: events?.merged_cluster_count ?? null,
     merged_event_count: events?.merged_event_count ?? null
   },
+  event_relations: eventRelations ? {
+    relation_count: eventRelations.relation_count ?? eventRelations.relations?.length ?? 0,
+    counts: eventRelations.counts || {},
+    engine: eventRelations.engine,
+    version: eventRelations.version
+  } : null,
   provenance_audit: auditSummary ? {
     events_analyzed: provenanceAudit.events_analyzed,
     zero_independence_events: provenanceAudit.zero_independence_events,
@@ -173,6 +181,7 @@ const report = {
     provenance_is_inference_not_fact: true,
     provenance_audit_is_observational_not_truth: true,
     semantic_consolidation_is_conservative: true,
+    event_relations_do_not_merge_events: true,
     human_editorial_approval_required: true
   }
 };
