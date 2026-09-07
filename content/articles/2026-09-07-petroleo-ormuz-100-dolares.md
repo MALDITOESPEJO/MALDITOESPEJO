@@ -4,7 +4,7 @@ section: "Economía"
 author: "Ariadna Soler Montalbán"
 date: "2026-09-07"
 time: "09:51"
-status: "approved"
+status: "published"
 slug: "petroleo-ormuz-100-dolares"
 image: "/images/2026-09-07-petroleo-ormuz-100-dolares.jpg"
 ---
