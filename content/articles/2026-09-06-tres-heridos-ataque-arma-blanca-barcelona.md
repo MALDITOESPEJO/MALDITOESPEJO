@@ -3,7 +3,7 @@ title: "Tres personas heridas en un ataque con arma blanca en Barcelona; el pres
 description: "Tres personas resultan heridas en un ataque con arma blanca en Barcelona. El presunto agresor se encuentra en estado crítico tras precipitarse desde un cuarto piso."
 date: "2026-09-06"
 section: "Actualidad"
-author: "Ariadna Soler Montalbán"
+author: "Iria Valcárcel Montoro"
 type: "news"
 status: "approved"
 image: "/images/2026-09-06-tres-heridos-ataque-arma-blanca-barcelona.png"
@@ -27,4 +27,4 @@ La policía catalana mantiene abierta una investigación para determinar qué oc
 
 Por el momento, los motivos se desconocen y los investigadores no descartan ninguna hipótesis.
 
-**Ariadna Soler Montalbán · 6 de septiembre de 2026 · 18:20 h**
+**Iria Valcárcel Montoro · 6 de septiembre de 2026 · 18:20 h**
