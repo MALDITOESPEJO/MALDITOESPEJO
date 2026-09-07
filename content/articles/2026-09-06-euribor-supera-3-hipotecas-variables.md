@@ -3,7 +3,7 @@ title: "El Euríbor supera el 3% y vuelve a presionar a los hogares con hipoteca
 description: "El Euríbor a 12 meses supera el 3% en septiembre y vuelve a elevar la presión sobre los hogares con hipotecas a tipo variable."
 date: "2026-09-06"
 section: "Economía"
-author: "Ariadna Soler Montalbán"
+author: "Nerea Villacorta Beltrán"
 type: "news"
 status: "approved"
 image: "/images/2026-09-06-euribor-supera-3-hipotecas-variables.svg"
@@ -21,4 +21,4 @@ Para las familias con préstamos variables, una subida sostenida del Euríbor pu
 
 El índice no se publica durante el fin de semana. El próximo dato está previsto para el lunes 7 de septiembre.
 
-**Ariadna Soler Montalbán · 6 de septiembre de 2026 · 18:30 h**
+**Nerea Villacorta Beltrán · 6 de septiembre de 2026 · 18:30 h**
