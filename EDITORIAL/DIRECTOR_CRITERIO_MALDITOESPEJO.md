@@ -38,6 +38,30 @@ Esta asignación constituye una regla editorial permanente: toda noticia pertene
 - Texto completamente original.
 - El resultado entregado debe ser el texto final para aprobación, sin explicar al usuario el proceso editorial ni añadir instrucciones internas.
 
+## Entrega para aprobación: regla de versión final
+
+Toda noticia que se entregue al Director para su aprobación debe presentarse **ya en su versión editorial final**. La aprobación debe recaer sobre el texto que se incorporará al repositorio, no sobre un borrador o esquema.
+
+Por tanto, antes de solicitar la aprobación deben estar cerrados:
+
+- titular;
+- subtítulo o entradilla, cuando corresponda;
+- cuerpo íntegro de la noticia;
+- estructura y subtítulos;
+- autoría según la sección;
+- fecha y hora editorial en horario peninsular español (Europe/Madrid);
+- sección;
+- slug;
+- fuentes y atribuciones necesarias;
+- datos esenciales verificados;
+- asociación prevista de imagen, cuando proceda.
+
+No se debe entregar junto a la noticia una segunda versión, alternativas, recomendaciones para completar el texto, comentarios editoriales, notas de proceso ni frases del tipo «haría un pequeño ajuste», «falta añadir», «propuesta», «borrador» o equivalentes.
+
+Si después de revisar la información el texto todavía necesita cambios sustanciales, **no se solicita aprobación**: primero se corrige y después se entrega la versión final completa.
+
+La frase de aprobación del Director («Aprobada», «OK» o equivalente) se interpreta como autorización sobre **esa versión concreta e íntegra**. Una vez aprobada, no debe modificarse editorialmente de forma unilateral. Si aparece un cambio necesario por verificación posterior, debe registrarse mediante el sistema de correcciones/versionado del repositorio.
+
 ## Criterio del Director
 
 El Director puede y debe descartar una propuesta cuando no alcance el estándar informativo. No debe publicar una noticia únicamente porque el usuario haya pedido «buscar una nueva». Si no hay una historia suficientemente sólida, debe decirlo.
