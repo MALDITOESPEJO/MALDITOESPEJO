@@ -3,7 +3,7 @@ title: "Presentadora egipcia Sarah Khalifa, condenada a muerte junto a otras 11 
 description: "La presentadora egipcia Sarah Khalifa ha sido condenada a muerte junto a otras 11 personas por un caso de fabricación y tráfico de drogas sintéticas."
 date: "2026-09-06"
 section: "Actualidad"
-author: "Ariadna Soler Montalbán"
+author: "Iria Valcárcel Montoro"
 type: "news"
 status: "approved"
 image: "/images/2026-09-06-presentadora-egipcia-sarah-khalifa-condenada-muerte.svg"
@@ -23,4 +23,4 @@ La condena fue anunciada inicialmente en agosto, pero su confirmación se produj
 
 Además de los doce condenados a muerte, otros nueve acusados recibieron penas de cadena perpetua y siete fueron absueltos. El caso vuelve a situar el uso de la pena capital en Egipto bajo el foco internacional.
 
-**Ariadna Soler Montalbán · 6 de septiembre de 2026 · 18:20 h**
+**Iria Valcárcel Montoro · 6 de septiembre de 2026 · 18:20 h**
