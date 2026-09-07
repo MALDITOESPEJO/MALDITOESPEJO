@@ -1,0 +1,18 @@
+{
+  "article": "content/articles/finlandia-defensa-civil-ejercicio-2026.md",
+  "verification_completed": true,
+  "publication_claims": [
+    "CLM-FIN-01",
+    "CLM-FIN-02",
+    "CLM-FIN-03",
+    "CLM-FIN-04",
+    "CLM-FIN-05",
+    "CLM-FIN-06"
+  ],
+  "publication_sources_support": true,
+  "material_contradictions_resolved": true,
+  "human_editorial_approval": true,
+  "approved_at": "2026-09-07",
+  "approved_by": "Editor responsable",
+  "notes": "Aprobación humana confirmada en la conversación editorial. Imagen asociada por slug en public/images/finlandia-defensa-civil-ejercicio-2026.jpg."
+}
