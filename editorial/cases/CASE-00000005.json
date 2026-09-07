@@ -1,0 +1,234 @@
+{
+  "case_id": "CASE-00000005",
+  "created_at": "2026-09-07",
+  "status": "EVIDENCE_READY",
+  "input_type": "news_lead",
+  "input_reference": "Cartagena acogerá la última prueba de la 44Cup 2026, con la ciudad como nueva sede del circuito internacional de RC44.",
+  "editorial_section": "Cartagena",
+  "assigned_author": "Lucía Belmonte Navarro",
+  "discovery_source": {
+    "role": "DISCOVERY",
+    "publication": false,
+    "description": "Nota del Ayuntamiento de Cartagena publicada el 6 de septiembre de 2026 sobre la llegada de la 44Cup a Cartagena. Se utiliza como pista inicial y también se contrasta con la fuente oficial del circuito antes de incorporarla al alcance publicable."
+  },
+  "claims": [
+    {
+      "claim_id": "CLM-00000021",
+      "type": "FACT",
+      "importance": "CENTRAL",
+      "claim": "Cartagena acogerá del 11 al 15 de noviembre de 2026 la última prueba de la temporada 2026 de la 44Cup.",
+      "verification_status": "VERIFIED",
+      "evidence_required": ["official_44cup_event_page", "official_local_government_source"]
+    },
+    {
+      "claim_id": "CLM-00000022",
+      "type": "FACT",
+      "importance": "CENTRAL",
+      "claim": "La cita supondrá el debut de Cartagena como sede del circuito 44Cup.",
+      "verification_status": "VERIFIED",
+      "evidence_required": ["official_44cup_event_page", "official_local_government_source"]
+    },
+    {
+      "claim_id": "CLM-00000023",
+      "type": "FACT",
+      "importance": "HIGH",
+      "claim": "La regata tendrá como base el puerto de Cartagena y contará con apoyo del Ayuntamiento de Cartagena, la Comunidad Autónoma de la Región de Murcia y la Autoridad Portuaria de Cartagena.",
+      "verification_status": "VERIFIED",
+      "evidence_required": ["official_44cup_event_page"]
+    },
+    {
+      "claim_id": "CLM-00000024",
+      "type": "FACT",
+      "importance": "HIGH",
+      "claim": "Los barcos de la 44Cup estarán amarrados en el Muelle Norte y podrán ser contemplados por vecinos y visitantes, con actividades en tierra previstas para aficionados y público general.",
+      "verification_status": "VERIFIED",
+      "evidence_required": ["official_local_government_source", "official_44cup_event_page"]
+    },
+    {
+      "claim_id": "CLM-00000025",
+      "type": "CONTEXT",
+      "importance": "MEDIUM",
+      "claim": "La 44Cup se disputa con barcos RC44, monotipos idénticos de 44 pies de eslora, y combina a propietarios que deben timonear con tripulaciones profesionales de alto nivel.",
+      "verification_status": "VERIFIED",
+      "evidence_required": ["official_44cup_source"]
+    },
+    {
+      "claim_id": "CLM-00000026",
+      "type": "CONTEXT",
+      "importance": "MEDIUM",
+      "claim": "Cartagena ya había acogido el Audi MedCup para los TP52 entre 2008 y 2011 y una escala de The Ocean Race Europe en 2025.",
+      "verification_status": "SUPPORTED",
+      "evidence_required": ["official_local_government_source"],
+      "note": "El dato aparece en la comunicación municipal y se mantiene como contexto atribuido a esa fuente."
+    }
+  ],
+  "sources": [
+    {
+      "source_id": "SRC-44CUP-CARTAGENA-20260907",
+      "role": "PUBLICATION",
+      "description": "44Cup, página oficial del evento 44Cup Cartagena: confirma que Cartagena acogerá la final de la temporada del 11 al 15 de noviembre de 2026, el debut de la sede, la base en el puerto y los apoyos institucionales.",
+      "url_or_reference": "https://www.44cup.org/events/44cup-cartagena"
+    },
+    {
+      "source_id": "SRC-44CUP-NEWS-20260907",
+      "role": "CORROBORATION",
+      "description": "44Cup, noticia oficial sobre la temporada 2026: sitúa a Cartagena como nueva sede y cierre de la temporada; la versión histórica de calendario que mostraba 4-8 de noviembre queda superada por la página específica del evento y las publicaciones posteriores del propio circuito.",
+      "url_or_reference": "https://www.44cup.org/news/44cup-2026-will-visit-new-venues-in-spain-and-italy"
+    },
+    {
+      "source_id": "SRC-AYTO-CARTAGENA-20260906",
+      "role": "PUBLICATION",
+      "description": "Ayuntamiento de Cartagena, comunicado de 6 de septiembre de 2026 sobre la 44Cup: confirma las fechas 11-15 de noviembre, el debut, el Muelle Norte, las actividades en tierra y el contexto náutico de la ciudad.",
+      "url_or_reference": "https://www.cartagena.es/detalle_noticias.asp?c=&d=&h=&id=89458&pagina=1&t=esp"
+    }
+  ],
+  "research_plan": {
+    "priority": "PRIMARY_FIRST",
+    "targets": ["44Cup / RC44 official event page", "44Cup official news and calendar", "Ayuntamiento de Cartagena", "Autoridad Portuaria de Cartagena", "Real Club de Regatas de Cartagena"],
+    "questions": [
+      "¿Cuál es la fecha vigente de la prueba de Cartagena y qué fuente oficial la fija?",
+      "¿Es realmente el debut de Cartagena en la 44Cup y el cierre de la temporada 2026?",
+      "¿Dónde se ubicará la base de la prueba y qué entidades respaldan la organización?",
+      "¿Qué información sobre acceso público, amarre de los barcos y actividades en tierra está documentada oficialmente?",
+      "¿Qué elementos de contexto sobre el formato RC44 pueden sostenerse con la fuente oficial sin ampliar el alcance?"
+    ]
+  },
+  "evidence": [
+    {
+      "evidence_id": "EVD-00000020",
+      "claim_id": "CLM-00000021",
+      "source_id": "SRC-44CUP-CARTAGENA-20260907",
+      "source_role": "PUBLICATION",
+      "document_or_record": "44CUP CARTAGENA, página oficial del evento",
+      "published_at": "2026-09-07",
+      "observed_at": "2026-09-07",
+      "evidence_role": "PRIMARY_DOCUMENT",
+      "provenance_status": "ESTABLISHED",
+      "independence_group": "IG-44CUP-01",
+      "lineage_id": "LIN-44CUP-CARTAGENA-01",
+      "relationship_type": "ORIGINAL",
+      "assessment": "SUPPORTS"
+    },
+    {
+      "evidence_id": "EVD-00000021",
+      "claim_id": "CLM-00000022",
+      "source_id": "SRC-44CUP-CARTAGENA-20260907",
+      "source_role": "PUBLICATION",
+      "document_or_record": "44CUP CARTAGENA, página oficial del evento",
+      "published_at": "2026-09-07",
+      "observed_at": "2026-09-07",
+      "evidence_role": "PRIMARY_DOCUMENT",
+      "provenance_status": "ESTABLISHED",
+      "independence_group": "IG-44CUP-01",
+      "lineage_id": "LIN-44CUP-CARTAGENA-01",
+      "relationship_type": "ORIGINAL",
+      "assessment": "SUPPORTS"
+    },
+    {
+      "evidence_id": "EVD-00000022",
+      "claim_id": "CLM-00000023",
+      "source_id": "SRC-44CUP-CARTAGENA-20260907",
+      "source_role": "PUBLICATION",
+      "document_or_record": "44CUP CARTAGENA, página oficial del evento",
+      "published_at": "2026-09-07",
+      "observed_at": "2026-09-07",
+      "evidence_role": "PRIMARY_DOCUMENT",
+      "provenance_status": "ESTABLISHED",
+      "independence_group": "IG-44CUP-01",
+      "lineage_id": "LIN-44CUP-CARTAGENA-01",
+      "relationship_type": "ORIGINAL",
+      "assessment": "SUPPORTS"
+    },
+    {
+      "evidence_id": "EVD-00000023",
+      "claim_id": "CLM-00000024",
+      "source_id": "SRC-AYTO-CARTAGENA-20260906",
+      "source_role": "PUBLICATION",
+      "document_or_record": "Cartagena vuelve a ser elegida como destino náutico internacional con la 44Cup, Ayuntamiento de Cartagena, 6 Sep 2026",
+      "published_at": "2026-09-06",
+      "observed_at": "2026-09-07",
+      "evidence_role": "PRIMARY_DOCUMENT",
+      "provenance_status": "ESTABLISHED",
+      "independence_group": "IG-AYTO-CARTAGENA-01",
+      "lineage_id": "LIN-AYTO-44CUP-01",
+      "relationship_type": "ORIGINAL",
+      "assessment": "SUPPORTS"
+    },
+    {
+      "evidence_id": "EVD-00000024",
+      "claim_id": "CLM-00000025",
+      "source_id": "SRC-44CUP-CARTAGENA-20260907",
+      "source_role": "PUBLICATION",
+      "document_or_record": "44CUP CARTAGENA, página oficial del evento",
+      "published_at": "2026-09-07",
+      "observed_at": "2026-09-07",
+      "evidence_role": "PRIMARY_DOCUMENT",
+      "provenance_status": "ESTABLISHED",
+      "independence_group": "IG-44CUP-01",
+      "lineage_id": "LIN-44CUP-CARTAGENA-01",
+      "relationship_type": "ORIGINAL",
+      "assessment": "SUPPORTS"
+    },
+    {
+      "evidence_id": "EVD-00000025",
+      "claim_id": "CLM-00000026",
+      "source_id": "SRC-AYTO-CARTAGENA-20260906",
+      "source_role": "PUBLICATION",
+      "document_or_record": "Cartagena vuelve a ser elegida como destino náutico internacional con la 44Cup, Ayuntamiento de Cartagena, 6 Sep 2026",
+      "published_at": "2026-09-06",
+      "observed_at": "2026-09-07",
+      "evidence_role": "PRIMARY_DOCUMENT",
+      "provenance_status": "ESTABLISHED",
+      "independence_group": "IG-AYTO-CARTAGENA-01",
+      "lineage_id": "LIN-AYTO-44CUP-01",
+      "relationship_type": "ORIGINAL",
+      "assessment": "SUPPORTS"
+    }
+  ],
+  "provenance": {
+    "status": "ESTABLISHED",
+    "central_claim_lineage": "LIN-44CUP-CARTAGENA-01;LIN-AYTO-44CUP-01",
+    "secondary_media_counted_as_independent": false,
+    "notes": "Las afirmaciones centrales están respaldadas por dos líneas de origen independientes: el organizador oficial 44Cup/RC44 y el Ayuntamiento de Cartagena. No se cuenta la republicación en medios secundarios como corroboración independiente."
+  },
+  "contrast": {
+    "status": "RESOLVED",
+    "material_conflict_found": true,
+    "material_conflict": "Una comunicación histórica del circuito publicada en diciembre de 2025 y algunos sitios que la reproducen muestran 4-8 de noviembre para Cartagena, mientras que la página oficial específica del evento, las publicaciones posteriores del propio circuito y el Ayuntamiento fijan la prueba del 11 al 15 de noviembre de 2026.",
+    "resolution": "Se adopta el 11-15 de noviembre como fecha vigente porque aparece en la página específica oficial de 44Cup Cartagena y en comunicaciones posteriores del circuito y del Ayuntamiento. La fecha antigua 4-8 de noviembre queda excluida del alcance publicable.",
+    "assessed_at": "2026-09-07"
+  },
+  "contradictions": {
+    "material_conflict_found": true,
+    "status": "RESOLVED",
+    "items": [
+      {
+        "claim_id": "CLM-00000021",
+        "description": "Discrepancia histórica entre el calendario inicial 4-8 de noviembre y la fecha vigente 11-15 de noviembre.",
+        "impact": "Afecta a un dato central de la noticia.",
+        "resolution": "Resuelta a favor de la página específica oficial del evento y de las publicaciones posteriores que fijan 11-15 de noviembre."
+      }
+    ]
+  },
+  "verification": {
+    "completed": true,
+    "status": "VERIFIED",
+    "verified_claims": ["CLM-00000021", "CLM-00000022", "CLM-00000023", "CLM-00000024", "CLM-00000025", "CLM-00000026"],
+    "blocking_claims": [],
+    "human_approval": false
+  },
+  "publishable_scope": {
+    "status": "AVAILABLE",
+    "claim_ids": ["CLM-00000021", "CLM-00000022", "CLM-00000023", "CLM-00000024", "CLM-00000025", "CLM-00000026"],
+    "excluded_claim_ids": [],
+    "notes": "El artículo deberá mantener el dato de fechas en 11-15 de noviembre y no reutilizar la fecha histórica 4-8 de noviembre."
+  },
+  "draft": {
+    "article_path": "content/articles/2026-09-07-cartagena-44cup-vela.md",
+    "status": "NOT_STARTED"
+  },
+  "publication": {
+    "allowed": false,
+    "reason": "La evidencia está lista y las afirmaciones centrales están verificadas, pero aún no existe borrador original sometido a revisión editorial humana ni aprobación editorial/publication gate."
+  }
+}
