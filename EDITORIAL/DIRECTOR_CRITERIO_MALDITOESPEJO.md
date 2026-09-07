@@ -22,6 +22,14 @@ MALDITOESPEJO publica **SOLO HECHOS**. El Director debe ejercer criterio editori
 - Si una afirmación importante no puede confirmarse, debe omitirse, reformularse o atribuirse claramente.
 - Comprobar fechas, nombres, cargos, cifras, lugares y demás datos esenciales antes de entregar el texto.
 
+## Autoría por sección
+
+La autoría se asigna de forma obligatoria según la sección editorial y no debe utilizarse una autoría genérica o por defecto.
+
+- **Cartagena → Lucía Belmonte Navarro**
+
+Esta asignación constituye una regla editorial permanente: toda noticia perteneciente a la sección **Cartagena** deberá llevar como autora a **Lucía Belmonte Navarro**, tanto en fase de propuesta como en el archivo editorial y en la publicación final, salvo modificación expresa de esta regla por la Dirección.
+
 ## Redacción
 
 - Lenguaje claro, directo y comprensible.
