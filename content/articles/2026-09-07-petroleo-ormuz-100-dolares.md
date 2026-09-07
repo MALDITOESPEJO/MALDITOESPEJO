@@ -1,7 +1,7 @@
 ---
 title: "El petróleo se acerca a los 100 dólares mientras los ataques entre EE. UU. e Irán reducen el tráfico por Ormuz"
 section: "Economía"
-author: "Ariadna Soler Montalbán"
+author: "Nerea Villacorta Beltrán"
 date: "2026-09-07"
 time: "09:51"
 status: "published"
@@ -11,7 +11,7 @@ image: "/images/2026-09-07-petroleo-ormuz-100-dolares.jpg"
 
 # El petróleo se acerca a los 100 dólares mientras los ataques entre EE. UU. e Irán reducen el tráfico por Ormuz
 
-**Economía · Ariadna Soler Montalbán · 7 de septiembre de 2026 · 09:51 h (España)**
+**Economía · Nerea Villacorta Beltrán · 7 de septiembre de 2026 · 09:51 h (España)**
 
 El petróleo vuelve a acercarse a los 100 dólares por barril mientras la escalada militar entre Estados Unidos e Irán empieza a tener un efecto cada vez más visible sobre el tráfico comercial en el estrecho de Ormuz, una de las principales rutas energéticas del mundo.
 
@@ -81,4 +81,4 @@ Si ocurre lo contrario, el problema dejará de ser únicamente militar.
 
 **Se convertirá en una crisis económica global cuyo primer indicador será el precio del petróleo.**
 
-**Ariadna Soler Montalbán · 7 de septiembre de 2026 · 09:51 h**
+**Nerea Villacorta Beltrán · 7 de septiembre de 2026 · 09:51 h**
