@@ -1,0 +1,18 @@
+{
+  "article": "content/articles/2026-09-07-japon-reservas-yen-intervencion.md",
+  "verification_completed": true,
+  "publication_claims": [
+    "CLM-JPN-01",
+    "CLM-JPN-02",
+    "CLM-JPN-03",
+    "CLM-JPN-04",
+    "CLM-JPN-05",
+    "CLM-JPN-06"
+  ],
+  "publication_sources_support": true,
+  "material_contradictions_resolved": true,
+  "human_editorial_approval": true,
+  "approved_at": "2026-09-07",
+  "approved_by": "Editor responsable",
+  "notes": "Aprobación humana confirmada en la conversación editorial. Imagen asociada por slug en public/images/2026-09-07-japon-reservas-yen-intervencion.jpg."
+}
