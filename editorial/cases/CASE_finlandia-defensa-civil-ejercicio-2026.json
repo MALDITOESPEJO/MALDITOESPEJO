@@ -1,0 +1,36 @@
+{
+  "case_id": "CASE_finlandia-defensa-civil-ejercicio-2026",
+  "created_at": "2026-09-07",
+  "status": "VERIFIED",
+  "input_type": "news_article",
+  "input_reference": "Finlandia activa su sistema de defensa civil con el mayor ejercicio europeo desde la Segunda Guerra Mundial",
+  "editorial_section": "Mundo",
+  "assigned_author": "Gael Santacruz Ferrán",
+  "discovery_source": {"role":"DISCOVERY","publication":false},
+  "claims": [
+    {"claim_id":"CLM-FIN-01","type":"FACT","importance":"CENTRAL","claim":"Shelter 2026 se celebró los días 2 y 3 de septiembre de 2026 en Luola, Savilahti, Kuopio, Finlandia.","verification_status":"VERIFIED"},
+    {"claim_id":"CLM-FIN-02","type":"FACT","importance":"CENTRAL","claim":"Participaron más de 2.000 personas, incluidos organismos públicos, organizaciones voluntarias, empresas e instituciones educativas.","verification_status":"VERIFIED"},
+    {"claim_id":"CLM-FIN-03","type":"FACT","importance":"HIGH","claim":"El ejercicio probó la protección de una población numerosa y la coordinación, las cadenas de mando, la toma de decisiones, la situación compartida y las comunicaciones durante alteraciones del funcionamiento normal de la sociedad.","verification_status":"VERIFIED"},
+    {"claim_id":"CLM-FIN-04","type":"FACT","importance":"HIGH","claim":"Luola es una instalación subterránea de doble uso que puede convertirse en refugio de defensa civil para aproximadamente 7.000 personas.","verification_status":"VERIFIED"},
+    {"claim_id":"CLM-FIN-05","type":"FACT","importance":"HIGH","claim":"El ejercicio contempló escenarios de interrupción de infraestructuras críticas, ciberataques y amenaza de ataques con misiles.","verification_status":"VERIFIED"},
+    {"claim_id":"CLM-FIN-06","type":"FACT","importance":"HIGH","claim":"Shelter 2026 fue presentado por sus organizadores como el mayor ejercicio de defensa civil de este tipo realizado en Finlandia en décadas y como uno de los ejercicios europeos de mayor escala desde la Segunda Guerra Mundial.","verification_status":"VERIFIED"}
+  ],
+  "sources": [
+    {"source_id":"SRC-KUOPIO-SHELTER-202609","role":"PUBLICATION","description":"City of Kuopio, Shelter 2026 - civil defense exercise, información oficial sobre fechas, participantes, objetivos y características de Luola."},
+    {"source_id":"SRC-KUOPIO-PRESS-20260710","role":"PUBLICATION","description":"City of Kuopio, comunicado oficial del 10 de julio de 2026 sobre Shelter 2026 y su escala excepcional en Finlandia."},
+    {"source_id":"SRC-AP-FINLAND-20260903","role":"PUBLICATION","description":"Associated Press, información del 3 de septiembre de 2026 sobre el ejercicio y los escenarios simulados."}
+  ],
+  "evidence": [
+    {"evidence_id":"EVD-FIN-01","claim_id":"CLM-FIN-01","source_id":"SRC-KUOPIO-SHELTER-202609","evidence_role":"PRIMARY_DOCUMENT","provenance_status":"ESTABLISHED","assessment":"SUPPORTS"},
+    {"evidence_id":"EVD-FIN-02","claim_id":"CLM-FIN-02","source_id":"SRC-KUOPIO-SHELTER-202609","evidence_role":"PRIMARY_DOCUMENT","provenance_status":"ESTABLISHED","assessment":"SUPPORTS"},
+    {"evidence_id":"EVD-FIN-03","claim_id":"CLM-FIN-03","source_id":"SRC-KUOPIO-SHELTER-202609","evidence_role":"PRIMARY_DOCUMENT","provenance_status":"ESTABLISHED","assessment":"SUPPORTS"},
+    {"evidence_id":"EVD-FIN-04","claim_id":"CLM-FIN-04","source_id":"SRC-KUOPIO-PRESS-20260710","evidence_role":"PRIMARY_DOCUMENT","provenance_status":"ESTABLISHED","assessment":"SUPPORTS"},
+    {"evidence_id":"EVD-FIN-05","claim_id":"CLM-FIN-05","source_id":"SRC-AP-FINLAND-20260903","evidence_role":"INDEPENDENT_CORROBORATION","provenance_status":"ESTABLISHED","assessment":"SUPPORTS"},
+    {"evidence_id":"EVD-FIN-06","claim_id":"CLM-FIN-06","source_id":"SRC-KUOPIO-PRESS-20260710","evidence_role":"PRIMARY_DOCUMENT","provenance_status":"ESTABLISHED","assessment":"SUPPORTS"}
+  ],
+  "provenance": {"status":"COMPLETE","secondary_media_counted_as_independent":true},
+  "contrast": {"status":"RESOLVED","material_conflict_found":false,"material_conflict":"No se identifica contradicción material sobre las fechas, participación, objetivos o escala del ejercicio."},
+  "verification": {"completed":true,"status":"VERIFIED","verified_claims":["CLM-FIN-01","CLM-FIN-02","CLM-FIN-03","CLM-FIN-04","CLM-FIN-05","CLM-FIN-06"]},
+  "publishable_scope": {"claim_ids":["CLM-FIN-01","CLM-FIN-02","CLM-FIN-03","CLM-FIN-04","CLM-FIN-05","CLM-FIN-06"]},
+  "publication": {"allowed":true,"reason":"Claims centrales verificadas mediante fuente oficial del Ayuntamiento de Kuopio y corroboración independiente de AP."}
+}
