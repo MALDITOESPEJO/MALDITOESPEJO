@@ -4,7 +4,7 @@ title: "Al menos 25 muertos, muchos de ellos adolescentes, en un accidente de au
 description: "Al menos 25 personas han muerto, muchas de ellas adolescentes, tras precipitarse un autobús por un barranco en la isla de Fogo, en Cabo Verde."
 date: "2026-09-06"
 section: "Actualidad"
-author: "Ariadna Soler Montalbán"
+author: "Iria Valcárcel Montoro"
 type: "news"
 status: "approved"
 image: "/images/2026-09-06-accidente-autobus-cabo-verde.svg"
@@ -20,4 +20,4 @@ La tragedia ha provocado una fuerte conmoción en el país. El presidente de Cab
 
 El accidente se produce en una de las zonas más accidentadas de Fogo, una isla dominada por el volcán que da nombre al territorio y donde las carreteras atraviesan un paisaje de fuertes pendientes y terreno volcánico.
 
-**Ariadna Soler Montalbán · 6 de septiembre de 2026 · 19:10 h**
+**Iria Valcárcel Montoro · 6 de septiembre de 2026 · 19:10 h**
