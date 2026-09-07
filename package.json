@@ -58,6 +58,7 @@
     "test:news:consolidation": "node scripts/test-news-consolidation-regression.mjs",
     "test:news:relations": "node scripts/test-news-event-relations-regression.mjs",
     "check:publication": "node scripts/check-publication-gate.mjs",
+    "news:editorial-guard": "node scripts/news-editorial-guard.mjs",
     "recovery:record": "node scripts/record-editorial-failure.mjs",
     "recovery:validate": "node scripts/validate-failure-records.mjs",
     "legacy:inventory": "node scripts/inventory-legacy-articles.mjs",
