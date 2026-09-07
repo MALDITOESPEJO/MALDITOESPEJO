@@ -3,15 +3,15 @@ title: "Taiwán convierte los semiconductores en una herramienta de poder geopol
 section: "Tecnología"
 author: "Ariadna Soler Montalbán"
 date: "2026-09-07"
-time: "09:58"
-status: "approved"
+time: "10:03"
+status: "published"
 slug: "taiwan-semiconductores-poder-geopolitico"
 image: "/images/2026-09-07-taiwan-semiconductores-poder-geopolitico.jpg"
 ---
 
 # Taiwán convierte los semiconductores en una herramienta de poder geopolítico
 
-**Tecnología · Ariadna Soler Montalbán · 7 de septiembre de 2026 · 09:58 h (España)**
+**Tecnología · Ariadna Soler Montalbán · 7 de septiembre de 2026 · 10:03 h (España)**
 
 Taiwán está convirtiendo su posición privilegiada en la industria mundial de los semiconductores en una herramienta de influencia internacional mientras Estados Unidos, China y la Unión Europea compiten por controlar las tecnologías que sostienen la inteligencia artificial.
 
@@ -131,4 +131,4 @@ La competencia ya no se desarrolla únicamente entre fabricantes.
 
 Y en esa competición, Taiwán ha conseguido convertir algo tan pequeño como un chip en una de las mayores fuentes de poder geopolítico del mundo.
 
-**Ariadna Soler Montalbán · 7 de septiembre de 2026 · 09:58 h (España)**
+**Ariadna Soler Montalbán · 7 de septiembre de 2026 · 10:03 h (España)**
