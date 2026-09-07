@@ -5,7 +5,8 @@ date: "2026-09-03"
 section: "Mundo"
 author: "Gael Santacruz Ferrán"
 type: "news"
-status: "approved"
+status: "published"
+case_id: "CASE_finlandia-defensa-civil-ejercicio-2026"
 ---
 
 # Finlandia activa su sistema de defensa civil con el mayor ejercicio europeo desde la Segunda Guerra Mundial
@@ -38,4 +39,4 @@ En Kuopio, las autoridades están probando precisamente esa capacidad. El escena
 
 La experiencia finlandesa muestra así un modelo de seguridad basado no solo en las capacidades militares, sino también en la preparación de la población y en la resistencia de las estructuras civiles ante situaciones prolongadas de interrupción.
 
-El ejercicio concluirá el 3 de septiembre. Sus resultados permitirán evaluar los procedimientos utilizados y determinar qué aspectos de la preparación deberán ser reforzados.
+El ejercicio concluyó el 3 de septiembre. Sus resultados permitirán evaluar los procedimientos utilizados y determinar qué aspectos de la preparación deberán ser reforzados.
