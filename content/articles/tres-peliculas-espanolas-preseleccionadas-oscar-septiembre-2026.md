@@ -3,7 +3,7 @@ title: "Tres películas españolas quedan preseleccionadas para representar a Es
 description: "El ser querido, La bola negra y Los domingos continúan en la carrera para representar a España en la categoría de Mejor Película Internacional."
 date: "2026-09-03"
 section: "actualidad"
-author: "Clara Valdés Moreno"
+author: "Iria Valcárcel Montoro"
 type: "news"
 status: "approved"
 ---
