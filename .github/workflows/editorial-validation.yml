@@ -13,6 +13,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -59,6 +61,26 @@ jobs:
       - name: Run editorial E2E acceptance tests
         run: npm run test:e2e:editorial
 
+      - name: Enforce changed-article editorial guard
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [[ "${{ github.event_name }}" == "pull_request" ]]; then
+            RANGE="origin/${{ github.event.pull_request.base.ref }}...HEAD"
+          else
+            RANGE="${{ github.event.before }}...${{ github.sha }}"
+          fi
+          files=$(git diff --name-only "$RANGE" -- 'content/articles/*.md' 'content/articles/**/*.md' || true)
+          if [[ -z "$files" ]]; then
+            echo "No article files changed; editorial guard not required for this commit."
+            exit 0
+          fi
+          while IFS= read -r file; do
+            [[ -z "$file" ]] && continue
+            echo "Guarding $file"
+            node scripts/news-editorial-guard.mjs --article "$file"
+          done <<< "$files"
+
       - name: Enforce Publication Gate
         run: npm run check:publication
 
@@ -66,3 +88,6 @@ jobs:
 # A published article must have a valid publication-gate record with verified
 # publication claims, supporting publication sources, resolved material contradictions,
 # and explicit human editorial approval. Legacy articles must first be CERTIFIED or WITHDRAWN.
+# The editorial guard additionally blocks new duplicate-event candidates at intake and
+# enforces section authorship, visible sources and the original-redaction declaration
+# for new editorial material.
