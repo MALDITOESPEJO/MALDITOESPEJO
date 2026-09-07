@@ -12,7 +12,8 @@ MALDITOESPEJO publica **SOLO HECHOS**. El Director debe ejercer criterio editori
 - Se prioriza una noticia menos espectacular pero incontestable frente a una historia atractiva con hechos insuficientemente comprobados.
 - No se debe inventar, completar ni deducir una supuesta cola editorial cuando no pueda recuperarse con seguridad.
 - No se debe elegir una noticia al azar para responder a una petición de continuar.
-- Antes de entregar una noticia debe comprobarse que no duplica una ya publicada.
+- Antes de entregar una noticia debe comprobarse que no duplica una ya publicada, aprobada o previamente incorporada al circuito editorial.
+- La comprobación de duplicados debe atender al **hecho informativo** —protagonistas, acontecimiento, lugar, fecha y hechos esenciales— y no únicamente al titular.
 
 ## Verificación
 
@@ -21,6 +22,18 @@ MALDITOESPEJO publica **SOLO HECHOS**. El Director debe ejercer criterio editori
 - No convertir declaraciones o acusaciones en hechos.
 - Si una afirmación importante no puede confirmarse, debe omitirse, reformularse o atribuirse claramente.
 - Comprobar fechas, nombres, cargos, cifras, lugares y demás datos esenciales antes de entregar el texto.
+
+## Fuentes y redacción original
+
+Las fuentes son instrumentos de **investigación, contraste y verificación**. No son material para copiar.
+
+- Toda noticia nueva debe identificar de forma visible sus fuentes en el propio artículo, mediante un apartado final de **Fuentes** o mediante atribuciones claramente identificables cuando corresponda.
+- Las fuentes deben conservarse también en los metadatos o expediente editorial cuando el flujo de publicación los utilice.
+- MALDITOESPEJO debe **reescribir íntegramente la información con su propia línea editorial**: estructura, enfoque, titular, entradilla y desarrollo deben ser propios.
+- Está prohibido reutilizar titulares, entradillas, párrafos o estructuras distintivas de una fuente como si fueran redacción propia.
+- Las citas textuales solo podrán utilizarse cuando sean necesarias, breves y estén claramente atribuidas a quien las pronunció o al documento que las contiene.
+- Una noticia no se considera editorialmente final si las fuentes no son visibles o si el texto conserva una dependencia evidente de la redacción de la fuente.
+- La automatización puede comprobar que las fuentes están declaradas y visibles y que existe una declaración de originalidad; la **originalidad semántica final** sigue requiriendo revisión editorial humana cuando no existe el texto de referencia local para una comparación automática.
 
 ## Autoría por sección
 
@@ -35,7 +48,7 @@ Esta asignación constituye una regla editorial permanente: toda noticia pertene
 - Lenguaje claro, directo y comprensible.
 - Sin opiniones institucionales de MALDITOESPEJO.
 - Sin tecnicismos innecesarios.
-- Texto completamente original.
+- Texto completamente original y reescrito por MALDITOESPEJO.
 - El resultado entregado debe ser el texto final para aprobación, sin explicar al usuario el proceso editorial ni añadir instrucciones internas.
 
 ## Entrega para aprobación: regla de versión final
@@ -54,6 +67,7 @@ Por tanto, antes de solicitar la aprobación deben estar cerrados:
 - slug;
 - fuentes y atribuciones necesarias;
 - datos esenciales verificados;
+- declaración de redacción original;
 - asociación prevista de imagen, cuando proceda.
 
 No se debe entregar junto a la noticia una segunda versión, alternativas, recomendaciones para completar el texto, comentarios editoriales, notas de proceso ni frases del tipo «haría un pequeño ajuste», «falta añadir», «propuesta», «borrador» o equivalentes.
@@ -65,6 +79,14 @@ La frase de aprobación del Director («Aprobada», «OK» o equivalente) se int
 ## Criterio del Director
 
 El Director puede y debe descartar una propuesta cuando no alcance el estándar informativo. No debe publicar una noticia únicamente porque el usuario haya pedido «buscar una nueva». Si no hay una historia suficientemente sólida, debe decirlo.
+
+## Continuidad y estados
+
+- Una noticia **mostrada** al Director no equivale a una noticia aprobada.
+- Solo «Aprobada», «OK» o equivalente constituye aprobación editorial humana.
+- Una noticia no aprobada no puede describirse como aprobada ni publicada.
+- Antes de proponer una nueva noticia debe comprobarse el archivo histórico y el circuito editorial del día para evitar duplicados.
+- No se debe inferir que una noticia fue aprobada por el mero hecho de haber sido redactada, mostrada o preparada para publicación.
 
 ## Continuidad
 
