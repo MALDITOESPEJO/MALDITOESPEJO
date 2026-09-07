@@ -15,6 +15,12 @@ sources:
   - "https://www.cartagena.es/detalle_noticias.asp?c=&d=&h=&id=89458&pagina=1&t=esp"
 ---
 
+# Cartagena debutará en la 44Cup con la última prueba de la temporada, del 11 al 15 de noviembre
+
+**La ciudad acogerá por primera vez una prueba del circuito internacional de RC44, con los barcos amarrados en el Muelle Norte y actividades para el público**
+
+**Lucía Belmonte Navarro · 7 de septiembre de 2026 · 10:00 h**
+
 Cartagena acogerá del 11 al 15 de noviembre la última prueba de la temporada 2026 de la 44Cup, el circuito internacional de vela de la clase RC44. Será además el debut de la ciudad como sede de esta competición.
 
 La prueba tendrá como base el puerto de Cartagena. La organización y las instituciones locales prevén que los barcos permanezcan amarrados en el Muelle Norte durante los días de competición, de modo que vecinos y visitantes puedan acercarse a la flota. También se han anunciado actividades en tierra dirigidas a aficionados y público general.
