@@ -4,7 +4,7 @@ title: "La AfD gana en Sajonia-Anhalt con el 43,8 % y deja a Alemania ante un nu
 description: "La AfD gana en Sajonia-Anhalt con el 43,8 % y 39 escaños, pero queda a tres de la mayoría absoluta y abre un nuevo escenario político en Alemania."
 date: "2026-09-07"
 section: "Actualidad"
-author: "Ariadna Soler Montalbán"
+author: "Iria Valcárcel Montoro"
 type: "news"
 status: "published"
 image: "/images/2026-09-07-afd-sajonia-anhalt-elecciones.jpg"
@@ -28,4 +28,4 @@ Sajonia-Anhalt se convierte así en un nuevo escenario de prueba para el llamado
 
 La elección deja una paradoja política clara: **la AfD ha conseguido una victoria contundente, pero todavía no tiene los votos suficientes para gobernar en solitario**. Las próximas negociaciones determinarán si el resultado se traduce en un Gobierno liderado por la formación o en una nueva mayoría construida para mantenerla en la oposición.
 
-**Ariadna Soler Montalbán · 7 de septiembre de 2026 · 15:00 h**
+**Iria Valcárcel Montoro · 7 de septiembre de 2026 · 15:00 h**
