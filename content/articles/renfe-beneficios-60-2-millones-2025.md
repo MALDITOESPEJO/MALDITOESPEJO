@@ -4,7 +4,7 @@ title: "Renfe vuelve a beneficios en 2025 con 60,2 millones de euros"
 description: "Renfe cerró 2025 con 60,2 millones de beneficio, tras perder 2,9 millones en 2024, impulsada por los ingresos de viajeros y una mayor eficiencia."
 date: "2026-09-02"
 section: "economia"
-author: "Marta Robles Ferrer"
+author: "Nerea Villacorta Beltrán"
 type: "news"
 status: "review"
 ---
