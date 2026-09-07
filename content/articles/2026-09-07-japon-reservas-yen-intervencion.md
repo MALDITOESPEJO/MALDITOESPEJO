@@ -6,7 +6,8 @@ date: "2026-09-07"
 section: "Economía"
 author: "Ariadna Soler Montalbán"
 type: "news"
-status: "approved"
+status: "published"
+case_id: "CASE_japon-reservas-yen-intervencion"
 image: "/images/2026-09-07-japon-reservas-yen-intervencion.jpg"
 ---
 
