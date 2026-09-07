@@ -1,0 +1,37 @@
+{
+  "case_id": "CASE_japon-reservas-yen-intervencion",
+  "created_at": "2026-09-07",
+  "status": "VERIFIED",
+  "input_type": "news_article",
+  "input_reference": "Japan's August foreign reserves post largest-ever drop after record intervention",
+  "editorial_section": "Economía",
+  "assigned_author": "Ariadna Soler Montalbán",
+  "discovery_source": {"role":"DISCOVERY","publication":false},
+  "claims": [
+    {"claim_id":"CLM-JPN-01","type":"FACT","importance":"CENTRAL","claim":"Japón cerró agosto de 2026 con reservas oficiales por 1.207.524 millones de dólares, 79.575 millones menos que a finales de julio.","verification_status":"VERIFIED"},
+    {"claim_id":"CLM-JPN-02","type":"FACT","importance":"CENTRAL","claim":"La caída mensual de las reservas fue la mayor registrada por Japón y estuvo vinculada a una intervención récord para comprar yenes y vender dólares.","verification_status":"VERIFIED"},
+    {"claim_id":"CLM-JPN-03","type":"FACT","importance":"CENTRAL","claim":"Japón realizó operaciones de intervención por 15,3993 billones de yenes entre el 30 de julio y el 26 de agosto de 2026.","verification_status":"VERIFIED"},
+    {"claim_id":"CLM-JPN-04","type":"FACT","importance":"HIGH","claim":"A finales de agosto Japón mantenía 839.559 millones de dólares en valores dentro de sus reservas de divisas.","verification_status":"VERIFIED"},
+    {"claim_id":"CLM-JPN-05","type":"FACT","importance":"HIGH","claim":"El yen había alcanzado niveles cercanos a 164 por dólar antes de la intervención y se situaba alrededor de 155-156 por dólar a comienzos de septiembre.","verification_status":"VERIFIED"},
+    {"claim_id":"CLM-JPN-06","type":"CONTEXT","importance":"HIGH","claim":"Los mercados siguen valorando una posible subida de tipos del Banco de Japón en septiembre ante la debilidad del yen y las presiones inflacionistas.","verification_status":"VERIFIED"}
+  ],
+  "sources": [
+    {"source_id":"SRC-MOF-JPN-RESERVES-20260907","role":"PUBLICATION","description":"Ministry of Finance Japan, International Reserves/Foreign Currency Liquidity, datos oficiales a 31 de agosto de 2026."},
+    {"source_id":"SRC-MOF-JPN-FX-20260828","role":"PUBLICATION","description":"Ministry of Finance Japan, Foreign Exchange Intervention Operations, periodo 30 de julio a 26 de agosto de 2026."},
+    {"source_id":"SRC-REUTERS-JPN-RESERVES-20260907","role":"CORROBORATION","description":"Reuters, 7 de septiembre de 2026, análisis de la caída récord de reservas y la intervención cambiaria."},
+    {"source_id":"SRC-REUTERS-JPN-BOJ-20260907","role":"CONTEXT","description":"Reuters, 7 de septiembre de 2026, expectativas de subida de tipos del Banco de Japón."}
+  ],
+  "evidence": [
+    {"evidence_id":"EVD-JPN-01","claim_id":"CLM-JPN-01","source_id":"SRC-MOF-JPN-RESERVES-20260907","evidence_role":"PRIMARY_DOCUMENT","provenance_status":"ESTABLISHED","assessment":"SUPPORTS"},
+    {"evidence_id":"EVD-JPN-02","claim_id":"CLM-JPN-02","source_id":"SRC-REUTERS-JPN-RESERVES-20260907","evidence_role":"INDEPENDENT_CORROBORATION","provenance_status":"ESTABLISHED","assessment":"SUPPORTS"},
+    {"evidence_id":"EVD-JPN-03","claim_id":"CLM-JPN-03","source_id":"SRC-MOF-JPN-FX-20260828","evidence_role":"PRIMARY_DOCUMENT","provenance_status":"ESTABLISHED","assessment":"SUPPORTS"},
+    {"evidence_id":"EVD-JPN-04","claim_id":"CLM-JPN-04","source_id":"SRC-MOF-JPN-RESERVES-20260907","evidence_role":"PRIMARY_DOCUMENT","provenance_status":"ESTABLISHED","assessment":"SUPPORTS"},
+    {"evidence_id":"EVD-JPN-05","claim_id":"CLM-JPN-05","source_id":"SRC-REUTERS-JPN-RESERVES-20260907","evidence_role":"INDEPENDENT_CORROBORATION","provenance_status":"ESTABLISHED","assessment":"SUPPORTS"},
+    {"evidence_id":"EVD-JPN-06","claim_id":"CLM-JPN-06","source_id":"SRC-REUTERS-JPN-BOJ-20260907","evidence_role":"CONTEXT_DOCUMENT","provenance_status":"ESTABLISHED","assessment":"SUPPORTS"}
+  ],
+  "provenance": {"status":"COMPLETE","secondary_media_counted_as_independent":false},
+  "contrast": {"status":"RESOLVED","material_conflict_found":false,"material_conflict":"Las cifras oficiales de reservas e intervención son consistentes entre los datos del Ministerio de Finanzas y la cobertura de Reuters."},
+  "verification": {"completed":true,"status":"VERIFIED","verified_claims":["CLM-JPN-01","CLM-JPN-02","CLM-JPN-03","CLM-JPN-04","CLM-JPN-05","CLM-JPN-06"]},
+  "publishable_scope": {"claim_ids":["CLM-JPN-01","CLM-JPN-02","CLM-JPN-03","CLM-JPN-04","CLM-JPN-05","CLM-JPN-06"]},
+  "publication": {"allowed":true,"reason":"Afirmaciones centrales respaldadas por datos oficiales del Ministerio de Finanzas de Japón y corroboración independiente de Reuters."}
+}
