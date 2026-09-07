@@ -4,7 +4,7 @@ title: "Japón registra la mayor caída de reservas de su historia tras una inte
 description: "Japón registra en agosto una caída récord de reservas tras destinar unos 15,4 billones de yenes a una intervención para sostener su moneda."
 date: "2026-09-07"
 section: "Economía"
-author: "Ariadna Soler Montalbán"
+author: "Nerea Villacorta Beltrán"
 type: "news"
 status: "published"
 case_id: "CASE_japon-reservas-yen-intervencion"
@@ -49,4 +49,4 @@ Japón dispone de unas reservas todavía enormes, pero una intervención de casi
 
 El dato publicado este lunes deja una señal clara: Japón ha utilizado una cantidad excepcional de sus reservas para sostener el yen, pero el mercado todavía no ha dejado de poner a prueba su capacidad para hacerlo.
 
-**Ariadna Soler Montalbán · 7 de septiembre de 2026 · 09:39 h**
+**Nerea Villacorta Beltrán · 7 de septiembre de 2026 · 09:39 h**
