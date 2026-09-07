@@ -6,7 +6,8 @@ date: "2026-09-07"
 section: "Actualidad"
 author: "Ariadna Soler Montalbán"
 type: "news"
-status: "approved"
+status: "published"
+image: "/images/2026-09-07-afd-sajonia-anhalt-elecciones.jpg"
 ---
 
 La **Alternativa para Alemania (AfD)** ha conseguido una victoria histórica en las elecciones regionales de Sajonia-Anhalt celebradas este domingo, al obtener el **43,8 % de los votos y 39 de los 83 escaños** del Parlamento regional. El resultado convierte a la formación ultraderechista en la fuerza claramente más votada del estado, pero no le permite alcanzar por sí sola la mayoría absoluta, situada en 42 escaños.
