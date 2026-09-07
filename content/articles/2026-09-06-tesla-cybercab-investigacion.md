@@ -3,7 +3,7 @@ title: "EEUU investiga el Tesla Cybercab tras su lanzamiento"
 description: "La NHTSA investiga cómo Tesla certificó el Cybercab, un vehículo autónomo sin volante ni pedales convencionales."
 date: "2026-09-06"
 section: "Actualidad"
-author: "Ariadna Soler Montalbán"
+author: "Iria Valcárcel Montoro"
 type: "news"
 status: "approved"
 image: "/images/2026-09-06-tesla-cybercab-investigacion.svg"
@@ -25,4 +25,4 @@ La investigación no implica que la NHTSA haya determinado que el Cybercab sea i
 
 El caso coloca bajo el foco una cuestión que va mucho más allá de Tesla: qué reglas deben aplicarse cuando los vehículos dejan de estar diseñados para ser conducidos por personas.
 
-**Ariadna Soler Montalbán · 6 de septiembre de 2026 · 18:40 h**
+**Iria Valcárcel Montoro · 6 de septiembre de 2026 · 18:40 h**
