@@ -4,7 +4,7 @@ title: "21 migrantes marroquíes regresan a Marruecos tras un nuevo apedreamient
 description: "21 migrantes marroquíes fueron identificados en Ceuta tras un nuevo apedreamiento a militares y guardias civiles y regresaron voluntariamente a Marruecos."
 date: "2026-09-06"
 section: "Actualidad"
-author: "Ariadna Soler Montalbán"
+author: "Iria Valcárcel Montoro"
 type: "news"
 status: "approved"
 image: "/images/2026-09-06-21-migrantes-marroquies-ceuta-apedreamiento.svg"
@@ -22,4 +22,4 @@ Mientras tanto, el Gobierno central ha asumido el control de 16.000 metros cuadr
 
 La situación mantiene abierta una doble crisis: la necesidad de alojamiento y atención para miles de personas que permanecen en condiciones precarias y la creciente presión sobre los servicios públicos y los dispositivos de seguridad de la ciudad.
 
-**Ariadna Soler Montalbán · 6 de septiembre de 2026 · 19:00 h**
+**Iria Valcárcel Montoro · 6 de septiembre de 2026 · 19:00 h**
