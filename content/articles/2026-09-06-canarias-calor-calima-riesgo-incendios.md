@@ -3,7 +3,7 @@ title: "Canarias afronta un episodio de calor, calima y riesgo de incendios"
 description: "Canarias afronta un episodio de altas temperaturas, calima y viento con alerta por riesgo de incendios en Gran Canaria y Tenerife."
 date: "2026-09-06"
 section: "Actualidad"
-author: "Ariadna Soler Montalbán"
+author: "Iria Valcárcel Montoro"
 type: "news"
 status: "approved"
 image: "/images/2026-09-06-canarias-calor-calima-riesgo-incendios.svg"
@@ -21,4 +21,4 @@ Las autoridades han pedido extremar las precauciones, especialmente en las zonas
 
 El episodio llega después de varios días de temperaturas elevadas en buena parte de España y mantiene al archipiélago bajo vigilancia ante la combinación de calor, humedad, calima y viento.
 
-**Ariadna Soler Montalbán · 6 de septiembre de 2026 · 18:30 h**
+**Iria Valcárcel Montoro · 6 de septiembre de 2026 · 18:30 h**
