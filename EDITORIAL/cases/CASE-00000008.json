@@ -1,0 +1,1193 @@
+{
+    "case_id":  "CASE-00000008",
+    "created_at":  "2026-09-11T06:26:53.395Z",
+    "status":  "RECHECK_REQUIRED",
+    "input_fingerprint":  "22905B14",
+    "input":  {
+                  "input_type":  "document",
+                  "input_reference":  "lead-ahogamientos-2026-record.txt",
+                  "input_text":  "La Real Federación Española de Salvamento y Socorrismo (RFESS) ha publicado el 8 de septiembre de 2026 su Informe Nacional de Ahogamientos (INA) correspondiente al mes de agosto, elevando el balance acumulado de 2026 a 389 muertes por ahogamiento no intencional en espacios acuáticos españoles entre el 1 de enero y el 31 de agosto. En agosto fallecieron 80 personas. El verano de 2026 (junio-agosto) acumula 264 fallecimientos, frente a los 230 del mismo periodo de 2025 — 34 muertes más, un incremento cercano al 15%. El grupo de edad con más fallecimientos en el conjunto del año es el comprendido entre los 65 y los 74 años, con 68 víctimas, seguido muy de cerca por las personas de 75 años o más, con 66 víctimas — las personas mayores mantienen así el perfil de mayor incidencia. En agosto, 58 de las 80 víctimas fueron hombres (72,2%) y 22 mujeres; en el acumulado del año, 299 hombres y 90 mujeres. Por comunidades autónomas, en agosto la Comunidad Valenciana registró el mayor número de fallecimientos (16), seguida de Andalucía (12), Cataluña y Castilla y León (11 cada una). La fuente de estos datos es la propia página oficial de la RFESS (rfess.es), leída directamente el 11 de septiembre de 2026.\n"
+              },
+    "workflow":  {
+                     "claims":  "READY_FOR_SOURCE_RESEARCH",
+                     "sources":  "SOURCES_RESOLVED_REVIEW_REQUIRED",
+                     "evidence":  "REGISTERED_REQUIRES_PROVENANCE_CHECK",
+                     "provenance":  "PENDING_CHECK",
+                     "contradictions":  "PENDING",
+                     "verification":  "RECHECK_REQUIRED",
+                     "draft":  "PENDING",
+                     "validation":  "PENDING",
+                     "editorial_gate":  "PENDING",
+                     "dependencies":  "ASSESSED",
+                     "evidence_sufficiency":  "NO_SUFFICIENT_EVIDENCE",
+                     "source_independence":  "NO_INDEPENDENT_CORROBORATION_COUNTED",
+                     "temporal_verification":  "TEMPORAL_ASSESSED",
+                     "source_authority":  "CLASSIFIED_REQUIRES_DOCUMENT_CHECK"
+                 },
+    "publication":  {
+                        "allowed":  false,
+                        "reason":  "La suficiencia documental no sustituye la verificación ni la aprobación editorial humana."
+                    },
+    "claims":  [
+                   {
+                       "claim_id":  "CLM-00000001",
+                       "type":  "FACT",
+                       "claim":  "La Real Federación Española de Salvamento y Socorrismo (RFESS) ha publicado el 8 de septiembre de 2026 su Informe Nacional de Ahogamientos (INA) correspondiente al mes de agosto, elevando el balance acumulado de 2026 a 389 muertes por ahogamiento no intencional en espacios acuáticos españoles entre el 1 de enero y el 31 de agosto.",
+                       "importance":  "IMPORTANT",
+                       "verification_status":  "UNASSESSED",
+                       "evidence_required":  [
+                                                 "primary_or_documentary_evidence"
+                                             ]
+                   },
+                   {
+                       "claim_id":  "CLM-00000002",
+                       "type":  "FACT",
+                       "claim":  "En agosto fallecieron 80 personas.",
+                       "importance":  "IMPORTANT",
+                       "verification_status":  "UNASSESSED",
+                       "evidence_required":  [
+                                                 "primary_or_documentary_evidence"
+                                             ]
+                   },
+                   {
+                       "claim_id":  "CLM-00000003",
+                       "type":  "FACT",
+                       "claim":  "El verano de 2026 (junio-agosto) acumula 264 fallecimientos, frente a los 230 del mismo periodo de 2025 — 34 muertes más, un incremento cercano al 15%.",
+                       "importance":  "IMPORTANT",
+                       "verification_status":  "UNASSESSED",
+                       "evidence_required":  [
+                                                 "primary_or_documentary_evidence"
+                                             ]
+                   },
+                   {
+                       "claim_id":  "CLM-00000004",
+                       "type":  "FACT",
+                       "claim":  "El grupo de edad con más fallecimientos en el conjunto del año es el comprendido entre los 65 y los 74 años, con 68 víctimas, seguido muy de cerca por las personas de 75 años o más, con 66 víctimas — las personas mayores mantienen así el perfil de mayor incidencia.",
+                       "importance":  "CONTEXTUAL",
+                       "verification_status":  "UNASSESSED",
+                       "evidence_required":  [
+                                                 "primary_or_documentary_evidence"
+                                             ]
+                   },
+                   {
+                       "claim_id":  "CLM-00000005",
+                       "type":  "FACT",
+                       "claim":  "En agosto, 58 de las 80 víctimas fueron hombres (72,2%) y 22 mujeres; en el acumulado del año, 299 hombres y 90 mujeres.",
+                       "importance":  "CONTEXTUAL",
+                       "verification_status":  "UNASSESSED",
+                       "evidence_required":  [
+                                                 "primary_or_documentary_evidence"
+                                             ]
+                   },
+                   {
+                       "claim_id":  "CLM-00000006",
+                       "type":  "FACT",
+                       "claim":  "Por comunidades autónomas, en agosto la Comunidad Valenciana registró el mayor número de fallecimientos (16), seguida de Andalucía (12), Cataluña y Castilla y León (11 cada una).",
+                       "importance":  "CONTEXTUAL",
+                       "verification_status":  "UNASSESSED",
+                       "evidence_required":  [
+                                                 "primary_or_documentary_evidence"
+                                             ]
+                   },
+                   {
+                       "claim_id":  "CLM-00000007",
+                       "type":  "FACT",
+                       "claim":  "La fuente de estos datos es la propia página oficial de la RFESS (rfess.es), leída directamente el 11 de septiembre de 2026.",
+                       "importance":  "CONTEXTUAL",
+                       "verification_status":  "UNASSESSED",
+                       "evidence_required":  [
+                                                 "primary_or_documentary_evidence"
+                                             ]
+                   }
+               ],
+    "claims_engine":  {
+                          "version":  "2.0",
+                          "generated_at":  "2026-09-11T06:26:54.577Z",
+                          "mode":  "DETERMINISTIC_ATOMIC_DECOMPOSITION",
+                          "input_units":  7,
+                          "note":  "Descomposición conservadora. La clasificación no verifica hechos ni añade información que no figure en la entrada."
+                      },
+    "claim_dependencies":  [
+
+                           ],
+    "dependency_analysis":  {
+                                "version":  "1.0",
+                                "analyzed_at":  "2026-09-11T06:26:55.660Z",
+                                "explicit_only":  true,
+                                "dependency_count":  0,
+                                "affected_claims":  [
+
+                                                    ],
+                                "cycles":  [
+
+                                           ],
+                                "status":  "ASSESSED",
+                                "rule":  "Las dependencias no se infieren por proximidad temática. Una afirmación derivada no puede superar el estado de certeza de sus dependencias."
+                            },
+    "research_plan":  {
+                          "version":  "1.0",
+                          "generated_at":  "2026-09-11T06:26:56.773Z",
+                          "mode":  "DETERMINISTIC_SOURCE_TARGETING",
+                          "plans":  [
+                                        {
+                                            "claim_id":  "CLM-00000001",
+                                            "priority":  "IMPORTANT",
+                                            "evidence_required":  [
+                                                                      "primary_or_documentary_evidence"
+                                                                  ],
+                                            "source_targets":  [
+                                                                   "PRIMARY_DOCUMENT",
+                                                                   "OFFICIAL_DATA",
+                                                                   "INDEPENDENT_CORROBORATION"
+                                                               ],
+                                            "search_questions":  [
+                                                                     "¿Qué documento, registro o declaración de primera mano respalda: La Real Federación Española de Salvamento y Socorrismo (RFESS) ha publicado el 8 de septiembre de 2026 su Informe Nacional de Ahogamientos (INA) correspondiente al mes de agosto, elevando el balance acumulado de 2026 a 389 muertes por ahogamiento no intencional en espacios acuáticos españoles entre el 1 de enero y el 31 de agosto.?",
+                                                                     "¿La fuente es actual y corresponde al hecho concreto?",
+                                                                     "¿Existe una fuente independiente que permita contrastarlo?"
+                                                                 ],
+                                            "status":  "PENDING_RESEARCH"
+                                        },
+                                        {
+                                            "claim_id":  "CLM-00000002",
+                                            "priority":  "IMPORTANT",
+                                            "evidence_required":  [
+                                                                      "primary_or_documentary_evidence"
+                                                                  ],
+                                            "source_targets":  [
+                                                                   "PRIMARY_DOCUMENT",
+                                                                   "OFFICIAL_DATA",
+                                                                   "INDEPENDENT_CORROBORATION"
+                                                               ],
+                                            "search_questions":  [
+                                                                     "¿Qué documento, registro o declaración de primera mano respalda: En agosto fallecieron 80 personas.?",
+                                                                     "¿La fuente es actual y corresponde al hecho concreto?",
+                                                                     "¿Existe una fuente independiente que permita contrastarlo?"
+                                                                 ],
+                                            "status":  "PENDING_RESEARCH"
+                                        },
+                                        {
+                                            "claim_id":  "CLM-00000003",
+                                            "priority":  "IMPORTANT",
+                                            "evidence_required":  [
+                                                                      "primary_or_documentary_evidence"
+                                                                  ],
+                                            "source_targets":  [
+                                                                   "PRIMARY_DOCUMENT",
+                                                                   "OFFICIAL_DATA",
+                                                                   "INDEPENDENT_CORROBORATION"
+                                                               ],
+                                            "search_questions":  [
+                                                                     "¿Qué documento, registro o declaración de primera mano respalda: El verano de 2026 (junio-agosto) acumula 264 fallecimientos, frente a los 230 del mismo periodo de 2025 — 34 muertes más, un incremento cercano al 15%.?",
+                                                                     "¿La fuente es actual y corresponde al hecho concreto?",
+                                                                     "¿Existe una fuente independiente que permita contrastarlo?"
+                                                                 ],
+                                            "status":  "PENDING_RESEARCH"
+                                        },
+                                        {
+                                            "claim_id":  "CLM-00000004",
+                                            "priority":  "CONTEXTUAL",
+                                            "evidence_required":  [
+                                                                      "primary_or_documentary_evidence"
+                                                                  ],
+                                            "source_targets":  [
+                                                                   "PRIMARY_DOCUMENT",
+                                                                   "OFFICIAL_DATA",
+                                                                   "INDEPENDENT_CORROBORATION"
+                                                               ],
+                                            "search_questions":  [
+                                                                     "¿Qué documento, registro o declaración de primera mano respalda: El grupo de edad con más fallecimientos en el conjunto del año es el comprendido entre los 65 y los 74 años, con 68 víctimas, seguido muy de cerca por las personas de 75 años o más, con 66 víctimas — las personas mayores mantienen así el perfil de mayor incidencia.?",
+                                                                     "¿La fuente es actual y corresponde al hecho concreto?",
+                                                                     "¿Existe una fuente independiente que permita contrastarlo?"
+                                                                 ],
+                                            "status":  "PENDING_RESEARCH"
+                                        },
+                                        {
+                                            "claim_id":  "CLM-00000005",
+                                            "priority":  "CONTEXTUAL",
+                                            "evidence_required":  [
+                                                                      "primary_or_documentary_evidence"
+                                                                  ],
+                                            "source_targets":  [
+                                                                   "PRIMARY_DOCUMENT",
+                                                                   "OFFICIAL_DATA",
+                                                                   "INDEPENDENT_CORROBORATION"
+                                                               ],
+                                            "search_questions":  [
+                                                                     "¿Qué documento, registro o declaración de primera mano respalda: En agosto, 58 de las 80 víctimas fueron hombres (72,2%) y 22 mujeres; en el acumulado del año, 299 hombres y 90 mujeres.?",
+                                                                     "¿La fuente es actual y corresponde al hecho concreto?",
+                                                                     "¿Existe una fuente independiente que permita contrastarlo?"
+                                                                 ],
+                                            "status":  "PENDING_RESEARCH"
+                                        },
+                                        {
+                                            "claim_id":  "CLM-00000006",
+                                            "priority":  "CONTEXTUAL",
+                                            "evidence_required":  [
+                                                                      "primary_or_documentary_evidence"
+                                                                  ],
+                                            "source_targets":  [
+                                                                   "PRIMARY_DOCUMENT",
+                                                                   "OFFICIAL_DATA",
+                                                                   "INDEPENDENT_CORROBORATION"
+                                                               ],
+                                            "search_questions":  [
+                                                                     "¿Qué documento, registro o declaración de primera mano respalda: Por comunidades autónomas, en agosto la Comunidad Valenciana registró el mayor número de fallecimientos (16), seguida de Andalucía (12), Cataluña y Castilla y León (11 cada una).?",
+                                                                     "¿La fuente es actual y corresponde al hecho concreto?",
+                                                                     "¿Existe una fuente independiente que permita contrastarlo?"
+                                                                 ],
+                                            "status":  "PENDING_RESEARCH"
+                                        },
+                                        {
+                                            "claim_id":  "CLM-00000007",
+                                            "priority":  "CONTEXTUAL",
+                                            "evidence_required":  [
+                                                                      "primary_or_documentary_evidence"
+                                                                  ],
+                                            "source_targets":  [
+                                                                   "PRIMARY_DOCUMENT",
+                                                                   "OFFICIAL_DATA",
+                                                                   "INDEPENDENT_CORROBORATION"
+                                                               ],
+                                            "search_questions":  [
+                                                                     "¿Qué documento, registro o declaración de primera mano respalda: La fuente de estos datos es la propia página oficial de la RFESS (rfess.es), leída directamente el 11 de septiembre de 2026.?",
+                                                                     "¿La fuente es actual y corresponde al hecho concreto?",
+                                                                     "¿Existe una fuente independiente que permita contrastarlo?"
+                                                                 ],
+                                            "status":  "PENDING_RESEARCH"
+                                        }
+                                    ],
+                          "rule":  "Encontrar una fuente no equivale a aceptar la evidencia ni a verificar el claim."
+                      },
+    "web_research":  {
+                         "imported_at":  "2026-09-11T06:29:44.281Z",
+                         "research_run_id":  null,
+                         "provider":  "claude-web-search",
+                         "status":  "RESULTS_IMPORTED",
+                         "result_count":  9,
+                         "rejected_count":  0
+                     },
+    "web_results":  [
+                        {
+                            "claim_id":  "CLM-00000001",
+                            "url":  "https://rfess.es/agosto-registra-80-muertes-por-ahogamiento-y-eleva-a-389-el-balance-de-2026/",
+                            "title":  "Agosto registra 80 muertes por ahogamiento y eleva a 389 el balance de 2026",
+                            "source_name":  "RFESS (Real Federación Española de Salvamento y Socorrismo) — fuente primaria",
+                            "published_at":  "2026-09-08",
+                            "snippet":  "Un total de 80 personas fallecieron por ahogamiento no intencional en los espacios acuáticos españoles durante el mes de agosto, según los datos del Informe Nacional de Ahogamientos (INA) elaborado por la Real Federación Española de Salvamento y Socorrismo. Balance acumulado 2026: 389 muertes (entre el 1 de enero y el 31 de agosto).",
+                            "document_or_record":  null,
+                            "source_role":  "UNASSESSED",
+                            "relationship_type":  "UNKNOWN_PROVENANCE",
+                            "lineage_id":  "LIN-UNKNOWN",
+                            "independence_group":  "IG-UNKNOWN",
+                            "acceptance":  "CANDIDATE_REQUIRES_EDITORIAL_ASSESSMENT"
+                        },
+                        {
+                            "claim_id":  "CLM-00000001",
+                            "url":  "https://rfess.es/ina/",
+                            "title":  "INA - RFESS",
+                            "source_name":  "RFESS — índice oficial de informes",
+                            "published_at":  "2025-11-25",
+                            "snippet":  "Informe Nacional de Ahogamientos. Agosto registra 80 muertes por ahogamiento y eleva a 389 el balance de 2026. Leer más.",
+                            "document_or_record":  null,
+                            "source_role":  "UNASSESSED",
+                            "relationship_type":  "UNKNOWN_PROVENANCE",
+                            "lineage_id":  "LIN-UNKNOWN",
+                            "independence_group":  "IG-UNKNOWN",
+                            "acceptance":  "CANDIDATE_REQUIRES_EDITORIAL_ASSESSMENT"
+                        },
+                        {
+                            "claim_id":  "CLM-00000002",
+                            "url":  "https://rfess.es/agosto-registra-80-muertes-por-ahogamiento-y-eleva-a-389-el-balance-de-2026/",
+                            "title":  "Agosto registra 80 muertes por ahogamiento y eleva a 389 el balance de 2026",
+                            "source_name":  "RFESS — fuente primaria",
+                            "published_at":  "2026-09-08",
+                            "snippet":  "Cifras de agosto: 80 muertes por ahogamiento.",
+                            "document_or_record":  null,
+                            "source_role":  "UNASSESSED",
+                            "relationship_type":  "UNKNOWN_PROVENANCE",
+                            "lineage_id":  "LIN-UNKNOWN",
+                            "independence_group":  "IG-UNKNOWN",
+                            "acceptance":  "CANDIDATE_REQUIRES_EDITORIAL_ASSESSMENT"
+                        },
+                        {
+                            "claim_id":  "CLM-00000003",
+                            "url":  "https://rfess.es/agosto-registra-80-muertes-por-ahogamiento-y-eleva-a-389-el-balance-de-2026/",
+                            "title":  "Agosto registra 80 muertes por ahogamiento y eleva a 389 el balance de 2026",
+                            "source_name":  "RFESS — fuente primaria",
+                            "published_at":  "2026-09-08",
+                            "snippet":  "El balance del verano de 2026 empeora respecto al año anterior: entre junio, julio y agosto de 2026 se registraron 264 fallecimientos frente a los 230 del mismo periodo de 2025, lo que supone 34 muertes más (un incremento cercano al 15%).",
+                            "document_or_record":  null,
+                            "source_role":  "UNASSESSED",
+                            "relationship_type":  "UNKNOWN_PROVENANCE",
+                            "lineage_id":  "LIN-UNKNOWN",
+                            "independence_group":  "IG-UNKNOWN",
+                            "acceptance":  "CANDIDATE_REQUIRES_EDITORIAL_ASSESSMENT"
+                        },
+                        {
+                            "claim_id":  "CLM-00000003",
+                            "url":  "https://elpais.com/salud-y-bienestar/2026-09-05/el-verano-con-mas-ahogamientos-desde-que-hay-registros-como-reconocer-a-alguien-en-peligro.html",
+                            "title":  "El verano con más ahogamientos desde que hay registros: ¿cómo reconocer a alguien en peligro?",
+                            "source_name":  "El País (corroboración independiente)",
+                            "published_at":  "2026-09-05",
+                            "snippet":  "Los ahogamientos se han saldado con 363 vidas en lo que llevamos de año en España, 239 de ellas solo entre junio y agosto. Es el peor verano desde 2015, cuando comienzan a registrarse estos datos en el Informe Nacional de Ahogamientos (INA) de la Real Federación Española de Salvamento y Socorrismo (RFESS).",
+                            "document_or_record":  null,
+                            "source_role":  "UNASSESSED",
+                            "relationship_type":  "UNKNOWN_PROVENANCE",
+                            "lineage_id":  "LIN-UNKNOWN",
+                            "independence_group":  "IG-UNKNOWN",
+                            "acceptance":  "CANDIDATE_REQUIRES_EDITORIAL_ASSESSMENT"
+                        },
+                        {
+                            "claim_id":  "CLM-00000004",
+                            "url":  "https://rfess.es/agosto-registra-80-muertes-por-ahogamiento-y-eleva-a-389-el-balance-de-2026/",
+                            "title":  "Agosto registra 80 muertes por ahogamiento y eleva a 389 el balance de 2026",
+                            "source_name":  "RFESS — fuente primaria",
+                            "published_at":  "2026-09-08",
+                            "snippet":  "Las personas de mayor edad mantienen la mayor incidencia. El grupo con más fallecimientos es el comprendido entre los 65 y los 74 años (68 víctimas), seguido muy de cerca por las personas de 75 años o más (66 víctimas).",
+                            "document_or_record":  null,
+                            "source_role":  "UNASSESSED",
+                            "relationship_type":  "UNKNOWN_PROVENANCE",
+                            "lineage_id":  "LIN-UNKNOWN",
+                            "independence_group":  "IG-UNKNOWN",
+                            "acceptance":  "CANDIDATE_REQUIRES_EDITORIAL_ASSESSMENT"
+                        },
+                        {
+                            "claim_id":  "CLM-00000005",
+                            "url":  "https://rfess.es/agosto-registra-80-muertes-por-ahogamiento-y-eleva-a-389-el-balance-de-2026/",
+                            "title":  "Agosto registra 80 muertes por ahogamiento y eleva a 389 el balance de 2026",
+                            "source_name":  "RFESS — fuente primaria",
+                            "published_at":  "2026-09-08",
+                            "snippet":  "En agosto: 58 hombres y 22 mujeres (72,2% de las víctimas del mes fueron hombres). En los datos acumulados clasificados por sexo figuran 299 hombres y 90 mujeres.",
+                            "document_or_record":  null,
+                            "source_role":  "UNASSESSED",
+                            "relationship_type":  "UNKNOWN_PROVENANCE",
+                            "lineage_id":  "LIN-UNKNOWN",
+                            "independence_group":  "IG-UNKNOWN",
+                            "acceptance":  "CANDIDATE_REQUIRES_EDITORIAL_ASSESSMENT"
+                        },
+                        {
+                            "claim_id":  "CLM-00000006",
+                            "url":  "https://rfess.es/agosto-registra-80-muertes-por-ahogamiento-y-eleva-a-389-el-balance-de-2026/",
+                            "title":  "Agosto registra 80 muertes por ahogamiento y eleva a 389 el balance de 2026",
+                            "source_name":  "RFESS — fuente primaria",
+                            "published_at":  "2026-09-08",
+                            "snippet":  "Desglose por comunidad autónoma (agosto): Comunidad Valenciana: 16; Andalucía: 12; Cataluña: 11; Castilla y León: 11; Canarias: 6; Baleares: 6; Galicia: 4; País Vasco: 4; Navarra: 3; Asturias: 2.",
+                            "document_or_record":  null,
+                            "source_role":  "UNASSESSED",
+                            "relationship_type":  "UNKNOWN_PROVENANCE",
+                            "lineage_id":  "LIN-UNKNOWN",
+                            "independence_group":  "IG-UNKNOWN",
+                            "acceptance":  "CANDIDATE_REQUIRES_EDITORIAL_ASSESSMENT"
+                        },
+                        {
+                            "claim_id":  "CLM-00000007",
+                            "url":  "https://rfess.es/agosto-registra-80-muertes-por-ahogamiento-y-eleva-a-389-el-balance-de-2026/",
+                            "title":  "Agosto registra 80 muertes por ahogamiento y eleva a 389 el balance de 2026",
+                            "source_name":  "RFESS — fuente primaria",
+                            "published_at":  "2026-09-08",
+                            "snippet":  "Página oficial de la Real Federación Española de Salvamento y Socorrismo, leída directamente el 11 de septiembre de 2026.",
+                            "document_or_record":  null,
+                            "source_role":  "UNASSESSED",
+                            "relationship_type":  "UNKNOWN_PROVENANCE",
+                            "lineage_id":  "LIN-UNKNOWN",
+                            "independence_group":  "IG-UNKNOWN",
+                            "acceptance":  "CANDIDATE_REQUIRES_EDITORIAL_ASSESSMENT"
+                        }
+                    ],
+    "web_results_rejected":  [
+
+                             ],
+    "evidence_retrieval":  {
+                               "retrieved_at":  "2026-09-11T06:29:56.097Z",
+                               "candidates":  8,
+                               "failed":  1,
+                               "output_file":  "editorial/cases/CASE-00000008.evidence-candidates.json",
+                               "status":  "CANDIDATES_RETRIEVED"
+                           },
+    "evidence":  [
+
+                 ],
+    "evidence_acceptance":  {
+                                "assessed_at":  "2026-09-11T06:34:19.439Z",
+                                "candidates_received":  8,
+                                "accepted":  8,
+                                "pending_review":  0,
+                                "rejected":  0,
+                                "rule":  "Un resultado de búsqueda no se convierte en evidencia por relevancia, ranking, título o snippet. La aceptación requiere información documental suficiente y evaluación explícita."
+                            },
+    "evidence_sufficiency":  {
+                                 "assessed_at":  "2026-09-11T06:36:32.762Z",
+                                 "status":  "NO_SUFFICIENT_EVIDENCE",
+                                 "claims":  [
+                                                {
+                                                    "claim_id":  "CLM-00000001",
+                                                    "type":  "FACT",
+                                                    "importance":  "IMPORTANT",
+                                                    "status":  "INSUFFICIENT",
+                                                    "reason":  "La procedencia de una o más evidencias no está suficientemente documentada.",
+                                                    "evidence_ids":  [
+                                                                         "EVD-00000001",
+                                                                         "EVD-00000002"
+                                                                     ],
+                                                    "checks":  {
+                                                                   "documentary_identity":  true,
+                                                                   "provenance_known":  false,
+                                                                   "source_authority_adequate":  true,
+                                                                   "temporal_requirement_satisfied":  true,
+                                                                   "dependencies_resolved":  true,
+                                                                   "supporting_evidence":  true,
+                                                                   "partial_support":  true,
+                                                                   "contradiction_present":  false
+                                                               }
+                                                },
+                                                {
+                                                    "claim_id":  "CLM-00000002",
+                                                    "type":  "FACT",
+                                                    "importance":  "IMPORTANT",
+                                                    "status":  "INSUFFICIENT",
+                                                    "reason":  "La procedencia de una o más evidencias no está suficientemente documentada.",
+                                                    "evidence_ids":  [
+                                                                         "EVD-00000003"
+                                                                     ],
+                                                    "checks":  {
+                                                                   "documentary_identity":  true,
+                                                                   "provenance_known":  false,
+                                                                   "source_authority_adequate":  true,
+                                                                   "temporal_requirement_satisfied":  true,
+                                                                   "dependencies_resolved":  true,
+                                                                   "supporting_evidence":  true,
+                                                                   "partial_support":  false,
+                                                                   "contradiction_present":  false
+                                                               }
+                                                },
+                                                {
+                                                    "claim_id":  "CLM-00000003",
+                                                    "type":  "FACT",
+                                                    "importance":  "IMPORTANT",
+                                                    "status":  "INSUFFICIENT",
+                                                    "reason":  "La procedencia de una o más evidencias no está suficientemente documentada.",
+                                                    "evidence_ids":  [
+                                                                         "EVD-00000004"
+                                                                     ],
+                                                    "checks":  {
+                                                                   "documentary_identity":  true,
+                                                                   "provenance_known":  false,
+                                                                   "source_authority_adequate":  true,
+                                                                   "temporal_requirement_satisfied":  true,
+                                                                   "dependencies_resolved":  true,
+                                                                   "supporting_evidence":  true,
+                                                                   "partial_support":  false,
+                                                                   "contradiction_present":  false
+                                                               }
+                                                },
+                                                {
+                                                    "claim_id":  "CLM-00000004",
+                                                    "type":  "FACT",
+                                                    "importance":  "CONTEXTUAL",
+                                                    "status":  "INSUFFICIENT",
+                                                    "reason":  "La procedencia de una o más evidencias no está suficientemente documentada.",
+                                                    "evidence_ids":  [
+                                                                         "EVD-00000005"
+                                                                     ],
+                                                    "checks":  {
+                                                                   "documentary_identity":  true,
+                                                                   "provenance_known":  false,
+                                                                   "source_authority_adequate":  true,
+                                                                   "temporal_requirement_satisfied":  true,
+                                                                   "dependencies_resolved":  true,
+                                                                   "supporting_evidence":  true,
+                                                                   "partial_support":  false,
+                                                                   "contradiction_present":  false
+                                                               }
+                                                },
+                                                {
+                                                    "claim_id":  "CLM-00000005",
+                                                    "type":  "FACT",
+                                                    "importance":  "CONTEXTUAL",
+                                                    "status":  "INSUFFICIENT",
+                                                    "reason":  "La procedencia de una o más evidencias no está suficientemente documentada.",
+                                                    "evidence_ids":  [
+                                                                         "EVD-00000006"
+                                                                     ],
+                                                    "checks":  {
+                                                                   "documentary_identity":  true,
+                                                                   "provenance_known":  false,
+                                                                   "source_authority_adequate":  true,
+                                                                   "temporal_requirement_satisfied":  true,
+                                                                   "dependencies_resolved":  true,
+                                                                   "supporting_evidence":  true,
+                                                                   "partial_support":  false,
+                                                                   "contradiction_present":  false
+                                                               }
+                                                },
+                                                {
+                                                    "claim_id":  "CLM-00000006",
+                                                    "type":  "FACT",
+                                                    "importance":  "CONTEXTUAL",
+                                                    "status":  "INSUFFICIENT",
+                                                    "reason":  "La procedencia de una o más evidencias no está suficientemente documentada.",
+                                                    "evidence_ids":  [
+                                                                         "EVD-00000007"
+                                                                     ],
+                                                    "checks":  {
+                                                                   "documentary_identity":  true,
+                                                                   "provenance_known":  false,
+                                                                   "source_authority_adequate":  true,
+                                                                   "temporal_requirement_satisfied":  true,
+                                                                   "dependencies_resolved":  true,
+                                                                   "supporting_evidence":  true,
+                                                                   "partial_support":  false,
+                                                                   "contradiction_present":  false
+                                                               }
+                                                },
+                                                {
+                                                    "claim_id":  "CLM-00000007",
+                                                    "type":  "FACT",
+                                                    "importance":  "CONTEXTUAL",
+                                                    "status":  "INSUFFICIENT",
+                                                    "reason":  "La procedencia de una o más evidencias no está suficientemente documentada.",
+                                                    "evidence_ids":  [
+                                                                         "EVD-00000008"
+                                                                     ],
+                                                    "checks":  {
+                                                                   "documentary_identity":  true,
+                                                                   "provenance_known":  false,
+                                                                   "source_authority_adequate":  true,
+                                                                   "temporal_requirement_satisfied":  true,
+                                                                   "dependencies_resolved":  true,
+                                                                   "supporting_evidence":  true,
+                                                                   "partial_support":  false,
+                                                                   "contradiction_present":  false
+                                                               }
+                                                }
+                                            ],
+                                 "sufficient_claims":  [
+
+                                                       ],
+                                 "partially_sufficient_claims":  [
+
+                                                                 ],
+                                 "blocking_claims":  [
+                                                         "CLM-00000001",
+                                                         "CLM-00000002",
+                                                         "CLM-00000003",
+                                                         "CLM-00000004",
+                                                         "CLM-00000005",
+                                                         "CLM-00000006",
+                                                         "CLM-00000007"
+                                                     ],
+                                 "contested_claims":  [
+
+                                                      ],
+                                 "rule":  "La suficiencia se determina por claim. EVIDENCIA ENCONTRADA no equivale a EVIDENCIA SUFICIENTE y la suficiencia no equivale a verdad material."
+                             },
+    "source_independence":  {
+                                "assessed_at":  "2026-09-11T06:34:21.632Z",
+                                "status":  "UNKNOWN_INDEPENDENCE",
+                                "findings":  [
+                                                 {
+                                                     "type":  "UNKNOWN_INDEPENDENCE",
+                                                     "independence_group":  "IG-UNKNOWN",
+                                                     "evidence_ids":  [
+                                                                          "EVD-00000001",
+                                                                          "EVD-00000002",
+                                                                          "EVD-00000003",
+                                                                          "EVD-00000004",
+                                                                          "EVD-00000005",
+                                                                          "EVD-00000006",
+                                                                          "EVD-00000007",
+                                                                          "EVD-00000008"
+                                                                      ],
+                                                     "action":  "DO_NOT_COUNT_AS_INDEPENDENT_CORROBORATION"
+                                                 }
+                                             ],
+                                "independent_candidates":  [
+
+                                                           ],
+                                "excluded_from_independent_count":  [
+
+                                                                    ],
+                                "rule":  "Las reproducciones, citas, agregaciones o evidencias del mismo linaje no crean corroboración independiente.",
+                                "human_review_required":  true
+                            },
+    "temporal_verification":  {
+                                  "assessed_at":  "2026-09-11T06:34:22.732Z",
+                                  "status":  "ASSESSED",
+                                  "claims":  [
+                                                 {
+                                                     "claim_id":  "CLM-00000001",
+                                                     "type":  "FACT",
+                                                     "importance":  "IMPORTANT",
+                                                     "temporal_requirement":  false,
+                                                     "status":  "HISTORICALLY_SUPPORTED",
+                                                     "reason":  "La evidencia cubre el periodo histórico expresado por el claim.",
+                                                     "evidence_ids":  [
+                                                                          "EVD-00000001",
+                                                                          "EVD-00000002"
+                                                                      ],
+                                                     "claim_years":  [
+                                                                         2026,
+                                                                         2026
+                                                                     ],
+                                                     "evidence_years":  [
+                                                                            2026,
+                                                                            2025
+                                                                        ],
+                                                     "latest_evidence_date":  "2026-09-11T00:00:00.000Z",
+                                                     "checks":  {
+                                                                    "temporal_data_present":  true,
+                                                                    "explicit_period_match":  true,
+                                                                    "superseded_evidence":  false
+                                                                }
+                                                 },
+                                                 {
+                                                     "claim_id":  "CLM-00000002",
+                                                     "type":  "FACT",
+                                                     "importance":  "IMPORTANT",
+                                                     "temporal_requirement":  false,
+                                                     "status":  "CURRENTLY_SUPPORTED",
+                                                     "reason":  "No se detecta un desajuste temporal material en la evidencia disponible.",
+                                                     "evidence_ids":  [
+                                                                          "EVD-00000003"
+                                                                      ],
+                                                     "claim_years":  [
+
+                                                                     ],
+                                                     "evidence_years":  [
+                                                                            2026
+                                                                        ],
+                                                     "latest_evidence_date":  "2026-09-11T00:00:00.000Z",
+                                                     "checks":  {
+                                                                    "temporal_data_present":  true,
+                                                                    "explicit_period_match":  true,
+                                                                    "superseded_evidence":  false
+                                                                }
+                                                 },
+                                                 {
+                                                     "claim_id":  "CLM-00000003",
+                                                     "type":  "FACT",
+                                                     "importance":  "IMPORTANT",
+                                                     "temporal_requirement":  false,
+                                                     "status":  "CURRENTLY_SUPPORTED",
+                                                     "reason":  "No se detecta un desajuste temporal material en la evidencia disponible.",
+                                                     "evidence_ids":  [
+                                                                          "EVD-00000004"
+                                                                      ],
+                                                     "claim_years":  [
+                                                                         2026,
+                                                                         2025
+                                                                     ],
+                                                     "evidence_years":  [
+                                                                            2026
+                                                                        ],
+                                                     "latest_evidence_date":  "2026-09-11T00:00:00.000Z",
+                                                     "checks":  {
+                                                                    "temporal_data_present":  true,
+                                                                    "explicit_period_match":  true,
+                                                                    "superseded_evidence":  false
+                                                                }
+                                                 },
+                                                 {
+                                                     "claim_id":  "CLM-00000004",
+                                                     "type":  "FACT",
+                                                     "importance":  "CONTEXTUAL",
+                                                     "temporal_requirement":  false,
+                                                     "status":  "CURRENTLY_SUPPORTED",
+                                                     "reason":  "No se detecta un desajuste temporal material en la evidencia disponible.",
+                                                     "evidence_ids":  [
+                                                                          "EVD-00000005"
+                                                                      ],
+                                                     "claim_years":  [
+
+                                                                     ],
+                                                     "evidence_years":  [
+                                                                            2026
+                                                                        ],
+                                                     "latest_evidence_date":  "2026-09-11T00:00:00.000Z",
+                                                     "checks":  {
+                                                                    "temporal_data_present":  true,
+                                                                    "explicit_period_match":  true,
+                                                                    "superseded_evidence":  false
+                                                                }
+                                                 },
+                                                 {
+                                                     "claim_id":  "CLM-00000005",
+                                                     "type":  "FACT",
+                                                     "importance":  "CONTEXTUAL",
+                                                     "temporal_requirement":  false,
+                                                     "status":  "CURRENTLY_SUPPORTED",
+                                                     "reason":  "No se detecta un desajuste temporal material en la evidencia disponible.",
+                                                     "evidence_ids":  [
+                                                                          "EVD-00000006"
+                                                                      ],
+                                                     "claim_years":  [
+
+                                                                     ],
+                                                     "evidence_years":  [
+                                                                            2026
+                                                                        ],
+                                                     "latest_evidence_date":  "2026-09-11T00:00:00.000Z",
+                                                     "checks":  {
+                                                                    "temporal_data_present":  true,
+                                                                    "explicit_period_match":  true,
+                                                                    "superseded_evidence":  false
+                                                                }
+                                                 },
+                                                 {
+                                                     "claim_id":  "CLM-00000006",
+                                                     "type":  "FACT",
+                                                     "importance":  "CONTEXTUAL",
+                                                     "temporal_requirement":  true,
+                                                     "status":  "CURRENTLY_SUPPORTED",
+                                                     "reason":  "La evidencia contiene información temporal compatible con el alcance del claim.",
+                                                     "evidence_ids":  [
+                                                                          "EVD-00000007"
+                                                                      ],
+                                                     "claim_years":  [
+
+                                                                     ],
+                                                     "evidence_years":  [
+                                                                            2026
+                                                                        ],
+                                                     "latest_evidence_date":  "2026-09-11T00:00:00.000Z",
+                                                     "checks":  {
+                                                                    "temporal_data_present":  true,
+                                                                    "explicit_period_match":  true,
+                                                                    "superseded_evidence":  false
+                                                                }
+                                                 },
+                                                 {
+                                                     "claim_id":  "CLM-00000007",
+                                                     "type":  "FACT",
+                                                     "importance":  "CONTEXTUAL",
+                                                     "temporal_requirement":  false,
+                                                     "status":  "HISTORICALLY_SUPPORTED",
+                                                     "reason":  "La evidencia cubre el periodo histórico expresado por el claim.",
+                                                     "evidence_ids":  [
+                                                                          "EVD-00000008"
+                                                                      ],
+                                                     "claim_years":  [
+                                                                         2026
+                                                                     ],
+                                                     "evidence_years":  [
+                                                                            2026
+                                                                        ],
+                                                     "latest_evidence_date":  "2026-09-11T00:00:00.000Z",
+                                                     "checks":  {
+                                                                    "temporal_data_present":  true,
+                                                                    "explicit_period_match":  true,
+                                                                    "superseded_evidence":  false
+                                                                }
+                                                 }
+                                             ],
+                                  "currently_supported_claims":  [
+                                                                     "CLM-00000002",
+                                                                     "CLM-00000003",
+                                                                     "CLM-00000004",
+                                                                     "CLM-00000005",
+                                                                     "CLM-00000006"
+                                                                 ],
+                                  "historically_supported_claims":  [
+                                                                        "CLM-00000001",
+                                                                        "CLM-00000007"
+                                                                    ],
+                                  "partially_aligned_claims":  [
+
+                                                               ],
+                                  "contested_claims":  [
+
+                                                       ],
+                                  "unresolved_claims":  [
+
+                                                        ],
+                                  "rule":  "La fecha y el periodo forman parte de la evaluación de la evidencia cuando el claim puede cambiar con el tiempo. Adecuación temporal no equivale a verdad material."
+                              },
+    "verification":  {
+                         "assessed_at":  "2026-09-11T06:34:23.839Z",
+                         "status":  "RECHECK_REQUIRED",
+                         "completed":  false,
+                         "claims":  [
+                                        {
+                                            "claim_id":  "CLM-00000001",
+                                            "type":  "FACT",
+                                            "importance":  "IMPORTANT",
+                                            "status":  "RECHECK_REQUIRED",
+                                            "reason":  "La evaluación documental considera insuficiente el respaldo del claim.",
+                                            "evidence_ids":  [
+                                                                 "EVD-00000001",
+                                                                 "EVD-00000002"
+                                                             ],
+                                            "sufficiency_status":  "INSUFFICIENT",
+                                            "temporal_status":  "HISTORICALLY_SUPPORTED"
+                                        },
+                                        {
+                                            "claim_id":  "CLM-00000002",
+                                            "type":  "FACT",
+                                            "importance":  "IMPORTANT",
+                                            "status":  "RECHECK_REQUIRED",
+                                            "reason":  "La evaluación documental considera insuficiente el respaldo del claim.",
+                                            "evidence_ids":  [
+                                                                 "EVD-00000003"
+                                                             ],
+                                            "sufficiency_status":  "INSUFFICIENT",
+                                            "temporal_status":  "CURRENTLY_SUPPORTED"
+                                        },
+                                        {
+                                            "claim_id":  "CLM-00000003",
+                                            "type":  "FACT",
+                                            "importance":  "IMPORTANT",
+                                            "status":  "RECHECK_REQUIRED",
+                                            "reason":  "La evaluación documental considera insuficiente el respaldo del claim.",
+                                            "evidence_ids":  [
+                                                                 "EVD-00000004"
+                                                             ],
+                                            "sufficiency_status":  "INSUFFICIENT",
+                                            "temporal_status":  "CURRENTLY_SUPPORTED"
+                                        },
+                                        {
+                                            "claim_id":  "CLM-00000004",
+                                            "type":  "FACT",
+                                            "importance":  "CONTEXTUAL",
+                                            "status":  "RECHECK_REQUIRED",
+                                            "reason":  "La evaluación documental considera insuficiente el respaldo del claim.",
+                                            "evidence_ids":  [
+                                                                 "EVD-00000005"
+                                                             ],
+                                            "sufficiency_status":  "INSUFFICIENT",
+                                            "temporal_status":  "CURRENTLY_SUPPORTED"
+                                        },
+                                        {
+                                            "claim_id":  "CLM-00000005",
+                                            "type":  "FACT",
+                                            "importance":  "CONTEXTUAL",
+                                            "status":  "RECHECK_REQUIRED",
+                                            "reason":  "La evaluación documental considera insuficiente el respaldo del claim.",
+                                            "evidence_ids":  [
+                                                                 "EVD-00000006"
+                                                             ],
+                                            "sufficiency_status":  "INSUFFICIENT",
+                                            "temporal_status":  "CURRENTLY_SUPPORTED"
+                                        },
+                                        {
+                                            "claim_id":  "CLM-00000006",
+                                            "type":  "FACT",
+                                            "importance":  "CONTEXTUAL",
+                                            "status":  "RECHECK_REQUIRED",
+                                            "reason":  "La evaluación documental considera insuficiente el respaldo del claim.",
+                                            "evidence_ids":  [
+                                                                 "EVD-00000007"
+                                                             ],
+                                            "sufficiency_status":  "INSUFFICIENT",
+                                            "temporal_status":  "CURRENTLY_SUPPORTED"
+                                        },
+                                        {
+                                            "claim_id":  "CLM-00000007",
+                                            "type":  "FACT",
+                                            "importance":  "CONTEXTUAL",
+                                            "status":  "RECHECK_REQUIRED",
+                                            "reason":  "La evaluación documental considera insuficiente el respaldo del claim.",
+                                            "evidence_ids":  [
+                                                                 "EVD-00000008"
+                                                             ],
+                                            "sufficiency_status":  "INSUFFICIENT",
+                                            "temporal_status":  "HISTORICALLY_SUPPORTED"
+                                        }
+                                    ],
+                         "verified_claims":  [
+
+                                             ],
+                         "blocking_claims":  [
+                                                 "CLM-00000001",
+                                                 "CLM-00000002",
+                                                 "CLM-00000003",
+                                                 "CLM-00000004",
+                                                 "CLM-00000005",
+                                                 "CLM-00000006",
+                                                 "CLM-00000007"
+                                             ],
+                         "human_approval":  false
+                     },
+    "publishable_scope":  {
+                              "status":  "NONE",
+                              "claim_ids":  [
+
+                                            ],
+                              "rule":  "Solo pueden publicarse como hechos las afirmaciones con estado VERIFIED. Las demás quedan fuera del alcance factual de la pieza y no pueden presentarse como hechos verificados."
+                          },
+    "source_resolution":  {
+                              "resolved_at":  "2026-09-11T06:36:30.600Z",
+                              "registry":  "editorial/sources/MASTER_SOURCE_REGISTRY_NORMALIZED.csv",
+                              "candidates_received":  9,
+                              "resolved":  8,
+                              "unresolved":  1,
+                              "rule":  "Solo se asigna una fuente cuando existe una coincidencia única con el registro maestro. Las coincidencias ambiguas o inexistentes requieren revisión humana."
+                          },
+    "resolved_sources":  [
+                             {
+                                 "claim_id":  "CLM-00000001",
+                                 "url":  "https://rfess.es/agosto-registra-80-muertes-por-ahogamiento-y-eleva-a-389-el-balance-de-2026/",
+                                 "title":  "Agosto registra 80 muertes por ahogamiento y eleva a 389 el balance de 2026",
+                                 "source_name":  "RT",
+                                 "published_at":  "2026-09-08",
+                                 "snippet":  "Un total de 80 personas fallecieron por ahogamiento no intencional en los espacios acuáticos españoles durante el mes de agosto, según los datos del Informe Nacional de Ahogamientos (INA) elaborado por la Real Federación Española de Salvamento y Socorrismo. Balance acumulado 2026: 389 muertes (entre el 1 de enero y el 31 de agosto).",
+                                 "document_or_record":  null,
+                                 "source_role":  "UNASSESSED",
+                                 "relationship_type":  "UNKNOWN_PROVENANCE",
+                                 "lineage_id":  "LIN-UNKNOWN",
+                                 "independence_group":  "IG-UNKNOWN",
+                                 "acceptance":  "CANDIDATE_REQUIRES_EDITORIAL_ASSESSMENT",
+                                 "resolved_source_id":  "RT-001",
+                                 "institution":  "RT",
+                                 "source_type":  "OFFICIAL_MEDIA_OR_INSTITUTION",
+                                 "source_nature":  "SECONDARY",
+                                 "authority_level":  "PRIMARY",
+                                 "editorial_role":  "DISCOVERY;CROSS_CHECK",
+                                 "primary_evidence_available":  "YES",
+                                 "resolution":  "EXACT_REGISTRY_MATCH"
+                             },
+                             {
+                                 "claim_id":  "CLM-00000002",
+                                 "url":  "https://rfess.es/agosto-registra-80-muertes-por-ahogamiento-y-eleva-a-389-el-balance-de-2026/",
+                                 "title":  "Agosto registra 80 muertes por ahogamiento y eleva a 389 el balance de 2026",
+                                 "source_name":  "RT",
+                                 "published_at":  "2026-09-08",
+                                 "snippet":  "Cifras de agosto: 80 muertes por ahogamiento.",
+                                 "document_or_record":  null,
+                                 "source_role":  "UNASSESSED",
+                                 "relationship_type":  "UNKNOWN_PROVENANCE",
+                                 "lineage_id":  "LIN-UNKNOWN",
+                                 "independence_group":  "IG-UNKNOWN",
+                                 "acceptance":  "CANDIDATE_REQUIRES_EDITORIAL_ASSESSMENT",
+                                 "resolved_source_id":  "RT-001",
+                                 "institution":  "RT",
+                                 "source_type":  "OFFICIAL_MEDIA_OR_INSTITUTION",
+                                 "source_nature":  "SECONDARY",
+                                 "authority_level":  "PRIMARY",
+                                 "editorial_role":  "DISCOVERY;CROSS_CHECK",
+                                 "primary_evidence_available":  "YES",
+                                 "resolution":  "EXACT_REGISTRY_MATCH"
+                             },
+                             {
+                                 "claim_id":  "CLM-00000003",
+                                 "url":  "https://rfess.es/agosto-registra-80-muertes-por-ahogamiento-y-eleva-a-389-el-balance-de-2026/",
+                                 "title":  "Agosto registra 80 muertes por ahogamiento y eleva a 389 el balance de 2026",
+                                 "source_name":  "RT",
+                                 "published_at":  "2026-09-08",
+                                 "snippet":  "El balance del verano de 2026 empeora respecto al año anterior: entre junio, julio y agosto de 2026 se registraron 264 fallecimientos frente a los 230 del mismo periodo de 2025, lo que supone 34 muertes más (un incremento cercano al 15%).",
+                                 "document_or_record":  null,
+                                 "source_role":  "UNASSESSED",
+                                 "relationship_type":  "UNKNOWN_PROVENANCE",
+                                 "lineage_id":  "LIN-UNKNOWN",
+                                 "independence_group":  "IG-UNKNOWN",
+                                 "acceptance":  "CANDIDATE_REQUIRES_EDITORIAL_ASSESSMENT",
+                                 "resolved_source_id":  "RT-001",
+                                 "institution":  "RT",
+                                 "source_type":  "OFFICIAL_MEDIA_OR_INSTITUTION",
+                                 "source_nature":  "SECONDARY",
+                                 "authority_level":  "PRIMARY",
+                                 "editorial_role":  "DISCOVERY;CROSS_CHECK",
+                                 "primary_evidence_available":  "YES",
+                                 "resolution":  "EXACT_REGISTRY_MATCH"
+                             },
+                             {
+                                 "claim_id":  "CLM-00000003",
+                                 "url":  "https://elpais.com/salud-y-bienestar/2026-09-05/el-verano-con-mas-ahogamientos-desde-que-hay-registros-como-reconocer-a-alguien-en-peligro.html",
+                                 "title":  "El verano con más ahogamientos desde que hay registros: ¿cómo reconocer a alguien en peligro?",
+                                 "source_name":  "EL PAÍS",
+                                 "published_at":  "2026-09-05",
+                                 "snippet":  "Los ahogamientos se han saldado con 363 vidas en lo que llevamos de año en España, 239 de ellas solo entre junio y agosto. Es el peor verano desde 2015, cuando comienzan a registrarse estos datos en el Informe Nacional de Ahogamientos (INA) de la Real Federación Española de Salvamento y Socorrismo (RFESS).",
+                                 "document_or_record":  null,
+                                 "source_role":  "UNASSESSED",
+                                 "relationship_type":  "UNKNOWN_PROVENANCE",
+                                 "lineage_id":  "LIN-UNKNOWN",
+                                 "independence_group":  "IG-UNKNOWN",
+                                 "acceptance":  "CANDIDATE_REQUIRES_EDITORIAL_ASSESSMENT",
+                                 "resolved_source_id":  "EL-PAIS-001",
+                                 "institution":  "EL PAÍS",
+                                 "source_type":  "MEDIA",
+                                 "source_nature":  "SECONDARY",
+                                 "authority_level":  "SECONDARY",
+                                 "editorial_role":  "DISCOVERY;CROSS_CHECK",
+                                 "primary_evidence_available":  "YES",
+                                 "resolution":  "EXACT_REGISTRY_MATCH"
+                             },
+                             {
+                                 "claim_id":  "CLM-00000004",
+                                 "url":  "https://rfess.es/agosto-registra-80-muertes-por-ahogamiento-y-eleva-a-389-el-balance-de-2026/",
+                                 "title":  "Agosto registra 80 muertes por ahogamiento y eleva a 389 el balance de 2026",
+                                 "source_name":  "RT",
+                                 "published_at":  "2026-09-08",
+                                 "snippet":  "Las personas de mayor edad mantienen la mayor incidencia. El grupo con más fallecimientos es el comprendido entre los 65 y los 74 años (68 víctimas), seguido muy de cerca por las personas de 75 años o más (66 víctimas).",
+                                 "document_or_record":  null,
+                                 "source_role":  "UNASSESSED",
+                                 "relationship_type":  "UNKNOWN_PROVENANCE",
+                                 "lineage_id":  "LIN-UNKNOWN",
+                                 "independence_group":  "IG-UNKNOWN",
+                                 "acceptance":  "CANDIDATE_REQUIRES_EDITORIAL_ASSESSMENT",
+                                 "resolved_source_id":  "RT-001",
+                                 "institution":  "RT",
+                                 "source_type":  "OFFICIAL_MEDIA_OR_INSTITUTION",
+                                 "source_nature":  "SECONDARY",
+                                 "authority_level":  "PRIMARY",
+                                 "editorial_role":  "DISCOVERY;CROSS_CHECK",
+                                 "primary_evidence_available":  "YES",
+                                 "resolution":  "EXACT_REGISTRY_MATCH"
+                             },
+                             {
+                                 "claim_id":  "CLM-00000005",
+                                 "url":  "https://rfess.es/agosto-registra-80-muertes-por-ahogamiento-y-eleva-a-389-el-balance-de-2026/",
+                                 "title":  "Agosto registra 80 muertes por ahogamiento y eleva a 389 el balance de 2026",
+                                 "source_name":  "RT",
+                                 "published_at":  "2026-09-08",
+                                 "snippet":  "En agosto: 58 hombres y 22 mujeres (72,2% de las víctimas del mes fueron hombres). En los datos acumulados clasificados por sexo figuran 299 hombres y 90 mujeres.",
+                                 "document_or_record":  null,
+                                 "source_role":  "UNASSESSED",
+                                 "relationship_type":  "UNKNOWN_PROVENANCE",
+                                 "lineage_id":  "LIN-UNKNOWN",
+                                 "independence_group":  "IG-UNKNOWN",
+                                 "acceptance":  "CANDIDATE_REQUIRES_EDITORIAL_ASSESSMENT",
+                                 "resolved_source_id":  "RT-001",
+                                 "institution":  "RT",
+                                 "source_type":  "OFFICIAL_MEDIA_OR_INSTITUTION",
+                                 "source_nature":  "SECONDARY",
+                                 "authority_level":  "PRIMARY",
+                                 "editorial_role":  "DISCOVERY;CROSS_CHECK",
+                                 "primary_evidence_available":  "YES",
+                                 "resolution":  "EXACT_REGISTRY_MATCH"
+                             },
+                             {
+                                 "claim_id":  "CLM-00000006",
+                                 "url":  "https://rfess.es/agosto-registra-80-muertes-por-ahogamiento-y-eleva-a-389-el-balance-de-2026/",
+                                 "title":  "Agosto registra 80 muertes por ahogamiento y eleva a 389 el balance de 2026",
+                                 "source_name":  "RT",
+                                 "published_at":  "2026-09-08",
+                                 "snippet":  "Desglose por comunidad autónoma (agosto): Comunidad Valenciana: 16; Andalucía: 12; Cataluña: 11; Castilla y León: 11; Canarias: 6; Baleares: 6; Galicia: 4; País Vasco: 4; Navarra: 3; Asturias: 2.",
+                                 "document_or_record":  null,
+                                 "source_role":  "UNASSESSED",
+                                 "relationship_type":  "UNKNOWN_PROVENANCE",
+                                 "lineage_id":  "LIN-UNKNOWN",
+                                 "independence_group":  "IG-UNKNOWN",
+                                 "acceptance":  "CANDIDATE_REQUIRES_EDITORIAL_ASSESSMENT",
+                                 "resolved_source_id":  "RT-001",
+                                 "institution":  "RT",
+                                 "source_type":  "OFFICIAL_MEDIA_OR_INSTITUTION",
+                                 "source_nature":  "SECONDARY",
+                                 "authority_level":  "PRIMARY",
+                                 "editorial_role":  "DISCOVERY;CROSS_CHECK",
+                                 "primary_evidence_available":  "YES",
+                                 "resolution":  "EXACT_REGISTRY_MATCH"
+                             },
+                             {
+                                 "claim_id":  "CLM-00000007",
+                                 "url":  "https://rfess.es/agosto-registra-80-muertes-por-ahogamiento-y-eleva-a-389-el-balance-de-2026/",
+                                 "title":  "Agosto registra 80 muertes por ahogamiento y eleva a 389 el balance de 2026",
+                                 "source_name":  "RT",
+                                 "published_at":  "2026-09-08",
+                                 "snippet":  "Página oficial de la Real Federación Española de Salvamento y Socorrismo, leída directamente el 11 de septiembre de 2026.",
+                                 "document_or_record":  null,
+                                 "source_role":  "UNASSESSED",
+                                 "relationship_type":  "UNKNOWN_PROVENANCE",
+                                 "lineage_id":  "LIN-UNKNOWN",
+                                 "independence_group":  "IG-UNKNOWN",
+                                 "acceptance":  "CANDIDATE_REQUIRES_EDITORIAL_ASSESSMENT",
+                                 "resolved_source_id":  "RT-001",
+                                 "institution":  "RT",
+                                 "source_type":  "OFFICIAL_MEDIA_OR_INSTITUTION",
+                                 "source_nature":  "SECONDARY",
+                                 "authority_level":  "PRIMARY",
+                                 "editorial_role":  "DISCOVERY;CROSS_CHECK",
+                                 "primary_evidence_available":  "YES",
+                                 "resolution":  "EXACT_REGISTRY_MATCH"
+                             }
+                         ],
+    "unresolved_sources":  [
+                               {
+                                   "claim_id":  "CLM-00000001",
+                                   "url":  "https://rfess.es/ina/",
+                                   "title":  "INA - RFESS",
+                                   "source_name":  "RFESS — índice oficial de informes",
+                                   "published_at":  "2025-11-25",
+                                   "snippet":  "Informe Nacional de Ahogamientos. Agosto registra 80 muertes por ahogamiento y eleva a 389 el balance de 2026. Leer más.",
+                                   "document_or_record":  null,
+                                   "source_role":  "UNASSESSED",
+                                   "relationship_type":  "UNKNOWN_PROVENANCE",
+                                   "lineage_id":  "LIN-UNKNOWN",
+                                   "independence_group":  "IG-UNKNOWN",
+                                   "acceptance":  "CANDIDATE_REQUIRES_EDITORIAL_ASSESSMENT",
+                                   "resolution":  "NO_REGISTRY_MATCH",
+                                   "candidate_source_ids":  [
+
+                                                            ]
+                               }
+                           ],
+    "source_authority":  {
+                             "assessed_at":  "2026-09-11T06:36:31.693Z",
+                             "classifications":  [
+                                                     {
+                                                         "source_id":  "RT-001",
+                                                         "source_name":  "RT",
+                                                         "authority_class":  "SECONDARY_REPRODUCTION",
+                                                         "primary_evidence_available":  true,
+                                                         "reason":  "Fuente secundaria utilizada como pista o reproducción; no sustituye la evidencia primaria.",
+                                                         "verification_required":  true
+                                                     },
+                                                     {
+                                                         "source_id":  "RT-001",
+                                                         "source_name":  "RT",
+                                                         "authority_class":  "SECONDARY_REPRODUCTION",
+                                                         "primary_evidence_available":  true,
+                                                         "reason":  "Fuente secundaria utilizada como pista o reproducción; no sustituye la evidencia primaria.",
+                                                         "verification_required":  true
+                                                     },
+                                                     {
+                                                         "source_id":  "RT-001",
+                                                         "source_name":  "RT",
+                                                         "authority_class":  "SECONDARY_REPRODUCTION",
+                                                         "primary_evidence_available":  true,
+                                                         "reason":  "Fuente secundaria utilizada como pista o reproducción; no sustituye la evidencia primaria.",
+                                                         "verification_required":  true
+                                                     },
+                                                     {
+                                                         "source_id":  "EL-PAIS-001",
+                                                         "source_name":  "EL PAÍS",
+                                                         "authority_class":  "SECONDARY_REPRODUCTION",
+                                                         "primary_evidence_available":  true,
+                                                         "reason":  "Fuente secundaria utilizada como pista o reproducción; no sustituye la evidencia primaria.",
+                                                         "verification_required":  true
+                                                     },
+                                                     {
+                                                         "source_id":  "RT-001",
+                                                         "source_name":  "RT",
+                                                         "authority_class":  "SECONDARY_REPRODUCTION",
+                                                         "primary_evidence_available":  true,
+                                                         "reason":  "Fuente secundaria utilizada como pista o reproducción; no sustituye la evidencia primaria.",
+                                                         "verification_required":  true
+                                                     },
+                                                     {
+                                                         "source_id":  "RT-001",
+                                                         "source_name":  "RT",
+                                                         "authority_class":  "SECONDARY_REPRODUCTION",
+                                                         "primary_evidence_available":  true,
+                                                         "reason":  "Fuente secundaria utilizada como pista o reproducción; no sustituye la evidencia primaria.",
+                                                         "verification_required":  true
+                                                     },
+                                                     {
+                                                         "source_id":  "RT-001",
+                                                         "source_name":  "RT",
+                                                         "authority_class":  "SECONDARY_REPRODUCTION",
+                                                         "primary_evidence_available":  true,
+                                                         "reason":  "Fuente secundaria utilizada como pista o reproducción; no sustituye la evidencia primaria.",
+                                                         "verification_required":  true
+                                                     },
+                                                     {
+                                                         "source_id":  "RT-001",
+                                                         "source_name":  "RT",
+                                                         "authority_class":  "SECONDARY_REPRODUCTION",
+                                                         "primary_evidence_available":  true,
+                                                         "reason":  "Fuente secundaria utilizada como pista o reproducción; no sustituye la evidencia primaria.",
+                                                         "verification_required":  true
+                                                     }
+                                                 ],
+                             "rule":  "La autoridad de una fuente no demuestra por sí sola todo el claim. La clasificación es una ayuda para priorizar evidencia y requiere comprobación del documento concreto."
+                         }
+}

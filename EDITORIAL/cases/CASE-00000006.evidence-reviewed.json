@@ -1,0 +1,90 @@
+{
+  "case_id": "CASE-00000006",
+  "candidates": [
+    {
+      "claim_id": "CLM-00000001",
+      "source_id": "SRC-UNRESOLVED",
+      "source_role": "CORROBORATION",
+      "assessment": "SUPPORTS",
+      "url_or_reference": "https://russpain.com/news/severe-storms-trigger-orange-alerts-across-mediterranean-spain-91642/",
+      "document_or_record": "Severe storms trigger orange alerts across Mediterranean Spain",
+      "published_at": "2026-09-09",
+      "relevant_excerpt_or_data": "AEMET spokesperson Rubén del Campo said the orange alerts are staggered: Catalonia remains under warning until 13:59, the Balearic Islands from midday, Comunidad Valenciana and Murcia from 14:00, and Almería from 16:00."
+    },
+    {
+      "claim_id": "CLM-00000001",
+      "source_id": "SRC-UNRESOLVED",
+      "source_role": "CORROBORATION",
+      "assessment": "PARTIALLY_SUPPORTS",
+      "url_or_reference": "https://www.manchestereveningnews.co.uk/news/world-news/popular-spanish-holiday-hotspots-hit-34588975",
+      "document_or_record": "Popular Spanish holiday hotspots hit with 'significant danger' weather alerts today",
+      "published_at": "2026-09-09",
+      "relevant_excerpt_or_data": "On Wednesday, September 9, AEMET has issued alerts for a whopping six different weather phenomenon [...] Storm warnings are also in place across parts of Andalusia, Catalonia, Murcia and Valencia.",
+      "note": "Confirma el aviso en Murcia, no la hora exacta de entrada en vigor."
+    },
+    {
+      "claim_id": "CLM-00000002",
+      "source_id": "SRC-UNRESOLVED",
+      "source_role": "CONTEXT",
+      "assessment": "PARTIALLY_SUPPORTS",
+      "url_or_reference": "https://russpain.com/news/severe-storms-trigger-orange-alerts-across-mediterranean-spain-91642/",
+      "document_or_record": "Severe storms trigger orange alerts across Mediterranean Spain",
+      "published_at": "2026-09-09",
+      "relevant_excerpt_or_data": "On the northern coast of Alicante, rainfall could reach up to 60 liters per square meter in 12 hours and 40 liters per square meter in just one hour [...] In Murcia, despite the storm risk, maximum temperatures could still reach 37°C.",
+      "note": "La cifra de lluvia (40L/60L) se atribuye textualmente a la costa de Alicante, no a Murcia. Solo el dato de calor (37°C) está confirmado para Murcia."
+    },
+    {
+      "claim_id": "CLM-00000002",
+      "source_id": "SRC-UNRESOLVED",
+      "source_role": "CORROBORATION",
+      "assessment": "CONTESTS",
+      "url_or_reference": "https://russpain.com/news/murcia-cools-off-after-overnight-rain-and-sudden-temperature-drop-92101/",
+      "document_or_record": "Murcia cools off after overnight rain and sudden temperature drop",
+      "published_at": "2026-09-10",
+      "relevant_excerpt_or_data": "On September 9, several areas of Murcia were under yellow and orange weather alerts due to heavy rain and storms, with local downpours reaching up to 30 litres per square metre in an hour.",
+      "note": "Dato real posterior (30L/m²/h) inferior al previsto (40L/m²/h) en el claim."
+    },
+    {
+      "claim_id": "CLM-00000003",
+      "source_id": "SRC-UNRESOLVED",
+      "source_role": "CORROBORATION",
+      "assessment": "CONTESTS",
+      "url_or_reference": "https://russpain.com/news/murcia-cools-off-after-overnight-rain-and-sudden-temperature-drop-92101/",
+      "document_or_record": "Murcia cools off after overnight rain and sudden temperature drop",
+      "published_at": "2026-09-10",
+      "relevant_excerpt_or_data": "According to the Agencia Estatal de Meteorología (AEMET), any rain will be limited to the early hours, and while there is still a chance of storms, they are not expected to cause problems. [...] the worst storms have mostly missed the area.",
+      "note": "Fuente posterior indica que no se materializó el riesgo de inundación descrito en el claim."
+    },
+    {
+      "claim_id": "CLM-00000004",
+      "source_id": "SRC-UNRESOLVED",
+      "source_role": "CORROBORATION",
+      "assessment": "SUPPORTS",
+      "url_or_reference": "https://russpain.com/news/severe-storms-trigger-orange-alerts-across-mediterranean-spain-91642/",
+      "document_or_record": "Severe storms trigger orange alerts across Mediterranean Spain",
+      "published_at": "2026-09-09",
+      "relevant_excerpt_or_data": "AEMET spokesperson Rubén del Campo said the orange alerts are staggered: [...] Comunidad Valenciana and Murcia from 14:00."
+    },
+    {
+      "claim_id": "CLM-00000004",
+      "source_id": "SRC-UNRESOLVED",
+      "source_role": "CORROBORATION",
+      "assessment": "SUPPORTS",
+      "url_or_reference": "https://euroweeklynews.com/2026/09/08/spains-record-heat-breaks-with-a-10oc-drop-and-alicante-gets-hail-on-the-first-day-back-at-school/",
+      "document_or_record": "Spain's record heat breaks with a 10ºC drop, and Alicante gets hail on the first day back at school",
+      "published_at": "2026-09-08",
+      "relevant_excerpt_or_data": "AEMET spokesman Rubén del Campo said Wednesday would bring \"an accentuated temperature drop in much of the territory\" [...] Murcia and southern Andalucía still expected to pass 36ºC."
+    },
+    {
+      "claim_id": "CLM-00000004",
+      "source_id": "SRC-UNRESOLVED",
+      "source_role": "CORROBORATION",
+      "assessment": "PARTIALLY_SUPPORTS",
+      "url_or_reference": "https://www.manchestereveningnews.co.uk/news/world-news/popular-spanish-holiday-hotspots-hit-34588975",
+      "document_or_record": "Popular Spanish holiday hotspots hit with 'significant danger' weather alerts today",
+      "published_at": "2026-09-09",
+      "relevant_excerpt_or_data": "On Wednesday, September 9, AEMET has issued alerts [...] Storm warnings are also in place across parts of Andalusia, Catalonia, Murcia and Valencia.",
+      "note": "Confirma el aviso oficial, no cita directamente al portavoz."
+    }
+  ]
+}

@@ -1,0 +1,984 @@
+{
+  "case_id": "CASE-00000006",
+  "created_at": "2026-09-09T13:39:59.094Z",
+  "status": "RECHECK_REQUIRED",
+  "input_fingerprint": "68592ED2",
+  "input": {
+    "input_type": "document",
+    "input_reference": "lead-aviso-naranja-tormentas-murcia.txt",
+    "input_text": "La Agencia Estatal de Meteorología (AEMET) ha activado un aviso naranja por tormentas para la Región de Murcia el 9 de septiembre de 2026, con entrada en vigor a las 14:00 horas. El aviso prevé lluvias que pueden alcanzar los 40 litros por metro cuadrado en una hora y hasta 60 en doce horas, con riesgo de granizo grande y rachas de viento fuertes, tras varios días previos de calor intenso en la región (temperaturas por encima de 36-37°C). El riesgo principal es de inundación repentina en ramblas y zonas bajas por la combinación de suelo recalentado y lluvia torrencial. La confirmación de los datos del aviso (nivel, horario, valores previstos) procede de declaraciones directas del portavoz de AEMET, Rubén del Campo, recogidas por tres medios independientes (russpain.com, Euro Weekly News, barna.news) el 8-9 de septiembre de 2026 — no de una lectura directa de la página de avisos de aemet.es, que es contenido dinámico (JavaScript) y no devolvió datos al intentar leerla directamente. Se recomienda confirmar el aviso contra la web oficial de AEMET (aemet.es, sección avisos, Región de Murcia) antes de dar el caso por verificado.\n"
+  },
+  "workflow": {
+    "claims": "READY_FOR_SOURCE_RESEARCH",
+    "sources": "SOURCES_RESOLVED_REVIEW_REQUIRED",
+    "evidence": "REGISTERED_REQUIRES_PROVENANCE_CHECK",
+    "provenance": "PENDING_CHECK",
+    "contradictions": "PENDING",
+    "verification": "RECHECK_REQUIRED",
+    "draft": "PENDING",
+    "validation": "PENDING",
+    "editorial_gate": "PENDING",
+    "dependencies": "ASSESSED",
+    "source_authority": "CLASSIFIED_REQUIRES_DOCUMENT_CHECK",
+    "evidence_sufficiency": "NO_SUFFICIENT_EVIDENCE",
+    "source_independence": "NO_INDEPENDENT_CORROBORATION_COUNTED",
+    "temporal_verification": "TEMPORAL_ASSESSED"
+  },
+  "publication": {
+    "allowed": false,
+    "reason": "La suficiencia documental no sustituye la verificación ni la aprobación editorial humana."
+  },
+  "claims": [
+    {
+      "claim_id": "CLM-00000001",
+      "type": "FACT",
+      "claim": "La Agencia Estatal de Meteorología (AEMET) ha activado un aviso naranja por tormentas para la Región de Murcia el 9 de septiembre de 2026, con entrada en vigor a las 14:00 horas.",
+      "importance": "IMPORTANT",
+      "verification_status": "UNASSESSED",
+      "evidence_required": [
+        "primary_or_documentary_evidence"
+      ]
+    },
+    {
+      "claim_id": "CLM-00000002",
+      "type": "FACT",
+      "claim": "El aviso prevé lluvias que pueden alcanzar los 40 litros por metro cuadrado en una hora y hasta 60 en doce horas, con riesgo de granizo grande y rachas de viento fuertes, tras varios días previos de calor intenso en la región (temperaturas por encima de 36-37°C).",
+      "importance": "IMPORTANT",
+      "verification_status": "UNASSESSED",
+      "evidence_required": [
+        "primary_or_documentary_evidence"
+      ]
+    },
+    {
+      "claim_id": "CLM-00000003",
+      "type": "FACT",
+      "claim": "El riesgo principal es de inundación repentina en ramblas y zonas bajas por la combinación de suelo recalentado y lluvia torrencial.",
+      "importance": "IMPORTANT",
+      "verification_status": "UNASSESSED",
+      "evidence_required": [
+        "primary_or_documentary_evidence"
+      ]
+    },
+    {
+      "claim_id": "CLM-00000004",
+      "type": "FACT",
+      "claim": "La confirmación de los datos del aviso (nivel, horario, valores previstos) procede de declaraciones directas del portavoz de AEMET, Rubén del Campo, recogidas por tres medios independientes (russpain.com, Euro Weekly News, barna.news) el 8-9 de septiembre de 2026 — no de una lectura directa de la página de avisos de aemet.es, que es contenido dinámico (JavaScript) y no devolvió datos al intentar leerla directamente.",
+      "importance": "CONTEXTUAL",
+      "verification_status": "UNASSESSED",
+      "evidence_required": [
+        "primary_or_documentary_evidence"
+      ]
+    },
+    {
+      "claim_id": "CLM-00000005",
+      "type": "FACT",
+      "claim": "Se recomienda confirmar el aviso contra la web oficial de AEMET (aemet.es, sección avisos, Región de Murcia) antes de dar el caso por verificado.",
+      "importance": "CONTEXTUAL",
+      "verification_status": "UNASSESSED",
+      "evidence_required": [
+        "primary_or_documentary_evidence"
+      ]
+    }
+  ],
+  "claims_engine": {
+    "version": "2.0",
+    "generated_at": "2026-09-09T13:40:36.131Z",
+    "mode": "DETERMINISTIC_ATOMIC_DECOMPOSITION",
+    "input_units": 5,
+    "note": "Descomposición conservadora. La clasificación no verifica hechos ni añade información que no figure en la entrada."
+  },
+  "claim_dependencies": [],
+  "dependency_analysis": {
+    "version": "1.0",
+    "analyzed_at": "2026-09-09T13:41:16.600Z",
+    "explicit_only": true,
+    "dependency_count": 0,
+    "affected_claims": [],
+    "cycles": [],
+    "status": "ASSESSED",
+    "rule": "Las dependencias no se infieren por proximidad temática. Una afirmación derivada no puede superar el estado de certeza de sus dependencias."
+  },
+  "research_plan": {
+    "version": "1.0",
+    "generated_at": "2026-09-10T07:24:05.914Z",
+    "mode": "DETERMINISTIC_SOURCE_TARGETING",
+    "plans": [
+      {
+        "claim_id": "CLM-00000001",
+        "priority": "IMPORTANT",
+        "evidence_required": [
+          "primary_or_documentary_evidence"
+        ],
+        "source_targets": [
+          "PRIMARY_DOCUMENT",
+          "OFFICIAL_DATA",
+          "INDEPENDENT_CORROBORATION"
+        ],
+        "search_questions": [
+          "¿Qué documento, registro o declaración de primera mano respalda: La Agencia Estatal de Meteorología (AEMET) ha activado un aviso naranja por tormentas para la Región de Murcia el 9 de septiembre de 2026, con entrada en vigor a las 14:00 horas.?",
+          "¿La fuente es actual y corresponde al hecho concreto?",
+          "¿Existe una fuente independiente que permita contrastarlo?"
+        ],
+        "status": "PENDING_RESEARCH"
+      },
+      {
+        "claim_id": "CLM-00000002",
+        "priority": "IMPORTANT",
+        "evidence_required": [
+          "primary_or_documentary_evidence"
+        ],
+        "source_targets": [
+          "PRIMARY_DOCUMENT",
+          "OFFICIAL_DATA",
+          "INDEPENDENT_CORROBORATION"
+        ],
+        "search_questions": [
+          "¿Qué documento, registro o declaración de primera mano respalda: El aviso prevé lluvias que pueden alcanzar los 40 litros por metro cuadrado en una hora y hasta 60 en doce horas, con riesgo de granizo grande y rachas de viento fuertes, tras varios días previos de calor intenso en la región (temperaturas por encima de 36-37°C).?",
+          "¿La fuente es actual y corresponde al hecho concreto?",
+          "¿Existe una fuente independiente que permita contrastarlo?"
+        ],
+        "status": "PENDING_RESEARCH"
+      },
+      {
+        "claim_id": "CLM-00000003",
+        "priority": "IMPORTANT",
+        "evidence_required": [
+          "primary_or_documentary_evidence"
+        ],
+        "source_targets": [
+          "PRIMARY_DOCUMENT",
+          "OFFICIAL_DATA",
+          "INDEPENDENT_CORROBORATION"
+        ],
+        "search_questions": [
+          "¿Qué documento, registro o declaración de primera mano respalda: El riesgo principal es de inundación repentina en ramblas y zonas bajas por la combinación de suelo recalentado y lluvia torrencial.?",
+          "¿La fuente es actual y corresponde al hecho concreto?",
+          "¿Existe una fuente independiente que permita contrastarlo?"
+        ],
+        "status": "PENDING_RESEARCH"
+      },
+      {
+        "claim_id": "CLM-00000004",
+        "priority": "CONTEXTUAL",
+        "evidence_required": [
+          "primary_or_documentary_evidence"
+        ],
+        "source_targets": [
+          "PRIMARY_DOCUMENT",
+          "OFFICIAL_DATA",
+          "INDEPENDENT_CORROBORATION"
+        ],
+        "search_questions": [
+          "¿Qué documento, registro o declaración de primera mano respalda: La confirmación de los datos del aviso (nivel, horario, valores previstos) procede de declaraciones directas del portavoz de AEMET, Rubén del Campo, recogidas por tres medios independientes (russpain.com, Euro Weekly News, barna.news) el 8-9 de septiembre de 2026 — no de una lectura directa de la página de avisos de aemet.es, que es contenido dinámico (JavaScript) y no devolvió datos al intentar leerla directamente.?",
+          "¿La fuente es actual y corresponde al hecho concreto?",
+          "¿Existe una fuente independiente que permita contrastarlo?"
+        ],
+        "status": "PENDING_RESEARCH"
+      },
+      {
+        "claim_id": "CLM-00000005",
+        "priority": "CONTEXTUAL",
+        "evidence_required": [
+          "primary_or_documentary_evidence"
+        ],
+        "source_targets": [
+          "PRIMARY_DOCUMENT",
+          "OFFICIAL_DATA",
+          "INDEPENDENT_CORROBORATION"
+        ],
+        "search_questions": [
+          "¿Qué documento, registro o declaración de primera mano respalda: Se recomienda confirmar el aviso contra la web oficial de AEMET (aemet.es, sección avisos, Región de Murcia) antes de dar el caso por verificado.?",
+          "¿La fuente es actual y corresponde al hecho concreto?",
+          "¿Existe una fuente independiente que permita contrastarlo?"
+        ],
+        "status": "PENDING_RESEARCH"
+      }
+    ],
+    "rule": "Encontrar una fuente no equivale a aceptar la evidencia ni a verificar el claim."
+  },
+  "source_resolution": {
+    "resolved_at": "2026-09-10T08:13:56.149Z",
+    "registry": "editorial/sources/MASTER_SOURCE_REGISTRY_NORMALIZED.csv",
+    "candidates_received": 8,
+    "resolved": 2,
+    "unresolved": 6,
+    "rule": "Solo se asigna una fuente cuando existe una coincidencia única con el registro maestro. Las coincidencias ambiguas o inexistentes requieren revisión humana."
+  },
+  "resolved_sources": [
+    {
+      "claim_id": "CLM-00000001",
+      "url": "https://manchestereveningnews.co.uk/news/world-news/popular-spanish-holiday-hotspots-hit-34588975",
+      "title": "Popular Spanish holiday hotspots hit with 'significant danger' weather alerts today",
+      "source_name": "RT",
+      "published_at": "2026-09-09",
+      "snippet": "On Wednesday, September 9, AEMET has issued alerts for a whopping six different weather phenomenon - rain, storms, rissaga, coastal, wind, and extreme heat. [...] Storm warnings are also in place across parts of Andalusia, Catalonia, Murcia and Valencia.",
+      "document_or_record": null,
+      "source_role": "UNASSESSED",
+      "relationship_type": "UNKNOWN_PROVENANCE",
+      "lineage_id": "LIN-UNKNOWN",
+      "independence_group": "IG-UNKNOWN",
+      "acceptance": "CANDIDATE_REQUIRES_EDITORIAL_ASSESSMENT",
+      "resolved_source_id": "RT-001",
+      "institution": "RT",
+      "source_type": "OFFICIAL_MEDIA_OR_INSTITUTION",
+      "source_nature": "SECONDARY",
+      "authority_level": "PRIMARY",
+      "editorial_role": "DISCOVERY;CROSS_CHECK",
+      "primary_evidence_available": "YES",
+      "resolution": "EXACT_REGISTRY_MATCH"
+    },
+    {
+      "claim_id": "CLM-00000004",
+      "url": "https://manchestereveningnews.co.uk/news/world-news/popular-spanish-holiday-hotspots-hit-34588975",
+      "title": "Popular Spanish holiday hotspots hit with 'significant danger' weather alerts today",
+      "source_name": "RT",
+      "published_at": "2026-09-09",
+      "snippet": "On Wednesday, September 9, AEMET has issued alerts for a whopping six different weather phenomenon [...] Storm warnings are also in place across parts of Andalusia, Catalonia, Murcia and Valencia.",
+      "document_or_record": null,
+      "source_role": "UNASSESSED",
+      "relationship_type": "UNKNOWN_PROVENANCE",
+      "lineage_id": "LIN-UNKNOWN",
+      "independence_group": "IG-UNKNOWN",
+      "acceptance": "CANDIDATE_REQUIRES_EDITORIAL_ASSESSMENT",
+      "resolved_source_id": "RT-001",
+      "institution": "RT",
+      "source_type": "OFFICIAL_MEDIA_OR_INSTITUTION",
+      "source_nature": "SECONDARY",
+      "authority_level": "PRIMARY",
+      "editorial_role": "DISCOVERY;CROSS_CHECK",
+      "primary_evidence_available": "YES",
+      "resolution": "EXACT_REGISTRY_MATCH"
+    }
+  ],
+  "unresolved_sources": [
+    {
+      "claim_id": "CLM-00000001",
+      "url": "https://russpain.com/news/severe-storms-trigger-orange-alerts-across-mediterranean-spain-91642",
+      "title": "Severe storms trigger orange alerts across Mediterranean Spain",
+      "source_name": "RussSpain",
+      "published_at": "2026-09-09",
+      "snippet": "AEMET spokesperson Rubén del Campo said the orange alerts are staggered: Catalonia remains under warning until 13:59, the Balearic Islands from midday, Comunidad Valenciana and Murcia from 14:00, and Almería from 16:00.",
+      "document_or_record": null,
+      "source_role": "UNASSESSED",
+      "relationship_type": "UNKNOWN_PROVENANCE",
+      "lineage_id": "LIN-UNKNOWN",
+      "independence_group": "IG-UNKNOWN",
+      "acceptance": "CANDIDATE_REQUIRES_EDITORIAL_ASSESSMENT",
+      "resolution": "AMBIGUOUS_REGISTRY_MATCH",
+      "candidate_source_ids": [
+        "CONGRESO-001",
+        "TC-001",
+        "RT-001"
+      ]
+    },
+    {
+      "claim_id": "CLM-00000002",
+      "url": "https://russpain.com/news/severe-storms-trigger-orange-alerts-across-mediterranean-spain-91642",
+      "title": "Severe storms trigger orange alerts across Mediterranean Spain",
+      "source_name": "RussSpain",
+      "published_at": "2026-09-09",
+      "snippet": "On the coast of Alicante, rainfall could reach up to 60 liters per square meter in 12 hours and 40 liters per square meter in just one hour, with a risk of large hail and strong winds. [...] In Murcia, despite the storm risk, maximum temperatures could still reach 37°C, showing the mix of heat and instability.",
+      "document_or_record": null,
+      "source_role": "UNASSESSED",
+      "relationship_type": "UNKNOWN_PROVENANCE",
+      "lineage_id": "LIN-UNKNOWN",
+      "independence_group": "IG-UNKNOWN",
+      "acceptance": "CANDIDATE_REQUIRES_EDITORIAL_ASSESSMENT",
+      "resolution": "AMBIGUOUS_REGISTRY_MATCH",
+      "candidate_source_ids": [
+        "CONGRESO-001",
+        "TC-001",
+        "RT-001"
+      ]
+    },
+    {
+      "claim_id": "CLM-00000002",
+      "url": "https://russpain.com/news/murcia-cools-off-after-overnight-rain-and-sudden-temperature-drop-92101",
+      "title": "Murcia cools off after overnight rain and sudden temperature drop",
+      "source_name": "RussSpain",
+      "published_at": "2026-09-10",
+      "snippet": "On September 9, several areas of Murcia were under yellow and orange weather alerts due to heavy rain and storms, with local downpours reaching up to 30 litres per square metre in an hour.",
+      "document_or_record": null,
+      "source_role": "UNASSESSED",
+      "relationship_type": "UNKNOWN_PROVENANCE",
+      "lineage_id": "LIN-UNKNOWN",
+      "independence_group": "IG-UNKNOWN",
+      "acceptance": "CANDIDATE_REQUIRES_EDITORIAL_ASSESSMENT",
+      "resolution": "AMBIGUOUS_REGISTRY_MATCH",
+      "candidate_source_ids": [
+        "CONGRESO-001",
+        "TC-001"
+      ]
+    },
+    {
+      "claim_id": "CLM-00000003",
+      "url": "https://russpain.com/news/murcia-cools-off-after-overnight-rain-and-sudden-temperature-drop-92101",
+      "title": "Murcia cools off after overnight rain and sudden temperature drop",
+      "source_name": "RussSpain",
+      "published_at": "2026-09-10",
+      "snippet": "According to the Agencia Estatal de Meteorología (AEMET), any rain will be limited to the early hours, and while there is still a chance of storms, they are not expected to cause problems. [...] the worst storms have mostly missed the area, as reported earlier in Barcelona.",
+      "document_or_record": null,
+      "source_role": "UNASSESSED",
+      "relationship_type": "UNKNOWN_PROVENANCE",
+      "lineage_id": "LIN-UNKNOWN",
+      "independence_group": "IG-UNKNOWN",
+      "acceptance": "CANDIDATE_REQUIRES_EDITORIAL_ASSESSMENT",
+      "resolution": "AMBIGUOUS_REGISTRY_MATCH",
+      "candidate_source_ids": [
+        "CONGRESO-001",
+        "TC-001"
+      ]
+    },
+    {
+      "claim_id": "CLM-00000004",
+      "url": "https://russpain.com/news/severe-storms-trigger-orange-alerts-across-mediterranean-spain-91642",
+      "title": "Severe storms trigger orange alerts across Mediterranean Spain",
+      "source_name": "RussSpain",
+      "published_at": "2026-09-09",
+      "snippet": "AEMET spokesperson Rubén del Campo said the orange alerts are staggered: [...] Comunidad Valenciana and Murcia from 14:00.",
+      "document_or_record": null,
+      "source_role": "UNASSESSED",
+      "relationship_type": "UNKNOWN_PROVENANCE",
+      "lineage_id": "LIN-UNKNOWN",
+      "independence_group": "IG-UNKNOWN",
+      "acceptance": "CANDIDATE_REQUIRES_EDITORIAL_ASSESSMENT",
+      "resolution": "AMBIGUOUS_REGISTRY_MATCH",
+      "candidate_source_ids": [
+        "CONGRESO-001",
+        "TC-001",
+        "RT-001"
+      ]
+    },
+    {
+      "claim_id": "CLM-00000004",
+      "url": "https://euroweeklynews.com/2026/09/08/spains-record-heat-breaks-with-a-10oc-drop-and-alicante-gets-hail-on-the-first-day-back-at-school",
+      "title": "Spain's record heat breaks with a 10ºC drop, and Alicante gets hail on the first day back at school",
+      "source_name": "Euro Weekly News",
+      "published_at": "2026-09-08",
+      "snippet": "AEMET spokesman Rubén del Campo said Wednesday would bring \"an accentuated temperature drop in much of the territory\" [...] The southeast holds on to the heat through Wednesday, with Murcia and southern Andalucía still expected to pass 36ºC.",
+      "document_or_record": null,
+      "source_role": "UNASSESSED",
+      "relationship_type": "UNKNOWN_PROVENANCE",
+      "lineage_id": "LIN-UNKNOWN",
+      "independence_group": "IG-UNKNOWN",
+      "acceptance": "CANDIDATE_REQUIRES_EDITORIAL_ASSESSMENT",
+      "resolution": "AMBIGUOUS_REGISTRY_MATCH",
+      "candidate_source_ids": [
+        "CONGRESO-001",
+        "TC-001"
+      ]
+    }
+  ],
+  "source_authority": {
+    "assessed_at": "2026-09-10T08:14:37.040Z",
+    "classifications": [
+      {
+        "source_id": "RT-001",
+        "source_name": "RT",
+        "authority_class": "SECONDARY_REPRODUCTION",
+        "primary_evidence_available": true,
+        "reason": "Fuente secundaria utilizada como pista o reproducción; no sustituye la evidencia primaria.",
+        "verification_required": true
+      },
+      {
+        "source_id": "RT-001",
+        "source_name": "RT",
+        "authority_class": "SECONDARY_REPRODUCTION",
+        "primary_evidence_available": true,
+        "reason": "Fuente secundaria utilizada como pista o reproducción; no sustituye la evidencia primaria.",
+        "verification_required": true
+      }
+    ],
+    "rule": "La autoridad de una fuente no demuestra por sí sola todo el claim. La clasificación es una ayuda para priorizar evidencia y requiere comprobación del documento concreto."
+  },
+  "evidence_sufficiency": {
+    "assessed_at": "2026-09-10T08:24:21.437Z",
+    "status": "NO_SUFFICIENT_EVIDENCE",
+    "claims": [
+      {
+        "claim_id": "CLM-00000001",
+        "type": "FACT",
+        "importance": "IMPORTANT",
+        "status": "INSUFFICIENT",
+        "reason": "La procedencia de una o más evidencias no está suficientemente documentada.",
+        "evidence_ids": [
+          "EVD-00000001",
+          "EVD-00000002"
+        ],
+        "checks": {
+          "documentary_identity": true,
+          "provenance_known": false,
+          "source_authority_adequate": true,
+          "temporal_requirement_satisfied": true,
+          "dependencies_resolved": true,
+          "supporting_evidence": true,
+          "partial_support": true,
+          "contradiction_present": false
+        }
+      },
+      {
+        "claim_id": "CLM-00000002",
+        "type": "FACT",
+        "importance": "IMPORTANT",
+        "status": "CONTESTED",
+        "reason": "Existe evidencia contradictoria o una contradicción material pendiente.",
+        "evidence_ids": [
+          "EVD-00000003",
+          "EVD-00000004"
+        ],
+        "checks": {
+          "documentary_identity": true,
+          "provenance_known": false,
+          "source_authority_adequate": true,
+          "temporal_requirement_satisfied": true,
+          "dependencies_resolved": true,
+          "supporting_evidence": false,
+          "partial_support": true,
+          "contradiction_present": true
+        }
+      },
+      {
+        "claim_id": "CLM-00000003",
+        "type": "FACT",
+        "importance": "IMPORTANT",
+        "status": "CONTESTED",
+        "reason": "Existe evidencia contradictoria o una contradicción material pendiente.",
+        "evidence_ids": [
+          "EVD-00000005"
+        ],
+        "checks": {
+          "documentary_identity": true,
+          "provenance_known": false,
+          "source_authority_adequate": true,
+          "temporal_requirement_satisfied": true,
+          "dependencies_resolved": true,
+          "supporting_evidence": false,
+          "partial_support": false,
+          "contradiction_present": true
+        }
+      },
+      {
+        "claim_id": "CLM-00000004",
+        "type": "FACT",
+        "importance": "CONTEXTUAL",
+        "status": "INSUFFICIENT",
+        "reason": "La procedencia de una o más evidencias no está suficientemente documentada.",
+        "evidence_ids": [
+          "EVD-00000006",
+          "EVD-00000007",
+          "EVD-00000008"
+        ],
+        "checks": {
+          "documentary_identity": true,
+          "provenance_known": false,
+          "source_authority_adequate": true,
+          "temporal_requirement_satisfied": true,
+          "dependencies_resolved": true,
+          "supporting_evidence": true,
+          "partial_support": true,
+          "contradiction_present": false
+        }
+      },
+      {
+        "claim_id": "CLM-00000005",
+        "type": "FACT",
+        "importance": "CONTEXTUAL",
+        "status": "UNASSESSED",
+        "reason": "No hay evidencia documental vinculada al claim.",
+        "evidence_ids": [],
+        "checks": {
+          "documentary_identity": true,
+          "provenance_known": true,
+          "source_authority_adequate": false,
+          "temporal_requirement_satisfied": true,
+          "dependencies_resolved": true,
+          "supporting_evidence": false,
+          "partial_support": false,
+          "contradiction_present": false
+        }
+      }
+    ],
+    "sufficient_claims": [],
+    "partially_sufficient_claims": [],
+    "blocking_claims": [
+      "CLM-00000001",
+      "CLM-00000002",
+      "CLM-00000003",
+      "CLM-00000004"
+    ],
+    "contested_claims": [
+      "CLM-00000002",
+      "CLM-00000003"
+    ],
+    "rule": "La suficiencia se determina por claim. EVIDENCIA ENCONTRADA no equivale a EVIDENCIA SUFICIENTE y la suficiencia no equivale a verdad material."
+  },
+  "source_independence": {
+    "assessed_at": "2026-09-10T07:31:48.890Z",
+    "status": "UNKNOWN_INDEPENDENCE",
+    "findings": [],
+    "independent_candidates": [],
+    "excluded_from_independent_count": [],
+    "rule": "Las reproducciones, citas, agregaciones o evidencias del mismo linaje no crean corroboración independiente.",
+    "human_review_required": false
+  },
+  "temporal_verification": {
+    "assessed_at": "2026-09-10T07:31:49.967Z",
+    "status": "ASSESSED",
+    "claims": [
+      {
+        "claim_id": "CLM-00000001",
+        "type": "FACT",
+        "importance": "IMPORTANT",
+        "temporal_requirement": true,
+        "status": "TEMPORALLY_UNASSESSED",
+        "reason": "El claim es temporalmente sensible pero todavía no tiene evidencia vinculada.",
+        "evidence_ids": [],
+        "claim_years": [
+          2026
+        ],
+        "evidence_years": [],
+        "latest_evidence_date": null,
+        "checks": {
+          "temporal_data_present": false,
+          "explicit_period_match": false,
+          "superseded_evidence": false
+        }
+      },
+      {
+        "claim_id": "CLM-00000002",
+        "type": "FACT",
+        "importance": "IMPORTANT",
+        "temporal_requirement": false,
+        "status": "CURRENTLY_SUPPORTED",
+        "reason": "El claim no presenta una exigencia temporal específica y no hay evidencia que revisar.",
+        "evidence_ids": [],
+        "claim_years": [],
+        "evidence_years": [],
+        "latest_evidence_date": null,
+        "checks": {
+          "temporal_data_present": false,
+          "explicit_period_match": true,
+          "superseded_evidence": false
+        }
+      },
+      {
+        "claim_id": "CLM-00000003",
+        "type": "FACT",
+        "importance": "IMPORTANT",
+        "temporal_requirement": false,
+        "status": "CURRENTLY_SUPPORTED",
+        "reason": "El claim no presenta una exigencia temporal específica y no hay evidencia que revisar.",
+        "evidence_ids": [],
+        "claim_years": [],
+        "evidence_years": [],
+        "latest_evidence_date": null,
+        "checks": {
+          "temporal_data_present": false,
+          "explicit_period_match": true,
+          "superseded_evidence": false
+        }
+      },
+      {
+        "claim_id": "CLM-00000004",
+        "type": "FACT",
+        "importance": "CONTEXTUAL",
+        "temporal_requirement": false,
+        "status": "CURRENTLY_SUPPORTED",
+        "reason": "El claim no presenta una exigencia temporal específica y no hay evidencia que revisar.",
+        "evidence_ids": [],
+        "claim_years": [
+          2026
+        ],
+        "evidence_years": [],
+        "latest_evidence_date": null,
+        "checks": {
+          "temporal_data_present": false,
+          "explicit_period_match": false,
+          "superseded_evidence": false
+        }
+      },
+      {
+        "claim_id": "CLM-00000005",
+        "type": "FACT",
+        "importance": "CONTEXTUAL",
+        "temporal_requirement": false,
+        "status": "CURRENTLY_SUPPORTED",
+        "reason": "El claim no presenta una exigencia temporal específica y no hay evidencia que revisar.",
+        "evidence_ids": [],
+        "claim_years": [],
+        "evidence_years": [],
+        "latest_evidence_date": null,
+        "checks": {
+          "temporal_data_present": false,
+          "explicit_period_match": true,
+          "superseded_evidence": false
+        }
+      }
+    ],
+    "currently_supported_claims": [
+      "CLM-00000002",
+      "CLM-00000003",
+      "CLM-00000004",
+      "CLM-00000005"
+    ],
+    "historically_supported_claims": [],
+    "partially_aligned_claims": [],
+    "contested_claims": [],
+    "unresolved_claims": [
+      "CLM-00000001"
+    ],
+    "rule": "La fecha y el periodo forman parte de la evaluación de la evidencia cuando el claim puede cambiar con el tiempo. Adecuación temporal no equivale a verdad material."
+  },
+  "verification": {
+    "assessed_at": "2026-09-10T07:31:51.033Z",
+    "status": "RECHECK_REQUIRED",
+    "completed": false,
+    "claims": [
+      {
+        "claim_id": "CLM-00000001",
+        "type": "FACT",
+        "importance": "IMPORTANT",
+        "status": "RECHECK_REQUIRED",
+        "reason": "La adecuación temporal de la evidencia no está completamente establecida.",
+        "evidence_ids": [],
+        "sufficiency_status": "UNASSESSED",
+        "temporal_status": "TEMPORALLY_UNASSESSED"
+      },
+      {
+        "claim_id": "CLM-00000002",
+        "type": "FACT",
+        "importance": "IMPORTANT",
+        "status": "INSUFFICIENT",
+        "reason": "No existe evidencia evaluada como SUPPORTS.",
+        "evidence_ids": [],
+        "sufficiency_status": "UNASSESSED",
+        "temporal_status": "CURRENTLY_SUPPORTED"
+      },
+      {
+        "claim_id": "CLM-00000003",
+        "type": "FACT",
+        "importance": "IMPORTANT",
+        "status": "INSUFFICIENT",
+        "reason": "No existe evidencia evaluada como SUPPORTS.",
+        "evidence_ids": [],
+        "sufficiency_status": "UNASSESSED",
+        "temporal_status": "CURRENTLY_SUPPORTED"
+      },
+      {
+        "claim_id": "CLM-00000004",
+        "type": "FACT",
+        "importance": "CONTEXTUAL",
+        "status": "INSUFFICIENT",
+        "reason": "No existe evidencia evaluada como SUPPORTS.",
+        "evidence_ids": [],
+        "sufficiency_status": "UNASSESSED",
+        "temporal_status": "CURRENTLY_SUPPORTED"
+      },
+      {
+        "claim_id": "CLM-00000005",
+        "type": "FACT",
+        "importance": "CONTEXTUAL",
+        "status": "INSUFFICIENT",
+        "reason": "No existe evidencia evaluada como SUPPORTS.",
+        "evidence_ids": [],
+        "sufficiency_status": "UNASSESSED",
+        "temporal_status": "CURRENTLY_SUPPORTED"
+      }
+    ],
+    "verified_claims": [],
+    "blocking_claims": [
+      "CLM-00000001",
+      "CLM-00000002",
+      "CLM-00000003",
+      "CLM-00000004",
+      "CLM-00000005"
+    ],
+    "human_approval": false
+  },
+  "publishable_scope": {
+    "status": "NONE",
+    "claim_ids": [],
+    "rule": "Solo pueden publicarse como hechos las afirmaciones con estado VERIFIED. Las demás quedan fuera del alcance factual de la pieza y no pueden presentarse como hechos verificados."
+  },
+  "web_research": {
+    "imported_at": "2026-09-10T08:00:23.176Z",
+    "research_run_id": null,
+    "provider": "claude-web-search",
+    "status": "RESULTS_IMPORTED",
+    "result_count": 8,
+    "rejected_count": 1
+  },
+  "web_results": [
+    {
+      "claim_id": "CLM-00000001",
+      "url": "https://russpain.com/news/severe-storms-trigger-orange-alerts-across-mediterranean-spain-91642",
+      "title": "Severe storms trigger orange alerts across Mediterranean Spain",
+      "source_name": "RussSpain",
+      "published_at": "2026-09-09",
+      "snippet": "AEMET spokesperson Rubén del Campo said the orange alerts are staggered: Catalonia remains under warning until 13:59, the Balearic Islands from midday, Comunidad Valenciana and Murcia from 14:00, and Almería from 16:00.",
+      "document_or_record": null,
+      "source_role": "UNASSESSED",
+      "relationship_type": "UNKNOWN_PROVENANCE",
+      "lineage_id": "LIN-UNKNOWN",
+      "independence_group": "IG-UNKNOWN",
+      "acceptance": "CANDIDATE_REQUIRES_EDITORIAL_ASSESSMENT"
+    },
+    {
+      "claim_id": "CLM-00000001",
+      "url": "https://manchestereveningnews.co.uk/news/world-news/popular-spanish-holiday-hotspots-hit-34588975",
+      "title": "Popular Spanish holiday hotspots hit with 'significant danger' weather alerts today",
+      "source_name": "Manchester Evening News",
+      "published_at": "2026-09-09",
+      "snippet": "On Wednesday, September 9, AEMET has issued alerts for a whopping six different weather phenomenon - rain, storms, rissaga, coastal, wind, and extreme heat. [...] Storm warnings are also in place across parts of Andalusia, Catalonia, Murcia and Valencia.",
+      "document_or_record": null,
+      "source_role": "UNASSESSED",
+      "relationship_type": "UNKNOWN_PROVENANCE",
+      "lineage_id": "LIN-UNKNOWN",
+      "independence_group": "IG-UNKNOWN",
+      "acceptance": "CANDIDATE_REQUIRES_EDITORIAL_ASSESSMENT"
+    },
+    {
+      "claim_id": "CLM-00000002",
+      "url": "https://russpain.com/news/severe-storms-trigger-orange-alerts-across-mediterranean-spain-91642",
+      "title": "Severe storms trigger orange alerts across Mediterranean Spain",
+      "source_name": "RussSpain",
+      "published_at": "2026-09-09",
+      "snippet": "On the coast of Alicante, rainfall could reach up to 60 liters per square meter in 12 hours and 40 liters per square meter in just one hour, with a risk of large hail and strong winds. [...] In Murcia, despite the storm risk, maximum temperatures could still reach 37°C, showing the mix of heat and instability.",
+      "document_or_record": null,
+      "source_role": "UNASSESSED",
+      "relationship_type": "UNKNOWN_PROVENANCE",
+      "lineage_id": "LIN-UNKNOWN",
+      "independence_group": "IG-UNKNOWN",
+      "acceptance": "CANDIDATE_REQUIRES_EDITORIAL_ASSESSMENT"
+    },
+    {
+      "claim_id": "CLM-00000002",
+      "url": "https://russpain.com/news/murcia-cools-off-after-overnight-rain-and-sudden-temperature-drop-92101",
+      "title": "Murcia cools off after overnight rain and sudden temperature drop",
+      "source_name": "RussSpain",
+      "published_at": "2026-09-10",
+      "snippet": "On September 9, several areas of Murcia were under yellow and orange weather alerts due to heavy rain and storms, with local downpours reaching up to 30 litres per square metre in an hour.",
+      "document_or_record": null,
+      "source_role": "UNASSESSED",
+      "relationship_type": "UNKNOWN_PROVENANCE",
+      "lineage_id": "LIN-UNKNOWN",
+      "independence_group": "IG-UNKNOWN",
+      "acceptance": "CANDIDATE_REQUIRES_EDITORIAL_ASSESSMENT"
+    },
+    {
+      "claim_id": "CLM-00000003",
+      "url": "https://russpain.com/news/murcia-cools-off-after-overnight-rain-and-sudden-temperature-drop-92101",
+      "title": "Murcia cools off after overnight rain and sudden temperature drop",
+      "source_name": "RussSpain",
+      "published_at": "2026-09-10",
+      "snippet": "According to the Agencia Estatal de Meteorología (AEMET), any rain will be limited to the early hours, and while there is still a chance of storms, they are not expected to cause problems. [...] the worst storms have mostly missed the area, as reported earlier in Barcelona.",
+      "document_or_record": null,
+      "source_role": "UNASSESSED",
+      "relationship_type": "UNKNOWN_PROVENANCE",
+      "lineage_id": "LIN-UNKNOWN",
+      "independence_group": "IG-UNKNOWN",
+      "acceptance": "CANDIDATE_REQUIRES_EDITORIAL_ASSESSMENT"
+    },
+    {
+      "claim_id": "CLM-00000004",
+      "url": "https://russpain.com/news/severe-storms-trigger-orange-alerts-across-mediterranean-spain-91642",
+      "title": "Severe storms trigger orange alerts across Mediterranean Spain",
+      "source_name": "RussSpain",
+      "published_at": "2026-09-09",
+      "snippet": "AEMET spokesperson Rubén del Campo said the orange alerts are staggered: [...] Comunidad Valenciana and Murcia from 14:00.",
+      "document_or_record": null,
+      "source_role": "UNASSESSED",
+      "relationship_type": "UNKNOWN_PROVENANCE",
+      "lineage_id": "LIN-UNKNOWN",
+      "independence_group": "IG-UNKNOWN",
+      "acceptance": "CANDIDATE_REQUIRES_EDITORIAL_ASSESSMENT"
+    },
+    {
+      "claim_id": "CLM-00000004",
+      "url": "https://euroweeklynews.com/2026/09/08/spains-record-heat-breaks-with-a-10oc-drop-and-alicante-gets-hail-on-the-first-day-back-at-school",
+      "title": "Spain's record heat breaks with a 10ºC drop, and Alicante gets hail on the first day back at school",
+      "source_name": "Euro Weekly News",
+      "published_at": "2026-09-08",
+      "snippet": "AEMET spokesman Rubén del Campo said Wednesday would bring \"an accentuated temperature drop in much of the territory\" [...] The southeast holds on to the heat through Wednesday, with Murcia and southern Andalucía still expected to pass 36ºC.",
+      "document_or_record": null,
+      "source_role": "UNASSESSED",
+      "relationship_type": "UNKNOWN_PROVENANCE",
+      "lineage_id": "LIN-UNKNOWN",
+      "independence_group": "IG-UNKNOWN",
+      "acceptance": "CANDIDATE_REQUIRES_EDITORIAL_ASSESSMENT"
+    },
+    {
+      "claim_id": "CLM-00000004",
+      "url": "https://manchestereveningnews.co.uk/news/world-news/popular-spanish-holiday-hotspots-hit-34588975",
+      "title": "Popular Spanish holiday hotspots hit with 'significant danger' weather alerts today",
+      "source_name": "Manchester Evening News",
+      "published_at": "2026-09-09",
+      "snippet": "On Wednesday, September 9, AEMET has issued alerts for a whopping six different weather phenomenon [...] Storm warnings are also in place across parts of Andalusia, Catalonia, Murcia and Valencia.",
+      "document_or_record": null,
+      "source_role": "UNASSESSED",
+      "relationship_type": "UNKNOWN_PROVENANCE",
+      "lineage_id": "LIN-UNKNOWN",
+      "independence_group": "IG-UNKNOWN",
+      "acceptance": "CANDIDATE_REQUIRES_EDITORIAL_ASSESSMENT"
+    }
+  ],
+  "web_results_rejected": [
+    {
+      "item": {
+        "claim_id": "CLM-00000005",
+        "url": "",
+        "title": "",
+        "source_name": "",
+        "published_at": "",
+        "snippet": "",
+        "note": "No es un hecho verificable externamente: es una recomendación metodológica propia incluida en el lead (confirmar contra aemet.es), no una afirmación sobre el mundo. No hay evidencia externa aplicable; señalar al usuario si el motor de casos necesita que este claim se reclasifique en vez de tratarlo como FACT."
+      },
+      "reason": "claim_id inexistente o campos obligatorios ausentes"
+    }
+  ],
+  "evidence_retrieval": {
+    "retrieved_at": "2026-09-10T08:09:29.323Z",
+    "candidates": 8,
+    "failed": 0,
+    "output_file": "editorial/cases/CASE-00000006.evidence-candidates.json",
+    "status": "CANDIDATES_RETRIEVED"
+  },
+  "evidence": [
+    {
+      "evidence_id": "EVD-00000001",
+      "claim_id": "CLM-00000001",
+      "source_id": "SRC-UNRESOLVED",
+      "source_role": "CORROBORATION",
+      "document_or_record": "Severe storms trigger orange alerts across Mediterranean Spain",
+      "url_or_reference": "https://russpain.com/news/severe-storms-trigger-orange-alerts-across-mediterranean-spain-91642/",
+      "published_at": "2026-09-09",
+      "observed_at": "2026-09-10T08:23:21.805Z",
+      "relevant_excerpt_or_data": "AEMET spokesperson Rubén del Campo said the orange alerts are staggered: Catalonia remains under warning until 13:59, the Balearic Islands from midday, Comunidad Valenciana and Murcia from 14:00, and Almería from 16:00.",
+      "lineage_id": "LIN-UNKNOWN",
+      "independence_group": "IG-UNKNOWN",
+      "relationship_type": "UNKNOWN_PROVENANCE",
+      "assessment": "SUPPORTS",
+      "accepted_at": "2026-09-10T08:23:21.807Z"
+    },
+    {
+      "evidence_id": "EVD-00000002",
+      "claim_id": "CLM-00000001",
+      "source_id": "SRC-UNRESOLVED",
+      "source_role": "CORROBORATION",
+      "document_or_record": "Popular Spanish holiday hotspots hit with 'significant danger' weather alerts today",
+      "url_or_reference": "https://www.manchestereveningnews.co.uk/news/world-news/popular-spanish-holiday-hotspots-hit-34588975",
+      "published_at": "2026-09-09",
+      "observed_at": "2026-09-10T08:23:21.807Z",
+      "relevant_excerpt_or_data": "On Wednesday, September 9, AEMET has issued alerts for a whopping six different weather phenomenon [...] Storm warnings are also in place across parts of Andalusia, Catalonia, Murcia and Valencia.",
+      "lineage_id": "LIN-UNKNOWN",
+      "independence_group": "IG-UNKNOWN",
+      "relationship_type": "UNKNOWN_PROVENANCE",
+      "assessment": "PARTIALLY_SUPPORTS",
+      "accepted_at": "2026-09-10T08:23:21.807Z"
+    },
+    {
+      "evidence_id": "EVD-00000003",
+      "claim_id": "CLM-00000002",
+      "source_id": "SRC-UNRESOLVED",
+      "source_role": "CONTEXT",
+      "document_or_record": "Severe storms trigger orange alerts across Mediterranean Spain",
+      "url_or_reference": "https://russpain.com/news/severe-storms-trigger-orange-alerts-across-mediterranean-spain-91642/",
+      "published_at": "2026-09-09",
+      "observed_at": "2026-09-10T08:23:21.807Z",
+      "relevant_excerpt_or_data": "On the northern coast of Alicante, rainfall could reach up to 60 liters per square meter in 12 hours and 40 liters per square meter in just one hour [...] In Murcia, despite the storm risk, maximum temperatures could still reach 37°C.",
+      "lineage_id": "LIN-UNKNOWN",
+      "independence_group": "IG-UNKNOWN",
+      "relationship_type": "UNKNOWN_PROVENANCE",
+      "assessment": "PARTIALLY_SUPPORTS",
+      "accepted_at": "2026-09-10T08:23:21.807Z"
+    },
+    {
+      "evidence_id": "EVD-00000004",
+      "claim_id": "CLM-00000002",
+      "source_id": "SRC-UNRESOLVED",
+      "source_role": "CORROBORATION",
+      "document_or_record": "Murcia cools off after overnight rain and sudden temperature drop",
+      "url_or_reference": "https://russpain.com/news/murcia-cools-off-after-overnight-rain-and-sudden-temperature-drop-92101/",
+      "published_at": "2026-09-10",
+      "observed_at": "2026-09-10T08:23:21.807Z",
+      "relevant_excerpt_or_data": "On September 9, several areas of Murcia were under yellow and orange weather alerts due to heavy rain and storms, with local downpours reaching up to 30 litres per square metre in an hour.",
+      "lineage_id": "LIN-UNKNOWN",
+      "independence_group": "IG-UNKNOWN",
+      "relationship_type": "UNKNOWN_PROVENANCE",
+      "assessment": "CONTESTS",
+      "accepted_at": "2026-09-10T08:23:21.807Z"
+    },
+    {
+      "evidence_id": "EVD-00000005",
+      "claim_id": "CLM-00000003",
+      "source_id": "SRC-UNRESOLVED",
+      "source_role": "CORROBORATION",
+      "document_or_record": "Murcia cools off after overnight rain and sudden temperature drop",
+      "url_or_reference": "https://russpain.com/news/murcia-cools-off-after-overnight-rain-and-sudden-temperature-drop-92101/",
+      "published_at": "2026-09-10",
+      "observed_at": "2026-09-10T08:23:21.807Z",
+      "relevant_excerpt_or_data": "According to the Agencia Estatal de Meteorología (AEMET), any rain will be limited to the early hours, and while there is still a chance of storms, they are not expected to cause problems. [...] the worst storms have mostly missed the area.",
+      "lineage_id": "LIN-UNKNOWN",
+      "independence_group": "IG-UNKNOWN",
+      "relationship_type": "UNKNOWN_PROVENANCE",
+      "assessment": "CONTESTS",
+      "accepted_at": "2026-09-10T08:23:21.807Z"
+    },
+    {
+      "evidence_id": "EVD-00000006",
+      "claim_id": "CLM-00000004",
+      "source_id": "SRC-UNRESOLVED",
+      "source_role": "CORROBORATION",
+      "document_or_record": "Severe storms trigger orange alerts across Mediterranean Spain",
+      "url_or_reference": "https://russpain.com/news/severe-storms-trigger-orange-alerts-across-mediterranean-spain-91642/",
+      "published_at": "2026-09-09",
+      "observed_at": "2026-09-10T08:23:21.807Z",
+      "relevant_excerpt_or_data": "AEMET spokesperson Rubén del Campo said the orange alerts are staggered: [...] Comunidad Valenciana and Murcia from 14:00.",
+      "lineage_id": "LIN-UNKNOWN",
+      "independence_group": "IG-UNKNOWN",
+      "relationship_type": "UNKNOWN_PROVENANCE",
+      "assessment": "SUPPORTS",
+      "accepted_at": "2026-09-10T08:23:21.807Z"
+    },
+    {
+      "evidence_id": "EVD-00000007",
+      "claim_id": "CLM-00000004",
+      "source_id": "SRC-UNRESOLVED",
+      "source_role": "CORROBORATION",
+      "document_or_record": "Spain's record heat breaks with a 10ºC drop, and Alicante gets hail on the first day back at school",
+      "url_or_reference": "https://euroweeklynews.com/2026/09/08/spains-record-heat-breaks-with-a-10oc-drop-and-alicante-gets-hail-on-the-first-day-back-at-school/",
+      "published_at": "2026-09-08",
+      "observed_at": "2026-09-10T08:23:21.807Z",
+      "relevant_excerpt_or_data": "AEMET spokesman Rubén del Campo said Wednesday would bring \"an accentuated temperature drop in much of the territory\" [...] Murcia and southern Andalucía still expected to pass 36ºC.",
+      "lineage_id": "LIN-UNKNOWN",
+      "independence_group": "IG-UNKNOWN",
+      "relationship_type": "UNKNOWN_PROVENANCE",
+      "assessment": "SUPPORTS",
+      "accepted_at": "2026-09-10T08:23:21.807Z"
+    },
+    {
+      "evidence_id": "EVD-00000008",
+      "claim_id": "CLM-00000004",
+      "source_id": "SRC-UNRESOLVED",
+      "source_role": "CORROBORATION",
+      "document_or_record": "Popular Spanish holiday hotspots hit with 'significant danger' weather alerts today",
+      "url_or_reference": "https://www.manchestereveningnews.co.uk/news/world-news/popular-spanish-holiday-hotspots-hit-34588975",
+      "published_at": "2026-09-09",
+      "observed_at": "2026-09-10T08:23:21.807Z",
+      "relevant_excerpt_or_data": "On Wednesday, September 9, AEMET has issued alerts [...] Storm warnings are also in place across parts of Andalusia, Catalonia, Murcia and Valencia.",
+      "lineage_id": "LIN-UNKNOWN",
+      "independence_group": "IG-UNKNOWN",
+      "relationship_type": "UNKNOWN_PROVENANCE",
+      "assessment": "PARTIALLY_SUPPORTS",
+      "accepted_at": "2026-09-10T08:23:21.807Z"
+    }
+  ],
+  "evidence_acceptance": {
+    "assessed_at": "2026-09-10T08:23:21.807Z",
+    "candidates_received": 8,
+    "accepted": 8,
+    "pending_review": 0,
+    "rejected": 0,
+    "rule": "Un resultado de búsqueda no se convierte en evidencia por relevancia, ranking, título o snippet. La aceptación requiere información documental suficiente y evaluación explícita."
+  }
+}

@@ -1,0 +1,271 @@
+{
+  "case_id": "CASE-00000008",
+  "retrieved_at": "2026-09-11T06:29:56.097Z",
+  "candidates": [
+    {
+      "claim_id": "CLM-00000001",
+      "source_id": "SRC-UNRESOLVED",
+      "url_or_reference": "https://rfess.es/agosto-registra-80-muertes-por-ahogamiento-y-eleva-a-389-el-balance-de-2026/",
+      "document_or_record": "Agosto registra 80 muertes por ahogamiento y eleva a 389 el balance de 2026",
+      "source_role": "UNASSESSED",
+      "published_at": "2026-09-08",
+      "observed_at": "2026-09-11T06:29:47.217Z",
+      "relevant_excerpt_or_data": "Agosto registra 80 muertes por ahogamiento y eleva a 389 el balance de 2026 - RFESS Federación Organización Transparencia Circulares Cuotas, tasas y precios Tramitaciones Deporte Calendario Mínimas Récords en vigor Ranking Convocatorias Normativa Reglamento Medallero Histórico Español Resultados Antidopaje Descargas y consultas Alojamiento Formación ¿Qué hacemos? Dónde formarte Salvando Vidas Portal formativo Mujer y deporte Planes de igualdad Protocolos Programas Estudios específicos INA SIFA Informe Nacional de Ahogamiento Federación Organización Transparencia Circulares Cuotas, tasas y precios Tramitaciones Deporte Calendario Mínimas Récords en vigor Ranking Convocatorias Normativa Reglamento Medallero Histórico Español Resultados Antidopaje Descargas y consultas Alojamiento Formación ¿Qué hacemos? Dónde formarte Salvando Vidas Portal formativo Mujer y deporte Planes de igualdad Protocolos Programas Estudios específicos INA SIFA Informe Nacional de Ahogamiento Search Contacto Search Federación Organización Transparencia Circulares Cuotas, tasas y precios Tramitaciones Deporte Calendario Mínimas Récords en vigor Ranking Convocatorias Normativa Reglamento Medallero Histórico Español Resultados Antidopaje Descargas y consultas Alojamiento Formación ¿Qué hacemos? Dónde formarte Salvando Vidas Portal formativo Mujer y deporte Planes de igualdad Protocolos Programas Estudios específicos INA SIFA Informe Nacional de Ahogamiento Federación Organización Transparencia Circulares Cuotas, tasas y precios Tramitaciones Deporte Calendario Mínimas Récords en vigor Ranking Convocatorias Normativa Reglamento Medallero Histórico Español Resultados Antidopaje Descargas y consultas Alojamiento Formación ¿Qué hacemos? Dónde formarte Salvando Vidas Portal formativo Mujer y deporte Planes de igualdad Protocolos Programas Estudios específicos INA SIFA Informe Nacional de Ahogamiento Sep 08, 2026 Agosto registra 80 muertes por ahogamiento y eleva a 389 el balance de 2026 Las personas de mayor edad mantienen el perfil de mayor incidencia y las playas concentran 35 de las muertes del último mes Un total de 80 personas fallecieron por ahogamiento no intencional en los espacios acuáticos españoles durante el mes de agosto, según los datos del Informe Nacional de Ahogamientos (INA) elaborado por la Real Federación Española de Salvamento y Socorrismo. Con estos registros, el balance acumulado entre el 1 de enero y el 31 de agosto asciende a 389 muertes. Esta cifra incorpora además un fallecimiento ocurrido durante el mes de julio del que se tuvo constancia a mediados de agosto, por lo que el registro definitivo de julio pasa de los 91 casos contabilizados inicialmente a 92 fallecimientos. De esta forma, junio y julio, con 92 muertes cada uno, se mantienen como los meses con mayor mortalidad por ahogamiento en lo que va de año, mientras que agosto cierra con 80 decesos. Solo durante julio y agosto, dos meses plenamente incluidos en la temporada de baño iniciada el 15 de junio, se han contabilizado 172 muertes por ahogamiento. Las personas de mayor edad concentran el mayor número de víctimas El perfil por edades muestra una mayor incidencia entre las personas de edad avanzada. Hasta el 31 de agosto, el grupo con más fallecimientos es el comprendido entre los 65 y los 74 años, con 68 víctimas, seguido muy de cerca por las personas de 75 años o más, con 66. A continuación se sitúan las personas de entre 55 y 64 años, con 55 fallecimientos; las de 45 a 54 años, con 41; y las de 18 a 25 años, con 38. Entre los 35 y los 44 años se han registrado 30 víctimas; entre los 26 y los 34, 26; y en 31 casos se desconoce la edad. En cuanto a los menores de edad, el acumulado alcanza las 34 muertes: once entre los 0 y los 3 años, siete entre los 4 y los 6, tres entre los 7 y los 10 y trece entre los 11 y los 17 años. Los datos vuelven a evidenciar la necesidad de extremar la atención tanto sobre los menores como sobre las personas de mayor edad durante el baño. 58 de las ",
+      "lineage_id": "LIN-UNKNOWN",
+      "independence_group": "IG-UNKNOWN",
+      "relationship_type": "UNKNOWN_PROVENANCE",
+      "assessment": "UNASSESSED",
+      "retrieval": {
+        "http_status": 200,
+        "content_type": "text/html; charset=UTF-8",
+        "final_url": "https://rfess.es/agosto-registra-80-muertes-por-ahogamiento-y-eleva-a-389-el-balance-de-2026/",
+        "matched_claim_terms": [
+          "real",
+          "federación",
+          "española",
+          "salvamento",
+          "socorrismo",
+          "rfess",
+          "2026",
+          "informe",
+          "nacional",
+          "ahogamientos"
+        ],
+        "match_ratio": 0.8333333333333334
+      }
+    },
+    {
+      "claim_id": "CLM-00000001",
+      "source_id": "SRC-UNRESOLVED",
+      "url_or_reference": "https://rfess.es/ina/",
+      "document_or_record": "INA - RFESS",
+      "source_role": "UNASSESSED",
+      "published_at": "2025-11-25",
+      "observed_at": "2026-09-11T06:29:48.476Z",
+      "relevant_excerpt_or_data": "INA - RFESS Federación Organización Transparencia Circulares Cuotas, tasas y precios Tramitaciones Deporte Calendario Mínimas Récords en vigor Ranking Convocatorias Normativa Reglamento Medallero Histórico Español Resultados Antidopaje Descargas y consultas Alojamiento Formación ¿Qué hacemos? Dónde formarte Salvando Vidas Portal formativo Mujer y deporte Planes de igualdad Protocolos Programas Estudios específicos INA SIFA Informe Nacional de Ahogamiento Federación Organización Transparencia Circulares Cuotas, tasas y precios Tramitaciones Deporte Calendario Mínimas Récords en vigor Ranking Convocatorias Normativa Reglamento Medallero Histórico Español Resultados Antidopaje Descargas y consultas Alojamiento Formación ¿Qué hacemos? Dónde formarte Salvando Vidas Portal formativo Mujer y deporte Planes de igualdad Protocolos Programas Estudios específicos INA SIFA Informe Nacional de Ahogamiento Search Contacto Search Federación Organización Transparencia Circulares Cuotas, tasas y precios Tramitaciones Deporte Calendario Mínimas Récords en vigor Ranking Convocatorias Normativa Reglamento Medallero Histórico Español Resultados Antidopaje Descargas y consultas Alojamiento Formación ¿Qué hacemos? Dónde formarte Salvando Vidas Portal formativo Mujer y deporte Planes de igualdad Protocolos Programas Estudios específicos INA SIFA Informe Nacional de Ahogamiento Federación Organización Transparencia Circulares Cuotas, tasas y precios Tramitaciones Deporte Calendario Mínimas Récords en vigor Ranking Convocatorias Normativa Reglamento Medallero Histórico Español Resultados Antidopaje Descargas y consultas Alojamiento Formación ¿Qué hacemos? Dónde formarte Salvando Vidas Portal formativo Mujer y deporte Planes de igualdad Protocolos Programas Estudios específicos INA SIFA Informe Nacional de Ahogamiento INA SIFA Campañas de Prevención Informe Nacional de Ahogamientos Agosto registra 80 muertes por ahogamiento y eleva a 389 el balance de 2026 Leer más Julio registra 91 muertes por ahogamiento y eleva a 308 el balance de 2026 Leer más Junio de 2026 registra el peor dato de ahogamientos desde que existe el Informe Nacional de Ahogamientos Leer más Mayo registra 30 fallecimientos por ahogamiento antes de la temporada estival Leer más Ver todos los informes Informe nacional de ahogamientos INA 2026 Powered By EmbedPress INA 2025 Powered By EmbedPress INA 2024 Powered By EmbedPress INA 2023 Powered By EmbedPress INA 2022 Powered By EmbedPress INA 2021 Powered By EmbedPress INA 2020 Powered By EmbedPress INA 2019 Powered By EmbedPress INA 2018 Powered By EmbedPress INA 2017 Powered By EmbedPress INA 2016 Powered By EmbedPress INA 2015 Powered By EmbedPress Conciencia. Prevención. VIDA. Real Federación Española de Salvamento y Socorrismo Avenida Fuente Nueva, 14 nave 8-A 28703 San Sebastián de los Reyes (Madrid) España Teléfono: 917-252-234 Atención al público: lunes a viernes, de 9.00 a 13.30 horas. Facebook Instagram Linkedin Tiktok X-twitter Youtube Política de Privacidad Política de Cookies Aviso Legal Instituciones Patrocinadores y colaboradores Contacto para cuestiones deportivas, formativas y administrativas: administracion@rfess.es Teléfono: +34 917 252 234 Contactos para medios de comunicación: comunicacion@rfess.es Teléfono: +34 607 517 034 Entidad de Utilidad Pública, en virtud de lo establecido en el artículo 43.7 de la Ley 39/2022, de 30 de diciembre, del Deporte RFESS © 2026 | Una web de Abside Studio Juntos por un deporte que salva vidas. Real Federación Española de Salvamento y Socorrismo Avenida Fuente Nueva, 14 nave 8-A 28703 San Sebastián de los Reyes (Madrid) España Teléfono: 917-252-234 Atención al público: lunes a viernes, de 9.00 a 13.30 horas. Facebook Instagram Linkedin Tiktok X-twitter Youtube Política de Privacidad Política de Cookies Aviso Legal y Protección de Datos Instituciones Patrocinadores y colaboradores Contacto para cuestiones deportivas, formativas y administrativas: administracion@rfess.es Teléfono: +34 917 ",
+      "lineage_id": "LIN-UNKNOWN",
+      "independence_group": "IG-UNKNOWN",
+      "relationship_type": "UNKNOWN_PROVENANCE",
+      "assessment": "UNASSESSED",
+      "retrieval": {
+        "http_status": 200,
+        "content_type": "text/html; charset=UTF-8",
+        "final_url": "https://rfess.es/ina/",
+        "matched_claim_terms": [
+          "real",
+          "federación",
+          "española",
+          "salvamento",
+          "socorrismo",
+          "rfess",
+          "2026",
+          "informe",
+          "nacional",
+          "ahogamientos"
+        ],
+        "match_ratio": 0.8333333333333334
+      }
+    },
+    {
+      "claim_id": "CLM-00000002",
+      "source_id": "SRC-UNRESOLVED",
+      "url_or_reference": "https://rfess.es/agosto-registra-80-muertes-por-ahogamiento-y-eleva-a-389-el-balance-de-2026/",
+      "document_or_record": "Agosto registra 80 muertes por ahogamiento y eleva a 389 el balance de 2026",
+      "source_role": "UNASSESSED",
+      "published_at": "2026-09-08",
+      "observed_at": "2026-09-11T06:29:49.598Z",
+      "relevant_excerpt_or_data": "Agosto registra 80 muertes por ahogamiento y eleva a 389 el balance de 2026 - RFESS Federación Organización Transparencia Circulares Cuotas, tasas y precios Tramitaciones Deporte Calendario Mínimas Récords en vigor Ranking Convocatorias Normativa Reglamento Medallero Histórico Español Resultados Antidopaje Descargas y consultas Alojamiento Formación ¿Qué hacemos? Dónde formarte Salvando Vidas Portal formativo Mujer y deporte Planes de igualdad Protocolos Programas Estudios específicos INA SIFA Informe Nacional de Ahogamiento Federación Organización Transparencia Circulares Cuotas, tasas y precios Tramitaciones Deporte Calendario Mínimas Récords en vigor Ranking Convocatorias Normativa Reglamento Medallero Histórico Español Resultados Antidopaje Descargas y consultas Alojamiento Formación ¿Qué hacemos? Dónde formarte Salvando Vidas Portal formativo Mujer y deporte Planes de igualdad Protocolos Programas Estudios específicos INA SIFA Informe Nacional de Ahogamiento Search Contacto Search Federación Organización Transparencia Circulares Cuotas, tasas y precios Tramitaciones Deporte Calendario Mínimas Récords en vigor Ranking Convocatorias Normativa Reglamento Medallero Histórico Español Resultados Antidopaje Descargas y consultas Alojamiento Formación ¿Qué hacemos? Dónde formarte Salvando Vidas Portal formativo Mujer y deporte Planes de igualdad Protocolos Programas Estudios específicos INA SIFA Informe Nacional de Ahogamiento Federación Organización Transparencia Circulares Cuotas, tasas y precios Tramitaciones Deporte Calendario Mínimas Récords en vigor Ranking Convocatorias Normativa Reglamento Medallero Histórico Español Resultados Antidopaje Descargas y consultas Alojamiento Formación ¿Qué hacemos? Dónde formarte Salvando Vidas Portal formativo Mujer y deporte Planes de igualdad Protocolos Programas Estudios específicos INA SIFA Informe Nacional de Ahogamiento Sep 08, 2026 Agosto registra 80 muertes por ahogamiento y eleva a 389 el balance de 2026 Las personas de mayor edad mantienen el perfil de mayor incidencia y las playas concentran 35 de las muertes del último mes Un total de 80 personas fallecieron por ahogamiento no intencional en los espacios acuáticos españoles durante el mes de agosto, según los datos del Informe Nacional de Ahogamientos (INA) elaborado por la Real Federación Española de Salvamento y Socorrismo. Con estos registros, el balance acumulado entre el 1 de enero y el 31 de agosto asciende a 389 muertes. Esta cifra incorpora además un fallecimiento ocurrido durante el mes de julio del que se tuvo constancia a mediados de agosto, por lo que el registro definitivo de julio pasa de los 91 casos contabilizados inicialmente a 92 fallecimientos. De esta forma, junio y julio, con 92 muertes cada uno, se mantienen como los meses con mayor mortalidad por ahogamiento en lo que va de año, mientras que agosto cierra con 80 decesos. Solo durante julio y agosto, dos meses plenamente incluidos en la temporada de baño iniciada el 15 de junio, se han contabilizado 172 muertes por ahogamiento. Las personas de mayor edad concentran el mayor número de víctimas El perfil por edades muestra una mayor incidencia entre las personas de edad avanzada. Hasta el 31 de agosto, el grupo con más fallecimientos es el comprendido entre los 65 y los 74 años, con 68 víctimas, seguido muy de cerca por las personas de 75 años o más, con 66. A continuación se sitúan las personas de entre 55 y 64 años, con 55 fallecimientos; las de 45 a 54 años, con 41; y las de 18 a 25 años, con 38. Entre los 35 y los 44 años se han registrado 30 víctimas; entre los 26 y los 34, 26; y en 31 casos se desconoce la edad. En cuanto a los menores de edad, el acumulado alcanza las 34 muertes: once entre los 0 y los 3 años, siete entre los 4 y los 6, tres entre los 7 y los 10 y trece entre los 11 y los 17 años. Los datos vuelven a evidenciar la necesidad de extremar la atención tanto sobre los menores como sobre las personas de mayor edad durante el baño. 58 de las ",
+      "lineage_id": "LIN-UNKNOWN",
+      "independence_group": "IG-UNKNOWN",
+      "relationship_type": "UNKNOWN_PROVENANCE",
+      "assessment": "UNASSESSED",
+      "retrieval": {
+        "http_status": 200,
+        "content_type": "text/html; charset=UTF-8",
+        "final_url": "https://rfess.es/agosto-registra-80-muertes-por-ahogamiento-y-eleva-a-389-el-balance-de-2026/",
+        "matched_claim_terms": [
+          "agosto",
+          "fallecieron",
+          "personas"
+        ],
+        "match_ratio": 1
+      }
+    },
+    {
+      "claim_id": "CLM-00000003",
+      "source_id": "SRC-UNRESOLVED",
+      "url_or_reference": "https://rfess.es/agosto-registra-80-muertes-por-ahogamiento-y-eleva-a-389-el-balance-de-2026/",
+      "document_or_record": "Agosto registra 80 muertes por ahogamiento y eleva a 389 el balance de 2026",
+      "source_role": "UNASSESSED",
+      "published_at": "2026-09-08",
+      "observed_at": "2026-09-11T06:29:50.624Z",
+      "relevant_excerpt_or_data": "Agosto registra 80 muertes por ahogamiento y eleva a 389 el balance de 2026 - RFESS Federación Organización Transparencia Circulares Cuotas, tasas y precios Tramitaciones Deporte Calendario Mínimas Récords en vigor Ranking Convocatorias Normativa Reglamento Medallero Histórico Español Resultados Antidopaje Descargas y consultas Alojamiento Formación ¿Qué hacemos? Dónde formarte Salvando Vidas Portal formativo Mujer y deporte Planes de igualdad Protocolos Programas Estudios específicos INA SIFA Informe Nacional de Ahogamiento Federación Organización Transparencia Circulares Cuotas, tasas y precios Tramitaciones Deporte Calendario Mínimas Récords en vigor Ranking Convocatorias Normativa Reglamento Medallero Histórico Español Resultados Antidopaje Descargas y consultas Alojamiento Formación ¿Qué hacemos? Dónde formarte Salvando Vidas Portal formativo Mujer y deporte Planes de igualdad Protocolos Programas Estudios específicos INA SIFA Informe Nacional de Ahogamiento Search Contacto Search Federación Organización Transparencia Circulares Cuotas, tasas y precios Tramitaciones Deporte Calendario Mínimas Récords en vigor Ranking Convocatorias Normativa Reglamento Medallero Histórico Español Resultados Antidopaje Descargas y consultas Alojamiento Formación ¿Qué hacemos? Dónde formarte Salvando Vidas Portal formativo Mujer y deporte Planes de igualdad Protocolos Programas Estudios específicos INA SIFA Informe Nacional de Ahogamiento Federación Organización Transparencia Circulares Cuotas, tasas y precios Tramitaciones Deporte Calendario Mínimas Récords en vigor Ranking Convocatorias Normativa Reglamento Medallero Histórico Español Resultados Antidopaje Descargas y consultas Alojamiento Formación ¿Qué hacemos? Dónde formarte Salvando Vidas Portal formativo Mujer y deporte Planes de igualdad Protocolos Programas Estudios específicos INA SIFA Informe Nacional de Ahogamiento Sep 08, 2026 Agosto registra 80 muertes por ahogamiento y eleva a 389 el balance de 2026 Las personas de mayor edad mantienen el perfil de mayor incidencia y las playas concentran 35 de las muertes del último mes Un total de 80 personas fallecieron por ahogamiento no intencional en los espacios acuáticos españoles durante el mes de agosto, según los datos del Informe Nacional de Ahogamientos (INA) elaborado por la Real Federación Española de Salvamento y Socorrismo. Con estos registros, el balance acumulado entre el 1 de enero y el 31 de agosto asciende a 389 muertes. Esta cifra incorpora además un fallecimiento ocurrido durante el mes de julio del que se tuvo constancia a mediados de agosto, por lo que el registro definitivo de julio pasa de los 91 casos contabilizados inicialmente a 92 fallecimientos. De esta forma, junio y julio, con 92 muertes cada uno, se mantienen como los meses con mayor mortalidad por ahogamiento en lo que va de año, mientras que agosto cierra con 80 decesos. Solo durante julio y agosto, dos meses plenamente incluidos en la temporada de baño iniciada el 15 de junio, se han contabilizado 172 muertes por ahogamiento. Las personas de mayor edad concentran el mayor número de víctimas El perfil por edades muestra una mayor incidencia entre las personas de edad avanzada. Hasta el 31 de agosto, el grupo con más fallecimientos es el comprendido entre los 65 y los 74 años, con 68 víctimas, seguido muy de cerca por las personas de 75 años o más, con 66. A continuación se sitúan las personas de entre 55 y 64 años, con 55 fallecimientos; las de 45 a 54 años, con 41; y las de 18 a 25 años, con 38. Entre los 35 y los 44 años se han registrado 30 víctimas; entre los 26 y los 34, 26; y en 31 casos se desconoce la edad. En cuanto a los menores de edad, el acumulado alcanza las 34 muertes: once entre los 0 y los 3 años, siete entre los 4 y los 6, tres entre los 7 y los 10 y trece entre los 11 y los 17 años. Los datos vuelven a evidenciar la necesidad de extremar la atención tanto sobre los menores como sobre las personas de mayor edad durante el baño. 58 de las ",
+      "lineage_id": "LIN-UNKNOWN",
+      "independence_group": "IG-UNKNOWN",
+      "relationship_type": "UNKNOWN_PROVENANCE",
+      "assessment": "UNASSESSED",
+      "retrieval": {
+        "http_status": 200,
+        "content_type": "text/html; charset=UTF-8",
+        "final_url": "https://rfess.es/agosto-registra-80-muertes-por-ahogamiento-y-eleva-a-389-el-balance-de-2026/",
+        "matched_claim_terms": [
+          "verano",
+          "2026",
+          "junio",
+          "agosto",
+          "acumula",
+          "fallecimientos",
+          "mismo",
+          "periodo",
+          "2025",
+          "muertes",
+          "incremento"
+        ],
+        "match_ratio": 0.9166666666666666
+      }
+    },
+    {
+      "claim_id": "CLM-00000004",
+      "source_id": "SRC-UNRESOLVED",
+      "url_or_reference": "https://rfess.es/agosto-registra-80-muertes-por-ahogamiento-y-eleva-a-389-el-balance-de-2026/",
+      "document_or_record": "Agosto registra 80 muertes por ahogamiento y eleva a 389 el balance de 2026",
+      "source_role": "UNASSESSED",
+      "published_at": "2026-09-08",
+      "observed_at": "2026-09-11T06:29:53.074Z",
+      "relevant_excerpt_or_data": "Agosto registra 80 muertes por ahogamiento y eleva a 389 el balance de 2026 - RFESS Federación Organización Transparencia Circulares Cuotas, tasas y precios Tramitaciones Deporte Calendario Mínimas Récords en vigor Ranking Convocatorias Normativa Reglamento Medallero Histórico Español Resultados Antidopaje Descargas y consultas Alojamiento Formación ¿Qué hacemos? Dónde formarte Salvando Vidas Portal formativo Mujer y deporte Planes de igualdad Protocolos Programas Estudios específicos INA SIFA Informe Nacional de Ahogamiento Federación Organización Transparencia Circulares Cuotas, tasas y precios Tramitaciones Deporte Calendario Mínimas Récords en vigor Ranking Convocatorias Normativa Reglamento Medallero Histórico Español Resultados Antidopaje Descargas y consultas Alojamiento Formación ¿Qué hacemos? Dónde formarte Salvando Vidas Portal formativo Mujer y deporte Planes de igualdad Protocolos Programas Estudios específicos INA SIFA Informe Nacional de Ahogamiento Search Contacto Search Federación Organización Transparencia Circulares Cuotas, tasas y precios Tramitaciones Deporte Calendario Mínimas Récords en vigor Ranking Convocatorias Normativa Reglamento Medallero Histórico Español Resultados Antidopaje Descargas y consultas Alojamiento Formación ¿Qué hacemos? Dónde formarte Salvando Vidas Portal formativo Mujer y deporte Planes de igualdad Protocolos Programas Estudios específicos INA SIFA Informe Nacional de Ahogamiento Federación Organización Transparencia Circulares Cuotas, tasas y precios Tramitaciones Deporte Calendario Mínimas Récords en vigor Ranking Convocatorias Normativa Reglamento Medallero Histórico Español Resultados Antidopaje Descargas y consultas Alojamiento Formación ¿Qué hacemos? Dónde formarte Salvando Vidas Portal formativo Mujer y deporte Planes de igualdad Protocolos Programas Estudios específicos INA SIFA Informe Nacional de Ahogamiento Sep 08, 2026 Agosto registra 80 muertes por ahogamiento y eleva a 389 el balance de 2026 Las personas de mayor edad mantienen el perfil de mayor incidencia y las playas concentran 35 de las muertes del último mes Un total de 80 personas fallecieron por ahogamiento no intencional en los espacios acuáticos españoles durante el mes de agosto, según los datos del Informe Nacional de Ahogamientos (INA) elaborado por la Real Federación Española de Salvamento y Socorrismo. Con estos registros, el balance acumulado entre el 1 de enero y el 31 de agosto asciende a 389 muertes. Esta cifra incorpora además un fallecimiento ocurrido durante el mes de julio del que se tuvo constancia a mediados de agosto, por lo que el registro definitivo de julio pasa de los 91 casos contabilizados inicialmente a 92 fallecimientos. De esta forma, junio y julio, con 92 muertes cada uno, se mantienen como los meses con mayor mortalidad por ahogamiento en lo que va de año, mientras que agosto cierra con 80 decesos. Solo durante julio y agosto, dos meses plenamente incluidos en la temporada de baño iniciada el 15 de junio, se han contabilizado 172 muertes por ahogamiento. Las personas de mayor edad concentran el mayor número de víctimas El perfil por edades muestra una mayor incidencia entre las personas de edad avanzada. Hasta el 31 de agosto, el grupo con más fallecimientos es el comprendido entre los 65 y los 74 años, con 68 víctimas, seguido muy de cerca por las personas de 75 años o más, con 66. A continuación se sitúan las personas de entre 55 y 64 años, con 55 fallecimientos; las de 45 a 54 años, con 41; y las de 18 a 25 años, con 38. Entre los 35 y los 44 años se han registrado 30 víctimas; entre los 26 y los 34, 26; y en 31 casos se desconoce la edad. En cuanto a los menores de edad, el acumulado alcanza las 34 muertes: once entre los 0 y los 3 años, siete entre los 4 y los 6, tres entre los 7 y los 10 y trece entre los 11 y los 17 años. Los datos vuelven a evidenciar la necesidad de extremar la atención tanto sobre los menores como sobre las personas de mayor edad durante el baño. 58 de las ",
+      "lineage_id": "LIN-UNKNOWN",
+      "independence_group": "IG-UNKNOWN",
+      "relationship_type": "UNKNOWN_PROVENANCE",
+      "assessment": "UNASSESSED",
+      "retrieval": {
+        "http_status": 200,
+        "content_type": "text/html; charset=UTF-8",
+        "final_url": "https://rfess.es/agosto-registra-80-muertes-por-ahogamiento-y-eleva-a-389-el-balance-de-2026/",
+        "matched_claim_terms": [
+          "grupo",
+          "edad",
+          "fallecimientos",
+          "comprendido",
+          "entre",
+          "años",
+          "víctimas",
+          "seguido",
+          "cerca",
+          "personas",
+          "años"
+        ],
+        "match_ratio": 0.9166666666666666
+      }
+    },
+    {
+      "claim_id": "CLM-00000005",
+      "source_id": "SRC-UNRESOLVED",
+      "url_or_reference": "https://rfess.es/agosto-registra-80-muertes-por-ahogamiento-y-eleva-a-389-el-balance-de-2026/",
+      "document_or_record": "Agosto registra 80 muertes por ahogamiento y eleva a 389 el balance de 2026",
+      "source_role": "UNASSESSED",
+      "published_at": "2026-09-08",
+      "observed_at": "2026-09-11T06:29:54.100Z",
+      "relevant_excerpt_or_data": "Agosto registra 80 muertes por ahogamiento y eleva a 389 el balance de 2026 - RFESS Federación Organización Transparencia Circulares Cuotas, tasas y precios Tramitaciones Deporte Calendario Mínimas Récords en vigor Ranking Convocatorias Normativa Reglamento Medallero Histórico Español Resultados Antidopaje Descargas y consultas Alojamiento Formación ¿Qué hacemos? Dónde formarte Salvando Vidas Portal formativo Mujer y deporte Planes de igualdad Protocolos Programas Estudios específicos INA SIFA Informe Nacional de Ahogamiento Federación Organización Transparencia Circulares Cuotas, tasas y precios Tramitaciones Deporte Calendario Mínimas Récords en vigor Ranking Convocatorias Normativa Reglamento Medallero Histórico Español Resultados Antidopaje Descargas y consultas Alojamiento Formación ¿Qué hacemos? Dónde formarte Salvando Vidas Portal formativo Mujer y deporte Planes de igualdad Protocolos Programas Estudios específicos INA SIFA Informe Nacional de Ahogamiento Search Contacto Search Federación Organización Transparencia Circulares Cuotas, tasas y precios Tramitaciones Deporte Calendario Mínimas Récords en vigor Ranking Convocatorias Normativa Reglamento Medallero Histórico Español Resultados Antidopaje Descargas y consultas Alojamiento Formación ¿Qué hacemos? Dónde formarte Salvando Vidas Portal formativo Mujer y deporte Planes de igualdad Protocolos Programas Estudios específicos INA SIFA Informe Nacional de Ahogamiento Federación Organización Transparencia Circulares Cuotas, tasas y precios Tramitaciones Deporte Calendario Mínimas Récords en vigor Ranking Convocatorias Normativa Reglamento Medallero Histórico Español Resultados Antidopaje Descargas y consultas Alojamiento Formación ¿Qué hacemos? Dónde formarte Salvando Vidas Portal formativo Mujer y deporte Planes de igualdad Protocolos Programas Estudios específicos INA SIFA Informe Nacional de Ahogamiento Sep 08, 2026 Agosto registra 80 muertes por ahogamiento y eleva a 389 el balance de 2026 Las personas de mayor edad mantienen el perfil de mayor incidencia y las playas concentran 35 de las muertes del último mes Un total de 80 personas fallecieron por ahogamiento no intencional en los espacios acuáticos españoles durante el mes de agosto, según los datos del Informe Nacional de Ahogamientos (INA) elaborado por la Real Federación Española de Salvamento y Socorrismo. Con estos registros, el balance acumulado entre el 1 de enero y el 31 de agosto asciende a 389 muertes. Esta cifra incorpora además un fallecimiento ocurrido durante el mes de julio del que se tuvo constancia a mediados de agosto, por lo que el registro definitivo de julio pasa de los 91 casos contabilizados inicialmente a 92 fallecimientos. De esta forma, junio y julio, con 92 muertes cada uno, se mantienen como los meses con mayor mortalidad por ahogamiento en lo que va de año, mientras que agosto cierra con 80 decesos. Solo durante julio y agosto, dos meses plenamente incluidos en la temporada de baño iniciada el 15 de junio, se han contabilizado 172 muertes por ahogamiento. Las personas de mayor edad concentran el mayor número de víctimas El perfil por edades muestra una mayor incidencia entre las personas de edad avanzada. Hasta el 31 de agosto, el grupo con más fallecimientos es el comprendido entre los 65 y los 74 años, con 68 víctimas, seguido muy de cerca por las personas de 75 años o más, con 66. A continuación se sitúan las personas de entre 55 y 64 años, con 55 fallecimientos; las de 45 a 54 años, con 41; y las de 18 a 25 años, con 38. Entre los 35 y los 44 años se han registrado 30 víctimas; entre los 26 y los 34, 26; y en 31 casos se desconoce la edad. En cuanto a los menores de edad, el acumulado alcanza las 34 muertes: once entre los 0 y los 3 años, siete entre los 4 y los 6, tres entre los 7 y los 10 y trece entre los 11 y los 17 años. Los datos vuelven a evidenciar la necesidad de extremar la atención tanto sobre los menores como sobre las personas de mayor edad durante el baño. 58 de las ",
+      "lineage_id": "LIN-UNKNOWN",
+      "independence_group": "IG-UNKNOWN",
+      "relationship_type": "UNKNOWN_PROVENANCE",
+      "assessment": "UNASSESSED",
+      "retrieval": {
+        "http_status": 200,
+        "content_type": "text/html; charset=UTF-8",
+        "final_url": "https://rfess.es/agosto-registra-80-muertes-por-ahogamiento-y-eleva-a-389-el-balance-de-2026/",
+        "matched_claim_terms": [
+          "agosto",
+          "víctimas",
+          "fueron",
+          "hombres",
+          "mujeres",
+          "acumulado",
+          "hombres",
+          "mujeres"
+        ],
+        "match_ratio": 1
+      }
+    },
+    {
+      "claim_id": "CLM-00000006",
+      "source_id": "SRC-UNRESOLVED",
+      "url_or_reference": "https://rfess.es/agosto-registra-80-muertes-por-ahogamiento-y-eleva-a-389-el-balance-de-2026/",
+      "document_or_record": "Agosto registra 80 muertes por ahogamiento y eleva a 389 el balance de 2026",
+      "source_role": "UNASSESSED",
+      "published_at": "2026-09-08",
+      "observed_at": "2026-09-11T06:29:55.070Z",
+      "relevant_excerpt_or_data": "Agosto registra 80 muertes por ahogamiento y eleva a 389 el balance de 2026 - RFESS Federación Organización Transparencia Circulares Cuotas, tasas y precios Tramitaciones Deporte Calendario Mínimas Récords en vigor Ranking Convocatorias Normativa Reglamento Medallero Histórico Español Resultados Antidopaje Descargas y consultas Alojamiento Formación ¿Qué hacemos? Dónde formarte Salvando Vidas Portal formativo Mujer y deporte Planes de igualdad Protocolos Programas Estudios específicos INA SIFA Informe Nacional de Ahogamiento Federación Organización Transparencia Circulares Cuotas, tasas y precios Tramitaciones Deporte Calendario Mínimas Récords en vigor Ranking Convocatorias Normativa Reglamento Medallero Histórico Español Resultados Antidopaje Descargas y consultas Alojamiento Formación ¿Qué hacemos? Dónde formarte Salvando Vidas Portal formativo Mujer y deporte Planes de igualdad Protocolos Programas Estudios específicos INA SIFA Informe Nacional de Ahogamiento Search Contacto Search Federación Organización Transparencia Circulares Cuotas, tasas y precios Tramitaciones Deporte Calendario Mínimas Récords en vigor Ranking Convocatorias Normativa Reglamento Medallero Histórico Español Resultados Antidopaje Descargas y consultas Alojamiento Formación ¿Qué hacemos? Dónde formarte Salvando Vidas Portal formativo Mujer y deporte Planes de igualdad Protocolos Programas Estudios específicos INA SIFA Informe Nacional de Ahogamiento Federación Organización Transparencia Circulares Cuotas, tasas y precios Tramitaciones Deporte Calendario Mínimas Récords en vigor Ranking Convocatorias Normativa Reglamento Medallero Histórico Español Resultados Antidopaje Descargas y consultas Alojamiento Formación ¿Qué hacemos? Dónde formarte Salvando Vidas Portal formativo Mujer y deporte Planes de igualdad Protocolos Programas Estudios específicos INA SIFA Informe Nacional de Ahogamiento Sep 08, 2026 Agosto registra 80 muertes por ahogamiento y eleva a 389 el balance de 2026 Las personas de mayor edad mantienen el perfil de mayor incidencia y las playas concentran 35 de las muertes del último mes Un total de 80 personas fallecieron por ahogamiento no intencional en los espacios acuáticos españoles durante el mes de agosto, según los datos del Informe Nacional de Ahogamientos (INA) elaborado por la Real Federación Española de Salvamento y Socorrismo. Con estos registros, el balance acumulado entre el 1 de enero y el 31 de agosto asciende a 389 muertes. Esta cifra incorpora además un fallecimiento ocurrido durante el mes de julio del que se tuvo constancia a mediados de agosto, por lo que el registro definitivo de julio pasa de los 91 casos contabilizados inicialmente a 92 fallecimientos. De esta forma, junio y julio, con 92 muertes cada uno, se mantienen como los meses con mayor mortalidad por ahogamiento en lo que va de año, mientras que agosto cierra con 80 decesos. Solo durante julio y agosto, dos meses plenamente incluidos en la temporada de baño iniciada el 15 de junio, se han contabilizado 172 muertes por ahogamiento. Las personas de mayor edad concentran el mayor número de víctimas El perfil por edades muestra una mayor incidencia entre las personas de edad avanzada. Hasta el 31 de agosto, el grupo con más fallecimientos es el comprendido entre los 65 y los 74 años, con 68 víctimas, seguido muy de cerca por las personas de 75 años o más, con 66. A continuación se sitúan las personas de entre 55 y 64 años, con 55 fallecimientos; las de 45 a 54 años, con 41; y las de 18 a 25 años, con 38. Entre los 35 y los 44 años se han registrado 30 víctimas; entre los 26 y los 34, 26; y en 31 casos se desconoce la edad. En cuanto a los menores de edad, el acumulado alcanza las 34 muertes: once entre los 0 y los 3 años, siete entre los 4 y los 6, tres entre los 7 y los 10 y trece entre los 11 y los 17 años. Los datos vuelven a evidenciar la necesidad de extremar la atención tanto sobre los menores como sobre las personas de mayor edad durante el baño. 58 de las ",
+      "lineage_id": "LIN-UNKNOWN",
+      "independence_group": "IG-UNKNOWN",
+      "relationship_type": "UNKNOWN_PROVENANCE",
+      "assessment": "UNASSESSED",
+      "retrieval": {
+        "http_status": 200,
+        "content_type": "text/html; charset=UTF-8",
+        "final_url": "https://rfess.es/agosto-registra-80-muertes-por-ahogamiento-y-eleva-a-389-el-balance-de-2026/",
+        "matched_claim_terms": [
+          "agosto",
+          "comunidad",
+          "valenciana",
+          "registró",
+          "mayor",
+          "número",
+          "fallecimientos",
+          "andalucía",
+          "cataluña"
+        ],
+        "match_ratio": 0.75
+      }
+    },
+    {
+      "claim_id": "CLM-00000007",
+      "source_id": "SRC-UNRESOLVED",
+      "url_or_reference": "https://rfess.es/agosto-registra-80-muertes-por-ahogamiento-y-eleva-a-389-el-balance-de-2026/",
+      "document_or_record": "Agosto registra 80 muertes por ahogamiento y eleva a 389 el balance de 2026",
+      "source_role": "UNASSESSED",
+      "published_at": "2026-09-08",
+      "observed_at": "2026-09-11T06:29:56.097Z",
+      "relevant_excerpt_or_data": "Agosto registra 80 muertes por ahogamiento y eleva a 389 el balance de 2026 - RFESS Federación Organización Transparencia Circulares Cuotas, tasas y precios Tramitaciones Deporte Calendario Mínimas Récords en vigor Ranking Convocatorias Normativa Reglamento Medallero Histórico Español Resultados Antidopaje Descargas y consultas Alojamiento Formación ¿Qué hacemos? Dónde formarte Salvando Vidas Portal formativo Mujer y deporte Planes de igualdad Protocolos Programas Estudios específicos INA SIFA Informe Nacional de Ahogamiento Federación Organización Transparencia Circulares Cuotas, tasas y precios Tramitaciones Deporte Calendario Mínimas Récords en vigor Ranking Convocatorias Normativa Reglamento Medallero Histórico Español Resultados Antidopaje Descargas y consultas Alojamiento Formación ¿Qué hacemos? Dónde formarte Salvando Vidas Portal formativo Mujer y deporte Planes de igualdad Protocolos Programas Estudios específicos INA SIFA Informe Nacional de Ahogamiento Search Contacto Search Federación Organización Transparencia Circulares Cuotas, tasas y precios Tramitaciones Deporte Calendario Mínimas Récords en vigor Ranking Convocatorias Normativa Reglamento Medallero Histórico Español Resultados Antidopaje Descargas y consultas Alojamiento Formación ¿Qué hacemos? Dónde formarte Salvando Vidas Portal formativo Mujer y deporte Planes de igualdad Protocolos Programas Estudios específicos INA SIFA Informe Nacional de Ahogamiento Federación Organización Transparencia Circulares Cuotas, tasas y precios Tramitaciones Deporte Calendario Mínimas Récords en vigor Ranking Convocatorias Normativa Reglamento Medallero Histórico Español Resultados Antidopaje Descargas y consultas Alojamiento Formación ¿Qué hacemos? Dónde formarte Salvando Vidas Portal formativo Mujer y deporte Planes de igualdad Protocolos Programas Estudios específicos INA SIFA Informe Nacional de Ahogamiento Sep 08, 2026 Agosto registra 80 muertes por ahogamiento y eleva a 389 el balance de 2026 Las personas de mayor edad mantienen el perfil de mayor incidencia y las playas concentran 35 de las muertes del último mes Un total de 80 personas fallecieron por ahogamiento no intencional en los espacios acuáticos españoles durante el mes de agosto, según los datos del Informe Nacional de Ahogamientos (INA) elaborado por la Real Federación Española de Salvamento y Socorrismo. Con estos registros, el balance acumulado entre el 1 de enero y el 31 de agosto asciende a 389 muertes. Esta cifra incorpora además un fallecimiento ocurrido durante el mes de julio del que se tuvo constancia a mediados de agosto, por lo que el registro definitivo de julio pasa de los 91 casos contabilizados inicialmente a 92 fallecimientos. De esta forma, junio y julio, con 92 muertes cada uno, se mantienen como los meses con mayor mortalidad por ahogamiento en lo que va de año, mientras que agosto cierra con 80 decesos. Solo durante julio y agosto, dos meses plenamente incluidos en la temporada de baño iniciada el 15 de junio, se han contabilizado 172 muertes por ahogamiento. Las personas de mayor edad concentran el mayor número de víctimas El perfil por edades muestra una mayor incidencia entre las personas de edad avanzada. Hasta el 31 de agosto, el grupo con más fallecimientos es el comprendido entre los 65 y los 74 años, con 68 víctimas, seguido muy de cerca por las personas de 75 años o más, con 66. A continuación se sitúan las personas de entre 55 y 64 años, con 55 fallecimientos; las de 45 a 54 años, con 41; y las de 18 a 25 años, con 38. Entre los 35 y los 44 años se han registrado 30 víctimas; entre los 26 y los 34, 26; y en 31 casos se desconoce la edad. En cuanto a los menores de edad, el acumulado alcanza las 34 muertes: once entre los 0 y los 3 años, siete entre los 4 y los 6, tres entre los 7 y los 10 y trece entre los 11 y los 17 años. Los datos vuelven a evidenciar la necesidad de extremar la atención tanto sobre los menores como sobre las personas de mayor edad durante el baño. 58 de las ",
+      "lineage_id": "LIN-UNKNOWN",
+      "independence_group": "IG-UNKNOWN",
+      "relationship_type": "UNKNOWN_PROVENANCE",
+      "assessment": "UNASSESSED",
+      "retrieval": {
+        "http_status": 200,
+        "content_type": "text/html; charset=UTF-8",
+        "final_url": "https://rfess.es/agosto-registra-80-muertes-por-ahogamiento-y-eleva-a-389-el-balance-de-2026/",
+        "matched_claim_terms": [
+          "fuente",
+          "estos",
+          "datos",
+          "propia",
+          "rfess",
+          "rfess",
+          "2026"
+        ],
+        "match_ratio": 0.5833333333333334
+      }
+    }
+  ],
+  "failed": [
+    {
+      "result": {
+        "claim_id": "CLM-00000003",
+        "url": "https://elpais.com/salud-y-bienestar/2026-09-05/el-verano-con-mas-ahogamientos-desde-que-hay-registros-como-reconocer-a-alguien-en-peligro.html",
+        "title": "El verano con más ahogamientos desde que hay registros: ¿cómo reconocer a alguien en peligro?",
+        "source_name": "El País (corroboración independiente)",
+        "published_at": "2026-09-05",
+        "snippet": "Los ahogamientos se han saldado con 363 vidas en lo que llevamos de año en España, 239 de ellas solo entre junio y agosto. Es el peor verano desde 2015, cuando comienzan a registrarse estos datos en el Informe Nacional de Ahogamientos (INA) de la Real Federación Española de Salvamento y Socorrismo (RFESS).",
+        "document_or_record": null,
+        "source_role": "UNASSESSED",
+        "relationship_type": "UNKNOWN_PROVENANCE",
+        "lineage_id": "LIN-UNKNOWN",
+        "independence_group": "IG-UNKNOWN",
+        "acceptance": "CANDIDATE_REQUIRES_EDITORIAL_ASSESSMENT"
+      },
+      "reason": "HTTP 403"
+    }
+  ],
+  "note": "El contenido fue recuperado automáticamente. Los candidatos permanecen UNASSESSED hasta su evaluación; la recuperación no demuestra por sí sola el claim."
+}

@@ -91,7 +91,7 @@ for (const candidate of candidates) {
     lineage_id: candidate.lineage_id ?? "LIN-UNKNOWN",
     independence_group: candidate.independence_group ?? "IG-UNKNOWN",
     relationship_type: candidate.relationship_type ?? "UNKNOWN_PROVENANCE",
-    assessment,
+    provenance_status: candidate.provenance_status ?? "UNKNOWN",
     accepted_at: new Date().toISOString(),
   });
 }

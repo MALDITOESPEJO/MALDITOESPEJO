@@ -1,0 +1,80 @@
+{
+  "case_id": "CASE-00000008",
+  "provider": "claude-web-search",
+  "results": [
+    {
+      "claim_id": "CLM-00000001",
+      "url": "https://rfess.es/agosto-registra-80-muertes-por-ahogamiento-y-eleva-a-389-el-balance-de-2026/",
+      "title": "Agosto registra 80 muertes por ahogamiento y eleva a 389 el balance de 2026",
+      "source_name": "RFESS (Real Federación Española de Salvamento y Socorrismo) — fuente primaria",
+      "published_at": "2026-09-08",
+      "snippet": "Un total de 80 personas fallecieron por ahogamiento no intencional en los espacios acuáticos españoles durante el mes de agosto, según los datos del Informe Nacional de Ahogamientos (INA) elaborado por la Real Federación Española de Salvamento y Socorrismo. Balance acumulado 2026: 389 muertes (entre el 1 de enero y el 31 de agosto)."
+    },
+    {
+      "claim_id": "CLM-00000001",
+      "url": "https://rfess.es/ina/",
+      "title": "INA - RFESS",
+      "source_name": "RFESS — índice oficial de informes",
+      "published_at": "2025-11-25",
+      "snippet": "Informe Nacional de Ahogamientos. Agosto registra 80 muertes por ahogamiento y eleva a 389 el balance de 2026. Leer más."
+    },
+    {
+      "claim_id": "CLM-00000002",
+      "url": "https://rfess.es/agosto-registra-80-muertes-por-ahogamiento-y-eleva-a-389-el-balance-de-2026/",
+      "title": "Agosto registra 80 muertes por ahogamiento y eleva a 389 el balance de 2026",
+      "source_name": "RFESS — fuente primaria",
+      "published_at": "2026-09-08",
+      "snippet": "Cifras de agosto: 80 muertes por ahogamiento."
+    },
+    {
+      "claim_id": "CLM-00000003",
+      "url": "https://rfess.es/agosto-registra-80-muertes-por-ahogamiento-y-eleva-a-389-el-balance-de-2026/",
+      "title": "Agosto registra 80 muertes por ahogamiento y eleva a 389 el balance de 2026",
+      "source_name": "RFESS — fuente primaria",
+      "published_at": "2026-09-08",
+      "snippet": "El balance del verano de 2026 empeora respecto al año anterior: entre junio, julio y agosto de 2026 se registraron 264 fallecimientos frente a los 230 del mismo periodo de 2025, lo que supone 34 muertes más (un incremento cercano al 15%)."
+    },
+    {
+      "claim_id": "CLM-00000003",
+      "url": "https://elpais.com/salud-y-bienestar/2026-09-05/el-verano-con-mas-ahogamientos-desde-que-hay-registros-como-reconocer-a-alguien-en-peligro.html",
+      "title": "El verano con más ahogamientos desde que hay registros: ¿cómo reconocer a alguien en peligro?",
+      "source_name": "El País (corroboración independiente)",
+      "published_at": "2026-09-05",
+      "snippet": "Los ahogamientos se han saldado con 363 vidas en lo que llevamos de año en España, 239 de ellas solo entre junio y agosto. Es el peor verano desde 2015, cuando comienzan a registrarse estos datos en el Informe Nacional de Ahogamientos (INA) de la Real Federación Española de Salvamento y Socorrismo (RFESS).",
+      "note": "Publicado el 5 de septiembre, antes del cierre de agosto — las cifras (363/239) son parciales, del 2 de septiembre, no del balance final de agosto (389/264). Confirma la tendencia y la fuente, no las cifras exactas finales."
+    },
+    {
+      "claim_id": "CLM-00000004",
+      "url": "https://rfess.es/agosto-registra-80-muertes-por-ahogamiento-y-eleva-a-389-el-balance-de-2026/",
+      "title": "Agosto registra 80 muertes por ahogamiento y eleva a 389 el balance de 2026",
+      "source_name": "RFESS — fuente primaria",
+      "published_at": "2026-09-08",
+      "snippet": "Las personas de mayor edad mantienen la mayor incidencia. El grupo con más fallecimientos es el comprendido entre los 65 y los 74 años (68 víctimas), seguido muy de cerca por las personas de 75 años o más (66 víctimas)."
+    },
+    {
+      "claim_id": "CLM-00000005",
+      "url": "https://rfess.es/agosto-registra-80-muertes-por-ahogamiento-y-eleva-a-389-el-balance-de-2026/",
+      "title": "Agosto registra 80 muertes por ahogamiento y eleva a 389 el balance de 2026",
+      "source_name": "RFESS — fuente primaria",
+      "published_at": "2026-09-08",
+      "snippet": "En agosto: 58 hombres y 22 mujeres (72,2% de las víctimas del mes fueron hombres). En los datos acumulados clasificados por sexo figuran 299 hombres y 90 mujeres."
+    },
+    {
+      "claim_id": "CLM-00000006",
+      "url": "https://rfess.es/agosto-registra-80-muertes-por-ahogamiento-y-eleva-a-389-el-balance-de-2026/",
+      "title": "Agosto registra 80 muertes por ahogamiento y eleva a 389 el balance de 2026",
+      "source_name": "RFESS — fuente primaria",
+      "published_at": "2026-09-08",
+      "snippet": "Desglose por comunidad autónoma (agosto): Comunidad Valenciana: 16; Andalucía: 12; Cataluña: 11; Castilla y León: 11; Canarias: 6; Baleares: 6; Galicia: 4; País Vasco: 4; Navarra: 3; Asturias: 2."
+    },
+    {
+      "claim_id": "CLM-00000007",
+      "url": "https://rfess.es/agosto-registra-80-muertes-por-ahogamiento-y-eleva-a-389-el-balance-de-2026/",
+      "title": "Agosto registra 80 muertes por ahogamiento y eleva a 389 el balance de 2026",
+      "source_name": "RFESS — fuente primaria",
+      "published_at": "2026-09-08",
+      "snippet": "Página oficial de la Real Federación Española de Salvamento y Socorrismo, leída directamente el 11 de septiembre de 2026.",
+      "note": "Este claim describe el propio acto de consulta de la fuente (metodológico), no un hecho externo — similar al CLM-00000005 del caso AEMET anterior. Señalar si conviene reclasificarlo en vez de tratarlo como FACT normal."
+    }
+  ]
+}
