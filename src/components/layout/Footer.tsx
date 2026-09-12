@@ -27,6 +27,8 @@ export function Footer() {
                 { name: "Mundo", url: "/mundo" },
                 { name: "Tecnología", url: "/tecnologia" },
                 { name: "Cartagena", url: "/cartagena" },
+                { name: "Región de Murcia", url: "/region-de-murcia" },
+                { name: "Mayores", url: "/mayores" },
               ].map((s) => (
                 <li key={s.url}>
                   <Link href={s.url} className="transition-colors hover:text-ink">

@@ -13,6 +13,8 @@ export type SectionSlug =
   | "mundo"
   | "tecnologia"
   | "cartagena"
+  | "regiondemurcia"
+  | "mayores"
   | "cultura";
 
 export interface Section {

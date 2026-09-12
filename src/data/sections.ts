@@ -8,6 +8,8 @@ export const sections: Section[] = [
   { slug: "mundo", name: "Mundo", url: "/mundo" },
   { slug: "tecnologia", name: "Tecnología", url: "/tecnologia" },
   { slug: "cartagena", name: "Cartagena", url: "/cartagena" },
+  { slug: "regiondemurcia", name: "Región de Murcia", url: "/region-de-murcia" },
+  { slug: "mayores", name: "Mayores", url: "/mayores" },
 ];
 
 export function getSection(slug: string): Section | undefined {

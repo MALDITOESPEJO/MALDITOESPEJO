@@ -21,6 +21,8 @@ const VALID_SECTIONS = new Set([
   "mundo",
   "tecnologia",
   "cartagena",
+  "regiondemurcia",
+  "mayores",
   "cultura",
 ]);
 
@@ -114,7 +116,7 @@ function validateArticle(file) {
   // Misma normalizaci\u00f3n que aplica el frontend real (src/data/articles.ts):
   // min\u00fasculas + eliminaci\u00f3n de diacr\u00edticos, para que "Mundo", "Tecnolog\u00eda"
   // y "tecnologia" se validen como el mismo slug.
-  const normalizedSection = data.section?.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+  const normalizedSection = data.section?.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/\s+/g, "");
   if (data.section && !VALID_SECTIONS.has(normalizedSection)) errors.push(`secci\u00f3n desconocida '${data.section}' (debe normalizar a una de: ${[...VALID_SECTIONS].join(", ")})`);
 
   // Normalizamos a NFC antes de comparar: un acento puede venir compuesto
