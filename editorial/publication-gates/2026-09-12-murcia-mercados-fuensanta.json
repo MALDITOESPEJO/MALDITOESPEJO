@@ -1,0 +1,17 @@
+{
+  "article": "content/articles/2026-09-12-murcia-mercados-fuensanta.md",
+  "verification_path": "via_abreviada_fuente_oficial",
+  "verification_completed": true,
+  "official_source": "Ayuntamiento de Murcia, Concejalía de Consumo — Orden de 31 de octubre de 2024 (Consejería de Empresa, Empleo y Economía Social) y decreto municipal de 20 de mayo de 2025",
+  "conditions_met": {
+    "fuente_oficial_primaria_identificable": true,
+    "solo_hechos_declaraciones_atribuidas": true,
+    "redaccion_lenguaje_claro": true
+  },
+  "publication_sources_support": true,
+  "material_contradictions_resolved": true,
+  "human_editorial_approval": true,
+  "approved_at": "2026-09-12",
+  "approved_by": "Editor responsable",
+  "notes": "Aprobación humana confirmada en la conversación editorial. Publicado por la vía abreviada de verificación para fuente oficial directa (editorial/documentation/DIRECTOR_CRITERIO_MALDITOESPEJO.md), no por el motor de casos completo: no se abrió CASE-########. Corroborado además por murciaeconomia.com (12/09/2026). Imagen asociada por slug en public/images/2026-09-12-murcia-mercados-fuensanta.png."
+}
