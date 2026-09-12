@@ -23,6 +23,20 @@ MALDITOESPEJO publica **SOLO HECHOS**. El Director debe ejercer criterio editori
 - Si una afirmación importante no puede confirmarse, debe omitirse, reformularse o atribuirse claramente.
 - Comprobar fechas, nombres, cargos, cifras, lugares y demás datos esenciales antes de entregar el texto.
 
+## Vía abreviada de verificación para fuente oficial directa
+
+El motor de casos completo (investigación → claims → evidencia → verificación → Publication Gate) sigue siendo la vía por defecto para todo artículo nuevo. Existe una vía abreviada para las piezas que cumplan estas tres condiciones a la vez:
+
+1. **Fuente oficial identificable y primaria**: el organismo público es quien actúa o declara, no un medio que lo menciona. Debe citarse con referencia exacta (BOE, decreto, orden, nota de prensa oficial, o declaración con nombre y cargo del responsable).
+2. **Solo hechos, cero opiniones o valoraciones propias**: cualquier declaración de terceros va citada textualmente y atribuida a su autor; nunca se redacta como hecho probado por el periódico.
+3. **Redacción en lenguaje claro**: comprensible para audiencia sénior, sin tecnicismos administrativos, jurídicos o sanitarios sin explicar.
+
+Una segunda fuente independiente no es obligatoria bajo esta vía, aunque puede incluirse si existe y refuerza la pieza. Esta vía no excluye ningún tema por su naturaleza (incluidos sucesos u otros temas sensibles) siempre que las tres condiciones se cumplan.
+
+Registro mínimo exigido por pieza, redactado por quien firma: la fuente oficial exacta con enlace o referencia, y una frase explícita confirmando que se cumplen las condiciones 1-3.
+
+Esta vía abreviada acorta la verificación, nunca la aprobación: ninguna pieza, por esta vía o por el motor completo, se marca `approved`/`published` sin aprobación explícita del usuario para esa pieza concreta. El usuario decide, caso por caso, si publica.
+
 ## Fuentes y redacción original
 
 Las fuentes son instrumentos de **investigación, contraste y verificación**. No son material para copiar.
