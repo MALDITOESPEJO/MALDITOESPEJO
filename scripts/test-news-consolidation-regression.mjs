@@ -9,8 +9,8 @@
  */
 import fs from 'node:fs';
 
-const positivePath = 'EDITORIAL/radars/audits/2026-09-06/consolidation-regression-cases.json';
-const negativePath = 'EDITORIAL/radars/audits/2026-09-06/consolidation-negative-regression-cases.json';
+const positivePath = 'editorial/radars/audits/2026-09-06/consolidation-regression-cases.json';
+const negativePath = 'editorial/radars/audits/2026-09-06/consolidation-negative-regression-cases.json';
 
 const positive = JSON.parse(fs.readFileSync(positivePath, 'utf8').replace(/^\uFEFF/, ''));
 const negative = JSON.parse(fs.readFileSync(negativePath, 'utf8'));

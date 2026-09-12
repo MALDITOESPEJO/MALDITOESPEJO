@@ -5,7 +5,7 @@ import os from 'node:os';
 import path from 'node:path';
 import { spawnSync } from 'node:child_process';
 
-const fixture = 'EDITORIAL/radars/audits/2026-09-06/event-relation-regression-cases.json';
+const fixture = 'editorial/radars/audits/2026-09-06/event-relation-regression-cases.json';
 const cases = JSON.parse(fs.readFileSync(fixture, 'utf8'));
 const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'malditoespejo-relations-'));
 const input = path.join(dir, 'input.json');
