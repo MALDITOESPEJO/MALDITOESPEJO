@@ -30,6 +30,9 @@ const VALID_SECTIONS = new Set([
 // Cultura no es una secci\u00f3n editorial independiente ni una ruta real del
 // sitio (no existe /cultura en src/app ni en src/data/sections.ts): el
 // contenido cultural se etiqueta como "actualidad", no como "cultura".
+// SUSTITUIDO el 2026-09-12: se mantiene solo como referencia de legado para
+// contenido publicado entre el 2026-09-04 y el 2026-09-12 (ver
+// FIXED_AUTHOR_EFFECTIVE_DATE m\u00e1s abajo).
 const SECTION_AUTHORS = {
   actualidad: "Iria Valc\u00e1rcel Montoro",
   politica: "Bruno Salvatierra Ledesma",
@@ -40,11 +43,17 @@ const SECTION_AUTHORS = {
   cartagena: "Luc\u00eda Belmonte Navarro",
 };
 
-// A partir de esta fecha (inclusive), todo art\u00edculo nuevo debe llevar la
-// firma fija de su secci\u00f3n: un desajuste es error, no aviso. Los art\u00edculos
-// con fecha anterior son legado publicado antes de esta pol\u00edtica y solo
-// generan un aviso, para no romper la validaci\u00f3n de contenido ya vivo.
+// A partir de esta fecha (inclusive), todo art\u00edculo nuevo deb\u00eda llevar la
+// firma fija de su secci\u00f3n: un desajuste era error, no aviso. SUSTITUIDA el
+// 2026-09-12 por FIXED_AUTHOR_EFFECTIVE_DATE (ver abajo): se conserva solo
+// para no romper la validaci\u00f3n de contenido publicado en esa ventana.
 const AUTHOR_POLICY_EFFECTIVE_DATE = "2026-09-04";
+
+// Pol\u00edtica vigente confirmada por el propietario el 2026-09-12: el roster de
+// firmas individuales por secci\u00f3n queda sustituido por una autor\u00eda \u00fanica y
+// fija para todo art\u00edculo nuevo, en todas las secciones, sin excepci\u00f3n.
+const FIXED_AUTHOR = "Redacci\u00f3n MALDITOESPEJO";
+const FIXED_AUTHOR_EFFECTIVE_DATE = "2026-09-12";
 
 // "approved" es el estado terminal real que usa el frontend (ver
 // src/data/articles.ts: solo se publican archivos con status "approved").
@@ -123,14 +132,21 @@ function validateArticle(file) {
   // (\u00e9 = U+00E9) o descompuesto (e + \u00b4 = U+0065 U+0301); visualmente son
   // id\u00e9nticos pero no coinciden byte a byte si no se normalizan igual.
   const normalizedAuthor = data.author?.normalize("NFC");
-  const expectedAuthor = SECTION_AUTHORS[normalizedSection];
-  if (expectedAuthor && normalizedAuthor && normalizedAuthor !== expectedAuthor.normalize("NFC")) {
-    const isLegacy = data.date && data.date < AUTHOR_POLICY_EFFECTIVE_DATE;
-    const message = `la secci\u00f3n '${data.section}' tiene firma fija '${expectedAuthor}', pero este art\u00edculo figura con '${data.author}'`;
-    if (isLegacy) warnings.push(`${message} (contenido anterior al ${AUTHOR_POLICY_EFFECTIVE_DATE}: se permite como legado, no bloquea)`);
-    else errors.push(message);
-  } else if (!expectedAuthor && data.author) {
-    warnings.push(`la secci\u00f3n '${data.section}' todav\u00eda no tiene firma fija asignada en el roster oficial`);
+  const isFixedAuthorEra = data.date && data.date >= FIXED_AUTHOR_EFFECTIVE_DATE;
+  if (isFixedAuthorEra) {
+    if (normalizedAuthor && normalizedAuthor !== FIXED_AUTHOR.normalize("NFC")) {
+      errors.push(`todo art\u00edculo a partir del ${FIXED_AUTHOR_EFFECTIVE_DATE} debe llevar la autor\u00eda fija '${FIXED_AUTHOR}', pero este art\u00edculo figura con '${data.author}'`);
+    }
+  } else {
+    const expectedAuthor = SECTION_AUTHORS[normalizedSection];
+    if (expectedAuthor && normalizedAuthor && normalizedAuthor !== expectedAuthor.normalize("NFC")) {
+      const isLegacy = data.date && data.date < AUTHOR_POLICY_EFFECTIVE_DATE;
+      const message = `la secci\u00f3n '${data.section}' ten\u00eda firma fija '${expectedAuthor}', pero este art\u00edculo figura con '${data.author}'`;
+      if (isLegacy) warnings.push(`${message} (contenido anterior al ${AUTHOR_POLICY_EFFECTIVE_DATE}: se permite como legado, no bloquea)`);
+      else warnings.push(`${message} (contenido de la ventana 2026-09-04/2026-09-12, roster ya sustituido: se permite como legado, no bloquea)`);
+    } else if (!expectedAuthor && data.author) {
+      warnings.push(`la secci\u00f3n '${data.section}' no ten\u00eda firma fija asignada en el roster de esa \u00e9poca`);
+    }
   }
   if (data.status && !ALLOWED_STATUS.has(data.status)) errors.push(`estado editorial no permitido '${data.status}'`);
 

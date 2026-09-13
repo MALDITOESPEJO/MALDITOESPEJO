@@ -49,13 +49,9 @@ Las fuentes son instrumentos de **investigación, contraste y verificación**. N
 - Una noticia no se considera editorialmente final si las fuentes no son visibles o si el texto conserva una dependencia evidente de la redacción de la fuente.
 - La automatización puede comprobar que las fuentes están declaradas y visibles y que existe una declaración de originalidad; la **originalidad semántica final** sigue requiriendo revisión editorial humana cuando no existe el texto de referencia local para una comparación automática.
 
-## Autoría por sección
+## Autoría
 
-La autoría se asigna de forma obligatoria según la sección editorial y no debe utilizarse una autoría genérica o por defecto.
-
-- **Cartagena → Lucía Belmonte Navarro**
-
-Esta asignación constituye una regla editorial permanente: toda noticia perteneciente a la sección **Cartagena** deberá llevar como autora a **Lucía Belmonte Navarro**, tanto en fase de propuesta como en el archivo editorial y en la publicación final, salvo modificación expresa de esta regla por la Dirección.
+Desde el 12 de septiembre de 2026, toda pieza nueva, en cualquier sección, lleva como autoría **Redacción MALDITOESPEJO**, sin excepción. Sustituye a la asignación de firmas individuales por sección que estuvo vigente antes de esa fecha (incluida la de Cartagena → Lucía Belmonte Navarro). El contenido publicado antes del 12 de septiembre de 2026 con firma individual no se modifica retroactivamente; es legado válido bajo la política vigente en el momento de su publicación.
 
 ## Redacción
 
