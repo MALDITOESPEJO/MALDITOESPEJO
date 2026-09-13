@@ -1,0 +1,17 @@
+{
+  "article": "content/articles/2026-09-12-san-javier-carril-bici.md",
+  "verification_path": "via_abreviada_fuente_oficial",
+  "verification_completed": true,
+  "official_source": "Ayuntamiento de San Javier, Concejalía de Turismo y Playas — https://www.sanjavier.es/es/noticia-17255-nuevo-carril-bici",
+  "conditions_met": {
+    "fuente_oficial_primaria_identificable": true,
+    "solo_hechos_declaraciones_atribuidas": true,
+    "redaccion_lenguaje_claro": true
+  },
+  "publication_sources_support": true,
+  "material_contradictions_resolved": true,
+  "human_editorial_approval": true,
+  "approved_at": "2026-09-12",
+  "approved_by": "Editor responsable",
+  "notes": "Aprobación humana confirmada en la conversación editorial. Publicado por la vía abreviada de verificación para fuente oficial directa (editorial/documentation/DIRECTOR_CRITERIO_MALDITOESPEJO.md), no por el motor de casos completo: no se abrió CASE-########. La fuente es la propia noticia oficial del Ayuntamiento de San Javier, sin intermediario de prensa. Imagen aportada por el usuario, asociada por slug en public/images/2026-09-12-san-javier-carril-bici.jpg."
+}
