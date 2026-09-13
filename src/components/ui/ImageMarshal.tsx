@@ -25,7 +25,7 @@ export function ImageMarshal({
   }
 
   return (
-    <div className={`overflow-hidden ${className}`}>
+    <div className={`overflow-hidden bg-surface ${className}`}>
       <Image
         src={article.image.src}
         alt={article.image.alt}
@@ -33,7 +33,7 @@ export function ImageMarshal({
         height={article.image.height}
         sizes={sizes}
         priority={priority}
-        className="aspect-[16/9] w-full object-cover"
+        className="aspect-[16/9] w-full object-contain"
       />
     </div>
   );
