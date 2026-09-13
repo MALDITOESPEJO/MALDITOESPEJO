@@ -1,0 +1,17 @@
+{
+  "article": "content/articles/2026-09-12-dgt-nieve-autopistas.md",
+  "verification_path": "via_abreviada_fuente_oficial",
+  "verification_completed": true,
+  "official_source": "Real Decreto 518/2026, de 24 de junio (BOE-A-2026-13889), artículo 32 del Reglamento General de Circulación",
+  "conditions_met": {
+    "fuente_oficial_primaria_identificable": true,
+    "solo_hechos_declaraciones_atribuidas": true,
+    "redaccion_lenguaje_claro": true
+  },
+  "publication_sources_support": true,
+  "material_contradictions_resolved": true,
+  "human_editorial_approval": true,
+  "approved_at": "2026-09-12",
+  "approved_by": "Editor responsable",
+  "notes": "Aprobación humana confirmada en la conversación editorial. Publicado por la vía abreviada de verificación para fuente oficial directa (editorial/documentation/DIRECTOR_CRITERIO_MALDITOESPEJO.md), no por el motor de casos completo: no se abrió CASE-########. Texto del artículo 32 contrastado literalmente contra boe.es/diario_boe/txt.php?id=BOE-A-2026-13889. Imagen aportada por el usuario, asociada por slug en public/images/2026-09-12-dgt-nieve-autopistas.jpg."
+}
