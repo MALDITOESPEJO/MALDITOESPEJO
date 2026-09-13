@@ -11,6 +11,9 @@ status: "approved"
 editorial_originality: "original"
 sources:
   - "Ayuntamiento de San Javier, Concejalía de Turismo y Playas"
+related_articles:
+  - "2026-09-13-cartagena-senderos-azules"
+  - "2026-09-13-region-competencias-costas"
 ---
 
 El Ayuntamiento de San Javier ha terminado un nuevo carril bici entre San Javier y Los Alcázares. Está en el vial FM-F34, desde la rotonda de acceso al antiguo aeropuerto hasta el límite con Los Alcázares, en la zona de Los Narejos.
