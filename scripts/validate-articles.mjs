@@ -112,7 +112,7 @@ function verificationRecordExists(articleId) {
   ].some((candidate) => fs.existsSync(candidate));
 }
 
-function validateArticle(file) {
+function validateArticle(file, knownSlugs) {
   const content = fs.readFileSync(file, "utf8");
   const { data, error } = parseFrontmatter(content);
   const errors = [];
@@ -150,6 +150,15 @@ function validateArticle(file) {
   }
   if (data.status && !ALLOWED_STATUS.has(data.status)) errors.push(`estado editorial no permitido '${data.status}'`);
 
+  const ownSlug = path.basename(file, path.extname(file));
+  if (Array.isArray(data.related_articles)) {
+    for (const relatedSlug of data.related_articles) {
+      if (relatedSlug === ownSlug) warnings.push(`related_articles incluye el propio art\u00edculo ('${relatedSlug}'), se omitir\u00e1 en pantalla`);
+      else if (!knownSlugs.has(relatedSlug)) warnings.push(`related_articles referencia un slug que no existe ('${relatedSlug}'); el frontend lo omite en silencio, pero probablemente sea un error de tecleo`);
+    }
+    if (data.related_articles.length > 4) warnings.push(`related_articles tiene ${data.related_articles.length} elementos; el frontend solo muestra los primeros 4`);
+  }
+
   const articleId = data.id || path.basename(file, path.extname(file));
   if ((data.status === "verified" || data.status === "published") && !verificationRecordExists(articleId)) errors.push(`estado '${data.status}' requiere un expediente de verificaci\u00f3n en editorial/validation/${articleId}.md o .json`);
   if (data.status === "published" || data.status === "approved") warnings.push(`estado '${data.status}': la validaci\u00f3n autom\u00e1tica comprueba estructura; la aprobaci\u00f3n humana y el Publication Gate siguen siendo obligatorios para considerar la pieza publicable bajo el est\u00e1ndar completo`);
@@ -169,13 +178,14 @@ function collectMarkdownFiles(directory) {
 
 const files = collectMarkdownFiles(ARTICLES_DIR);
 if (files.length === 0) { console.error(`X No se encontraron art\u00edculos Markdown en ${path.relative(ROOT, ARTICLES_DIR)}`); process.exit(1); }
+const knownSlugs = new Set(files.map((file) => path.basename(file, path.extname(file))));
 let totalErrors = 0, totalWarnings = 0;
 console.log("MALDITOESPEJO \u2014 validaci\u00f3n autom\u00e1tica de art\u00edculos");
 console.log(`Art\u00edculos encontrados: ${files.length}`);
 console.log("");
 for (const file of files) {
   const relative = path.relative(ROOT, file);
-  const { errors, warnings } = validateArticle(file);
+  const { errors, warnings } = validateArticle(file, knownSlugs);
   totalErrors += errors.length; totalWarnings += warnings.length;
   if (errors.length === 0) console.log(`OK ${relative}`);
   else { console.log(`X ${relative}`); for (const error of errors) fail(`  ${error}`); }
