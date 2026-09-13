@@ -1,0 +1,17 @@
+{
+  "article": "content/articles/2026-09-13-region-competencias-costas.md",
+  "verification_path": "via_abreviada_fuente_oficial",
+  "verification_completed": true,
+  "official_source": "Gobierno de la Región de Murcia (fuentes del Ejecutivo regional; declaraciones del consejero Jorge García Montoro y del alcalde Mario Pérez Cervera) — https://www.laverdad.es/murcia/region-solicita-formalmente-competencias-costas-agilizar-permisos-20260911003713-nt.html",
+  "conditions_met": {
+    "fuente_oficial_primaria_identificable": true,
+    "solo_hechos_declaraciones_atribuidas": true,
+    "redaccion_lenguaje_claro": true
+  },
+  "publication_sources_support": true,
+  "material_contradictions_resolved": true,
+  "human_editorial_approval": true,
+  "approved_at": "2026-09-13",
+  "approved_by": "Editor responsable",
+  "notes": "Aprobación humana confirmada en la conversación editorial. Publicado por la vía abreviada de verificación para fuente oficial directa (editorial/documentation/DIRECTOR_CRITERIO_MALDITOESPEJO.md), no por el motor de casos completo: no se abrió CASE-########. El organismo que actúa (Gobierno de la Región de Murcia) es la propia fuente, con declaraciones nominales de dos cargos públicos y precedente contrastado en el BOE (transferencia de competencias de Costas al País Vasco, 2024). Imagen aportada por el usuario, asociada por slug en public/images/2026-09-13-region-competencias-costas.png."
+}
