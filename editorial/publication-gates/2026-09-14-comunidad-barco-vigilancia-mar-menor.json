@@ -1,0 +1,17 @@
+{
+  "article": "content/articles/2026-09-14-comunidad-barco-vigilancia-mar-menor.md",
+  "verification_path": "via_abreviada_fuente_oficial",
+  "verification_completed": true,
+  "official_source": "Comunidad Autónoma de la Región de Murcia, Consejería de Medio Ambiente (declaraciones del consejero Juan María Vázquez) — https://www.laopiniondemurcia.es/comunidad/2026/09/14/comunidad-estrena-barco-reforzar-vigilancia-134247518.html",
+  "conditions_met": {
+    "fuente_oficial_primaria_identificable": true,
+    "solo_hechos_declaraciones_atribuidas": true,
+    "redaccion_lenguaje_claro": true
+  },
+  "publication_sources_support": true,
+  "material_contradictions_resolved": true,
+  "human_editorial_approval": true,
+  "approved_at": "2026-09-14",
+  "approved_by": "Editor responsable",
+  "notes": "Aprobación humana confirmada en la conversación editorial. Publicado por la vía abreviada de verificación para fuente oficial directa (editorial/documentation/DIRECTOR_CRITERIO_MALDITOESPEJO.md), no por el motor de casos completo: no se abrió CASE-########. Imagen aportada por el usuario, asociada por slug en public/images/2026-09-14-comunidad-barco-vigilancia-mar-menor.png. Related_articles enlaza con dos piezas previas sobre gestión del litoral (competencias de Costas, senderos azules de Cartagena) por overlap temático genuino."
+}
