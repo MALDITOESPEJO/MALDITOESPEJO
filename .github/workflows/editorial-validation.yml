@@ -28,6 +28,9 @@ jobs:
       - name: Validate articles
         run: npm run validate:articles
 
+      - name: Validate article images
+        run: node scripts/validate-article-images.mjs
+
       - name: Validate verification records
         run: npm run validate:verification
 
