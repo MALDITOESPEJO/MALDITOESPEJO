@@ -1,0 +1,17 @@
+{
+  "article": "content/articles/2026-09-14-consejeria-balance-autovia-noroeste.md",
+  "verification_path": "via_abreviada_fuente_oficial",
+  "verification_completed": true,
+  "official_source": "Consejería de Infraestructuras, Dirección General de Carreteras (Región de Murcia) — https://www.laverdad.es/murcia/consejeria-cifra-580-millones-euros-balance-positivo-20260914233335-nt.html",
+  "conditions_met": {
+    "fuente_oficial_primaria_identificable": true,
+    "solo_hechos_declaraciones_atribuidas": true,
+    "redaccion_lenguaje_claro": true
+  },
+  "publication_sources_support": true,
+  "material_contradictions_resolved": true,
+  "human_editorial_approval": true,
+  "approved_at": "2026-09-14",
+  "approved_by": "Editor responsable",
+  "notes": "Aprobación humana confirmada en la conversación editorial. Publicado por la vía abreviada de verificación para fuente oficial directa (editorial/documentation/DIRECTOR_CRITERIO_MALDITOESPEJO.md), no por el motor de casos completo: no se abrió CASE-########. La cifra de '580 millones de balance positivo' es una valoración propia de la Consejería (beneficios calculados menos costes), no un dato contable directo -- se atribuye explícitamente a la Dirección General de Carreteras en todo el texto, sin presentarla como hecho neutro incuestionable. Se añadió, a petición del usuario, una segunda fuente con la crítica histórica de alcaldes de la zona (Bullas, Campos del Río, Mula, Caravaca) sobre la detracción de fondos municipales por este mismo peaje en sombra, también atribuida como declaración, no como hecho propio. Imagen aportada por el usuario, asociada por slug en public/images/2026-09-14-consejeria-balance-autovia-noroeste.png."
+}
