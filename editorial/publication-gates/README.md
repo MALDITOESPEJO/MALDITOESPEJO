@@ -22,6 +22,19 @@ Todos deben constar como `true` en el registro de autorización.
 
 La documentación de investigación puede existir antes del registro del Gate. El registro de autorización debe ser el último paso, no el primero.
 
+## Integración con Git y producción
+
+El Publication Gate autoriza el contenido, no sustituye el estado de producción.
+
+Una vez obtenida la aprobación humana:
+
+- el cambio aprobado se integra sobre `main`;
+- `main` debe conservar todas las publicaciones anteriores;
+- una rama `publish/*` no se promociona directamente a producción;
+- el despliegue de producción debe corresponder al `main` acumulado.
+
+La aprobación no autoriza a reemplazar `main` por el snapshot de una rama de preview.
+
 ## Golden Article
 
 El artículo de empleo de agosto de 2026 dispone de un registro de investigación separado en `editorial/validation/GOLDEN_ARTICLE_PUBLICATION_RECORD.md`.
