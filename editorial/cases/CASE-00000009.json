@@ -1,0 +1,42 @@
+{
+  "case_id": "CASE-00000009",
+  "created_at": "2026-09-14",
+  "status": "EVIDENCE_READY",
+  "input_type": "news_lead",
+  "input_reference": "Ayuntamiento de Cartagena, noticia 89537 publicada el 11/09/2026",
+  "editorial_section": "Cartagena",
+  "assigned_author": "Lucía Belmonte Navarro",
+  "subject": "Apertura del Registro Municipal de Demandantes de Vivienda Protegida y adjudicación de viviendas sociales en alquiler",
+  "claims": [
+    {"claim_id":"CLM-00000027","text":"El nuevo periodo de inscripción comenzará el 21 de septiembre de 2026 y se extenderá durante 60 días hábiles desde la publicación de la oferta en la web municipal.","status":"VERIFIED"},
+    {"claim_id":"CLM-00000028","text":"El registro se renueva cada dos años y la vigencia de las inscripciones anteriores ha vencido, por lo que se abre un nuevo proceso.","status":"VERIFIED"},
+    {"claim_id":"CLM-00000029","text":"El Ayuntamiento dispone actualmente de 52 viviendas municipales y todas están alquiladas.","status":"VERIFIED"},
+    {"claim_id":"CLM-00000030","text":"Durante la legislatura se han incorporado cinco nuevos inmuebles a la red municipal.","status":"VERIFIED"},
+    {"claim_id":"CLM-00000031","text":"El registro actual que será renovado cuenta con 374 personas inscritas.","status":"VERIFIED"},
+    {"claim_id":"CLM-00000032","text":"El Ayuntamiento se ha incorporado al programa PARES y ha adquirido cuatro viviendas que han sido rehabilitadas y amuebladas para familias en situación de vulnerabilidad.","status":"SUPPORTED"},
+    {"claim_id":"CLM-00000033","text":"La inscripción no otorga por sí misma derecho a la adjudicación de una vivienda y es obligatoria para acceder a una vivienda del parque municipal.","status":"VERIFIED"}
+  ],
+  "sources": [
+    {"source_id":"SRC-VIV-CART-20260911-01","role":"PUBLICATION","title":"Ayuntamiento de Cartagena: Aprobada la apertura del registro de demandantes de vivienda protegida que cuenta con más de medio centenar de viviendas sociales","url":"https://cartagena.es/detalle_noticias_imprimir.asp?id=89537","published_at":"2026-09-11"},
+    {"source_id":"SRC-VIV-CART-20260911-02","role":"CONTEXT","title":"Concejalía de Servicios Sociales de Cartagena: Vivienda e intermediación / Registro de demandantes","url":"https://serviciossociales.cartagena.es/vivienda.asp"},
+    {"source_id":"SRC-VIV-CART-20260911-03","role":"CONTEXT","title":"Sede electrónica del Ayuntamiento de Cartagena: Solicitud de Inscripción en el Registro de Demandantes de Vivienda","url":"https://cartagena.sedipualba.es/carpetaciudadana/tramite.aspx?idtramite=10756"},
+    {"source_id":"SRC-VIV-CART-20260911-04","role":"CORROBORATION","title":"Cadena SER Cartagena: Cartagena actualiza la lista de espera para optar a una vivienda social","url":"https://cadenaser.com/murcia/2026/09/11/cartagena-actualiza-la-lista-de-espera-para-optar-a-una-vivienda-social-radio-cartagena/","published_at":"2026-09-11"}
+  ],
+  "research_plan":{"priority":"primary_first","steps":["Contrastar convocatoria, fechas y cifras con la fuente municipal.","Comprobar funcionamiento y requisitos en Servicios Sociales y sede electrónica.","Contrastar las cifras principales con una fuente secundaria independiente.","Distinguir personas inscritas de una lista de espera y no reforzar esa equivalencia sin respaldo normativo.","Comprobar el anuncio formal de convocatoria cuando esté disponible para confirmar el inicio efectivo y fecha límite."]},
+  "evidence":[
+    {"evidence_id":"EVD-00000031","supports":["CLM-00000027","CLM-00000028"],"source_id":"SRC-VIV-CART-20260911-01","assessment":"Direct primary-source confirmation."},
+    {"evidence_id":"EVD-00000032","supports":["CLM-00000029","CLM-00000030","CLM-00000031"],"source_id":"SRC-VIV-CART-20260911-01","assessment":"Direct primary-source confirmation."},
+    {"evidence_id":"EVD-00000033","supports":["CLM-00000033"],"source_id":"SRC-VIV-CART-20260911-02","assessment":"Municipal service page states purpose, requirements and that registration does not itself confer entitlement."},
+    {"evidence_id":"EVD-00000034","supports":["CLM-00000033"],"source_id":"SRC-VIV-CART-20260911-03","assessment":"Municipal e-government procedure documents the registration process and housing-need documentation."},
+    {"evidence_id":"EVD-00000035","supports":["CLM-00000029","CLM-00000031"],"source_id":"SRC-VIV-CART-20260911-04","assessment":"Independent media corroboration of the 52 occupied municipal homes and 374 registered people."}
+  ],
+  "provenance":[
+    {"lineage_id":"LIN-00000009","group":"municipal","description":"Ayuntamiento, Servicios Sociales y sede electrónica forman una misma cadena institucional y no cuentan como fuentes independientes entre sí."},
+    {"lineage_id":"LIN-00000010","group":"independent_media","description":"Cadena SER aporta corroboración independiente de las cifras y la apertura."}
+  ],
+  "contradictions":[],
+  "verification":{"completed":true,"status":"VERIFIED","human_approval":false,"notes":"Los hechos centrales están documentados. Se evita llamar 'lista de espera' a las 374 personas salvo que la convocatoria formal permita establecer esa equivalencia. La fecha de inicio está anunciada por el Ayuntamiento para el 21 de septiembre; queda pendiente contrastar la publicación formal de la convocatoria cuando aparezca."},
+  "publishable_scope":["CLM-00000027","CLM-00000028","CLM-00000029","CLM-00000030","CLM-00000031","CLM-00000033"],
+  "publication":{"approved":false,"published":false},
+  "next_step":"EDITOR_REVIEW"
+}
