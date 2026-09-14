@@ -202,3 +202,29 @@ El editor conserva la decisión final de publicación, especialmente cuando:
 ## 10. Principio rector
 
 > **MALDITOESPEJO no transforma una noticia en otra noticia. Transforma una pista en una investigación y una investigación verificada en una noticia original.**
+
+## 11. Integración técnica de una publicación aprobada
+
+La publicación aprobada debe integrarse siempre sobre el `main` actual.
+
+El `main` representa el estado acumulado de producción.
+
+Las ramas `publish/*` son ramas temporales utilizadas para generar previews y facilitar la revisión. No deben promocionarse directamente a producción.
+
+Flujo:
+
+`PREVIEW → APROBACIÓN HUMANA → ACTUALIZAR MAIN → INTEGRAR CAMBIO → DEPLOY DE MAIN`
+
+Antes de integrar:
+
+1. recuperar el estado actual de `main`;
+2. comprobar que el preview fue creado a partir de un estado conocido;
+3. detectar si `main` ha avanzado;
+4. integrar el cambio sobre el `main` actual;
+5. resolver cualquier conflicto antes de publicar;
+6. comprobar que no desaparece ningún artículo publicado;
+7. desplegar el `main` resultante.
+
+Si `main` ha cambiado de forma incompatible con el preview, la publicación debe detenerse y regenerarse/revisarse sobre el estado actual.
+
+Una rama `publish/*` nunca debe sustituir el contenido acumulado de `main`.
