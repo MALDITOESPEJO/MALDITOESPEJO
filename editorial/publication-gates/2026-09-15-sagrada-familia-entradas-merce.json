@@ -1,0 +1,17 @@
+{
+  "article": "content/articles/2026-09-15-sagrada-familia-entradas-merce.md",
+  "verification_path": "via_abreviada_fuente_oficial",
+  "verification_completed": true,
+  "official_source": "Basílica de la Sagrada Família (comunicado oficial sobre las jornadas de puertas abiertas por La Mercè) — https://www.20minutos.es/cataluna/barcelona/sagrada-familia-sortea-20-000-entradas-para-visitar-templo-forma-gratuita-durante-merce_7036628_0.html",
+  "conditions_met": {
+    "fuente_oficial_primaria_identificable": true,
+    "solo_hechos_declaraciones_atribuidas": true,
+    "redaccion_lenguaje_claro": true
+  },
+  "publication_sources_support": true,
+  "material_contradictions_resolved": true,
+  "human_editorial_approval": true,
+  "approved_at": "2026-09-15",
+  "approved_by": "Editor responsable",
+  "notes": "Aprobación humana confirmada en la conversación editorial. Publicado por la vía abreviada de verificación para fuente oficial directa (editorial/documentation/DIRECTOR_CRITERIO_MALDITOESPEJO.md), no por el motor de casos completo: no se abrió CASE-########. Información con vigencia práctica: el sorteo de inscripción sigue abierto en el momento de publicación (hasta el 20 de septiembre). La imagen aportada por el usuario muestra una fecha de generación (14 de septiembre) distinta a la de publicación (15 de septiembre); no afecta a ningún dato de la noticia (fechas, horarios y plazo de inscripción verificados, todos correctos). Imagen asociada por slug en public/images/2026-09-15-sagrada-familia-entradas-merce.jpg."
+}
