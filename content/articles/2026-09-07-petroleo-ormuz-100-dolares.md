@@ -1,5 +1,5 @@
 ---
-title: "El petróleo se acerca a los 100 dólares mientras los ataques entre EE. UU. e Irán reducen el tráfico por Ormuz"
+title: "El petróleo supera los 100 dólares mientras la crisis de Ormuz eleva el riesgo energético"
 section: "Economía"
 author: "Nerea Villacorta Beltrán"
 date: "2026-09-07"
@@ -7,78 +7,72 @@ time: "09:51"
 status: "published"
 slug: "petroleo-ormuz-100-dolares"
 image: "/images/2026-09-07-petroleo-ormuz-100-dolares.jpg"
+sources:
+  - id: "source-1"
+    entity: "U.S. Energy Information Administration"
+    label: "Spot Prices for Crude Oil and Petroleum Products"
+    nature: "fuente oficial"
+    date: "7 septiembre 2026"
+    url: "https://www.eia.gov/dnav/pet/PET_PRI_SPT_S1_D.htm"
+  - id: "source-2"
+    entity: "U.S. Central Command"
+    label: "CENTCOM Destroys 3 IRGC Oil Tankers After Iran Targets 2 U.S. Navy Warships"
+    nature: "fuente oficial"
+    date: "5 septiembre 2026"
+    url: "https://www.centcom.mil/MEDIA/PUBLIC-RELEASES/Article/4591744/centcom-destroys-3-irgc-oil-tankers-after-iran-targets-2-us-navy-warships/"
+  - id: "source-3"
+    entity: "International Maritime Organization"
+    label: "Six months of uncertainty for seafarers in Strait of Hormuz"
+    nature: "fuente oficial"
+    date: "28 agosto 2026"
+    url: "https://www.imo.org/en/mediacentre/pressbriefings/pages/statement-on-the-ongoing-crisis-in-the-strait-of-hormuz.aspx"
+  - id: "source-4"
+    entity: "International Maritime Organization"
+    label: "Monthly data on transits of ships through the Strait of Hormuz"
+    nature: "fuente oficial"
+    date: "agosto 2026"
+    url: "https://www.imo.org/en/mediacentre/hottopics/pages/strait-of-hormuz-middle-east-data.aspx"
 ---
 
-# El petróleo se acerca a los 100 dólares mientras los ataques entre EE. UU. e Irán reducen el tráfico por Ormuz
+# El petróleo supera los 100 dólares mientras la crisis de Ormuz eleva el riesgo energético
 
 **Economía · Nerea Villacorta Beltrán · 7 de septiembre de 2026 · 09:51 h (España)**
 
-El petróleo vuelve a acercarse a los 100 dólares por barril mientras la escalada militar entre Estados Unidos e Irán empieza a tener un efecto cada vez más visible sobre el tráfico comercial en el estrecho de Ormuz, una de las principales rutas energéticas del mundo.
+El precio del petróleo Brent se situó en **104,47 dólares por barril el 7 de septiembre**, según la serie oficial de precios de la Administración de Información Energética de Estados Unidos (EIA). El repunte se produce mientras la crisis de seguridad en Oriente Medio mantiene bajo presión al transporte marítimo en torno al estrecho de Ormuz.
 
-El Brent llegó este lunes a **97,48 dólares por barril**, con una subida del 1,25%, mientras el West Texas Intermediate avanzó hasta los 92,62 dólares. El crudo acumula además una fuerte subida semanal después de la reanudación de los ataques entre ambos países.
+El dato corrige la referencia de 97,48 dólares que figuraba en la versión anterior de este artículo: esa cifra no corresponde al precio spot del Brent registrado por la EIA para el 7 de septiembre.
 
-La preocupación de los mercados ya no se limita a las declaraciones militares. El problema empieza a trasladarse al movimiento físico de mercancías.
+## Ormuz, una ruta energética crítica
 
-## Ormuz empieza a quedarse vacío
+El estrecho de Ormuz conecta el golfo Pérsico con el golfo de Omán y el mar Arábigo. La EIA señala que los flujos que atravesaron el estrecho en 2024 y durante el primer trimestre de 2025 representaron **más de una cuarta parte del comercio marítimo mundial de petróleo** y aproximadamente una quinta parte del consumo mundial de petróleo y productos petrolíferos.
 
-Según datos de la firma de análisis marítimo Kpler citados por Reuters, una media de **10 buques de mercancías al día** atravesó el estrecho durante los últimos diez días. Es el nivel más bajo desde mayo.
+La importancia de la vía explica por qué cualquier interrupción sostenida puede tener consecuencias sobre los mercados energéticos, aunque el estrecho no llegue a quedar formalmente cerrado.
 
-La caída se ha acelerado durante el fin de semana: solo dos embarcaciones atravesaron el estrecho el sábado y seis lo hicieron el domingo. La mayoría utilizó el lado iraní de la vía marítima.
+## La navegación afronta una situación de riesgo
 
-El cambio es relevante porque Ormuz concentra aproximadamente **una quinta parte del suministro mundial de petróleo**. Cuando una ruta de esta importancia pierde capacidad de tránsito, el mercado empieza a valorar no solo el riesgo político, sino la posibilidad de una reducción efectiva de la oferta energética.
+La Organización Marítima Internacional (OMI) ha documentado el deterioro de la seguridad marítima en la zona. El 28 de agosto informó de que al menos **70 ataques contra el transporte marítimo internacional** habían sido verificados desde el comienzo del conflicto de Oriente Medio, con 19 marinos fallecidos.
 
-## Los ataques ya afectan a los petroleros
+La OMI también señaló que hasta 400 buques, con unos 6.000 marinos a bordo, no habían podido abandonar el golfo Pérsico de forma segura desde el inicio del conflicto. La organización ha publicado además datos mensuales sobre los tránsitos por Ormuz para seguir la evolución del tráfico.
 
-La escalada se produjo después de que Estados Unidos atacara tres petroleros iraníes el sábado, según el mando militar estadounidense, en respuesta a ataques iraníes contra buques de guerra estadounidenses.
+## Estados Unidos confirma nuevos ataques contra petroleros
 
-La Guardia Revolucionaria iraní respondió anunciando ataques contra varios petroleros que, según Teherán, utilizaban rutas no autorizadas, además de acciones contra buques vinculados a Estados Unidos.
+La tensión aumentó el 5 de septiembre. El Mando Central de Estados Unidos (CENTCOM) informó de que sus fuerzas atacaron tres petroleros iraníes después de que la Guardia Revolucionaria Islámica lanzara misiles balísticos contra dos buques de guerra estadounidenses.
 
-El resultado es una situación especialmente delicada para las compañías navieras: los buques comerciales han pasado a formar parte del riesgo militar de la zona.
+Según el comunicado estadounidense, los petroleros M/T Downy, M/T Stark 1 y M/T Kylo fueron atacados y quedaron inutilizados. CENTCOM afirmó que las tripulaciones habían recibido instrucciones de abandonar los buques antes de los ataques.
 
-El Reino Unido ha contabilizado **27 incidentes con proyectiles en torno al estrecho desde el 6 de julio**, según los datos citados por Reuters.
+Se trata de una declaración oficial estadounidense y no constituye, por sí sola, una descripción independiente de la posición iraní sobre los hechos.
 
-## La amenaza ya no es solo el precio del crudo
+## El riesgo energético va más allá del precio del crudo
 
-La primera consecuencia es evidente: petróleo más caro.
+El encarecimiento del petróleo puede trasladarse a los costes de transporte y producción y aumentar las presiones inflacionistas. El efecto final dependerá de la duración de la perturbación, del volumen de crudo que continúe atravesando la región y de la capacidad de los productores y operadores para utilizar rutas o suministros alternativos.
 
-Pero el problema económico puede ser mucho mayor si la reducción del tráfico se mantiene. Un encarecimiento prolongado del crudo eleva los costes de transporte, electricidad, producción industrial y calefacción. También aumenta la presión sobre la inflación.
+La propia OMI ha advertido de que la interrupción de cadenas de suministro de combustibles, fertilizantes y otras materias primas tiene consecuencias para comunidades y economías de todo el mundo.
 
-Eso puede obligar a los bancos centrales a mantener una política monetaria más restrictiva durante más tiempo, incluso aunque el crecimiento económico se debilite.
+## Lo que no se sabe
 
-El riesgo, por tanto, es que una crisis geopolítica termine convirtiéndose en un problema simultáneo de **energía, inflación y tipos de interés**.
+Las fuentes oficiales consultadas no permiten afirmar que el estrecho de Ormuz esté cerrado ni atribuir a una única causa toda la evolución diaria del precio del petróleo.
 
-## Irán prepara nuevas restricciones
+Tampoco se incorpora en esta versión la estimación de tráfico de Kpler citada anteriormente por Reuters, ni las previsiones de bancos de inversión sobre posibles precios de 120 dólares. Son datos y escenarios procedentes de fuentes secundarias que no son necesarios para explicar los hechos que sí pueden documentarse con fuentes primarias.
 
-La incertidumbre ha aumentado todavía más después de que Irán anunciara que prepara una nueva zona restringida en el Golfo y nuevos mapas de navegación para el estrecho.
+La cuestión central es si la reducción de la seguridad marítima se traduce en una disminución sostenida de los flujos energéticos. Mientras esa respuesta no esté clara, Ormuz seguirá siendo uno de los principales focos de riesgo para el mercado mundial del petróleo.
 
-Teherán ha advertido de que los buques que entren en esa zona podrían ser incluidos en una lista de sanciones.
-
-No significa que Ormuz esté completamente cerrado. De hecho, algunos barcos continúan atravesándolo. Pero el descenso del tráfico demuestra que las compañías están actuando como si el riesgo hubiera aumentado sustancialmente.
-
-Esa diferencia es fundamental para los mercados: **no hace falta un cierre formal del estrecho para provocar una crisis energética**. Basta con que una parte significativa de los operadores deje de considerarlo una ruta segura.
-
-## El mercado empieza a descontar un escenario más largo
-
-La escalada también está modificando las expectativas sobre cuánto tiempo podría durar la perturbación.
-
-Analistas de ANZ consideran que las exportaciones podrían permanecer limitadas durante 2026 y que los flujos energéticos de Oriente Medio no recuperarían cierta normalidad hasta comienzos de 2027 si el conflicto se resuelve de manera gradual.
-
-Goldman Sachs, por su parte, ha advertido de que una intensificación de los ataques contra buques en Oriente Medio podría llevar el petróleo hasta **120 dólares por barril**.
-
-Es un escenario de riesgo, no una previsión inevitable.
-
-Pero explica por qué el mercado está reaccionando antes de que exista un cierre total de Ormuz.
-
-## La pregunta ahora es cuánto tráfico puede perder Ormuz
-
-El petróleo se encuentra todavía por debajo de los máximos que alcanzaría en un escenario de interrupción completa y prolongada del suministro.
-
-La cuestión decisiva es si la caída del tráfico registrada durante los últimos días es temporal o marca el comienzo de una reducción sostenida de los flujos energéticos.
-
-Si los barcos vuelven a circular con normalidad, parte de la prima de riesgo podría desaparecer rápidamente.
-
-Si ocurre lo contrario, el problema dejará de ser únicamente militar.
-
-**Se convertirá en una crisis económica global cuyo primer indicador será el precio del petróleo.**
-
-**Nerea Villacorta Beltrán · 7 de septiembre de 2026 · 09:51 h**
