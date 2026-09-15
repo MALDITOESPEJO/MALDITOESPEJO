@@ -1,0 +1,17 @@
+{
+  "article": "content/articles/2026-09-15-imserso-turismo-mayores.md",
+  "verification_path": "via_abreviada_fuente_oficial",
+  "verification_completed": true,
+  "official_source": "Ministerio de Derechos Sociales, Consumo y Agenda 2030 — Imserso (nota de prensa oficial, dsca.gob.es; requisitos de participación verificados en sede.imserso.gob.es)",
+  "conditions_met": {
+    "fuente_oficial_primaria_identificable": true,
+    "solo_hechos_declaraciones_atribuidas": true,
+    "redaccion_lenguaje_claro": true
+  },
+  "publication_sources_support": true,
+  "material_contradictions_resolved": true,
+  "human_editorial_approval": true,
+  "approved_at": "2026-09-15",
+  "approved_by": "Editor responsable",
+  "notes": "Aprobación humana confirmada en la conversación editorial. Publicado por la vía abreviada de verificación para fuente oficial directa (editorial/documentation/DIRECTOR_CRITERIO_MALDITOESPEJO.md), no por el motor de casos completo: no se abrió CASE-########. La imagen aportada por el usuario simplificaba de forma incorrecta el requisito de edad ('mayores de 65 y pensionistas de 60-64'), dejando fuera a pensionistas de jubilación sin límite de edad y de viudedad desde los 55 -- el texto del artículo se corrigió con los requisitos reales verificados en sede.imserso.gob.es; la imagen se mantiene tal cual por ser ilustrativa, no una cita textual de la norma. La fecha de fin de temporada (junio de 2027) sí se verificó como correcta. Imagen asociada por slug en public/images/2026-09-15-imserso-turismo-mayores.png."
+}
