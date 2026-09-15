@@ -20,8 +20,16 @@ if (lines.length < 2) {
 }
 
 const header = lines[0].split(',').map((v) => v.trim());
-const required = ['lineage_id', 'evidence_id', 'source_id', 'independence_group', 'relation_type'];
+// The registry's established schema uses relationship_type. Accept relation_type
+// as a compatibility alias so validation does not require a needless schema rename.
+const relationColumn = header.includes('relationship_type')
+  ? 'relationship_type'
+  : header.includes('relation_type')
+    ? 'relation_type'
+    : null;
+const required = ['lineage_id', 'evidence_id', 'source_id', 'independence_group'];
 const missing = required.filter((field) => !header.includes(field));
+if (!relationColumn) missing.push('relationship_type');
 
 if (missing.length) {
   console.error(`PROVENANCE LINEAGE ERROR: faltan columnas: ${missing.join(', ')}`);
@@ -42,7 +50,7 @@ for (let i = 1; i < lines.length; i += 1) {
   const row = Object.fromEntries(header.map((name, j) => [name, (cols[j] ?? '').trim()]));
   const lineNo = i + 1;
 
-  if (!row.lineage_id || !row.evidence_id || !row.source_id || !row.independence_group || !row.relation_type) {
+  if (!row.lineage_id || !row.evidence_id || !row.source_id || !row.independence_group || !row[relationColumn]) {
     errors.push(`Línea ${lineNo}: registro incompleto.`);
     continue;
   }
