@@ -1,0 +1,17 @@
+{
+  "article": "content/articles/2026-09-15-inflacion-agosto-carburantes-luz.md",
+  "verification_path": "via_abreviada_fuente_oficial",
+  "verification_completed": true,
+  "official_source": "Instituto Nacional de Estadística (INE); Ministerio de Economía, vicepresidente primero y ministro de Economía Carlos Cuerpo — https://www.20minutos.es/lainformacion/economia-y-finanzas/los-carburantes-se-disparan-un-24-luz-un-9-elevan-inflacion-maximos-tres-anos_7036773_0.html",
+  "conditions_met": {
+    "fuente_oficial_primaria_identificable": true,
+    "solo_hechos_declaraciones_atribuidas": true,
+    "redaccion_lenguaje_claro": true
+  },
+  "publication_sources_support": true,
+  "material_contradictions_resolved": true,
+  "human_editorial_approval": true,
+  "approved_at": "2026-09-15",
+  "approved_by": "Editor responsable",
+  "notes": "Aprobación humana confirmada en la conversación editorial. Publicado por la vía abreviada de verificación para fuente oficial directa (editorial/documentation/DIRECTOR_CRITERIO_MALDITOESPEJO.md), no por el motor de casos completo: no se abrió CASE-########. El artículo fuente identificaba erróneamente a Carlos Cuerpo como 'vicepresidenta primera'; se verificó su cargo real (vicepresidente primero y ministro de Economía, Comercio y Empresa desde el 27 de marzo de 2026) antes de publicar. related_articles enlaza, de forma recíproca, con la pieza de salarios/convenios/butano del mismo día, por overlap temático real (coste de vida). Imagen aportada por el usuario verificada cifra por cifra: coincide. Imagen asociada por slug en public/images/2026-09-15-inflacion-agosto-carburantes-luz.jpg."
+}
