@@ -44,8 +44,6 @@ function parseFrontmatter(content) {
   for (const [index, line] of lines.slice(1, closing).entries()) {
     if (!line.trim() || line.trim().startsWith("#")) continue;
 
-    // Frontmatter keys are only recognized at column 0. This deliberately
-    // avoids treating nested YAML such as sources[].entity as top-level data.
     const keyMatch = line.match(/^([A-Za-z0-9_-]+):\s*(.*)$/);
     if (keyMatch) {
       const [, key, rawValue] = keyMatch;
@@ -64,9 +62,6 @@ function parseFrontmatter(content) {
 
     const listMatch = line.match(/^\s+-\s+(.+)$/);
     if (listMatch && activeListKey) {
-      // Scalar lists (e.g. related_articles) remain available to validation.
-      // Object lists (e.g. sources) are structurally accepted here; their
-      // nested fields are validated by their dedicated editorial validators.
       const item = listMatch[1].trim();
       if (/^id:\s*/.test(item) || /^entity:\s*/.test(item) || /^label:\s*/.test(item)) {
         activeListItem = item;
@@ -77,8 +72,6 @@ function parseFrontmatter(content) {
       continue;
     }
 
-    // Nested properties belonging to an object-list item are valid YAML for
-    // this structural validator and must not make the article fail.
     if (/^\s+\S/.test(line) && activeListKey) continue;
 
     return { data: null, error: `línea de frontmatter no reconocida (${index + 2}): ${line}` };
@@ -110,25 +103,27 @@ function validateArticle(file, knownSlugs) {
       warnings.push(`falta el campo recomendado '${field}'`);
     }
   }
-  if (data.date && !/^\d{4}-\d{2}-\d{2}$/.test(data.date)) {
+  if (typeof data.date === "string" && !/^\d{4}-\d{2}-\d{2}$/.test(data.date)) {
     errors.push(`'date' debe tener formato YYYY-MM-DD (valor: ${data.date})`);
   }
 
-  const normalizedSection = data.section?.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/\s+/g, "");
-  if (data.section && !VALID_SECTIONS.has(normalizedSection)) {
+  const normalizedSection = typeof data.section === "string"
+    ? data.section.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/\s+/g, "")
+    : null;
+  if (typeof data.section === "string" && !VALID_SECTIONS.has(normalizedSection)) {
     errors.push(`sección desconocida '${data.section}' (debe normalizar a una de: ${[...VALID_SECTIONS].join(", ")})`);
   }
 
-  const normalizedAuthor = data.author?.normalize("NFC");
-  const isFixedAuthorEra = data.date && data.date >= FIXED_AUTHOR_EFFECTIVE_DATE;
+  const normalizedAuthor = typeof data.author === "string" ? data.author.normalize("NFC") : null;
+  const isFixedAuthorEra = typeof data.date === "string" && data.date >= FIXED_AUTHOR_EFFECTIVE_DATE;
   if (isFixedAuthorEra) {
     if (normalizedAuthor && normalizedAuthor !== FIXED_AUTHOR.normalize("NFC")) {
       errors.push(`todo artículo a partir del ${FIXED_AUTHOR_EFFECTIVE_DATE} debe llevar la autoría fija '${FIXED_AUTHOR}', pero este artículo figura con '${data.author}'`);
     }
   } else {
-    const expectedAuthor = SECTION_AUTHORS[normalizedSection];
+    const expectedAuthor = normalizedSection ? SECTION_AUTHORS[normalizedSection] : null;
     if (expectedAuthor && normalizedAuthor && normalizedAuthor !== expectedAuthor.normalize("NFC")) {
-      const isLegacy = data.date && data.date < AUTHOR_POLICY_EFFECTIVE_DATE;
+      const isLegacy = typeof data.date === "string" && data.date < AUTHOR_POLICY_EFFECTIVE_DATE;
       const message = `la sección '${data.section}' tenía firma fija '${expectedAuthor}', pero este artículo figura con '${data.author}'`;
       warnings.push(isLegacy
         ? `${message} (contenido anterior al ${AUTHOR_POLICY_EFFECTIVE_DATE}: se permite como legado, no bloquea)`
@@ -149,7 +144,7 @@ function validateArticle(file, knownSlugs) {
     if (data.related_articles.length > 4) warnings.push(`related_articles tiene ${data.related_articles.length} elementos; el frontend solo muestra los primeros 4`);
   }
 
-  const articleId = data.id || path.basename(file, path.extname(file));
+  const articleId = typeof data.id === "string" && data.id ? data.id : path.basename(file, path.extname(file));
   if ((data.status === "verified" || data.status === "published") && !verificationRecordExists(articleId)) {
     errors.push(`estado '${data.status}' requiere un expediente de verificación en editorial/validation/${articleId}.md o .json`);
   }
