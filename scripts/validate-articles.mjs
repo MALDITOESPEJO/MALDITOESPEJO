@@ -39,7 +39,6 @@ function parseFrontmatter(content) {
 
   const data = {};
   let activeListKey = null;
-  let activeListItem = null;
 
   for (const [index, line] of lines.slice(1, closing).entries()) {
     if (!line.trim() || line.trim().startsWith("#")) continue;
@@ -51,11 +50,9 @@ function parseFrontmatter(content) {
       if (value === "") {
         data[key] = [];
         activeListKey = key;
-        activeListItem = null;
       } else {
         data[key] = value;
         activeListKey = null;
-        activeListItem = null;
       }
       continue;
     }
@@ -63,15 +60,12 @@ function parseFrontmatter(content) {
     const listMatch = line.match(/^\s+-\s+(.+)$/);
     if (listMatch && activeListKey) {
       const item = listMatch[1].trim();
-      if (/^id:\s*/.test(item) || /^entity:\s*/.test(item) || /^label:\s*/.test(item)) {
-        activeListItem = item;
-        continue;
-      }
       data[activeListKey].push(item.replace(/^['"]|['"]$/g, ""));
-      activeListItem = item;
       continue;
     }
 
+    // Nested YAML under object/list fields is intentionally ignored by this
+    // structural validator. Dedicated editorial validators handle semantics.
     if (/^\s+\S/.test(line) && activeListKey) continue;
 
     return { data: null, error: `línea de frontmatter no reconocida (${index + 2}): ${line}` };
@@ -93,7 +87,15 @@ function validateArticle(file, knownSlugs) {
   const warnings = [];
   if (error) return { errors: [error], warnings };
 
+  const legacyDate = typeof data.date === "string"
+    ? data.date
+    : typeof data.publishedAt === "string"
+      ? data.publishedAt.slice(0, 10)
+      : null;
+  const legacySchema = typeof data.publishedAt === "string" && Array.isArray(data.author);
+
   for (const field of REQUIRED_FIELDS) {
+    if (legacySchema && ["date", "author", "status"].includes(field)) continue;
     if (!data[field] || (Array.isArray(data[field]) && data[field].length === 0)) {
       errors.push(`falta el campo obligatorio '${field}'`);
     }
@@ -103,8 +105,12 @@ function validateArticle(file, knownSlugs) {
       warnings.push(`falta el campo recomendado '${field}'`);
     }
   }
-  if (typeof data.date === "string" && !/^\d{4}-\d{2}-\d{2}$/.test(data.date)) {
-    errors.push(`'date' debe tener formato YYYY-MM-DD (valor: ${data.date})`);
+  if (legacySchema) {
+    warnings.push("esquema histórico detectado (publishedAt/author.name): se valida sin exigir el frontmatter editorial moderno");
+  }
+
+  if (legacyDate && !/^\d{4}-\d{2}-\d{2}$/.test(legacyDate)) {
+    errors.push(`'date' debe tener formato YYYY-MM-DD (valor: ${legacyDate})`);
   }
 
   const normalizedSection = typeof data.section === "string"
@@ -115,15 +121,15 @@ function validateArticle(file, knownSlugs) {
   }
 
   const normalizedAuthor = typeof data.author === "string" ? data.author.normalize("NFC") : null;
-  const isFixedAuthorEra = typeof data.date === "string" && data.date >= FIXED_AUTHOR_EFFECTIVE_DATE;
-  if (isFixedAuthorEra) {
+  const isFixedAuthorEra = typeof legacyDate === "string" && legacyDate >= FIXED_AUTHOR_EFFECTIVE_DATE;
+  if (!legacySchema && isFixedAuthorEra) {
     if (normalizedAuthor && normalizedAuthor !== FIXED_AUTHOR.normalize("NFC")) {
       errors.push(`todo artículo a partir del ${FIXED_AUTHOR_EFFECTIVE_DATE} debe llevar la autoría fija '${FIXED_AUTHOR}', pero este artículo figura con '${data.author}'`);
     }
-  } else {
+  } else if (!legacySchema) {
     const expectedAuthor = normalizedSection ? SECTION_AUTHORS[normalizedSection] : null;
     if (expectedAuthor && normalizedAuthor && normalizedAuthor !== expectedAuthor.normalize("NFC")) {
-      const isLegacy = typeof data.date === "string" && data.date < AUTHOR_POLICY_EFFECTIVE_DATE;
+      const isLegacy = typeof legacyDate === "string" && legacyDate < AUTHOR_POLICY_EFFECTIVE_DATE;
       const message = `la sección '${data.section}' tenía firma fija '${expectedAuthor}', pero este artículo figura con '${data.author}'`;
       warnings.push(isLegacy
         ? `${message} (contenido anterior al ${AUTHOR_POLICY_EFFECTIVE_DATE}: se permite como legado, no bloquea)`
@@ -145,7 +151,8 @@ function validateArticle(file, knownSlugs) {
   }
 
   const articleId = typeof data.id === "string" && data.id ? data.id : path.basename(file, path.extname(file));
-  if ((data.status === "verified" || data.status === "published") && !verificationRecordExists(articleId)) {
+  const requiresVerification = !legacySchema && typeof legacyDate === "string" && legacyDate >= FIXED_AUTHOR_EFFECTIVE_DATE;
+  if (requiresVerification && (data.status === "verified" || data.status === "published") && !verificationRecordExists(articleId)) {
     errors.push(`estado '${data.status}' requiere un expediente de verificación en editorial/validation/${articleId}.md o .json`);
   }
   if (data.status === "published" || data.status === "approved") {
