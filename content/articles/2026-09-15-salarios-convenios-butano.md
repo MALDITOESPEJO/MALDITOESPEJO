@@ -12,6 +12,8 @@ editorial_originality: "original"
 sources:
   - "Ministerio de Trabajo y Economía Social (Estadística de Convenios Colectivos)"
   - "Boletín Oficial del Estado (resolución sobre el precio del butano)"
+related_articles:
+  - "2026-09-15-inflacion-agosto-carburantes-luz"
 ---
 
 Los convenios colectivos firmados en la Región de Murcia hasta agosto, con efectos económicos en 2026, elevan los salarios una media del 5,86%. Es casi el doble que la media de España, que se queda en el 3,04%, y la subida más alta de todas las comunidades.
