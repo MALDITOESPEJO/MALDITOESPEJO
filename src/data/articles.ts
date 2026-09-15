@@ -41,7 +41,13 @@ function parseFrontmatterLists(markdown:string):Record<string,string[]>{
 function mapSourcesFromFrontmatter(rawSources:string[]|undefined):import("./types").Source[]{
   return (rawSources??[]).map((label)=>({label}));
 }
-function markdownBody(markdown:string):string[]{return markdown.replace(/^---\r?\n[\s\S]*?\r?\n---\r?\n?/,'').split(/\r?\n\s*\r?\n/).map(block=>block.trim()).filter(block=>block&&!block.startsWith("#"));}
+
+function markdownBody(markdown:string):string[]{
+  const blocks=markdown.replace(/^---\r?\n[\s\S]*?\r?\n---\r?\n?/,'').split(/\r?\n\s*\r?\n/).map(block=>block.trim()).filter(block=>block&&!block.startsWith("#"));
+  // El contenido antiguo puede conservar una firma textual al final del cuerpo.
+  // La firma pública se obtiene siempre del modelo Article y debe ser única.
+  return blocks.filter(block=>!/^\*\*[^*]+\s+·\s+\d{1,2}\s+de\s+[a-záéíóúñ]+\s+de\s+\d{4}(?:\s+·\s+\d{1,2}:\d{2}\s*h)?\s*\*\*$/i.test(block));
+}
 function publicationTimestamp(slug:string,meta:Record<string,string>):string{const explicitTime=meta.time?.match(/^(?:[01]\d|2[0-3]):[0-5]\d$/)?.[0];return `${meta.date}T${explicitTime??LEGACY_PUBLICATION_TIMES[slug]??"00:00"}`;}
 function findEditorialImage(slug:string,meta:Record<string,string>):string|undefined{
   const explicitImage=meta.image?.trim();
