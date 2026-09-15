@@ -1,0 +1,17 @@
+{
+  "article": "content/articles/2026-09-15-salarios-convenios-butano.md",
+  "verification_path": "via_abreviada_fuente_oficial",
+  "verification_completed": true,
+  "official_source": "Ministerio de Trabajo y Economía Social (Estadística de Convenios Colectivos); Boletín Oficial del Estado (resolución sobre el precio del butano) — https://www.laopiniondemurcia.es/comunidad/2026/09/15/nuevos-salarios-firmados-region-dan-134270329.html",
+  "conditions_met": {
+    "fuente_oficial_primaria_identificable": true,
+    "solo_hechos_declaraciones_atribuidas": true,
+    "redaccion_lenguaje_claro": true
+  },
+  "publication_sources_support": true,
+  "material_contradictions_resolved": true,
+  "human_editorial_approval": true,
+  "approved_at": "2026-09-15",
+  "approved_by": "Editor responsable",
+  "notes": "Aprobación humana confirmada en la conversación editorial. Publicado por la vía abreviada de verificación para fuente oficial directa (editorial/documentation/DIRECTOR_CRITERIO_MALDITOESPEJO.md), no por el motor de casos completo: no se abrió CASE-########. Datos estadísticos oficiales (Ministerio de Trabajo) y resolución BOE, sin declaraciones de terceros que contrastar. Se advierte en el cuerpo que la subida del 5,86% es una media ponderada, no una subida uniforme para todos los trabajadores. Imagen aportada por el usuario verificada cifra por cifra contra el texto: todas coinciden. Imagen asociada por slug en public/images/2026-09-15-salarios-convenios-butano.png."
+}
