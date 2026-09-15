@@ -38,7 +38,8 @@ const normalize = value => String(value || '')
   .replace(/[^a-z0-9ñ]+/g, ' ')
   .trim();
 
-const tokens = value => new Set(normalize(value).split(/\s+/).filter(x => x.length > 3 && !STOP.has(x)));
+// Keep short but meaningful entities such as "rey" in the relation signal.
+const tokens = value => new Set(normalize(value).split(/\s+/).filter(x => x.length > 2 && !STOP.has(x)));
 const jaccard = (a, b) => {
   if (!a.size || !b.size) return 0;
   let intersection = 0;
@@ -69,16 +70,26 @@ const relationFor = (a, b) => {
   const sameSection = Boolean(section(a) && section(b) && section(a) === section(b));
   const aNumbers = numbers(`${a.title || ''} ${a.summary || ''}`);
   const bNumbers = numbers(`${b.title || ''} ${b.summary || ''}`);
+  const sharedNumbers = [...aNumbers].filter(n => bNumbers.has(n));
   const conflictingNumbers = aNumbers.size && bNumbers.size &&
     [...aNumbers].some(n => !bNumbers.has(n)) && [...bNumbers].some(n => !aNumbers.has(n));
   const evolvingMarker = /\bnuevo\b|\botro\b|\bsegunda\b|\btercer[oa]?\b|\bposterior\b|\bdespues\b/.test(ar.raw) ||
     /\bnuevo\b|\botro\b|\bsegunda\b|\btercer[oa]?\b|\bposterior\b|\bdespues\b/.test(br.raw);
+  const sharedTitleTokens = [...ar.title].filter(token => br.title.has(token));
 
   if (titleSimilarity >= 0.78 && !conflictingNumbers && !evolvingMarker) {
     return { classification: 'SAME_EVENT_BOUNDARY', confidence: 'HIGH', reason: 'La relación es tan próxima que debería haberse resuelto en consolidación; se marca como límite de control y no se fusiona aquí.' };
   }
 
-  const contextualOverlap = (sameGeo && titleSimilarity >= 0.12) ||
+  // Stronger editorial signal for same-context event sequences: two or more
+  // meaningful title tokens, or a shared numeric identifier, are enough to
+  // classify as RELATED_EVENT. A single generic geographic token such as
+  // "Ceuta" remains PARALLEL_SIGNAL, preserving the regression distinction.
+  const relatedContext = sameGeo && sameSection &&
+    (sharedTitleTokens.length >= 2 || sharedNumbers.length > 0);
+
+  const contextualOverlap = relatedContext ||
+    (sameGeo && titleSimilarity >= 0.12) ||
     (sameSection && titleSimilarity >= 0.30) ||
     (fullSimilarity >= 0.42 && (sameGeo || sameSection));
 
@@ -90,7 +101,9 @@ const relationFor = (a, b) => {
         ? 'Comparte contexto pero contiene cifras incompatibles; se mantiene separado.'
         : evolvingMarker
           ? 'La redacción indica posible evolución o episodio posterior; no se consolida automáticamente.'
-          : 'Comparte contexto temporal, geográfico o temático con otro evento, pero no hay evidencia suficiente de identidad.'
+          : relatedContext
+            ? 'Comparte contexto y señales de identidad suficientes para tratarse como eventos relacionados, pero permanecen separados.'
+            : 'Comparte contexto temporal, geográfico o temático con otro evento, pero no hay evidencia suficiente de identidad.'
     };
   }
 
