@@ -15,7 +15,7 @@ function pullRequestChangesArticles() {
   const baseSha = process.env.GITHUB_BASE_SHA;
   if (!baseSha) return true;
   try {
-    const changed = execFileSync("git", ["diff", "--name-only", `${baseSha}...HEAD"], {
+    const changed = execFileSync("git", ["diff", "--name-only", `${baseSha}...HEAD`], {
       cwd: ROOT,
       encoding: "utf8",
     });
