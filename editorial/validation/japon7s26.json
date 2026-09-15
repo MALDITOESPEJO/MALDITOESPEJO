@@ -1,41 +1,23 @@
 {
-  "article_id": "japon7s26",
-  "publication_date": "2026-09-07",
-  "section": "Economía",
-  "author": "Nerea Villacorta Beltrán",
-  "status": "published",
-  "publication_sources": [
-    {
-      "entity": "Ministry of Finance Japan",
-      "url": "https://www.mof.go.jp/english/policy/international_policy/reference/official_reserve_assets/e0808.html",
-      "role": "reservas internacionales al cierre de agosto de 2026"
-    },
-    {
-      "entity": "Ministry of Finance Japan",
-      "url": "https://www.mof.go.jp/english/policy/international_policy/reference/feio/monthly/20260828e.html",
-      "role": "importe oficial de las intervenciones cambiarias"
-    },
-    {
-      "entity": "Bank of Japan",
-      "url": "https://www.boj.or.jp/en/statistics/market/forex/fxdaily/",
-      "role": "tipos de cambio diarios"
-    }
+  "article_id":"japon7s26",
+  "publication_date":"2026-09-07",
+  "section":"Economía",
+  "author":"Nerea Villacorta Beltrán",
+  "status":"published",
+  "publication_sources":[
+    {"entity":"Ministry of Finance Japan","url":"https://www.mof.go.jp/english/policy/international_policy/reference/official_reserve_assets/e0808.html","role":"reservas internacionales al cierre de agosto de 2026"},
+    {"entity":"Ministry of Finance Japan","url":"https://www.mof.go.jp/english/policy/international_policy/reference/feio/monthly/20260828e.html","role":"importe oficial de las intervenciones cambiarias"},
+    {"entity":"Bank of Japan","url":"https://www.boj.or.jp/en/statistics/market/forex/fxdaily/","role":"tipos de cambio diarios"}
   ],
-  "claim_to_evidence": {
-    "reserve_assets": "documented by the Ministry of Finance Japan: 1,207,524 million USD at end-August, down 79,575 million USD from July",
-    "intervention_amount": "documented by the Ministry of Finance Japan: 15,399.3 billion yen during 30 July–26 August 2026",
-    "securities_reserves": "documented by the Ministry of Finance Japan: 839,559 million USD",
-    "yen_exchange_rate_context": "checked against the Bank of Japan daily foreign-exchange-rate publication"
+  "claim_to_evidence_assessment": {
+    "reserve_assets":"El Ministerio de Finanzas de Japón documenta 1.207.524 millones de USD al cierre de agosto, 79.575 millones menos que en julio.",
+    "intervention_amount":"El Ministerio de Finanzas documenta 15.399,3 miles de millones de yenes de intervención entre el 30 de julio y el 26 de agosto de 2026.",
+    "securities_reserves":"El mismo informe oficial documenta 839.559 millones de USD en valores.",
+    "yen_exchange_rate_context":"El contexto cambiario se contrasta con la publicación diaria oficial del Banco de Japón."
   },
-  "temporal_check": "All core official evidence was available on or before 7 September 2026.",
-  "corroboration": "The reserve publication and intervention publication come from the same primary authority and independently document the two central figures used by the article; BOJ data provides exchange-rate context.",
-  "contradiction": "No contradiction identified for the central numerical claims.",
-  "interpretation_risks": [
-    "The article describes market pressure and possible monetary-policy effects as context rather than as confirmed future outcomes.",
-    "The phrase 'may modify capital flows' is an analytical possibility, not a measured post-intervention effect."
-  ],
-  "unresolved_points": [
-    "The article date does not establish the future path of the yen or future Bank of Japan policy decisions."
-  ],
-  "human_approval": "Historical article was already published. This remediation reconstructs the verification record; it does not create a new publication approval."
+  "temporal_check":"Toda la evidencia primaria central estaba disponible como máximo el 7 de septiembre de 2026.",
+  "corroboration_contradiction_check":"Las publicaciones del Ministerio de Finanzas documentan por separado reservas e intervención; el Banco de Japón aporta contexto cambiario. No se detecta contradicción en las cifras centrales.",
+  "interpretation_risks":["La presión de mercado y los posibles efectos monetarios se presentan como contexto, no como resultados futuros confirmados.","Los posibles efectos sobre flujos de capital son una hipótesis analítica, no una medición posterior."],
+  "unresolved_points":["La evolución futura del yen y las decisiones futuras del Banco de Japón no podían establecerse en la fecha de publicación."],
+  "human_approval_status":"Artículo histórico ya publicado. Este expediente reconstruye la trazabilidad documental y no constituye una nueva aprobación editorial humana."
 }
