@@ -68,8 +68,10 @@ for (const file of files) {
     continue;
   }
 
-  const normalizedAuthor = metadata.author?.normalize("NFC");
-  const isPolicyEra = metadata.date && metadata.date >= POLICY_EFFECTIVE_DATE;
+  const normalizedAuthor = typeof metadata.author === "string"
+    ? metadata.author.normalize("NFC")
+    : null;
+  const isPolicyEra = typeof metadata.date === "string" && metadata.date >= POLICY_EFFECTIVE_DATE;
   const isPublishable = PUBLISHABLE_STATUSES.has(metadata.status);
 
   if (isPolicyEra && isPublishable && normalizedAuthor !== FIXED_AUTHOR.normalize("NFC")) {
