@@ -79,9 +79,9 @@ for (const file of files) {
 
   if (isPolicyEra && isPublishable) {
     const sources = Array.isArray(metadata.sources) ? metadata.sources.filter(Boolean) : [];
-    if (sources.length !== 1) {
+    if (sources.length === 0) {
       errors += 1;
-      console.log(`✖ ${relative}: un artículo publicable desde ${POLICY_EFFECTIVE_DATE} debe declarar exactamente una fuente primaria/oficial (actual: ${sources.length})`);
+      console.log(`✖ ${relative}: un artículo publicable desde ${POLICY_EFFECTIVE_DATE} debe declarar al menos una fuente oficial/primaria`);
     }
   }
 
