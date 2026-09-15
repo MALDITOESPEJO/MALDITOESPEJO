@@ -9,13 +9,32 @@ type: "news"
 status: "published"
 case_id: "CASE_japon-reservas-yen-intervencion"
 image: "/images/2026-09-07-japon-reservas-yen-intervencion.jpg"
+sources:
+  - id: "source-1"
+    entity: "Ministry of Finance Japan"
+    label: "International Reserves/Foreign Currency Liquidity, end of August 2026"
+    nature: "fuente oficial"
+    date: "7 septiembre 2026"
+    url: "https://www.mof.go.jp/english/policy/international_policy/reference/official_reserve_assets/e0808.html"
+  - id: "source-2"
+    entity: "Ministry of Finance Japan"
+    label: "Foreign Exchange Intervention Operations, 30 July–26 August 2026"
+    nature: "fuente oficial"
+    date: "28 agosto 2026"
+    url: "https://www.mof.go.jp/english/policy/international_policy/reference/feio/monthly/20260828e.html"
+  - id: "source-3"
+    entity: "Bank of Japan"
+    label: "Foreign Exchange Rates (Daily)"
+    nature: "fuente oficial"
+    date: "7 septiembre 2026"
+    url: "https://www.boj.or.jp/en/statistics/market/forex/fxdaily/"
 ---
 
 Japón ha registrado en agosto la mayor caída mensual de sus reservas internacionales desde que existen registros comparables, después de utilizar una cantidad extraordinaria de activos para intervenir en el mercado de divisas y frenar la depreciación del yen.
 
 El Ministerio de Finanzas japonés informó este lunes de que las reservas oficiales se situaron a finales de agosto en 1,208 billones de dólares, frente a los 1,287 billones registrados un mes antes. El descenso fue de 79.575 millones de dólares.
 
-La caída coincide con la intervención realizada por Tokio para comprar yenes y vender dólares después de que la moneda japonesa llegara a situarse cerca de los 164 yenes por dólar. Según Reuters, Japón destinó unos 15,4 billones de yenes, aproximadamente 98.700 millones de dólares, a esta operación entre finales de julio y finales de agosto.
+La caída coincide con la intervención realizada por Tokio para comprar yenes y vender dólares después de que la moneda japonesa llegara a situarse cerca de los 164 yenes por dólar. El Ministerio de Finanzas de Japón cifra en 15,3993 billones de yenes el importe total de las operaciones de intervención realizadas entre el 30 de julio y el 26 de agosto.
 
 ## Una intervención de dimensiones excepcionales
 
