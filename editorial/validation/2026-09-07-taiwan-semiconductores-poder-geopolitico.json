@@ -1,23 +1,23 @@
 {
-  "article_id": "2026-09-07-taiwan-semiconductores-poder-geopolitico",
-  "publication_date": "2026-09-07",
-  "section": "Tecnología",
-  "author": "Vera Alcántara Robledo",
-  "status": "published",
-  "publication_sources": [
+  "article_id":"2026-09-07-taiwan-semiconductores-poder-geopolitico",
+  "publication_date":"2026-09-07",
+  "section":"Tecnología",
+  "author":"Vera Alcántara Robledo",
+  "status":"published",
+  "publication_sources":[
     {"entity":"Office of the President Republic of China (Taiwan)","url":"https://www.president.gov.tw/News/40305","role":"posición oficial sobre el papel estratégico de los semiconductores y las cadenas tecnológicas"},
     {"entity":"Ministry of Foreign Affairs, Republic of China (Taiwan)","url":"https://www.mofa.gov.tw/News_Content.aspx?n=96&s=123019","role":"foro oficial sobre riesgos geopolíticos, cadenas de suministro y semiconductores"},
     {"entity":"Ministry of Economic Affairs, R.O.C.","url":"https://www.moea.gov.tw/Mns/english/news/News.aspx?kind=6&menu_id=176&news_id=123966","role":"política oficial de cooperación internacional y semiconductores"}
   ],
-  "claim_to_evidence": {
-    "taiwan_semiconductor_strategic_role":"Las fuentes oficiales taiwanesas documentan el peso estratégico del clúster de semiconductores y la confianza internacional en sus cadenas de suministro.",
-    "geopolitical_dimension":"El Ministerio de Exteriores documenta expresamente los riesgos geopolíticos y las oportunidades de cooperación alrededor de los semiconductores.",
-    "ai_context":"Las fuentes oficiales describen la relación entre IA, innovación, cadenas internacionales y semiconductores."
+  "claim_to_evidence_assessment": {
+    "taiwan_semiconductor_strategic_role":"Las fuentes oficiales taiwanesas documentan el peso estratégico del clúster de semiconductores y la importancia de sus cadenas de suministro.",
+    "geopolitical_dimension":"El Ministerio de Exteriores documenta los riesgos geopolíticos y las oportunidades de cooperación alrededor de los semiconductores.",
+    "ai_context":"Las fuentes oficiales describen la relación entre IA, innovación, cadenas internacionales y semiconductores.",
+    "scope_limit":"Las afirmaciones amplias sobre políticas de Estados Unidos, UE y China no quedan plenamente cubiertas por este expediente y se mantienen señaladas como materia de revisión editorial."
   },
   "temporal_check":"Las fuentes presidenciales y de Exteriores son anteriores a la publicación del 7 de septiembre. Una página del Ministerio de Economía publicada el 14 de septiembre fue localizada durante la auditoría pero no se utiliza como evidencia de lo conocido el 7 de septiembre.",
-  "corroboration":"Varias instituciones oficiales taiwanesas documentan de forma convergente la importancia estratégica de los semiconductores y las cadenas de suministro.",
-  "contradiction":"No se detecta contradicción en las afirmaciones centrales sobre Taiwán. Las afirmaciones amplias sobre las políticas de Estados Unidos, UE y China requieren fuentes primarias específicas adicionales si se mantienen como hechos.",
+  "corroboration_contradiction_check":"Varias instituciones oficiales taiwanesas documentan de forma convergente la importancia estratégica de los semiconductores y las cadenas de suministro. No se detecta contradicción en las afirmaciones centrales sobre Taiwán; las afirmaciones geopolíticas amplias requieren fuentes primarias específicas adicionales si se mantienen como hechos.",
   "interpretation_risks":["El artículo contiene conclusiones geopolíticas más amplias que la evidencia taiwanesa documentada aquí.","El concepto de 'escudo de silicio' y varias comparaciones de dependencia son interpretativos."],
   "unresolved_points":["No se ha reconstruido en este expediente una trazabilidad primaria completa de los apartados sobre Estados Unidos, UE y China.","Esas afirmaciones quedan expresamente señaladas para revisión editorial futura; no se inventa evidencia para cubrirlas."],
-  "human_approval":"Artículo histórico ya publicado; este expediente documenta la evidencia primaria disponible y sus límites y no crea una nueva aprobación editorial."
+  "human_approval_status":"Artículo histórico ya publicado. Este expediente documenta la evidencia primaria disponible y sus límites y no constituye una nueva aprobación editorial humana."
 }
