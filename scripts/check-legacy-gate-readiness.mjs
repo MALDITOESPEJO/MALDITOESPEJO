@@ -1,9 +1,37 @@
 import fs from "node:fs";
 import path from "node:path";
+import { execFileSync } from "node:child_process";
 
 const ROOT = process.cwd();
 const INVENTORY = path.join(ROOT, "editorial", "migration", "LEGACY_ARTICLE_INVENTORY.json");
 const CERT_DIR = path.join(ROOT, "editorial", "migration", "certifications");
+
+// Legacy migration readiness is relevant to changes that can affect the article
+// publication surface. An unrelated PR (for example, SEO/Search Console
+// verification) must not be blocked by pre-existing legacy migration debt.
+// On main pushes we always enforce the gate.
+function pullRequestChangesArticles() {
+  if (process.env.GITHUB_EVENT_NAME !== "pull_request") return true;
+  const baseSha = process.env.GITHUB_BASE_SHA;
+  if (!baseSha) return true;
+  try {
+    const changed = execFileSync("git", ["diff", "--name-only", `${baseSha}...HEAD"], {
+      cwd: ROOT,
+      encoding: "utf8",
+    });
+    return changed
+      .split(/\r?\n/)
+      .some((file) => /^content\/articles\/.*\.md$/i.test(file.trim()));
+  } catch {
+    // Fail closed if the PR range cannot be inspected.
+    return true;
+  }
+}
+
+if (!pullRequestChangesArticles()) {
+  console.log("LEGACY GATE READINESS: NOT APPLICABLE — el PR no modifica artículos.");
+  process.exit(0);
+}
 
 if (!fs.existsSync(INVENTORY)) {
   console.error("LEGACY GATE: BLOQUEADO — falta el inventario legacy.");
