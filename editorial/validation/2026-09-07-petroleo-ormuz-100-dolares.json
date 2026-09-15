@@ -18,6 +18,8 @@
   },
   "temporal_check":"Las fuentes centrales utilizadas estaban disponibles como máximo el 7 de septiembre de 2026; no se utilizó información posterior para reconstruir el relato de esa fecha.",
   "corroboration_contradiction_check":"EIA, OMI y CENTCOM cubren dominios distintos. No se detecta contradicción en el precio Brent ni en los datos de seguridad marítima citados; la versión de CENTCOM queda identificada como atribución oficial estadounidense.",
+  "independence_assessment":"La procedencia es diferenciada: EIA aporta datos energéticos, OMI aporta datos de seguridad marítima y tránsito, y CENTCOM aporta exclusivamente la versión oficial estadounidense de sus operaciones. La fuente de CENTCOM no se presenta como corroboración independiente.",
+  "contradiction_outcome":"No se ha identificado contradicción material en los datos de EIA u OMI ni conflicto documental relevante en los hechos atribuidos a CENTCOM.",
   "interpretation_risks":["El precio del Brent no se atribuye a una única causa.","No se afirma que Ormuz estuviera formalmente cerrado."],
   "unresolved_points":["La duración y efecto final de la perturbación sobre los flujos energéticos seguían siendo inciertos el 7 de septiembre.","La posición iraní sobre el relato de CENTCOM no queda establecida por las fuentes primarias citadas."],
   "human_approval_status":"Artículo histórico ya publicado. Este expediente documenta la verificación reconstruida y no constituye una nueva aprobación editorial humana."
