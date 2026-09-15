@@ -12,10 +12,10 @@ const CERT_DIR = path.join(ROOT, "editorial", "migration", "certifications");
 // On main pushes we always enforce the gate.
 function pullRequestChangesArticles() {
   if (process.env.GITHUB_EVENT_NAME !== "pull_request") return true;
-  const baseSha = process.env.GITHUB_BASE_SHA;
-  if (!baseSha) return true;
+  const baseRef = process.env.GITHUB_BASE_REF;
+  if (!baseRef) return true;
   try {
-    const changed = execFileSync("git", ["diff", "--name-only", `${baseSha}...HEAD`], {
+    const changed = execFileSync("git", ["diff", "--name-only", `origin/${baseRef}...HEAD`], {
       cwd: ROOT,
       encoding: "utf8",
     });
