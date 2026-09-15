@@ -1,0 +1,17 @@
+{
+  "article": "content/articles/2026-09-15-fiscalia-delitos-sexuales-menores.md",
+  "verification_path": "via_abreviada_fuente_oficial",
+  "verification_completed": true,
+  "official_source": "Fiscalía de la Región de Murcia, Memoria de Actividad 2025, presentada por el fiscal superior José Luis Díaz Manzanera y la fiscal delegada de Menores, Celia Susana Aldaz, ante la Asamblea Regional",
+  "conditions_met": {
+    "fuente_oficial_primaria_identificable": true,
+    "solo_hechos_declaraciones_atribuidas": true,
+    "redaccion_lenguaje_claro": true
+  },
+  "publication_sources_support": true,
+  "material_contradictions_resolved": true,
+  "human_editorial_approval": true,
+  "approved_at": "2026-09-15",
+  "approved_by": "Editor responsable",
+  "notes": "Aprobación humana confirmada en la conversación editorial. Publicado por la vía abreviada de verificación para fuente oficial directa (editorial/documentation/DIRECTOR_CRITERIO_MALDITOESPEJO.md), no por el motor de casos completo: no se abrió CASE-########. Tema sensible (menores como víctimas y como presuntos autores): se descartó una fuente de prensa parcialmente truncada por muro de pago y se sustituyó por la Memoria de Actividad oficial de la Fiscalía, corroborada por múltiples medios independientes. Se incluyó un recurso de ayuda (Fundación ANAR) al final del cuerpo. La primera imagen aportada por el usuario atribuía la cifra regional (8,4%) a la Fiscalía General del Estado (organismo nacional equivocado); se rechazó y se sustituyó por una segunda versión correcta (Fiscalía de la Región de Murcia). Un bloque de la imagen final ('la Fiscalía pide más prevención, protección y atención especializada') es una generalización ilustrativa del generador sin cita verificada equivalente en el texto del artículo; se dejó constancia de ello en la conversación editorial, no se consideró motivo de rechazo por no atribuir hechos falsos ni a un organismo incorrecto. Imagen asociada por slug en public/images/2026-09-15-fiscalia-delitos-sexuales-menores.png."
+}
