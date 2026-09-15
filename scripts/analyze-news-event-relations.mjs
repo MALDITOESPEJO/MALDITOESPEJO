@@ -33,6 +33,8 @@ const normalize = value => String(value || '')
   .toLowerCase()
   .normalize('NFD')
   .replace(/[\u0300-\u036f]/g, '')
+  .replace(/\bfelipe\s+vi\b/g, 'rey')
+  .replace(/\bzarzuela\b/g, 'rey')
   .replace(/[^a-z0-9ñ]+/g, ' ')
   .trim();
 
@@ -76,7 +78,7 @@ const relationFor = (a, b) => {
     return { classification: 'SAME_EVENT_BOUNDARY', confidence: 'HIGH', reason: 'La relación es tan próxima que debería haberse resuelto en consolidación; se marca como límite de control y no se fusiona aquí.' };
   }
 
-  const contextualOverlap = (sameGeo && titleSimilarity >= 0.22) ||
+  const contextualOverlap = (sameGeo && titleSimilarity >= 0.12) ||
     (sameSection && titleSimilarity >= 0.30) ||
     (fullSimilarity >= 0.42 && (sameGeo || sameSection));
 
@@ -92,7 +94,7 @@ const relationFor = (a, b) => {
     };
   }
 
-  if ((sameGeo || sameSection) && titleSimilarity < 0.22) {
+  if ((sameGeo || sameSection) && titleSimilarity < 0.12) {
     return {
       classification: 'PARALLEL_SIGNAL',
       confidence: 'MEDIUM',
