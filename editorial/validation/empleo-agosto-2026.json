@@ -12,7 +12,9 @@
   ],
   "claim_to_evidence_assessment": "Las afirmaciones publicadas están vinculadas a evidencia documental procedente de las publicaciones oficiales revisadas. Las cifras del titular y de la entradilla están respaldadas por los datos oficiales de afiliación y paro registrado.",
   "temporal_check": "Los datos corresponden a agosto de 2026 y fueron publicados el 2 de septiembre de 2026.",
-  "corroboration_contradiction_check": "No se identifica contradicción material en las cifras oficiales utilizadas.",
+  "corroboration_contradiction_check": "Las dos fuentes oficiales cubren magnitudes distintas y complementarias. No se identifica contradicción material en las cifras oficiales utilizadas.",
+  "independence_assessment": "La procedencia es diferenciada: la Tesorería General de la Seguridad Social documenta la afiliación y el SEPE documenta el paro registrado. No se trata de una única fuente que reproduzca ambas magnitudes.",
+  "contradiction_outcome": "No se ha identificado contradicción material ni conflicto documental relevante entre las publicaciones oficiales revisadas.",
   "interpretation_risks": [
     "La caída mensual de afiliación media no se presenta como destrucción equivalente de puestos de trabajo.",
     "Se distingue entre serie original y serie desestacionalizada."
