@@ -1,0 +1,41 @@
+{
+  "article_id": "sajonia7s26",
+  "publication_date": "2026-09-07",
+  "section": "Actualidad",
+  "author": "Iria Valcárcel Montoro",
+  "status": "published",
+  "publication_sources": [
+    {
+      "entity": "Statistisches Landesamt Sachsen-Anhalt",
+      "url": "https://wahlergebnisse.sachsen-anhalt.de/",
+      "role": "resultados oficiales y distribución de escaños"
+    },
+    {
+      "entity": "Alternative für Deutschland",
+      "url": "https://www.afd.de/",
+      "role": "posición oficial del partido y candidatura"
+    },
+    {
+      "entity": "Christlich Demokratische Union Deutschlands",
+      "url": "https://www.cdu.de/",
+      "role": "valoración oficial del resultado de la CDU"
+    }
+  ],
+  "claim_to_evidence": {
+    "electoral_percentages_and_seats": "documented by the official state electoral results",
+    "turnout": "documented by the official state electoral results",
+    "party_positions": "attributed to the official AfD and CDU sources",
+    "government_formation_implications": "editorial inference from the published seat distribution; no coalition outcome asserted"
+  },
+  "temporal_check": "Sources are dated 6–7 September 2026 and match the article publication date.",
+  "corroboration": "Official electoral results provide the numerical baseline; party sources corroborate the respective political reactions.",
+  "contradiction": "No contradiction identified in the numerical result. Political interpretation remains attributed or explicitly framed as analysis.",
+  "interpretation_risks": [
+    "The article includes political interpretation beyond the raw result; those passages are not presented as official facts.",
+    "Future coalition negotiations could change after publication."
+  ],
+  "unresolved_points": [
+    "The eventual governing coalition was not determined by the 7 September publication date."
+  ],
+  "human_approval": "Historical article was already published. This remediation reconstructs the verification record; it does not create a new publication approval."
+}
