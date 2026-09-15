@@ -16,6 +16,8 @@
   },
   "temporal_check":"Las fuentes centrales están fechadas el 6–7 de septiembre de 2026 y eran contemporáneas a la publicación.",
   "corroboration_contradiction_check":"Los resultados oficiales constituyen la base numérica; las fuentes partidarias corroboran las respectivas reacciones. No se detecta contradicción en los resultados numéricos. Las interpretaciones políticas permanecen atribuidas o identificadas como análisis.",
+  "independence_assessment":"La procedencia es explícita: los resultados electorales proceden de la autoridad estadística electoral y las reacciones proceden de dos fuentes partidarias distintas. No se trata de una única fuente que reproduzca todo el relato.",
+  "contradiction_outcome":"No se ha identificado contradicción material en los resultados oficiales ni conflicto documental relevante entre las fuentes revisadas.",
   "interpretation_risks":["El artículo contiene interpretación política más allá del resultado bruto; no se presenta como hecho oficial.","Las negociaciones de gobierno podían cambiar después de la publicación."],
   "unresolved_points":["La coalición de gobierno definitiva no estaba determinada el 7 de septiembre de 2026."],
   "human_approval_status":"Artículo histórico ya publicado. Este expediente reconstruye la trazabilidad documental y no constituye una nueva aprobación editorial humana."
