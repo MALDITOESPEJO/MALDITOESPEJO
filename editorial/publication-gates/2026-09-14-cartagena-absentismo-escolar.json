@@ -1,0 +1,17 @@
+{
+  "article": "content/articles/2026-09-14-cartagena-absentismo-escolar.md",
+  "verification_path": "via_abreviada_fuente_oficial",
+  "verification_completed": true,
+  "official_source": "Ayuntamiento de Cartagena (declaraciones de la alcaldesa Noelia Arroyo) — https://www.cartagena.es/detalle_noticias.asp?id=89548",
+  "conditions_met": {
+    "fuente_oficial_primaria_identificable": true,
+    "solo_hechos_declaraciones_atribuidas": true,
+    "redaccion_lenguaje_claro": true
+  },
+  "publication_sources_support": true,
+  "material_contradictions_resolved": true,
+  "human_editorial_approval": true,
+  "approved_at": "2026-09-14",
+  "approved_by": "Editor responsable",
+  "notes": "Aprobación humana confirmada en la conversación editorial. Publicado por la vía abreviada de verificación para fuente oficial directa (editorial/documentation/DIRECTOR_CRITERIO_MALDITOESPEJO.md), no por el motor de casos completo: no se abrió CASE-########. Nota oficial de la propia sección de noticias del Ayuntamiento (no de 'grupos municipales'), sin disputa política. Pendiente de imagen: el usuario no la aportó en este turno; añadir en un commit posterior cuando la envíe."
+}
