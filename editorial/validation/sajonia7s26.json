@@ -5,37 +5,18 @@
   "author": "Iria Valcárcel Montoro",
   "status": "published",
   "publication_sources": [
-    {
-      "entity": "Statistisches Landesamt Sachsen-Anhalt",
-      "url": "https://wahlergebnisse.sachsen-anhalt.de/",
-      "role": "resultados oficiales y distribución de escaños"
-    },
-    {
-      "entity": "Alternative für Deutschland",
-      "url": "https://www.afd.de/",
-      "role": "posición oficial del partido y candidatura"
-    },
-    {
-      "entity": "Christlich Demokratische Union Deutschlands",
-      "url": "https://www.cdu.de/",
-      "role": "valoración oficial del resultado de la CDU"
-    }
+    {"entity":"Statistisches Landesamt Sachsen-Anhalt","url":"https://wahlergebnisse.sachsen-anhalt.de/","role":"resultados oficiales y distribución de escaños"},
+    {"entity":"Alternative für Deutschland","url":"https://www.afd.de/","role":"posición oficial del partido y candidatura"},
+    {"entity":"Christlich Demokratische Union Deutschlands","url":"https://www.cdu.de/","role":"valoración oficial del resultado de la CDU"}
   ],
-  "claim_to_evidence": {
-    "electoral_percentages_and_seats": "documented by the official state electoral results",
-    "turnout": "documented by the official state electoral results",
-    "party_positions": "attributed to the official AfD and CDU sources",
-    "government_formation_implications": "editorial inference from the published seat distribution; no coalition outcome asserted"
+  "claim_to_evidence_assessment": {
+    "electoral_percentages_and_seats":"Los porcentajes, participación y distribución de escaños están respaldados por los resultados oficiales del Estado de Sajonia-Anhalt.",
+    "party_positions":"Las valoraciones de AfD y CDU se atribuyen a sus respectivas fuentes oficiales.",
+    "government_formation_implications":"La lectura sobre formación de gobierno se limita a una inferencia editorial derivada de la distribución de escaños y no afirma un resultado de coalición no conocido el 7 de septiembre."
   },
-  "temporal_check": "Sources are dated 6–7 September 2026 and match the article publication date.",
-  "corroboration": "Official electoral results provide the numerical baseline; party sources corroborate the respective political reactions.",
-  "contradiction": "No contradiction identified in the numerical result. Political interpretation remains attributed or explicitly framed as analysis.",
-  "interpretation_risks": [
-    "The article includes political interpretation beyond the raw result; those passages are not presented as official facts.",
-    "Future coalition negotiations could change after publication."
-  ],
-  "unresolved_points": [
-    "The eventual governing coalition was not determined by the 7 September publication date."
-  ],
-  "human_approval": "Historical article was already published. This remediation reconstructs the verification record; it does not create a new publication approval."
+  "temporal_check":"Las fuentes centrales están fechadas el 6–7 de septiembre de 2026 y eran contemporáneas a la publicación.",
+  "corroboration_contradiction_check":"Los resultados oficiales constituyen la base numérica; las fuentes partidarias corroboran las respectivas reacciones. No se detecta contradicción en los resultados numéricos. Las interpretaciones políticas permanecen atribuidas o identificadas como análisis.",
+  "interpretation_risks":["El artículo contiene interpretación política más allá del resultado bruto; no se presenta como hecho oficial.","Las negociaciones de gobierno podían cambiar después de la publicación."],
+  "unresolved_points":["La coalición de gobierno definitiva no estaba determinada el 7 de septiembre de 2026."],
+  "human_approval_status":"Artículo histórico ya publicado. Este expediente reconstruye la trazabilidad documental y no constituye una nueva aprobación editorial humana."
 }
