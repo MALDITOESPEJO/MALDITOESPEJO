@@ -1,25 +1,24 @@
 {
-  "article_id": "2026-09-07-petroleo-ormuz-100-dolares",
-  "publication_date": "2026-09-07",
-  "section": "Economía",
-  "author": "Nerea Villacorta Beltrán",
-  "status": "published",
-  "publication_sources": [
+  "article_id":"2026-09-07-petroleo-ormuz-100-dolares",
+  "publication_date":"2026-09-07",
+  "section":"Economía",
+  "author":"Nerea Villacorta Beltrán",
+  "status":"published",
+  "publication_sources":[
     {"entity":"U.S. Energy Information Administration","url":"https://www.eia.gov/dnav/pet/PET_PRI_SPT_S1_D.htm","role":"precio spot oficial del Brent"},
     {"entity":"U.S. Central Command","url":"https://www.centcom.mil/MEDIA/PUBLIC-RELEASES/Article/4591744/centcom-destroys-3-irgc-oil-tankers-after-iran-targets-2-us-navy-warships/","role":"versión oficial estadounidense de los ataques del 5 de septiembre"},
     {"entity":"International Maritime Organization","url":"https://www.imo.org/en/mediacentre/pressbriefings/pages/statement-on-the-ongoing-crisis-in-the-strait-of-hormuz.aspx","role":"situación de seguridad marítima y ataques verificados"},
     {"entity":"International Maritime Organization","url":"https://www.imo.org/en/mediacentre/hottopics/pages/strait-of-hormuz-middle-east-data.aspx","role":"datos oficiales de tránsito por Ormuz"}
   ],
-  "claim_to_evidence": {
-    "brent_price":"EIA documenta 104.47 USD/barril el 7 de septiembre de 2026.",
-    "hormuz_energy_significance":"La investigación utiliza datos oficiales de EIA sobre el estrecho.",
-    "maritime_security":"La OMI documenta la situación de seguridad marítima.",
-    "5_september_us_operations":"Atribuido expresamente al comunicado oficial de CENTCOM."
+  "claim_to_evidence_assessment": {
+    "brent_price":"La EIA documenta 104,47 USD por barril el 7 de septiembre de 2026.",
+    "hormuz_energy_significance":"La investigación utiliza datos oficiales de la EIA sobre la relevancia energética del estrecho.",
+    "maritime_security":"La OMI documenta la situación de seguridad marítima y los ataques verificados.",
+    "5_september_us_operations":"La operación del 5 de septiembre se atribuye expresamente al comunicado oficial de CENTCOM y no se presenta como corroboración independiente."
   },
   "temporal_check":"Las fuentes centrales utilizadas estaban disponibles como máximo el 7 de septiembre de 2026; no se utilizó información posterior para reconstruir el relato de esa fecha.",
-  "corroboration":"EIA, OMI y CENTCOM cubren dominios distintos; el comunicado de CENTCOM no se presenta como corroboración independiente.",
-  "contradiction":"No se detecta contradicción en el precio Brent ni en los datos de seguridad marítima citados. La versión de CENTCOM queda identificada como atribución oficial estadounidense.",
+  "corroboration_contradiction_check":"EIA, OMI y CENTCOM cubren dominios distintos. No se detecta contradicción en el precio Brent ni en los datos de seguridad marítima citados; la versión de CENTCOM queda identificada como atribución oficial estadounidense.",
   "interpretation_risks":["El precio del Brent no se atribuye a una única causa.","No se afirma que Ormuz estuviera formalmente cerrado."],
   "unresolved_points":["La duración y efecto final de la perturbación sobre los flujos energéticos seguían siendo inciertos el 7 de septiembre.","La posición iraní sobre el relato de CENTCOM no queda establecida por las fuentes primarias citadas."],
-  "human_approval":"Artículo histórico ya publicado; este expediente documenta la verificación reconstruida y no crea una nueva aprobación editorial."
+  "human_approval_status":"Artículo histórico ya publicado. Este expediente documenta la verificación reconstruida y no constituye una nueva aprobación editorial humana."
 }
