@@ -12,7 +12,9 @@
   ],
   "claim_to_evidence_assessment": "Las afirmaciones centrales están respaldadas por la información oficial del Ayuntamiento de Kuopio y, para los escenarios del ejercicio, corroboradas por Associated Press.",
   "temporal_check": "El ejercicio se celebró los días 2 y 3 de septiembre de 2026 y las fuentes revisadas corresponden a 2026.",
-  "corroboration_contradiction_check": "No se identifica contradicción material en las afirmaciones publicables sobre fechas, participantes, objetivos, instalación y escenarios.",
+  "corroboration_contradiction_check": "La información oficial del Ayuntamiento de Kuopio constituye la base primaria; Associated Press aporta una fuente independiente de corroboración. No se identifica contradicción material en las afirmaciones publicables sobre fechas, participantes, objetivos, instalación y escenarios.",
+  "independence_assessment": "La procedencia es parcialmente independiente: las dos publicaciones del Ayuntamiento de Kuopio proceden de la misma institución y Associated Press aporta una fuente periodística separada. La fuente secundaria no se utiliza para convertir una afirmación no sustentada oficialmente en un hecho oficial.",
+  "contradiction_outcome": "No se ha identificado contradicción material ni conflicto documental relevante entre las fuentes revisadas.",
   "interpretation_risks": [
     "La pieza distingue entre preparación ante escenarios de emergencia y previsión de un ataque inminente.",
     "La referencia a la escala europea se formula conforme a la descripción de los organizadores y la cobertura independiente disponible."
