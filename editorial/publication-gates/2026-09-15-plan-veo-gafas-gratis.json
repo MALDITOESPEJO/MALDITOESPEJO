@@ -1,0 +1,17 @@
+{
+  "article": "content/articles/2026-09-15-plan-veo-gafas-gratis.md",
+  "verification_path": "via_abreviada_fuente_oficial",
+  "verification_completed": true,
+  "official_source": "Ministerio de Sanidad, informe sobre el Plan VEO; declaraciones del presidente Pedro Sánchez y la ministra Mónica García — https://www.laopiniondemurcia.es/comunidad/2026/09/15/20-000-ninos-murcianos-benefician-134269372.html",
+  "conditions_met": {
+    "fuente_oficial_primaria_identificable": true,
+    "solo_hechos_declaraciones_atribuidas": true,
+    "redaccion_lenguaje_claro": true
+  },
+  "publication_sources_support": true,
+  "material_contradictions_resolved": true,
+  "human_editorial_approval": true,
+  "approved_at": "2026-09-15",
+  "approved_by": "Editor responsable",
+  "notes": "Aprobación humana confirmada en la conversación editorial. Publicado por la vía abreviada de verificación para fuente oficial directa (editorial/documentation/DIRECTOR_CRITERIO_MALDITOESPEJO.md), no por el motor de casos completo: no se abrió CASE-########. Segunda fuente (Coorm) atribuida como declaración profesional informativa, no política. Imagen aportada por el usuario: la primera versión mostraba un organismo y un programa equivocados (Consejería de Educación / refuerzo educativo, en vez del Ministerio de Sanidad / Plan VEO) y se rechazó antes de publicar; esta segunda versión sí coincide con la fuente y las cifras reales. Imagen asociada por slug en public/images/2026-09-15-plan-veo-gafas-gratis.png."
+}
