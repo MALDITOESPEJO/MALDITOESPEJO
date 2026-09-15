@@ -2,11 +2,39 @@
 
 import fs from "node:fs";
 import path from "node:path";
+import { execFileSync } from "node:child_process";
 
 const ROOT = process.cwd();
 const ARTICLES_DIR = path.join(ROOT, "content", "articles");
 const GATES_DIR = path.join(ROOT, "editorial", "publication-gates");
 const CASES_DIR = path.join(ROOT, "editorial", "cases");
+
+// The publication gate protects article changes. Unrelated PRs (for example,
+// Search Console verification) must not be blocked by pre-existing publication
+// debt. Pushes to main always enforce the full gate.
+function pullRequestChangesArticles() {
+  if (process.env.GITHUB_EVENT_NAME !== "pull_request") return true;
+  const baseRef = process.env.GITHUB_BASE_REF;
+  if (!baseRef) return true;
+  try {
+    const range = `origin/${baseRef}...HEAD`;
+    const changed = execFileSync("git", ["diff", "--name-only", range, "--", "content/articles"], {
+      cwd: ROOT,
+      encoding: "utf8",
+    });
+    return changed
+      .split(/\r?\n/)
+      .some((file) => /^content\/articles\/.*\.md$/i.test(file.trim()));
+  } catch {
+    // Fail closed if the PR range cannot be inspected.
+    return true;
+  }
+}
+
+if (!pullRequestChangesArticles()) {
+  console.log("PUBLICATION GATE: NOT APPLICABLE — el PR no modifica artículos.");
+  process.exit(0);
+}
 
 const REQUIRED_APPROVAL_FIELDS = [
   "article",
