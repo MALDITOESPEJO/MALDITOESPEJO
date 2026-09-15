@@ -7,6 +7,13 @@ author: "Nerea Villacorta Beltrán"
 type: "news"
 status: "approved"
 image: "/images/2026-09-06-euribor-supera-3-hipotecas-variables.svg"
+sources:
+  - id: "source-1"
+    entity: "Banco de España"
+    label: "Tipos de interés diarios"
+    nature: "datos oficiales"
+    date: "4 septiembre 2026"
+    url: "https://datos.bde.es/datos/es/datasets/000/026.html"
 ---
 
 El Euríbor a 12 meses mantiene su escalada en septiembre y se sitúa por encima del 3%, elevando de nuevo la presión sobre los hogares con hipotecas a tipo variable.
