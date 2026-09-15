@@ -36,16 +36,23 @@ function findVerificationRecord(articleId) {
   return null;
 }
 
+function hasStructuredField(recordContent, field) {
+  return new RegExp(`"${field}"\\s*:`).test(recordContent);
+}
+
 function hasContradictionAssessment(content) {
-  return requiredSections.some((pattern) => pattern.test(content));
+  return requiredSections.some((pattern) => pattern.test(content))
+    || hasStructuredField(content, 'corroboration_contradiction_check');
 }
 
 function hasIndependenceAssessment(content) {
-  return /(independencia|independiente|misma\s+fuente|misma\s+cadena|misma\s+procedencia|linaje)/i.test(content);
+  return hasStructuredField(content, 'independence_assessment')
+    || /(independencia|independiente|misma\s+fuente|misma\s+cadena|misma\s+procedencia|linaje)/i.test(content);
 }
 
 function hasExplicitConflictOutcome(content) {
-  return /(contradicci[oó]n[^\n]*(?:material|relevante)|no se ha identificado[^\n]*contradicci[oó]n|se ha identificado[^\n]*contradicci[oó]n|conflicto[^\n]*(?:abierto|resuelto|pendiente))/i.test(content);
+  return hasStructuredField(content, 'contradiction_outcome')
+    || /(contradicci[oó]n[^\n]*(?:material|relevante)|no se ha identificado[^\n]*contradicci[oó]n|se ha identificado[^\n]*contradicci[oó]n|conflicto[^\n]*(?:abierto|resuelto|pendiente))/i.test(content);
 }
 
 if (!fs.existsSync(ARTICLES_DIR)) {
