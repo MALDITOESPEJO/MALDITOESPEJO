@@ -1,0 +1,17 @@
+{
+  "article": "content/articles/2026-09-15-comunidad-ayudas-agricultores.md",
+  "verification_path": "via_abreviada_fuente_oficial",
+  "verification_completed": true,
+  "official_source": "Gobierno de la Región de Murcia, declaraciones del presidente Fernando López Miras — https://www.laverdad.es/murcia/comunidad-prepara-nuevo-plan-ayudas-aliviar-crisis-20260914002740-nt.html (fuente parcialmente truncada por muro de pago)",
+  "conditions_met": {
+    "fuente_oficial_primaria_identificable": true,
+    "solo_hechos_declaraciones_atribuidas": true,
+    "redaccion_lenguaje_claro": true
+  },
+  "publication_sources_support": true,
+  "material_contradictions_resolved": true,
+  "human_editorial_approval": true,
+  "approved_at": "2026-09-15",
+  "approved_by": "Editor responsable",
+  "notes": "Aprobación humana confirmada en la conversación editorial. Publicado por la vía abreviada de verificación para fuente oficial directa (editorial/documentation/DIRECTOR_CRITERIO_MALDITOESPEJO.md), no por el motor de casos completo: no se abrió CASE-########. Fuente parcialmente truncada por muro de pago: no se pudo confirmar cifra exacta, fecha de convocatoria ni requisitos. La búsqueda de corroboración solo encontró anuncios de ayudas similares de años anteriores (2024, noviembre 2025), distintos a este; no se usaron esos datos para no mezclar convocatorias. El artículo se redactó deliberadamente con alcance limitado a lo verificado, sin rellenar los huecos, y lo dice explícitamente en el propio cuerpo. Imagen aportada por el usuario, verificada contra el texto: no añade ningún dato no confirmado. Imagen asociada por slug en public/images/2026-09-15-comunidad-ayudas-agricultores.jpg."
+}
