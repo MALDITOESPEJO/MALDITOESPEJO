@@ -1,0 +1,17 @@
+{
+  "article": "content/articles/2026-09-16-armada-heridos-camara-hiperbarica.md",
+  "verification_path": "via_abreviada_fuente_oficial",
+  "verification_completed": true,
+  "official_source": "Armada Española, Oficina de Comunicación Social — https://www.laopiniondemurcia.es/sucesos/2026/09/16/seis-heridos-graves-incidente-camara-134358208.html",
+  "conditions_met": {
+    "fuente_oficial_primaria_identificable": true,
+    "solo_hechos_declaraciones_atribuidas": true,
+    "redaccion_lenguaje_claro": true
+  },
+  "publication_sources_support": true,
+  "material_contradictions_resolved": true,
+  "human_editorial_approval": true,
+  "approved_at": "2026-09-16",
+  "approved_by": "Editor responsable",
+  "notes": "Aprobación humana confirmada en la conversación editorial. Publicado por la vía abreviada de verificación para fuente oficial directa (editorial/documentation/DIRECTOR_CRITERIO_MALDITOESPEJO.md), no por el motor de casos completo: no se abrió CASE-########. A diferencia de un caso descartado días atrás (colisión narcolancha-patrullera en Almería), aquí la cifra de heridos y su estado sí están confirmados oficialmente por un comunicado de la propia Armada, con cifras consistentes (no contradictorias entre fuentes anónimas). Se omitieron deliberadamente las hipótesis sobre la causa del accidente (intoxicación por gas, síndrome de descompresión) que la fuente atribuye a 'fuentes próximas' no oficiales, para no dar como hecho algo no confirmado por la Armada. Imagen aportada por el usuario, verificada: coincide con las cifras oficiales y no incluye ninguna causa sin confirmar. Imagen asociada por slug en public/images/2026-09-16-armada-heridos-camara-hiperbarica.png."
+}
