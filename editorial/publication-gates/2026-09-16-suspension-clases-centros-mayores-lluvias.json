@@ -1,0 +1,17 @@
+{
+  "article": "content/articles/2026-09-16-suspension-clases-centros-mayores-lluvias.md",
+  "verification_path": "via_abreviada_fuente_oficial",
+  "verification_completed": true,
+  "official_source": "Consejería de Educación y Formación Profesional; Consejería de Política Social, Familias e Igualdad (Región de Murcia); AEMET; declaraciones del presidente Fernando López Miras — https://www.laopiniondemurcia.es/fotos/comunidad/2026/09/16/suspendidas-clases-14-municipios-siete-134367579.html",
+  "conditions_met": {
+    "fuente_oficial_primaria_identificable": true,
+    "solo_hechos_declaraciones_atribuidas": true,
+    "redaccion_lenguaje_claro": true
+  },
+  "publication_sources_support": true,
+  "material_contradictions_resolved": true,
+  "human_editorial_approval": true,
+  "approved_at": "2026-09-16",
+  "approved_by": "Editor responsable",
+  "notes": "Aprobación humana confirmada en la conversación editorial. Publicado por la vía abreviada de verificación para fuente oficial directa (editorial/documentation/DIRECTOR_CRITERIO_MALDITOESPEJO.md), no por el motor de casos completo: no se abrió CASE-########. Información de seguridad con vigencia inmediata (jueves 17 de septiembre) y directamente relevante para audiencia sénior: incluye el cierre de centros de día y centros sociales para personas mayores. Actualiza y sustituye en severidad a la pieza del 15-S (aviso amarillo, ahora subido a naranja); related_articles enlaza de forma recíproca con esa pieza anterior. Imagen aportada por el usuario, verificada cifra por cifra contra el texto. Imagen asociada por slug en public/images/2026-09-16-suspension-clases-centros-mayores-lluvias.png."
+}

@@ -11,6 +11,8 @@ status: "approved"
 editorial_originality: "original"
 sources:
   - "Agencia Estatal de Meteorología (AEMET)"
+related_articles:
+  - "2026-09-16-suspension-clases-centros-mayores-lluvias"
 ---
 
 El calor que ha dominado estos días en la Región de Murcia va a cambiar de forma brusca. Según la Agencia Estatal de Meteorología (AEMET), la llegada de un frente frío dejará lluvias, tormentas y un descenso notable de las temperaturas a partir de mañana miércoles, que se notará todavía más el jueves.
