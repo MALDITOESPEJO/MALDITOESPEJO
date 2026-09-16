@@ -1,0 +1,17 @@
+{
+  "article": "content/articles/2026-09-15-aemet-cambio-tiempo-tormentas.md",
+  "verification_path": "via_abreviada_fuente_oficial",
+  "verification_completed": true,
+  "official_source": "Agencia Estatal de Meteorología (AEMET) — https://www.laopiniondemurcia.es/comunidad/2026/09/15/vuelco-radical-tiempo-region-murcia-dv-134305885.html",
+  "conditions_met": {
+    "fuente_oficial_primaria_identificable": true,
+    "solo_hechos_declaraciones_atribuidas": true,
+    "redaccion_lenguaje_claro": true
+  },
+  "publication_sources_support": true,
+  "material_contradictions_resolved": true,
+  "human_editorial_approval": true,
+  "approved_at": "2026-09-15",
+  "approved_by": "Editor responsable",
+  "notes": "Aprobación humana confirmada en la conversación editorial. Publicado por la vía abreviada de verificación para fuente oficial directa (editorial/documentation/DIRECTOR_CRITERIO_MALDITOESPEJO.md), no por el motor de casos completo: no se abrió CASE-########. Información de seguridad con vigencia inmediata (avisos amarillos para miércoles 16 y jueves 17 de septiembre). Todas las cifras (temperaturas por municipio, litros por metro cuadrado, horarios de los avisos) proceden directamente del reporte detallado de AEMET recogido en la fuente. Imagen aportada por el usuario, verificada: no añade datos no confirmados. Imagen asociada por slug en public/images/2026-09-15-aemet-cambio-tiempo-tormentas.png."
+}
