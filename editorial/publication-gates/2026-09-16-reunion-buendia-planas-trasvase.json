@@ -1,0 +1,17 @@
+{
+  "article": "content/articles/2026-09-16-reunion-buendia-planas-trasvase.md",
+  "verification_path": "via_abreviada_fuente_oficial",
+  "verification_completed": true,
+  "official_source": "Declaraciones del consejero Joaquín Buendía y del ministro Luis Planas — https://www.laverdad.es/murcia/ministro-planas-valida-subida-caudales-tajo-fundamento-20260915205006-nt.html",
+  "conditions_met": {
+    "fuente_oficial_primaria_identificable": true,
+    "solo_hechos_declaraciones_atribuidas": true,
+    "redaccion_lenguaje_claro": true
+  },
+  "publication_sources_support": true,
+  "material_contradictions_resolved": true,
+  "human_editorial_approval": true,
+  "approved_at": "2026-09-16",
+  "approved_by": "Editor responsable",
+  "notes": "Aprobación humana confirmada en la conversación editorial. Publicado por la vía abreviada de verificación para fuente oficial directa, en versión deliberadamente reescrita para neutralidad: el titular original de la fuente ('el ministro valida la subida') tomaba partido en un conflicto político real y disputado (Trasvase Tajo-Segura, Región de Murcia vs. caudales ecológicos del Plan Hidrológico del Tajo). Se redactó desde cero citando ambas posturas como declaraciones atribuidas (Buendía y Planas), sin validar ninguna de las dos, y sin abrir el motor de casos completo dado que no se trataba de contrastar hechos sino de no heredar el sesgo del titular original. No se abrió CASE-########. Autoría: Redacción MALDITOESPEJO. Imagen aportada por el usuario: mantiene la misma neutralidad (cifras de la Región atribuidas como estimación propia, frase de Planas entre comillas). Imagen asociada por slug en public/images/2026-09-16-reunion-buendia-planas-trasvase.png."
+}
