@@ -1,0 +1,17 @@
+{
+  "article": "content/articles/2026-09-16-rey-felipe-vi-ceuta.md",
+  "verification_path": "via_abreviada_fuente_oficial",
+  "verification_completed": true,
+  "official_source": "Casa de S.M. el Rey y Ministerio del Interior, declaraciones en acto público (apertura de curso de la Escuela Nacional de Protección Civil) — https://www.20minutos.es/nacional/rey-pone-los-ceuties-como-ejemplo-civismo-ante-una-situacion-compleja-su-primer-discurso-tras-crisis-migratoria_7036979_0.html",
+  "conditions_met": {
+    "fuente_oficial_primaria_identificable": true,
+    "solo_hechos_declaraciones_atribuidas": true,
+    "redaccion_lenguaje_claro": true
+  },
+  "publication_sources_support": true,
+  "material_contradictions_resolved": true,
+  "human_editorial_approval": true,
+  "approved_at": "2026-09-16",
+  "approved_by": "Editor responsable",
+  "notes": "Aprobación humana confirmada en la conversación editorial. Publicado por la vía abreviada de verificación para fuente oficial directa (editorial/documentation/DIRECTOR_CRITERIO_MALDITOESPEJO.md), no por el motor de casos completo: no se abrió CASE-########. Contenido mayormente ceremonial/institucional (discurso del Jefe del Estado y del ministro del Interior en un acto público), con una mención breve y atribuida a comentarios previos del presidente del Gobierno sobre la colaboración de las autoridades ceutíes, sin tomar partido en esa disputa. Imagen aportada por el usuario: incluye 'desde 1983' como año de fundación, una inferencia razonable de 'más de cuatro décadas de trayectoria' que decía la fuente, no verificada de forma independiente pero consistente. Imagen asociada por slug en public/images/2026-09-16-rey-felipe-vi-ceuta.png."
+}
