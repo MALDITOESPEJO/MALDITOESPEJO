@@ -14,6 +14,7 @@ sources:
 related_articles:
   - "2026-09-12-san-javier-carril-bici"
   - "2026-09-13-region-competencias-costas"
+  - "2026-09-17-costas-camping-portus"
 ---
 
 El Área del Litoral del Ayuntamiento de Cartagena está organizando actividades de educación ambiental en los senderos del municipio que tienen el distintivo de Sendero Azul. El objetivo es que los vecinos conozcan mejor estos espacios naturales y ayuden a cuidarlos.
