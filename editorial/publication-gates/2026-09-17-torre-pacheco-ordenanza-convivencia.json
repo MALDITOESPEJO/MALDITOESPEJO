@@ -1,0 +1,17 @@
+{
+  "article": "content/articles/2026-09-17-torre-pacheco-ordenanza-convivencia.md",
+  "verification_path": "via_abreviada_fuente_oficial",
+  "verification_completed": true,
+  "official_source": "Ayuntamiento de Torre Pacheco (Ordenanza Municipal de Convivencia Ciudadana, BORM 3 de septiembre de 2026; declaraciones del alcalde Pedro Ángel Roca) — corroborado por laverdad.es, murciaactualidad.com y cope.es",
+  "conditions_met": {
+    "fuente_oficial_primaria_identificable": true,
+    "solo_hechos_declaraciones_atribuidas": true,
+    "redaccion_lenguaje_claro": true
+  },
+  "publication_sources_support": true,
+  "material_contradictions_resolved": true,
+  "human_editorial_approval": true,
+  "approved_at": "2026-09-17",
+  "approved_by": "Editor responsable",
+  "notes": "Aprobación humana confirmada en la conversación editorial. Publicado por la vía abreviada de verificación para fuente oficial directa (editorial/documentation/DIRECTOR_CRITERIO_MALDITOESPEJO.md), no por el motor de casos completo: no se abrió CASE-########. La web oficial del Ayuntamiento dio un error técnico al cargarla directamente; se corroboró el contenido con tres medios independientes y con la publicación en el BORM. La imagen aportada por el usuario incluye una cifra de multa máxima (3.000 euros) no verificada específicamente para esta ordenanza -- es un tope habitual en ordenanzas municipales españolas para infracciones muy graves, pero no se pudo confirmar para este caso concreto, por lo que no se incorporó al texto del artículo; se mantiene la imagen por ser ilustrativa. Imagen asociada por slug en public/images/2026-09-17-torre-pacheco-ordenanza-convivencia.png."
+}
