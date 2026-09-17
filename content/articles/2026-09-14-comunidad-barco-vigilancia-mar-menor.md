@@ -14,6 +14,7 @@ sources:
 related_articles:
   - "2026-09-13-region-competencias-costas"
   - "2026-09-13-cartagena-senderos-azules"
+  - "2026-09-17-costas-camping-portus"
 ---
 
 La Comunidad Autónoma de la Región de Murcia ha puesto en marcha una nueva embarcación para vigilar el Mar Menor y otros espacios naturales protegidos del litoral. Ha costado 212.960 euros, pagados con fondos europeos del programa NextGenerationEU.

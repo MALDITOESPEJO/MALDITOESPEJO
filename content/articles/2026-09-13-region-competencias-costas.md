@@ -16,6 +16,7 @@ sources:
 related_articles:
   - "2026-09-12-san-javier-carril-bici"
   - "2026-09-13-cartagena-senderos-azules"
+  - "2026-09-17-costas-camping-portus"
 ---
 
 El Gobierno de la Región de Murcia solicitó el pasado 4 de septiembre al Ministerio de Política Territorial y Memoria Democrática una reunión de la Comisión Mixta de Transferencias. El objetivo es negociar el traspaso completo de las competencias de Costas a la Comunidad Autónoma.

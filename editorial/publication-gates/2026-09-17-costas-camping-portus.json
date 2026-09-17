@@ -1,0 +1,17 @@
+{
+  "article": "content/articles/2026-09-17-costas-camping-portus.md",
+  "verification_path": "via_abreviada_fuente_oficial",
+  "verification_completed": true,
+  "official_source": "Demarcación de Costas, Ministerio para la Transición Ecológica (informe oficial, aportado por el usuario en captura archivada de laverdad.es)",
+  "conditions_met": {
+    "fuente_oficial_primaria_identificable": true,
+    "solo_hechos_declaraciones_atribuidas": true,
+    "redaccion_lenguaje_claro": true
+  },
+  "publication_sources_support": true,
+  "material_contradictions_resolved": true,
+  "human_editorial_approval": true,
+  "approved_at": "2026-09-17",
+  "approved_by": "Editor responsable",
+  "notes": "Aprobación humana confirmada en la conversación editorial. Publicado por la vía abreviada de verificación para fuente oficial directa (editorial/documentation/DIRECTOR_CRITERIO_MALDITOESPEJO.md), no por el motor de casos completo: no se abrió CASE-########. Resolución administrativa ya adoptada (no una disputa abierta que requiera equilibrar dos posturas activas): la empresa del camping pierde sus alegaciones, y eso es un hecho verificable, no una opinión. related_articles enlaza, de forma recíproca en las tres direcciones, con las piezas previas del eje litoral (competencias de Costas, senderos azules de Cartagena, barco de vigilancia del Mar Menor). Imagen aportada por el usuario, verificada frase por frase contra las citas literales del informe: coincide. Imagen asociada por slug en public/images/2026-09-17-costas-camping-portus.png."
+}
