@@ -1,0 +1,17 @@
+{
+  "article": "content/articles/2026-09-18-rey-felipe-vi-apertura-curso-upct.md",
+  "verification_path": "via_abreviada_fuente_oficial",
+  "verification_completed": true,
+  "official_source": "Universidad Politécnica de Cartagena (UPCT), nota oficial sobre el Acto de Apertura Nacional del Curso Académico 2026/2027 (24 de septiembre, Paraninfo, Campus Muralla del Mar)",
+  "conditions_met": {
+    "fuente_oficial_primaria_identificable": true,
+    "solo_hechos_declaraciones_atribuidas": true,
+    "redaccion_lenguaje_claro": true
+  },
+  "publication_sources_support": true,
+  "material_contradictions_resolved": true,
+  "human_editorial_approval": true,
+  "approved_at": "2026-09-18",
+  "approved_by": "Editor responsable",
+  "notes": "Aprobación humana confirmada en la conversación editorial. Publicado por la vía abreviada de verificación para fuente oficial directa (editorial/documentation/DIRECTOR_CRITERIO_MALDITOESPEJO.md), no por el motor de casos completo: no se abrió CASE-########. El archivo se encontró en main sin frontmatter (solo el cuerpo del texto, subido directamente por GitHub sin pasar por el flujo de publicación), lo que hacía que ni el validador ni el sitio lo reconocieran como artículo. Se reconstruyó con el frontmatter completo tras confirmación del usuario (sección, fuente) y corroboración independiente del evento (Onda Regional de Murcia, La Verdad); el cuerpo original no se modificó. Sin imagen todavía."
+}
