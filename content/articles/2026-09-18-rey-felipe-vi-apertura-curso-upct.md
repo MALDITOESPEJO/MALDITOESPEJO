@@ -1,3 +1,18 @@
+---
+id: "rey-felipe-vi-apertura-curso-upct-2026"
+title: "El Rey Felipe VI presidirá la apertura del curso universitario en la UPCT"
+description: "El acto de apertura nacional del curso 2026-2027 de las universidades españolas se celebrará el 24 de septiembre en el Paraninfo de la Politécnica de Cartagena."
+date: "2026-09-18"
+time: "12:00"
+section: "Cartagena"
+author: "Redacción MALDITOESPEJO"
+type: "news"
+status: "approved"
+editorial_originality: "original"
+sources:
+  - "Universidad Politécnica de Cartagena (UPCT), nota oficial"
+---
+
 El Rey Felipe VI presidirá el próximo jueves 24 de septiembre la apertura oficial del curso académico 2026-2027 de las universidades españolas. El acto se celebrará en el Paraninfo de la Universidad Politécnica de Cartagena (UPCT), en el Campus Muralla del Mar, y será compartido con la Universidad de Murcia.
 
 Asistirán la ministra de Ciencia, Innovación y Universidades, Diana Morant, y 35 rectores de universidades españolas, además de las autoridades regionales, los rectores de las universidades de la autonomía y docentes universitarios. El interés por participar ha sido tal que la UPCT ha tenido que sortear las invitaciones entre su personal.
