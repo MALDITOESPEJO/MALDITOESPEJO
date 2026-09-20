@@ -4,7 +4,7 @@ title: "El Museo Arqueológico Municipal de Cartagena reabre tras su remodelaci�
 description: "El centro Enrique Escudero de Castro vuelve a abrir el 30 de septiembre tras las obras de reforma estival. Coincidirá con la exposición temporal “Plastihistoria del Traje”."
 date: "2026-09-20"
 time: "16:30"
-section: "Región de Murcia"
+section: "Cartagena"
 author: "Redacción MALDITOESPEJO"
 type: "news"
 status: "approved"
