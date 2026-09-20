@@ -4,7 +4,7 @@ title: "ANSE y WWF alertan de la expansión del robo de agua en Albacete y el Su
 description: "Una investigación de más de un año y medio cifra en más de 15.000 hectáreas las superficies regadas con indicios de ilegalidad en el eje Sureste. En el entorno del Mar Menor el volumen extraído habría caído un 65%."
 date: "2026-09-20"
 time: "16:50"
-section: "Región de Murcia"
+section: "Cartagena"
 author: "Redacción MALDITOESPEJO"
 type: "news"
 status: "approved"
