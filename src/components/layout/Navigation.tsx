@@ -10,13 +10,13 @@ export function Wordmark() {
       className="inline-flex items-center justify-center rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
     >
       <Image
-        src="/images/malditoespejo-logo.webp"
+        src="/images/malditoespejo-logo-web.png"
         alt="MALDITOESPEJO — Solo hechos"
-        width={560}
-        height={255}
+        width={600}
+        height={600}
         priority
-        sizes="(max-width: 639px) 210px, (max-width: 767px) 260px, 360px"
-        className="h-auto w-[210px] sm:w-[260px] md:w-[360px]"
+        sizes="(max-width: 639px) 220px, (max-width: 767px) 280px, 360px"
+        className="h-20 w-[220px] object-cover object-center sm:h-20 sm:w-[280px] md:h-[5.5rem] md:w-[360px]"
       />
     </Link>
   );
