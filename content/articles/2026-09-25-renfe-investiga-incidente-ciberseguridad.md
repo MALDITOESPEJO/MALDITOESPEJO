@@ -11,7 +11,6 @@ status: "approved"
 editorial_originality: "original"
 sources:
   - "Grupo Renfe - Sala de Prensa (25/09/2026)"
-related_articles: []
 ---
 
 Renfe se encuentra investigando un incidente de ciberseguridad cuyo origen se sitúa en servidores de Adif comprometidos que mantenían interconexión con sistemas de la operadora ferroviaria.
