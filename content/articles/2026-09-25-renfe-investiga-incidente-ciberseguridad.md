@@ -4,7 +4,7 @@ title: "Renfe investiga un incidente de ciberseguridad vinculado a sistemas exte
 description: "Los atacantes habrían accedido a nombres y correos de usuarios, sin que existan evidencias de filtración de datos bancarios o DNI."
 date: "2026-09-25"
 time: "18:00"
-section: "Nacional"
+section: "Actualidad"
 author: "Redacción MALDITOESPEJO"
 type: "news"
 status: "approved"
