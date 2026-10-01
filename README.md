@@ -27,7 +27,7 @@ Se prioriza una noticia menos espectacular pero incontestable frente a una histo
 
 No se inventan datos, no se completan vacíos con suposiciones y no se deducen acontecimientos que no puedan establecerse con seguridad.
 
-[**Ver el criterio editorial completo del Director →**](https://github.com/MALDITOESPEJO/MALDITOESPEJO/blob/main/EDITORIAL/DIRECTOR_CRITERIO_MALDITOESPEJO.md)
+[**Ver el criterio editorial completo del Director →**](https://github.com/MALDITOESPEJO/MALDITOESPEJO/blob/main/editorial/documentation/DIRECTOR_CRITERIO_MALDITOESPEJO.md)
 
 ---
 
@@ -138,7 +138,7 @@ MALDITOESPEJO no pretende publicar más.
 
 ### Documentación editorial
 
-- [Criterio editorial del Director](https://github.com/MALDITOESPEJO/MALDITOESPEJO/blob/main/EDITORIAL/DIRECTOR_CRITERIO_MALDITOESPEJO.md)
+- [Criterio editorial del Director](https://github.com/MALDITOESPEJO/MALDITOESPEJO/blob/main/editorial/documentation/DIRECTOR_CRITERIO_MALDITOESPEJO.md)
 - [Equipo de redactores](https://github.com/MALDITOESPEJO/MALDITOESPEJO/blob/main/editorial/people/EDITORIAL_WRITERS.md)
 - [Reglas de asignación de autoría](https://github.com/MALDITOESPEJO/MALDITOESPEJO/blob/main/editorial/people/AUTHOR_ASSIGNMENT_RULES.md)
 - [Política de autoría](https://github.com/MALDITOESPEJO/MALDITOESPEJO/blob/main/editorial/people/AUTHORSHIP_POLICY.md)
