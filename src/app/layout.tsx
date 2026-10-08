@@ -4,8 +4,19 @@ import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { CookieBanner } from "@/components/layout/CookieBanner";
-const sourceSerif4 = Source_Serif_4({ subsets: ["latin"], weight: ["400", "600", "700"], variable: "--font-display", display: "swap" });
-const inter = Inter({ subsets: ["latin"], weight: ["400", "500", "600", "700", "900"], variable: "--font-sans", display: "swap" });
+const sourceSerif4 = Source_Serif_4({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-display",
+  display: "swap",
+});
+
+const inter = Inter({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-sans",
+  display: "swap",
+});
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.malditoespejo.com"),
   title: { default: "MALDITOESPEJO — Solo hechos", template: "%s — MALDITOESPEJO" },
