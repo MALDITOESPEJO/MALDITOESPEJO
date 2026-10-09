@@ -49,11 +49,11 @@ export function Header() {
           </div>
         </div>
 
-        <div className="mt-3 hidden border-t border-border pt-3 md:block">
+        <div className="mb-3 border-t border-border pt-3 md:block">
           <Navigation />
         </div>
 
-        <div className="hidden border-t border-border md:block" />
+        <div className="border-t border-border md:block" />
       </div>
     </header>
   );
