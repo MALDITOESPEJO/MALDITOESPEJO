@@ -18,8 +18,8 @@ export function Header() {
       </div>
 
       <div className="container-editorial">
-        <div className="relative flex h-[5.75rem] items-center justify-between sm:h-28 md:h-[10.5rem]">
-          <div className="flex w-20 items-center md:w-28">
+        <div className="relative flex h-[6.875rem] items-center justify-between sm:h-[8.75rem] md:h-[12.75rem]">
+          <div className="flex w-12 items-center sm:w-20 md:w-28">
             <div className="md:hidden">
               <MobileNavigation />
             </div>
@@ -29,7 +29,7 @@ export function Header() {
             <Wordmark />
           </div>
 
-          <div className="flex w-20 justify-end md:w-28">
+          <div className="flex w-12 justify-end sm:w-20 md:w-28">
             <Link
               href="/search"
               aria-label="Buscar"
