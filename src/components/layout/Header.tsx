@@ -4,7 +4,7 @@ import { Navigation, Wordmark } from "./Navigation";
 
 export function Header() {
   return (
-    <header className="sticky top-0 z-50 bg-background/97 backdrop-blur-md">
+    <header className="sticky top-0 z-50 bg-background/97 backdrop-blur-md md:static">
       <div className="masthead-strip border-b border-white/10">
         <div className="container-editorial flex h-9 items-center justify-between gap-4 text-[0.62rem] font-semibold uppercase tracking-[0.12em]">
           <span className="hidden sm:block opacity-75">MALDITOESPEJO</span>
@@ -18,8 +18,8 @@ export function Header() {
       </div>
 
       <div className="container-editorial">
-        <div className="relative flex h-[4.5rem] items-center justify-between md:h-24">
-          <div className="flex w-20 items-center md:w-28">
+        <div className="relative flex h-[6.875rem] items-center justify-between sm:h-[8.75rem] md:h-[12.75rem]">
+          <div className="flex w-12 items-center sm:w-20 md:w-28">
             <div className="md:hidden">
               <MobileNavigation />
             </div>
@@ -29,7 +29,7 @@ export function Header() {
             <Wordmark />
           </div>
 
-          <div className="flex w-20 justify-end md:w-28">
+          <div className="flex w-12 justify-end sm:w-20 md:w-28">
             <Link
               href="/search"
               aria-label="Buscar"
