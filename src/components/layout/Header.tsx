@@ -18,7 +18,7 @@ export function Header() {
       </div>
 
       <div className="container-editorial">
-        <div className="relative flex h-20 items-center justify-between md:h-28">
+        <div className="relative flex h-[4.5rem] items-center justify-between md:h-24">
           <div className="flex w-20 items-center md:w-28">
             <div className="md:hidden">
               <MobileNavigation />
