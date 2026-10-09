@@ -15,8 +15,8 @@ export function Wordmark() {
         width={800}
         height={399}
         priority
-        sizes="(max-width: 639px) 180px, (max-width: 767px) 240px, 320px"
-        className="h-16 w-auto object-contain object-center sm:h-20 md:h-24"
+        sizes="(max-width: 639px) 240px, (max-width: 767px) 320px, 400px"
+        className="h-24 w-auto object-contain object-center sm:h-32 md:h-40"
       />
     </Link>
   );
