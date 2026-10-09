@@ -24,7 +24,7 @@ export function Wordmark() {
 
 export function Navigation() {
   return (
-    <nav aria-label="Secciones principales" className="py-2">
+    <nav aria-label="Secciones principales">
       <ul className="news-nav">
         {sections.map((section) => (
           <li key={section.slug}>
