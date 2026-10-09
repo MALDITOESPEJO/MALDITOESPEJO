@@ -12,11 +12,11 @@ export function Wordmark() {
       <Image
         src="/images/malditoespejo-logo-web.png"
         alt="MALDITOESPEJO — Solo hechos"
-        width={600}
-        height={600}
+        width={800}
+        height={399}
         priority
-        sizes="(max-width: 639px) 220px, (max-width: 767px) 280px, 360px"
-        className="h-16 w-[200px] object-contain object-center sm:h-20 sm:w-[280px] md:h-[5.5rem] md:w-[360px]"
+        sizes="(max-width: 639px) 180px, (max-width: 767px) 240px, 320px"
+        className="h-16 w-auto object-contain object-center sm:h-20 md:h-24"
       />
     </Link>
   );
