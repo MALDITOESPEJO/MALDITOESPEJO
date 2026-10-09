@@ -24,7 +24,7 @@ export function Wordmark() {
 
 export function Navigation() {
   return (
-    <nav aria-label="Secciones principales" className="mt-8">
+    <nav aria-label="Secciones principales" className="mt-12">
       <ul className="news-nav">
         {sections.map((section) => (
           <li key={section.slug}>
