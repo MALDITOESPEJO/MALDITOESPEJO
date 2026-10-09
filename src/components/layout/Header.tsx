@@ -45,7 +45,8 @@ export function Header() {
             </Link>
           </div>
         </div>
-        <div className="border-t border-border md:block">
+
+        <div className="mt-2 border-t border-border md:block">
           <div className="hidden md:block">
             <Navigation />
           </div>
