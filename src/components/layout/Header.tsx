@@ -45,7 +45,7 @@ export function Header() {
             </Link>
           </div>
         </div>
-        <div className="hidden border-t border-border py-3.5 md:block">
+        <div className="hidden border-y border-border py-3.5 md:block">
           <Navigation />
         </div>
       </div>
