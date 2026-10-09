@@ -16,6 +16,7 @@ export function Header() {
           </Link>
         </div>
       </div>
+
       <div className="container-editorial">
         <div className="relative flex h-20 items-center justify-between md:h-28">
           <div className="flex w-20 items-center md:w-28">
@@ -23,7 +24,9 @@ export function Header() {
               <MobileNavigation />
             </div>
           </div>
+
           <Wordmark />
+
           <div className="flex w-20 justify-end md:w-28">
             <Link
               href="/search"
@@ -46,11 +49,10 @@ export function Header() {
           </div>
         </div>
 
-        <div className="mt-2 border-t border-border md:block">
-          <div className="hidden md:block">
-            <Navigation />
-          </div>
+        <div className="mt-3 hidden border-t border-border pt-3 md:block">
+          <Navigation />
         </div>
+
         <div className="hidden border-t border-border md:block" />
       </div>
     </header>
