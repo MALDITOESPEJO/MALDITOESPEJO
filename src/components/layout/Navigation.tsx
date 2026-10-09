@@ -15,8 +15,8 @@ export function Wordmark() {
         width={800}
         height={399}
         priority
-        sizes="(max-width: 639px) 240px, (max-width: 767px) 320px, 400px"
-        className="h-24 w-auto object-contain object-center sm:h-32 md:h-40"
+        sizes="(max-width: 639px) 280px, (max-width: 767px) 360px, 480px"
+        className="h-32 w-auto object-contain object-center sm:h-40 md:h-56"
       />
     </Link>
   );
@@ -24,7 +24,7 @@ export function Wordmark() {
 
 export function Navigation() {
   return (
-    <nav aria-label="Secciones principales">
+    <nav aria-label="Secciones principales" className="mt-8">
       <ul className="news-nav">
         {sections.map((section) => (
           <li key={section.slug}>
