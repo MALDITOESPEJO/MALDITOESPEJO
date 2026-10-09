@@ -15,13 +15,12 @@ export function Wordmark() {
         width={800}
         height={399}
         priority
-        sizes="(max-width: 639px) 280px, (max-width: 767px) 360px, 480px"
-        className="h-32 w-auto object-contain object-center sm:h-40 md:h-56"
+        sizes="(max-width: 639px) 180px, (max-width: 767px) 240px, 300px"
+        className="h-14 w-auto max-h-full object-contain object-center sm:h-16 md:h-[4.75rem]"
       />
     </Link>
   );
 }
-
 export function Navigation() {
   return (
     <nav aria-label="Secciones principales">
