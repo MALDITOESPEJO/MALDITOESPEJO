@@ -8,28 +8,23 @@ interface LatestItemProps {
   article: Article;
 }
 
-/** Entrada del listado "Lo último": hora, categoria, titular. */
+/** Entrada del carril "Lo último": hora y dia en mono, seccion y titular. */
 export function LatestItem({ article }: LatestItemProps) {
+  const day = new Date(article.publishedAt)
+    .toLocaleDateString("es-ES", { day: "2-digit", month: "short" })
+    .replace(".", "");
+
   return (
-    <li className="border-b border-border py-5 last:border-b-0">
-      <div className="flex items-baseline gap-4">
-        <time
-          dateTime={article.publishedAt}
-          className="shrink-0 text-[0.85rem] font-semibold tabular-nums text-foreground"
-        >
-          {formatTime(article.publishedAt)}
-        </time>
-        <div className="min-w-0">
-          <span className="mr-2 text-[0.72rem] font-semibold uppercase tracking-[0.1em] text-muted">
-            {sectionName(article.section)}
-          </span>
-          <Link
-            href={`/${article.slug}`}
-            className="text-[1.05rem] font-display font-bold leading-snug text-ink transition-colors hover:text-accent"
-          >
-            {article.title}
-          </Link>
-        </div>
+    <li className="rail-item">
+      <time dateTime={article.publishedAt} className="rail-time">
+        {formatTime(article.publishedAt)}
+        <small>{day}</small>
+      </time>
+      <div className="min-w-0">
+        <span className="kicker kicker-sm">{sectionName(article.section)}</span>
+        <Link href={`/${article.slug}`} className="rail-link hl">
+          {article.title}
+        </Link>
       </div>
     </li>
   );

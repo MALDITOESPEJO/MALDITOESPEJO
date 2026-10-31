@@ -9,10 +9,7 @@ interface CategoryLabelProps {
 
 export function CategoryLabel({ slug, className = "" }: CategoryLabelProps) {
   return (
-    <Link
-      href={`/${slug}`}
-      className={`inline-block text-[0.72rem] font-semibold uppercase tracking-[0.14em] text-accent ${className}`}
-    >
+    <Link href={`/${slug}`} className={`kicker hover:underline ${className}`}>
       {sectionName(slug)}
     </Link>
   );

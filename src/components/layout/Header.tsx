@@ -1,64 +1,81 @@
 import Link from "next/link";
+
+import { articles } from "@/data/articles";
+import { formatEditorialMeta, sortByNewest } from "@/lib/utils";
 import { MobileNavigation } from "./MobileNavigation";
 import { Navigation, Wordmark } from "./Navigation";
+import { Ticker } from "./Ticker";
 
-export function Header() {
+function SearchIcon() {
   return (
-    <header className="sticky top-0 z-50 bg-background/97 backdrop-blur-md md:static">
-      <div className="masthead-strip border-b border-white/10">
-        <div className="container-editorial flex h-9 items-center justify-between gap-4 text-[0.62rem] font-semibold uppercase tracking-[0.12em]">
-          <span className="hidden sm:block opacity-75">MALDITOESPEJO</span>
-          <Link
-            href="/lo-ultimo"
-            className="ml-auto transition-opacity hover:opacity-70 sm:ml-0"
-          >
-            Lo último
-          </Link>
-        </div>
-      </div>
+    <svg
+      width="18"
+      height="18"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2.4"
+      strokeLinecap="square"
+      aria-hidden="true"
+    >
+      <circle cx="11" cy="11" r="7" />
+      <path d="m21 21-4.3-4.3" />
+    </svg>
+  );
+}
 
-      <div className="container-editorial">
-        <div className="relative flex h-[6.875rem] items-center justify-between sm:h-[8.75rem] md:h-[12.75rem]">
-          <div className="flex w-12 items-center sm:w-20 md:w-28">
+/**
+ * Cabecera en tres capas:
+ * 1) barra negra de edicion, 2) logotipo grande, 3) barra de secciones
+ * pegajosa (es lo unico que se queda fijo al hacer scroll), y debajo la cinta
+ * "Lo último".
+ */
+export function Header() {
+  const newest = sortByNewest(articles)[0];
+
+  return (
+    <>
+      <header>
+        <div className="topbar">
+          <div className="container-editorial">
+            <div className="topbar-inner">
+              <span>Solo hechos · Sin opinión</span>
+              {newest && <span>Actualizado {formatEditorialMeta(newest.publishedAt)}</span>}
+            </div>
+          </div>
+        </div>
+
+        <div className="container-editorial">
+          <div className="logo-row">
+            <Wordmark />
+          </div>
+        </div>
+      </header>
+
+      <div className="navbar">
+        <div className="container-editorial">
+          <div className="navbar-inner">
             <div className="md:hidden">
               <MobileNavigation />
             </div>
-          </div>
 
-          <div className="pb-3">
-            <Wordmark />
-          </div>
+            <div className="navbar-nav hidden md:block">
+              <Navigation />
+            </div>
 
-          <div className="flex w-12 justify-end sm:w-20 md:w-28">
-            <Link
-              href="/search"
-              aria-label="Buscar"
-              className="group flex h-10 w-10 items-center justify-center rounded-full border border-border text-ink transition-colors hover:border-ink hover:bg-surface"
-            >
-              <svg
-                width="18"
-                height="18"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.8"
-                strokeLinecap="round"
-              >
-                <circle cx="11" cy="11" r="7" />
-                <path d="m21 21-4.3-4.3" />
-              </svg>
-            </Link>
+            <div className="navbar-tools">
+              <Link href="/lo-ultimo" className="icon-btn icon-btn-hot md:hidden">
+                Lo último
+              </Link>
+              <Link href="/search" aria-label="Buscar" className="icon-btn">
+                <SearchIcon />
+              </Link>
+            </div>
           </div>
         </div>
-
-        <div className="border-t border-border" />
-
-        <div className="hidden pt-5 pb-3 md:block">
-          <Navigation />
-        </div>
-
-        <div className="border-t border-border" />
       </div>
-    </header>
+
+      <Ticker />
+    </>
   );
 }

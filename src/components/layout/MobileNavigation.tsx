@@ -24,16 +24,17 @@ export function MobileNavigation() {
         aria-expanded={open}
         aria-controls="mobile-menu"
         aria-label={open ? "Cerrar menú" : "Abrir menú"}
-        className="flex h-10 w-10 items-center justify-center text-ink"
+        className="icon-btn icon-btn-menu"
       >
         <svg
-          width="20"
-          height="20"
+          width="22"
+          height="22"
           viewBox="0 0 24 24"
           fill="none"
           stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
+          strokeWidth="2.6"
+          strokeLinecap="square"
+          aria-hidden="true"
         >
           {open ? (
             <>
@@ -48,32 +49,25 @@ export function MobileNavigation() {
             </>
           )}
         </svg>
+        <span>Menú</span>
       </button>
 
       {open && (
         <nav
           id="mobile-menu"
           aria-label="Secciones principales (móvil)"
-          className="border-t border-border bg-background"
+          className="mobile-panel"
         >
-          <ul className="flex flex-col">
+          <ul>
             {sections.map((section) => (
-              <li key={section.slug} className="border-b border-border">
-                <Link
-                  href={section.url}
-                  onClick={close}
-                  className="block px-[var(--gutter-mobile)] py-4 text-base font-medium text-ink"
-                >
+              <li key={section.slug}>
+                <Link href={section.url} onClick={close}>
                   {section.name}
                 </Link>
               </li>
             ))}
             <li>
-              <Link
-                href="/lo-ultimo"
-                onClick={close}
-                className="block px-[var(--gutter-mobile)] py-4 text-base font-medium text-accent"
-              >
+              <Link href="/lo-ultimo" onClick={close}>
                 Lo último
               </Link>
             </li>
