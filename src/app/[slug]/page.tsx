@@ -37,5 +37,25 @@ function articleStructuredData(article: Article): Record<string, unknown> {
 }
 export default async function ArticlePage({ params }: Props) {
   const { slug } = await params; const article = getArticleBySlug(slug); if (!article) notFound();
-  return <div className="container-editorial"><article className="section-space pb-16 md:pb-24"><ArticleHeader article={article} /><div className="mx-auto mt-8 w-full max-w-[680px]"><KeyFacts facts={article.keyFacts} as="h2" /></div><div className="mx-auto mt-10 w-full max-w-[680px]"><ArticleBody article={article} /></div><div className="mx-auto w-full max-w-[680px]"><UnknownFacts facts={article.unknownFacts ?? []} as="h2" /></div><ArticleTimeline article={article} /><ArticleUpdates article={article} /><ArticleSources article={article} /><RelatedStories article={article} /></article><JsonLd data={articleStructuredData(article)} /></div>;
+  return (
+    <div className="container-editorial">
+      <article className="section-space article-page">
+        <ArticleHeader article={article} />
+        <div className="article-layout">
+          <aside className="article-aside" aria-label="Resumen">
+            <KeyFacts facts={article.keyFacts} as="h2" />
+          </aside>
+          <div className="article-main">
+            <ArticleBody article={article} />
+            <UnknownFacts facts={article.unknownFacts ?? []} as="h2" />
+            <ArticleTimeline article={article} />
+            <ArticleUpdates article={article} />
+            <ArticleSources article={article} />
+          </div>
+        </div>
+        <RelatedStories article={article} />
+      </article>
+      <JsonLd data={articleStructuredData(article)} />
+    </div>
+  );
 }

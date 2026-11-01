@@ -4,6 +4,7 @@ import Link from "next/link";
 import { articles } from "@/data/articles";
 import { sections } from "@/data/sections";
 import { sortByNewest } from "@/lib/utils";
+import { factText } from "@/lib/markdown";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { FeaturedStory } from "@/components/editorial/FeaturedStory";
 import { StoryCard } from "@/components/editorial/StoryCard";
@@ -74,7 +75,7 @@ export default function HomePage() {
             <ul className="facts-list">
               {featured.keyFacts.map((fact, i) => (
                 <li key={i}>
-                  <span>{fact}</span>
+                  <span>{factText(fact)}</span>
                 </li>
               ))}
             </ul>

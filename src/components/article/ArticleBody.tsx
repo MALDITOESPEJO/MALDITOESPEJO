@@ -1,20 +1,19 @@
 import type { Article } from "@/data/types";
+import { MarkdownBlocks } from "./MarkdownBlocks";
 
 interface ArticleBodyProps {
   article: Article;
 }
 
 /**
- * Cuerpo del articulo (voz editorial en serifa) dentro de la
- * columna de lectura. Renderiza los bloques editoriales; la
- * clasificacion (hecho/declaracion/contexto/pendiente) es
- * estructural y no requiere etiqueta visual.
+ * Cuerpo del artículo (serifa de lectura). Cada bloque editorial se
+ * interpreta como Markdown: negritas, listas, citas y enlaces.
  */
 export function ArticleBody({ article }: ArticleBodyProps) {
   return (
     <div className="prose-editorial">
       {article.body.map((block, i) => (
-        <p key={i}>{block.content}</p>
+        <MarkdownBlocks key={i} content={block.content} />
       ))}
     </div>
   );

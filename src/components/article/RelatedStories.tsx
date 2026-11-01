@@ -23,11 +23,11 @@ export function RelatedStories({ article }: RelatedStoriesProps) {
   }
 
   return (
-    <section aria-labelledby="relacionados-titulo" className="mt-16 border-t border-border pt-10">
+    <section aria-label="Más sobre este tema" className="related">
       <SectionHeader title="Más sobre este tema" as="h2" variant="kicker" />
-      <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="grid-dense related-grid">
         {related.map((item) => (
-          <StoryCard key={item.slug} article={item} size="sm" showDek />
+          <StoryCard key={item.slug} article={item} size="md" />
         ))}
       </div>
     </section>

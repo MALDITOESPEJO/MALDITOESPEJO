@@ -15,7 +15,7 @@ export function ArticleMetaBar({ article }: ArticleMetaBarProps) {
     Boolean(article.updatedAt) && article.updatedAt !== article.publishedAt;
 
   return (
-    <div className="mt-6 border-y border-border py-4">
+    <div className="article-meta">
       <ArticleByline author={article.author} />
       <div className="metadata mt-2 flex flex-wrap items-center gap-x-4 gap-y-1">
         <span>

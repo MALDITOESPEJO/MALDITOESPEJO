@@ -16,14 +16,11 @@ export function ArticleSources({ article }: ArticleSourcesProps) {
   }
 
   return (
-    <section aria-labelledby="fuentes-titulo" className="mx-auto mt-12 w-full max-w-[680px]">
-      <h2
-        id="fuentes-titulo"
-        className="text-[0.78rem] font-semibold uppercase tracking-[0.16em] text-ink"
-      >
+    <section aria-labelledby="fuentes-titulo" className="art-block">
+      <h2 id="fuentes-titulo" className="art-label">
         Fuentes
       </h2>
-      <ul className="mt-4 divide-y divide-border border-y border-border">
+      <ul className="sources">
         {article.sources.map((source, i) => (
           <SourceRow key={i} source={source} />
         ))}
@@ -34,7 +31,7 @@ export function ArticleSources({ article }: ArticleSourcesProps) {
 
 function SourceRow({ source }: { source: Source }) {
   return (
-    <li className="flex flex-col gap-1 py-4">
+    <li>
       <div className="flex flex-wrap items-baseline gap-x-2 gap-y-1">
         {source.entity && <span className="font-semibold text-ink">{source.entity}</span>}
         <span className="text-[0.82rem] text-muted">{source.label}</span>
@@ -49,7 +46,7 @@ function SourceRow({ source }: { source: Source }) {
           target="_blank"
           rel="noopener noreferrer"
           aria-label={`Abrir ${source.label} de ${source.entity ?? "la fuente"} en ventana nueva`}
-          className="mt-1 inline-block break-all text-[0.82rem] text-accent underline decoration-accent/40 underline-offset-2 transition-colors hover:text-ink"
+          className="source-link"
         >
           {source.url.replace(/^https?:\/\//, "")}
           <span className="sr-only"> (abre en ventana nueva)</span>
