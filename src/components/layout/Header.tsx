@@ -64,9 +64,6 @@ export function Header() {
             </div>
 
             <div className="navbar-tools">
-              <Link href="/lo-ultimo" className="icon-btn icon-btn-hot md:hidden">
-                Lo último
-              </Link>
               <Link href="/search" aria-label="Buscar" className="icon-btn">
                 <SearchIcon />
               </Link>

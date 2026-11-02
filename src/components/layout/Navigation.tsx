@@ -32,11 +32,6 @@ export function Navigation() {
             </Link>
           </li>
         ))}
-        <li>
-          <Link href="/lo-ultimo" className="news-nav-link news-nav-link-active">
-            Lo último
-          </Link>
-        </li>
       </ul>
     </nav>
   );
