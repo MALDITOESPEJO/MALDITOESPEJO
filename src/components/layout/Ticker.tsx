@@ -6,7 +6,7 @@ import { formatTime, sortByNewest } from "@/lib/utils";
 const MAX_ITEMS = 8;
 
 /**
- * Cinta "Lo último": titulares recientes en movimiento continuo.
+ * Cinta "Ahora": titulares recientes en movimiento continuo.
  * Se pausa con el ratón o el foco. Con movimiento reducido se desplaza a mano.
  * La segunda copia es decorativa (aria-hidden, sin enlaces) para el bucle.
  */
@@ -16,7 +16,7 @@ export function Ticker() {
 
   return (
     <div className="ticker" role="region" aria-label="Titulares de última hora">
-      <div className="ticker-label">Lo último</div>
+      <div className="ticker-label">Ahora</div>
       <div className="ticker-viewport">
         <div className="ticker-track">
           <div className="ticker-set">

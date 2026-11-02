@@ -200,6 +200,8 @@ a.hl:hover, .card:hover .hl, .lead:hover .hl, .rail-item:hover .hl { background-
 }
 .icon-btn:hover { background: var(--color-volt); color: var(--color-ink); }
 .icon-btn-hot { background: var(--color-accent); border-left: 0; }
+/* En escritorio "Lo último" ya está en el menú: este botón es solo móvil. */
+@media (min-width: 768px) { .icon-btn-hot { display: none; } }
 .icon-btn-menu { border-left: 0; padding-left: 0; height: 100%; }
 
 .mobile-panel {
@@ -356,7 +358,7 @@ a.ticker-item:hover span { text-decoration: underline; text-decoration-thickness
 .article-meta { margin-top: 1.5rem; border-top: 2px solid var(--color-ink); border-bottom: 1px solid var(--color-border); padding: 0.8rem 0; }
 .article-figure { margin-top: 1.5rem; }
 .article-layout { margin-top: 2rem; }
-.article-main { min-width: 0; max-width: 44rem; }
+.article-main { min-width: 0; max-width: 44rem; margin-inline: auto; }
 
 .prose-editorial { text-align: left; hyphens: manual; font-size: 1.1875rem; line-height: 1.65; }
 .prose-editorial > p:first-child { font-size: 1.3rem; line-height: 1.5; }
