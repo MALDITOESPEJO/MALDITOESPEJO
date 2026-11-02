@@ -66,11 +66,6 @@ export function MobileNavigation() {
                 </Link>
               </li>
             ))}
-            <li>
-              <Link href="/lo-ultimo" onClick={close}>
-                Lo último
-              </Link>
-            </li>
           </ul>
         </nav>
       )}
