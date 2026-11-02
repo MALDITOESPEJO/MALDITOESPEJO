@@ -35,9 +35,9 @@ export default function HomePage() {
             <FeaturedStory article={featured} as="h1" layout="stack" />
           </div>
           {rail.length > 0 && (
-            <aside aria-label="Lo último" className="hero-rail">
+            <aside aria-label="Recién publicado" className="hero-rail">
               <div className="rail-head">
-                <h2>Lo último</h2>
+                <h2>Recién publicado</h2>
                 <Link href="/lo-ultimo">Ver todo →</Link>
               </div>
               <ol>

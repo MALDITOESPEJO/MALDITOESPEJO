@@ -37,9 +37,9 @@ export function SectionPage({ sectionSlug }: SectionPageProps) {
             <FeaturedStory article={lead} as="h2" layout="stack" />
           </div>
           {rail.length > 0 && (
-            <aside aria-label="Lo último de la sección" className="hero-rail">
+            <aside aria-label="Recién publicado en la sección" className="hero-rail">
               <div className="rail-head">
-                <h2>Lo último</h2>
+                <h2>Recién publicado</h2>
                 <Link href="/lo-ultimo">Ver todo →</Link>
               </div>
               <ol>
