@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { articles, getArticleBySlug } from "@/data/articles";
 import type { Article } from "@/data/types";
+import { toMadridIso } from "@/lib/utils";
 import { sectionName } from "@/data/sections";
 import { ArticleHeader } from "@/components/article/ArticleHeader";
 import { ArticleBody } from "@/components/article/ArticleBody";
@@ -20,7 +21,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!article) return { title: "Noticia no encontrada", robots: { index: false } };
   return {
     title: article.title, description: article.dek, alternates: { canonical: `/${article.slug}` },
-    openGraph: { title: article.title, description: article.dek, url: `/${article.slug}`, siteName: "MALDITOESPEJO", type: "article", publishedTime: article.publishedAt, modifiedTime: article.updatedAt ?? article.publishedAt, authors: [article.author.name], section: sectionName(article.section), ...(article.image?.src ? { images: [{ url: article.image.src, width: article.image.width, height: article.image.height, alt: article.image.alt }] } : {}) },
+    openGraph: { title: article.title, description: article.dek, url: `/${article.slug}`, siteName: "MALDITOESPEJO", type: "article", publishedTime: toMadridIso(article.publishedAt), modifiedTime: toMadridIso(article.updatedAt ?? article.publishedAt), authors: [article.author.name], section: sectionName(article.section), ...(article.image?.src ? { images: [{ url: article.image.src, width: article.image.width, height: article.image.height, alt: article.image.alt }] } : {}) },
     twitter: { card: "summary_large_image", title: article.title, description: article.dek, ...(article.image?.src ? { images: [article.image.src] } : {}) },
   };
 }
@@ -29,7 +30,7 @@ function articleStructuredData(article: Article): Record<string, unknown> {
   const articleUrl = absoluteUrl(`/${article.slug}`); const imageUrl = article.image?.src ? absoluteUrl(article.image.src) : undefined;
   return {
     "@context": "https://schema.org", "@type": "NewsArticle", url: articleUrl, headline: article.title, description: article.dek,
-    ...(imageUrl ? { image: [imageUrl] } : {}), datePublished: article.publishedAt, dateModified: article.updatedAt ?? article.publishedAt,
+    ...(imageUrl ? { image: [imageUrl] } : {}), datePublished: toMadridIso(article.publishedAt), dateModified: toMadridIso(article.updatedAt ?? article.publishedAt),
     author: [article.author.isOrganization ? { "@type": "Organization", name: article.author.name } : { "@type": "Person", name: article.author.name }],
     publisher: { "@type": "Organization", name: "MALDITOESPEJO", url: SITE_URL }, articleSection: sectionName(article.section), inLanguage: "es", isAccessibleForFree: true,
     mainEntityOfPage: { "@type": "WebPage", "@id": articleUrl },
