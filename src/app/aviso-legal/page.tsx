@@ -23,26 +23,26 @@ export const metadata: Metadata = {
 
 export default function AvisoLegalPage() {
   return (
-    <div className="container-editorial py-16 md:py-24">
-      <nav aria-label="Migas de pan" className="mb-10 text-xs text-faint">
+    <div className="container-editorial legal">
+      <nav aria-label="Migas de pan" className="legal-crumbs">
         <Link href="/" className="hover:text-ink transition-colors">
           Inicio
         </Link>
         <span className="mx-2">/</span>
-        <span className="text-muted">Aviso Legal</span>
+        <span className="legal-meta">Aviso Legal</span>
       </nav>
 
-      <div className="max-w-[var(--max-width-reading)]">
-        <p className="text-xs uppercase tracking-[0.2em] text-faint mb-6">Información legal</p>
-        <h1 className="font-display font-bold tracking-tight text-4xl md:text-5xl text-foreground mb-8 leading-tight">
+      <div className="legal-head">
+        <p className="kicker legal-kicker">Información legal</p>
+        <h1 className="headline-xl legal-title">
           Aviso Legal
         </h1>
-        <p className="text-muted">Última actualización: septiembre de 2026</p>
+        <p className="legal-meta">Última actualización: septiembre de 2026</p>
       </div>
 
-      <div className="mt-12 pt-12 border-t border-border max-w-[var(--max-width-reading)] space-y-12 text-foreground leading-relaxed">
+      <div className="legal-body">
         <div>
-          <h2 className="font-display font-bold tracking-tight text-2xl mb-4">1. Identificación del responsable</h2>
+          <h2 className="legal-h2">1. Identificación del responsable</h2>
           <p>
             En cumplimiento de lo establecido en la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la
             Información y de Comercio Electrónico (LSSI-CE), y del Reglamento (UE) 2016/679, General de Protección
@@ -56,15 +56,15 @@ export default function AvisoLegalPage() {
             <li><strong>Ámbito territorial:</strong> España y Unión Europea</li>
             <li>
               <strong>Contacto:</strong> Mediante correo electrónico a{" "}
-              <a href="mailto:carmelocotonblanco@gmail.com" className="text-accent hover:underline">carmelocotonblanco@gmail.com</a>
+              <a href="mailto:carmelocotonblanco@gmail.com" className="legal-link">carmelocotonblanco@gmail.com</a>
             </li>
           </ul>
         </div>
 
         <div>
-          <h2 className="font-display font-bold tracking-tight text-2xl mb-4">2. Condiciones de uso</h2>
+          <h2 className="legal-h2">2. Condiciones de uso</h2>
           <p>El acceso al sitio web MALDITOESPEJO es libre y gratuito. Su uso atribuye la condición de usuario, quien acepta las siguientes condiciones:</p>
-          <ul className="list-disc list-inside space-y-2 mt-4">
+          <ul className="legal-list">
             <li>Utilizar los contenidos con fines exclusivamente informativos, educativos o de investigación.</li>
             <li>No emplear los contenidos con fines ilícitos o contrarios al ordenamiento jurídico vigente.</li>
             <li>No reproducir, distribuir o modificar los contenidos sin autorización expresa del titular.</li>
@@ -74,7 +74,7 @@ export default function AvisoLegalPage() {
         </div>
 
         <div>
-          <h2 className="font-display font-bold tracking-tight text-2xl mb-4">3. Propiedad intelectual</h2>
+          <h2 className="legal-h2">3. Propiedad intelectual</h2>
           <p>Todos los contenidos del sitio web, incluyendo textos, análisis, estructura, diseño gráfico y código fuente, están protegidos por las normas de propiedad intelectual e industrial aplicables.</p>
           <p>La titularidad de los derechos de explotación corresponde al responsable del proyecto MALDITOESPEJO, salvo indicación expresa en contrario.</p>
           <p>Queda prohibida la reproducción, distribución, comunicación pública o transformación, total o parcial, de los contenidos sin autorización expresa y por escrito del titular.</p>
@@ -82,11 +82,11 @@ export default function AvisoLegalPage() {
         </div>
 
         <div>
-          <h2 className="font-display font-bold tracking-tight text-2xl mb-4">4. Exclusión de responsabilidad</h2>
+          <h2 className="legal-h2">4. Exclusión de responsabilidad</h2>
           <p>Los contenidos publicados en MALDITOESPEJO tienen carácter exclusivamente informativo y editorial.</p>
           <p className="font-medium text-foreground mt-4">En ningún caso constituyen asesoramiento profesional, consultoría ni recomendación de productos o servicios.</p>
           <p className="mt-4">El responsable del proyecto no se responsabiliza de:</p>
-          <ul className="list-disc list-inside space-y-2 mt-4">
+          <ul className="legal-list">
             <li>Las decisiones adoptadas por los usuarios a partir de la información contenida en el sitio web.</li>
             <li>El uso que terceros puedan hacer de los contenidos publicados, incluyendo su reproducción, modificación o interpretación.</li>
             <li>La exactitud, actualidad o integridad de la información en todo momento.</li>
@@ -96,7 +96,7 @@ export default function AvisoLegalPage() {
         </div>
 
         <div>
-          <h2 className="font-display font-bold tracking-tight text-2xl mb-4">5. Legislación aplicable y jurisdicción</h2>
+          <h2 className="legal-h2">5. Legislación aplicable y jurisdicción</h2>
           <p>Las presentes condiciones se rigen por la legislación española y la normativa de la Unión Europea que resulte de aplicación.</p>
           <p>Para la resolución de cualquier controversia que pudiera derivarse del acceso o uso del sitio web, las partes se someten a la jurisdicción de los juzgados y tribunales españoles competentes.</p>
         </div>

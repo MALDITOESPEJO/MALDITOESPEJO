@@ -26,8 +26,8 @@ export function SearchClient({ articles }: SearchClientProps) {
   }, [articles, query]);
 
   return (
-    <div className="mt-8">
-      <div className="flex max-w-xl gap-3">
+    <div className="search">
+      <div className="search-field">
         <label htmlFor="search-input" className="sr-only">
           Buscar
         </label>
@@ -36,32 +36,31 @@ export function SearchClient({ articles }: SearchClientProps) {
           type="search"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          placeholder="Buscar por titular, sección o contenido…"
-          className="h-12 w-full border border-border-strong bg-background px-4 text-[0.95rem] text-ink placeholder:text-faint"
+          placeholder="Titular, sección o contenido…"
+          className="search-input"
         />
       </div>
 
       {query.trim() === "" ? (
-        <p className="mt-6 text-sm text-muted">
-          Escribe un término para buscar en el contenido publicado de MALDITOESPEJO.
-        </p>
+        <p className="search-note">Escribe un término para buscar en el contenido publicado de MALDITOESPEJO.</p>
       ) : results.length === 0 ? (
-        <p className="mt-6 text-sm text-muted">No se encontraron resultados.</p>
+        <p className="search-note">No se encontraron resultados.</p>
       ) : (
-        <ul className="mt-6 max-w-xl divide-y divide-border border-y border-border">
-          {results.map((a) => (
-            <li key={a.slug}>
-              <Link href={`/${a.slug}`} className="group block py-4">
-                <span className="text-[0.72rem] font-semibold uppercase tracking-[0.12em] text-accent">
-                  {sectionName(a.section)}
-                </span>
-                <p className="mt-1 text-[1.05rem] font-display font-bold leading-snug text-ink group-hover:text-accent">
-                  {a.title}
-                </p>
-              </Link>
-            </li>
-          ))}
-        </ul>
+        <>
+          <p className="metadata search-count">
+            {results.length} {results.length === 1 ? "resultado" : "resultados"}
+          </p>
+          <ul className="search-results">
+            {results.map((a) => (
+              <li key={a.slug}>
+                <Link href={`/${a.slug}`} className="search-hit">
+                  <span className="kicker kicker-sm">{sectionName(a.section)}</span>
+                  <span className="headline-md hl">{a.title}</span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </>
       )}
     </div>
   );

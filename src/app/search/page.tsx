@@ -11,13 +11,14 @@ export const metadata: Metadata = {
 export default function SearchPage() {
   return (
     <div className="container-editorial">
-      <section className="section-space max-w-2xl">
-        <h1 className="headline-lg text-ink">Buscar</h1>
-        <p className="metadata mt-3">
-          Búsqueda local sobre el contenido publicado de MALDITOESPEJO.
-        </p>
-        <SearchClient articles={articles} />
-      </section>
+      <div className="section-space">
+        <div className="page-title">
+          <p className="kicker mb-3">Archivo completo</p>
+          <h1 className="headline-display">Buscar</h1>
+          <p className="metadata mt-4">Búsqueda local sobre el contenido publicado de MALDITOESPEJO.</p>
+        </div>
+      </div>
+      <SearchClient articles={articles} />
     </div>
   );
 }

@@ -10,18 +10,11 @@ export const metadata: Metadata = {
 export default function NotFound() {
   return (
     <div className="container-editorial">
-      <section className="section-space max-w-xl">
-        <p className="text-[0.75rem] font-semibold uppercase tracking-[0.16em] text-accent">
-          404
-        </p>
-        <h1 className="headline-lg mt-3 text-ink">Página no encontrada</h1>
-        <p className="dek mt-4">
-          El contenido que buscas no existe o se ha movido.
-        </p>
-        <Link
-          href="/"
-          className="mt-8 inline-flex items-center bg-ink px-6 py-3 text-sm font-semibold text-background transition-colors hover:bg-accent"
-        >
+      <section className="section-space notfound">
+        <p className="notfound-code" aria-hidden="true">404</p>
+        <h1 className="headline-lg">Página no encontrada</h1>
+        <p className="dek notfound-dek">El contenido que buscas no existe o se ha movido.</p>
+        <Link href="/" className="btn-hot">
           Volver a la portada
         </Link>
       </section>

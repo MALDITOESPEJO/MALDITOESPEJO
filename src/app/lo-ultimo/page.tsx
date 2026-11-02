@@ -31,25 +31,46 @@ export const metadata: Metadata = {
    No fija un numero de entradas: muestra todo el contenido disponible. */
 const byNewest = sortByNewest(articles);
 
+/* Agrupa por día (YYYY-MM-DD) conservando el orden cronológico inverso. */
+const days: { day: string; items: typeof byNewest }[] = [];
+for (const a of byNewest) {
+  const day = a.publishedAt.slice(0, 10);
+  const last = days[days.length - 1];
+  if (last && last.day === day) last.items.push(a);
+  else days.push({ day, items: [a] });
+}
+
+function dayLabel(day: string): string {
+  const [y, m, d] = day.split("-").map(Number);
+  return new Date(Date.UTC(y, m - 1, d)).toLocaleDateString("es-ES", {
+    weekday: "long",
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+    timeZone: "UTC",
+  });
+}
+
 export default function LoUltimoPage() {
   return (
     <div className="container-editorial">
-      <p className="mt-6 text-[0.7rem] font-semibold uppercase tracking-[0.14em] text-faint">
-        <span className="mr-2 inline-block border border-border-strong px-1.5 py-0.5 text-accent">
-          DEMO
-        </span>
-        Contenido ficticio de demostración del sistema visual
-      </p>
-
-      {/* LISTA CRONOLOGICA */}
-      <section aria-label="Lo último" className="section-space">
+      <div className="section-space">
         <SectionHeader title="Lo último" eyebrow="En este momento" />
-        <ol className="mt-8 max-w-2xl">
-          {byNewest.map((a) => (
-            <LatestItem key={a.slug} article={a} />
-          ))}
-        </ol>
-      </section>
+      </div>
+
+      {days.map(({ day, items }) => (
+        <section key={day} aria-label={dayLabel(day)} className="section-space">
+          <div className="band">
+            <h2 className="band-title">{dayLabel(day)}</h2>
+            <span className="band-more band-count">{items.length}</span>
+          </div>
+          <ol className="dense-list">
+            {items.map((a) => (
+              <LatestItem key={a.slug} article={a} />
+            ))}
+          </ol>
+        </section>
+      ))}
     </div>
   );
 }
