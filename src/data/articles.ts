@@ -42,12 +42,23 @@ function mapSourcesFromFrontmatter(rawSources:string[]|undefined):import("./type
   return (rawSources??[]).map((label)=>({label}));
 }
 
-function markdownBody(markdown:string):string[]{
-  const blocks=markdown.replace(/^---\r?\n[\s\S]*?\r?\n---\r?\n?/,'').split(/\r?\n\s*\r?\n/).map(block=>block.trim()).filter(block=>block&&!block.startsWith("#"));
+/* Subtitulos de andamiaje editorial (fuentes, estado, pendientes): no se muestran como subtitulo. */
+const SCAFFOLD_HEADINGS=new Set(["fuente primaria","que ha ocurrido","hechos clave","fuentes","estado editorial","el dato que queda abierto","proximos datos a vigilar","lo que todavia no se sabe","lo que todavia no puede afirmarse","lo que no se sabe","que sabemos y que no sabemos","que se conoce","que podemos decir y que no"]);
+function isNarrativeHeading(block:string):boolean{
+  const match=block.match(/^#{2,3}\s+(.+)$/);
+  if(!match)return false;
+  const key=match[1].trim().toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"");
+  return !SCAFFOLD_HEADINGS.has(key);
+}
+/* Bloques del cuerpo: parrafos y subtitulos narrativos (## / ###). Los titulos H1 y el andamiaje se descartan. */
+function markdownBlocks(markdown:string):string[]{
+  const blocks=markdown.replace(/^---\r?\n[\s\S]*?\r?\n---\r?\n?/,'').split(/\r?\n\s*\r?\n/).map(block=>block.trim()).filter(block=>block&&(!block.startsWith("#")||isNarrativeHeading(block)));
   // El contenido antiguo puede conservar una firma textual al final del cuerpo.
-  // La firma pública se obtiene siempre del modelo Article y debe ser única.
+  // La firma publica se obtiene siempre del modelo Article y debe ser unica.
   return blocks.filter(block=>!/^\*\*[^*]+\s+·\s+\d{1,2}\s+de\s+[a-záéíóúñ]+\s+de\s+\d{4}(?:\s+·\s+\d{1,2}:\d{2}\s*h)?\s*\*\*$/i.test(block));
 }
+/* Solo parrafos (sin subtitulos): base de keyFacts, que no cambia. */
+function markdownBody(markdown:string):string[]{return markdownBlocks(markdown).filter(block=>!block.startsWith("#"));}
 function publicationTimestamp(slug:string,meta:Record<string,string>):string{const explicitTime=meta.time?.match(/^(?:[01]\d|2[0-3]):[0-5]\d$/)?.[0];return `${meta.date}T${explicitTime??LEGACY_PUBLICATION_TIMES[slug]??"00:00"}`;}
 function findEditorialImage(slug:string,meta:Record<string,string>):string|undefined{
   const explicitImage=meta.image?.trim();
@@ -57,7 +68,7 @@ function findEditorialImage(slug:string,meta:Record<string,string>):string|undef
   const match=IMAGE_EXTENSIONS.map(extension=>`${slug}${extension}`).find(file=>files.has(file));
   return match?`/images/${match}`:undefined;
 }
-function loadApprovedArticles():Article[]{if(!fs.existsSync(CONTENT_DIR))return[];const loaded:Array<Article|null>=fs.readdirSync(CONTENT_DIR).filter(file=>file.endsWith(".md")||file.endsWith(".mdx")).map(file=>{const markdown=fs.readFileSync(path.join(CONTENT_DIR,file),"utf8");const meta=parseFrontmatter(markdown);const lists=parseFrontmatterLists(markdown);const section=meta.section?.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/\s+/g,"") as SectionSlug;const paragraphs=markdownBody(markdown);if(!["approved","published"].includes(meta.status)||!meta.title||!meta.date||!VALID_SECTIONS.has(section))return null;const slug=file.replace(/\.(md|mdx)$/,'');const imageSrc=findEditorialImage(slug,meta);return {slug,title:meta.title,dek:meta.description??"",section,publishedAt:publicationTimestamp(slug,meta),author:{name:PUBLICATION_AUTHOR},image:imageSrc?{src:imageSrc,alt:meta.title,width:1200,height:675}:undefined,keyFacts:paragraphs.slice(0,4),body:paragraphs.map(content=>({type:"fact",content})),sources:mapSourcesFromFrontmatter(lists.sources),relatedArticles:lists.related_articles,isDemo:false} as Article;});return loaded.filter((article):article is Article=>article!==null).sort((a,b)=>b.publishedAt.localeCompare(a.publishedAt));}
+function loadApprovedArticles():Article[]{if(!fs.existsSync(CONTENT_DIR))return[];const loaded:Array<Article|null>=fs.readdirSync(CONTENT_DIR).filter(file=>file.endsWith(".md")||file.endsWith(".mdx")).map(file=>{const markdown=fs.readFileSync(path.join(CONTENT_DIR,file),"utf8");const meta=parseFrontmatter(markdown);const lists=parseFrontmatterLists(markdown);const section=meta.section?.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/\s+/g,"") as SectionSlug;const paragraphs=markdownBody(markdown);const blocks=markdownBlocks(markdown);if(!["approved","published"].includes(meta.status)||!meta.title||!meta.date||!VALID_SECTIONS.has(section))return null;const slug=file.replace(/\.(md|mdx)$/,'');const imageSrc=findEditorialImage(slug,meta);return {slug,title:meta.title,dek:meta.description??"",section,publishedAt:publicationTimestamp(slug,meta),author:{name:PUBLICATION_AUTHOR},image:imageSrc?{src:imageSrc,alt:meta.title,width:1200,height:675}:undefined,keyFacts:paragraphs.slice(0,4),body:blocks.map(content=>({type:"fact",content})),sources:mapSourcesFromFrontmatter(lists.sources),relatedArticles:lists.related_articles,isDemo:false} as Article;});return loaded.filter((article):article is Article=>article!==null).sort((a,b)=>b.publishedAt.localeCompare(a.publishedAt));}
 export const articles:Article[]=loadApprovedArticles();
 export const baseArticles:Article[]=articles;
 export function getArticleBySlug(slug:string):Article|undefined{return articles.find(article=>article.slug===slug);}

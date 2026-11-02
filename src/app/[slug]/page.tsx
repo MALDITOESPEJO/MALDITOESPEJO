@@ -10,7 +10,6 @@ import { ArticleTimeline } from "@/components/article/ArticleTimeline";
 import { ArticleUpdates } from "@/components/article/ArticleUpdates";
 import { ArticleSources } from "@/components/article/ArticleSources";
 import { RelatedStories } from "@/components/article/RelatedStories";
-import { KeyFacts } from "@/components/article/KeyFacts";
 import { UnknownFacts } from "@/components/article/UnknownFacts";
 import { JsonLd } from "@/components/seo/JsonLd";
 interface Props { params: Promise<{ slug: string }> }
@@ -43,9 +42,6 @@ export default async function ArticlePage({ params }: Props) {
       <article className="section-space article-page">
         <ArticleHeader article={article} />
         <div className="article-layout">
-          <aside className="article-aside" aria-label="Resumen">
-            <KeyFacts facts={article.keyFacts} as="h2" />
-          </aside>
           <div className="article-main">
             <ArticleBody article={article} />
             <UnknownFacts facts={article.unknownFacts ?? []} as="h2" />

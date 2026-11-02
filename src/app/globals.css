@@ -355,16 +355,8 @@ a.ticker-item:hover span { text-decoration: underline; text-decoration-thickness
 .article-dek { margin-top: 1.25rem; max-width: 46rem; font-size: clamp(1.15rem, 1.9vw, 1.5rem); line-height: 1.35; }
 .article-meta { margin-top: 1.5rem; border-top: 2px solid var(--color-ink); border-bottom: 1px solid var(--color-border); padding: 0.8rem 0; }
 .article-figure { margin-top: 1.5rem; }
-.article-layout { display: grid; gap: 2rem; margin-top: 2rem; }
+.article-layout { margin-top: 2rem; }
 .article-main { min-width: 0; max-width: 44rem; }
-.article-aside { min-width: 0; }
-@media (min-width: 1024px) {
-  .article-layout { grid-template-columns: 22rem minmax(0, 44rem); gap: 3.5rem; justify-content: start; }
-  .article-aside { position: sticky; top: 4.5rem; align-self: start; }
-}
-.facts-compact { padding: 1.25rem; }
-.facts-compact .facts-list { grid-template-columns: minmax(0, 1fr); margin-top: 1rem; }
-.facts-compact .facts-list li { font-size: 0.95rem; }
 
 .prose-editorial { text-align: left; hyphens: manual; font-size: 1.1875rem; line-height: 1.65; }
 .prose-editorial > p:first-child { font-size: 1.3rem; line-height: 1.5; }
