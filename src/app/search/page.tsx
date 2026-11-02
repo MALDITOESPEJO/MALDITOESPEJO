@@ -10,15 +10,15 @@ export const metadata: Metadata = {
 
 export default function SearchPage() {
   return (
-    <div className="container-editorial">
-      <div className="section-space">
-        <div className="page-title">
-          <p className="kicker mb-3">Archivo completo</p>
-          <h1 className="headline-display">Buscar</h1>
-          <p className="metadata mt-4">Búsqueda local sobre el contenido publicado de MALDITOESPEJO.</p>
+    <div className="theme-dark">
+      <div className="container-editorial">
+        <div className="w-page-head">
+          <p className="sec-page-count">Archivo completo</p>
+          <h1 className="sec-page-title">Buscar</h1>
+          <p className="metadata">Búsqueda local sobre el contenido publicado de MALDITOESPEJO.</p>
         </div>
+        <SearchClient articles={articles} />
       </div>
-      <SearchClient articles={articles} />
     </div>
   );
 }

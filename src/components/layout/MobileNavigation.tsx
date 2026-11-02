@@ -5,37 +5,22 @@ import { useState } from "react";
 
 import { sections } from "@/data/sections";
 
+/** Menú hamburguesa (todos los anchos): lista completa de secciones y accesos. */
 export function MobileNavigation() {
   const [open, setOpen] = useState(false);
-
-  function toggle() {
-    setOpen((v) => !v);
-  }
-
-  function close() {
-    setOpen(false);
-  }
+  const close = () => setOpen(false);
 
   return (
-    <div className="md:hidden">
+    <div className="w-menu">
       <button
         type="button"
-        onClick={toggle}
+        onClick={() => setOpen((v) => !v)}
         aria-expanded={open}
-        aria-controls="mobile-menu"
+        aria-controls="site-menu"
         aria-label={open ? "Cerrar menú" : "Abrir menú"}
-        className="icon-btn icon-btn-menu"
+        className="w-menu-btn"
       >
-        <svg
-          width="22"
-          height="22"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2.6"
-          strokeLinecap="square"
-          aria-hidden="true"
-        >
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="square" aria-hidden="true">
           {open ? (
             <>
               <path d="M18 6 6 18" />
@@ -43,29 +28,34 @@ export function MobileNavigation() {
             </>
           ) : (
             <>
-              <path d="M4 7h16" />
-              <path d="M4 12h16" />
-              <path d="M4 17h16" />
+              <path d="M3 7h18" />
+              <path d="M3 12h18" />
+              <path d="M3 17h18" />
             </>
           )}
         </svg>
-        <span>Menú</span>
       </button>
 
       {open && (
-        <nav
-          id="mobile-menu"
-          aria-label="Secciones principales (móvil)"
-          className="mobile-panel"
-        >
+        <nav id="site-menu" aria-label="Menú del sitio" className="w-menu-panel">
           <ul>
-            {sections.map((section) => (
-              <li key={section.slug}>
-                <Link href={section.url} onClick={close}>
-                  {section.name}
+            {sections.map((s) => (
+              <li key={s.slug}>
+                <Link href={s.url} onClick={close}>
+                  {s.name}
                 </Link>
               </li>
             ))}
+            <li className="w-menu-sep">
+              <Link href="/lo-ultimo" onClick={close}>
+                Lo último
+              </Link>
+            </li>
+            <li>
+              <Link href="/search" onClick={close}>
+                Buscar
+              </Link>
+            </li>
           </ul>
         </nav>
       )}

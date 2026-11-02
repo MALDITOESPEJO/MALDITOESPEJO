@@ -9,8 +9,9 @@ export const metadata: Metadata = {
 
 export default function NotFound() {
   return (
+    <div className="theme-dark">
     <div className="container-editorial">
-      <section className="section-space notfound">
+      <section className="notfound">
         <p className="notfound-code" aria-hidden="true">404</p>
         <h1 className="headline-lg">Página no encontrada</h1>
         <p className="dek notfound-dek">El contenido que buscas no existe o se ha movido.</p>
@@ -18,6 +19,7 @@ export default function NotFound() {
           Volver a la portada
         </Link>
       </section>
+    </div>
     </div>
   );
 }

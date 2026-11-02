@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 
 import { articles } from "@/data/articles";
 import { sortByNewest } from "@/lib/utils";
-import { SectionHeader } from "@/components/ui/SectionHeader";
 import { LatestItem } from "@/components/editorial/LatestItem";
 
 export const metadata: Metadata = {
@@ -53,9 +52,11 @@ function dayLabel(day: string): string {
 
 export default function LoUltimoPage() {
   return (
+    <div className="theme-dark">
     <div className="container-editorial">
-      <div className="section-space">
-        <SectionHeader title="Lo último" eyebrow="En este momento" />
+      <div className="w-page-head">
+        <p className="sec-page-count">En este momento</p>
+        <h1 className="sec-page-title">Lo último</h1>
       </div>
 
       {days.map(({ day, items }) => (
@@ -71,6 +72,7 @@ export default function LoUltimoPage() {
           </ol>
         </section>
       ))}
+    </div>
     </div>
   );
 }

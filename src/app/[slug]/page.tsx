@@ -38,8 +38,9 @@ function articleStructuredData(article: Article): Record<string, unknown> {
 export default async function ArticlePage({ params }: Props) {
   const { slug } = await params; const article = getArticleBySlug(slug); if (!article) notFound();
   return (
-    <div className="container-editorial">
-      <article className="section-space article-page">
+    <div className="theme-paper">
+      <div className="container-editorial">
+      <article className="article-page">
         <ArticleHeader article={article} />
         <div className="article-layout">
           <div className="article-main">
@@ -53,6 +54,7 @@ export default async function ArticlePage({ params }: Props) {
         <RelatedStories article={article} />
       </article>
       <JsonLd data={articleStructuredData(article)} />
+      </div>
     </div>
   );
 }

@@ -7,23 +7,15 @@ interface ArticleHeaderProps {
   article: Article;
 }
 
-/**
- * Cabecera de artículo: etiqueta, titular mega-condensado (único H1),
- * entradilla, franja de metadatos e imagen a todo el ancho.
- */
+/** Cabecera centrada: etiqueta, titular condensado (único H1), entradilla, firma y fecha, imagen con grano. */
 export function ArticleHeader({ article }: ArticleHeaderProps) {
   return (
-    <header className="article-head">
-      <CategoryLabel slug={article.section} className="article-kicker" />
-      <h1 className="headline-xl article-title">{article.title}</h1>
-      <p className="dek article-dek">{article.dek}</p>
+    <header className="art-head">
+      <CategoryLabel slug={article.section} className="art-kicker" />
+      <h1 className="art-title">{article.title}</h1>
+      <p className="art-dek">{article.dek}</p>
       <ArticleMetaBar article={article} />
-      <ImageMarshal
-        article={article}
-        priority
-        className="article-figure"
-        sizes="(min-width: 1320px) 1240px, 100vw"
-      />
+      <ImageMarshal article={article} priority className="art-figure" sizes="(min-width: 1320px) 1240px, 100vw" />
     </header>
   );
 }
