@@ -42,6 +42,26 @@ function mapSourcesFromFrontmatter(rawSources:string[]|undefined):import("./type
   return (rawSources??[]).map((label)=>({label}));
 }
 
+/* Fuentes en formato objeto (id/entity/label/nature/date/url). Devuelve [] si el articulo usa el formato simple de una linea por fuente. */
+function parseStructuredSources(markdown:string):import("./types").Source[]{
+  const match=markdown.match(/^---\r?\n([\s\S]*?)\r?\n---/);
+  if(!match)return[];
+  const out:Array<Record<string,string>>=[];
+  let inSources=false;
+  let current:Record<string,string>|null=null;
+  const unquote=(v:string)=>v.trim().replace(/^"([\s\S]*)"$/,"$1").replace(/^'([\s\S]*)'$/,"$1").trim();
+  for(const line of match[1].split(/\r?\n/)){
+    if(/^sources:\s*$/.test(line)){inSources=true;continue;}
+    if(!inSources)continue;
+    if(/^\S/.test(line)){inSources=false;continue;}
+    const first=line.match(/^\s+-\s+([A-Za-z]\w*):\s*(.*)$/);
+    if(first){current={};out.push(current);current[first[1]]=unquote(first[2]);continue;}
+    const more=line.match(/^\s+([A-Za-z]\w*):\s*(.*)$/);
+    if(more&&current)current[more[1]]=unquote(more[2]);
+  }
+  return out.filter(o=>o.label||o.entity||o.name).map(o=>({id:o.id,entity:o.entity,label:o.label??o.name??o.entity??"",nature:o.nature,date:o.date,url:o.url&&/^https?:\/\//i.test(o.url)?o.url:undefined}) as import("./types").Source);
+}
+
 /* Subtitulos de andamiaje editorial (fuentes, estado, pendientes): no se muestran como subtitulo. */
 const SCAFFOLD_HEADINGS=new Set(["fuente primaria","que ha ocurrido","hechos clave","fuentes","estado editorial","el dato que queda abierto","proximos datos a vigilar","lo que todavia no se sabe","lo que todavia no puede afirmarse","lo que no se sabe","que sabemos y que no sabemos","que se conoce","que podemos decir y que no"]);
 function isNarrativeHeading(block:string):boolean{
@@ -68,7 +88,7 @@ function findEditorialImage(slug:string,meta:Record<string,string>):string|undef
   const match=IMAGE_EXTENSIONS.map(extension=>`${slug}${extension}`).find(file=>files.has(file));
   return match?`/images/${match}`:undefined;
 }
-function loadApprovedArticles():Article[]{if(!fs.existsSync(CONTENT_DIR))return[];const loaded:Array<Article|null>=fs.readdirSync(CONTENT_DIR).filter(file=>file.endsWith(".md")||file.endsWith(".mdx")).map(file=>{const markdown=fs.readFileSync(path.join(CONTENT_DIR,file),"utf8");const meta=parseFrontmatter(markdown);const lists=parseFrontmatterLists(markdown);const section=meta.section?.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/\s+/g,"") as SectionSlug;const paragraphs=markdownBody(markdown);const blocks=markdownBlocks(markdown);if(!["approved","published"].includes(meta.status)||!meta.title||!meta.date||!VALID_SECTIONS.has(section))return null;const slug=file.replace(/\.(md|mdx)$/,'');const imageSrc=findEditorialImage(slug,meta);return {slug,title:meta.title,dek:meta.description??"",section,publishedAt:publicationTimestamp(slug,meta),author:{name:PUBLICATION_AUTHOR},image:imageSrc?{src:imageSrc,alt:meta.title,width:1200,height:675}:undefined,keyFacts:paragraphs.slice(0,4),body:blocks.map(content=>({type:"fact",content})),sources:mapSourcesFromFrontmatter(lists.sources),relatedArticles:lists.related_articles,isDemo:false} as Article;});return loaded.filter((article):article is Article=>article!==null).sort((a,b)=>b.publishedAt.localeCompare(a.publishedAt));}
+function loadApprovedArticles():Article[]{if(!fs.existsSync(CONTENT_DIR))return[];const loaded:Array<Article|null>=fs.readdirSync(CONTENT_DIR).filter(file=>file.endsWith(".md")||file.endsWith(".mdx")).map(file=>{const markdown=fs.readFileSync(path.join(CONTENT_DIR,file),"utf8");const meta=parseFrontmatter(markdown);const lists=parseFrontmatterLists(markdown);const section=meta.section?.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/\s+/g,"") as SectionSlug;const paragraphs=markdownBody(markdown);const blocks=markdownBlocks(markdown);if(!["approved","published"].includes(meta.status)||!meta.title||!meta.date||!VALID_SECTIONS.has(section))return null;const slug=file.replace(/\.(md|mdx)$/,'');const imageSrc=findEditorialImage(slug,meta);return {slug,title:meta.title,dek:meta.description??"",section,publishedAt:publicationTimestamp(slug,meta),author:{name:PUBLICATION_AUTHOR},image:imageSrc?{src:imageSrc,alt:meta.title,width:1200,height:675}:undefined,keyFacts:paragraphs.slice(0,4),body:blocks.map(content=>({type:"fact",content})),sources:(()=>{const structured=parseStructuredSources(markdown);return structured.length?structured:mapSourcesFromFrontmatter(lists.sources);})(),relatedArticles:lists.related_articles,isDemo:false} as Article;});return loaded.filter((article):article is Article=>article!==null).sort((a,b)=>b.publishedAt.localeCompare(a.publishedAt));}
 export const articles:Article[]=loadApprovedArticles();
 export const baseArticles:Article[]=articles;
 export function getArticleBySlug(slug:string):Article|undefined{return articles.find(article=>article.slug===slug);}
