@@ -17,8 +17,8 @@ const byNewest = sortByNewest(articles);
 const featured = byNewest[0];
 /* Resumen crema: las 3 siguientes. */
 const digest = byNewest.slice(1, 4);
-/* Rejilla oscura: 8 historias con imagen. */
-const grid = byNewest.slice(4, 12);
+/* Rejilla oscura: 9 historias con imagen. */
+const grid = byNewest.slice(4, 13);
 /* Bloques de color: las 6 secciones con la noticia más reciente. */
 const blocks = sections
   .map((section) => ({ section, items: byNewest.filter((a) => a.section === section.slug).slice(0, 4) }))
@@ -26,7 +26,7 @@ const blocks = sections
   .sort((a, b) => b.items[0].publishedAt.localeCompare(a.items[0].publishedAt))
   .slice(0, 6);
 /* Más recientes: lo que queda de la portada, en lista compacta. */
-const archive = byNewest.slice(12, 32);
+const archive = byNewest.slice(13, 33);
 
 function longDate(iso: string): string {
   return new Date(iso).toLocaleDateString("es-ES", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" });
@@ -38,7 +38,7 @@ export default function HomePage() {
       <div className="theme-dark">
         <div className="container-editorial">
           <div className="masthead">
-            <GiantWordmark text="MALDITOESPEJO" height={250} />
+            <GiantWordmark text="MALDITOESPEJO" height={250} reflect={90} />
           </div>
           {featured && <FeaturedStory article={featured} as="h1" />}
         </div>

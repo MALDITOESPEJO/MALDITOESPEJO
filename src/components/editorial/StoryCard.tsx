@@ -1,24 +1,26 @@
 import Link from "next/link";
 import { formatEditorialMeta } from "@/lib/utils";
+import { sectionName } from "@/data/sections";
 import type { Article } from "@/data/types";
-import { CategoryLabel } from "@/components/ui/CategoryLabel";
 import { ImageMarshal } from "@/components/ui/ImageMarshal";
+import { ArrowChip } from "@/components/ui/ArrowChip";
 
 interface StoryCardProps {
   article: Article;
   size?: "sm" | "md" | "lg";
   showImage?: boolean;
   showDek?: boolean;
-  /** Ocupa dos columnas en la rejilla densa de portada (solo escritorio). */
+  /** Se mantiene por compatibilidad; la rejilla Wire ya no usa tarjetas a doble ancho. */
   wide?: boolean;
 }
 
-export function StoryCard({ article, size = "md", showImage = true, showDek = false, wide = false }: StoryCardProps) {
+/** Tarjeta: imagen, titular condensado con flecha, línea discontinua, entradilla y firma. */
+export function StoryCard({ article, size = "md", showImage = true, showDek = true }: StoryCardProps) {
   const heading = { sm: "headline-sm", md: "headline-md", lg: "headline-lg" }[size];
   const href = `/${article.slug}`;
 
   return (
-    <article className={`card${wide ? " card-wide" : ""}`}>
+    <article className="card">
       {showImage && (
         <Link href={href} aria-label={`Leer: ${article.title}`} className="card-media">
           {article.image ? (
@@ -28,17 +30,23 @@ export function StoryCard({ article, size = "md", showImage = true, showDek = fa
           )}
         </Link>
       )}
-      <div className="card-body">
-        <CategoryLabel slug={article.section} className="w-fit" />
+      <div className="card-head">
         <h3 className={heading}>
           <Link href={href} className="hl">
             {article.title}
           </Link>
         </h3>
-        {showDek && <p className={size === "lg" ? "dek" : "card-dek"}>{article.dek}</p>}
-        <time className="metadata" dateTime={article.publishedAt}>
-          {formatEditorialMeta(article.publishedAt)}
-        </time>
+        <ArrowChip />
+      </div>
+      {showDek && article.dek && (
+        <>
+          <hr className="card-rule" />
+          <p className="card-dek">{article.dek}</p>
+        </>
+      )}
+      <div className="card-meta">
+        <span>{sectionName(article.section)}</span>
+        <time dateTime={article.publishedAt}>{formatEditorialMeta(article.publishedAt)}</time>
       </div>
     </article>
   );

@@ -5,6 +5,7 @@ import type { Article, Section } from "@/data/types";
 import { formatEditorialMeta } from "@/lib/utils";
 import { sectionColor } from "@/lib/sectionTheme";
 import { ImageMarshal } from "@/components/ui/ImageMarshal";
+import { ArrowChip } from "@/components/ui/ArrowChip";
 
 interface SectionBlockProps {
   section: Section;
@@ -51,18 +52,26 @@ export function SectionBlock({ section, items }: SectionBlockProps) {
               <Link href={`/${a.slug}`} aria-label={`Leer: ${a.title}`} className="sec-card-media">
                 {a.image ? <ImageMarshal article={a} sizes="(min-width: 1024px) 22vw, 50vw" /> : <div className="editorial-image-placeholder" aria-hidden="true" />}
               </Link>
-              <h3 className="sec-card-title">
-                <Link href={`/${a.slug}`} className="hl">
-                  {a.title}
-                </Link>
-              </h3>
+              <div className="card-head">
+                <h3 className="sec-card-title">
+                  <Link href={`/${a.slug}`} className="hl">
+                    {a.title}
+                  </Link>
+                </h3>
+                <ArrowChip />
+              </div>
+              <hr className="card-rule" />
+              <p className="sec-card-dek">{a.dek}</p>
               <time className="sec-meta" dateTime={a.publishedAt}>
                 {formatEditorialMeta(a.publishedAt)}
               </time>
             </article>
           ))}
           <Link href={section.url} className="sec-more">
-            Leer más de {section.name}…
+            <span>Leer más de {section.name}…</span>
+            <span className="sec-more-foot">
+              Entrar <ArrowChip />
+            </span>
           </Link>
         </div>
       </div>

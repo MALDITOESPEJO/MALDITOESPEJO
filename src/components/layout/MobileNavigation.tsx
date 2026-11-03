@@ -46,11 +46,6 @@ export function MobileNavigation() {
                 </Link>
               </li>
             ))}
-            <li className="w-menu-sep">
-              <Link href="/lo-ultimo" onClick={close}>
-                Lo último
-              </Link>
-            </li>
             <li>
               <Link href="/search" onClick={close}>
                 Buscar

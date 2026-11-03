@@ -628,3 +628,52 @@ a.hl:hover, .card:hover .hl, .sec-card:hover .hl { text-decoration: underline; t
 
 /* Legales sobre crema */
 main:has(> .legal) { background: var(--cream); }
+
+/* ---------- Wire · refinamiento (referencia: capturas completas) ---------- */
+.giant-wordmark { aspect-ratio: auto; }
+.chip-arrow { flex: none; display: grid; place-items: center; width: 1.55rem; height: 1.05rem; margin-top: 0.25rem; background: var(--pw-black); color: #fff; }
+.theme-dark .chip-arrow { background: var(--ash); color: var(--pw-black); }
+.theme-color .chip-arrow, .theme-cream .chip-arrow { background: var(--pw-black); color: #fff; }
+.card-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 0.8rem; }
+.card-rule { border: 0; border-top: 1px dashed currentColor; opacity: 0.35; margin: 0; }
+.card-meta { display: flex; justify-content: space-between; gap: 1rem; font-family: var(--font-sans); font-weight: 600; font-size: 0.72rem; }
+.card-meta time { font-weight: 400; font-family: var(--ff-mono); font-size: 0.64rem; letter-spacing: 0.04em; text-transform: uppercase; opacity: 0.7; }
+.card { gap: 0.8rem; }
+.card-dek { font-size: 0.92rem; }
+
+/* Rejilla oscura: 3 columnas con filetes verticales */
+.grid-dense { column-gap: 0; }
+@media (min-width: 1024px) { .grid-dense { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.theme-dark .grid-dense > .card { padding: 1rem 1rem 1.75rem; }
+@media (min-width: 640px) and (max-width: 1023px) {
+  .theme-dark .grid-dense > .card:nth-child(2n+1) { padding-left: 0; }
+  .theme-dark .grid-dense > .card:nth-child(2n) { border-left: 1px solid #3a3a3a; padding-right: 0; }
+}
+@media (min-width: 1024px) {
+  .theme-dark .grid-dense > .card:nth-child(3n+1) { padding-left: 0; }
+  .theme-dark .grid-dense > .card:nth-child(3n+2), .theme-dark .grid-dense > .card:nth-child(3n) { border-left: 1px solid #3a3a3a; }
+  .theme-dark .grid-dense > .card:nth-child(3n) { padding-right: 0; }
+}
+@media (max-width: 639px) { .theme-dark .grid-dense > .card { padding-inline: 0; } }
+
+/* Bloques de color: tarjeta con entradilla y celda "leer más" tintada */
+.sec-card-dek { margin-top: 0.1rem; font-family: var(--font-display); font-size: 0.88rem; line-height: 1.4; color: rgba(0, 0, 0, 0.8); }
+.sec-card .card-head { margin-top: 0; }
+.sec-card .card-rule { margin: 0.7rem 0; }
+.sec-more { flex-direction: column; justify-content: space-between; align-items: stretch; gap: 2rem; min-height: 14rem; background: rgba(255, 255, 255, 0.22); padding: 1rem 1.1rem; margin: 1rem 0 1.5rem 1.1rem; border-left: 0 !important; }
+.sec-more:hover { background: var(--pw-black); color: var(--sec); padding-left: 1.1rem; }
+.sec-more-foot { display: flex; justify-content: flex-end; align-items: center; gap: 0.6rem; font-family: var(--font-display); font-weight: 400; font-stretch: 100%; font-variation-settings: normal; font-size: 0.8rem; letter-spacing: 0; line-height: 1; }
+.sec-more:hover .chip-arrow { background: var(--sec); color: var(--pw-black); }
+@media (max-width: 639px) { .sec-more { margin-left: 0; } }
+
+/* Resumen crema: firma, texto largo con desvanecido y botón */
+.digest-text { max-height: 15.5rem; }
+.digest-text p + p { margin-top: 0.8rem; }
+.digest-by { display: flex; align-items: center; gap: 0.6rem; margin: 0.9rem 0; letter-spacing: 0; text-transform: none; font-family: var(--font-sans); color: var(--pw-black); }
+.digest-avatar { display: grid; place-items: center; width: 2.1rem; height: 2.1rem; border-radius: 50%; background: var(--pw-black); color: var(--cream); font-family: var(--font-sans); font-weight: 900; font-stretch: 62%; font-variation-settings: "wdth" 62; font-size: 1.05rem; }
+.digest-by b { display: block; font-weight: 800; font-stretch: 62%; font-variation-settings: "wdth" 62; text-transform: uppercase; font-size: 1.05rem; line-height: 1; }
+.digest-by small { font-size: 0.66rem; font-weight: 500; color: rgba(0, 0, 0, 0.65); }
+.digest-cta { max-width: 26rem; margin: 3rem auto 0; text-align: center; display: grid; gap: 0.7rem; justify-items: center; font-weight: 600; font-size: 0.9rem; }
+.digest-cta-title { font-family: var(--font-sans); font-weight: 800; font-stretch: 68%; font-variation-settings: "wdth" 68; font-size: clamp(2rem, 4vw, 3rem); line-height: 0.95; }
+.btn-wire { display: block; width: 100%; padding: 0.85rem 1.5rem; background: #f0481d; color: var(--pw-black); font-weight: 700; font-size: 0.95rem; transition: background-color 120ms ease, color 120ms ease; }
+.btn-wire:hover { background: var(--pw-black); color: var(--cream); }
