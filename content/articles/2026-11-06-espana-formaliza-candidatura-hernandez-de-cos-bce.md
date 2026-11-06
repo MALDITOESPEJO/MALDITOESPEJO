@@ -7,7 +7,7 @@ time: "15:39"
 section: "Economía"
 author: "Redacción"
 type: "news"
-status: "pending"
+status: "approved"
 editorial_originality: "original"
 sources:
   - "https://www.20minutos.es/lainformacion/economia-y-finanzas/espana-presenta-formalmente-candidatura-cos_7058213_0.html"
