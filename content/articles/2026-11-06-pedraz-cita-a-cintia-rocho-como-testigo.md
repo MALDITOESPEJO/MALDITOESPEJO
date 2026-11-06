@@ -10,10 +10,7 @@ type: "news"
 status: "approved"
 editorial_originality: "original"
 sources:
-  - "https://www.articulo14.es/politica/pedraz-declarar-cintia-rocho-elecciones-20261106.html"
-  - "https://www.europapress.es/nacional/noticia-juez-cita-testigo-mujer-saenz-tejada-hablo-eliminar-jueza-caso-david-sanchez-20261106141552.html"
-  - "https://www.eldiario.es/politica/juez-pedraz-llama-declarar-testigo-supuesto-plan-atentar-biedma-cita-cinco-dias-elecciones_1_13644224.html"
-  - "https://elpais.com/espana/2026-11-06/pedraz-cita-a-declarar-a-la-mujer-que-afirma-que-la-trama-del-caso-leire-diez-queria-eliminar-a-la-jueza-biedma.html"
+
 ---
 
 El juez de la Audiencia Nacional Santiago Pedraz ha citado a Cintia Rocho para que declare como testigo el próximo 24 de noviembre, a las 10:15, en la investigación sobre las presuntas maniobras dirigidas contra la jueza Beatriz Biedma. La citación figura en una providencia dictada el 6 de noviembre, según la información publicada por Europa Press y por elDiario.es, que asegura haber tenido acceso al documento.
