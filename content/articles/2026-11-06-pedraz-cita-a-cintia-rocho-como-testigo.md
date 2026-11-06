@@ -7,7 +7,7 @@ time: "15:39"
 section: "Política"
 author: "Redacción"
 type: "news"
-status: "pending"
+status: "approved"
 editorial_originality: "original"
 sources:
   - "https://www.articulo14.es/politica/pedraz-declarar-cintia-rocho-elecciones-20261106.html"
