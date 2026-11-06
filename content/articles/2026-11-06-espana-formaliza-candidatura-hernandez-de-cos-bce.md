@@ -10,9 +10,6 @@ type: "news"
 status: "approved"
 editorial_originality: "original"
 sources:
-  - "https://www.20minutos.es/lainformacion/economia-y-finanzas/espana-presenta-formalmente-candidatura-cos_7058213_0.html"
-  - "https://efe.com/economia/2026-11-06/espana-formaliza-candidatura-pablo-hernandez-de-cos-bce/"
-  - "https://www.ecb.europa.eu/press/pr/date/2026/html/ecb.pr261029~abbb6dc64b.en.html"
   - "https://www.bis.org/about/organisation/management"
   - "https://www.consilium.europa.eu/es/meetings/eurogroup/2026/11/09/"
 ---
